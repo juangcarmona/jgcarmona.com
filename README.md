@@ -1,2 +1,2 @@
-# jgcarmona.com
-Is it possible to migrate an entire wordpress site to Astro or similar?
+# JGCARMONA.COM
+This project contains an attempt to migrate all my wordpress site to astro... I hope I find a good way to do it so that I can start publishing, directly, using Markdown. (And get rid of wordpress!)
