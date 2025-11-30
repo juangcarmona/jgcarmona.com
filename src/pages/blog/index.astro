@@ -1,5 +1,41 @@
 ---
-export const prerender = true;
+import BlogPage from "../../components/BlogPage.astro";
+import { getCollection } from "astro:content";
 
-return Astro.redirect('/blog/1');
+// misma lógica que página 1
+const allPosts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+let pageSize = 10 + 1; // porque /blog/1 añade uno
+const page = 1;
+const start = 0;
+const end = pageSize;
+
+const posts = allPosts.slice(start, end);
+const totalPages = Math.ceil(allPosts.length / pageSize);
+
+// mismo compact que en /blog/[page].astro
+const paginationItems = [];
+for (let p = 1; p <= totalPages; p++) {
+  const near = Math.abs(p - page) <= 1;
+  const edge = p === 1 || p === totalPages;
+
+  if (near || edge) paginationItems.push(p);
+  else paginationItems.push(null);
+}
+
+const compact: (number | "ellipsis")[] = [];
+for (let i = 0; i < paginationItems.length; i++) {
+  const item = paginationItems[i];
+  if (item === null) {
+    if (compact[compact.length - 1] !== "ellipsis") {
+      compact.push("ellipsis");
+    }
+  } else {
+    compact.push(item);
+  }
+}
 ---
+
+<BlogPage posts={posts} page={page} totalPages={totalPages} compact={compact} />
