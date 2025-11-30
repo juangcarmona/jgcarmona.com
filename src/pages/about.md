@@ -2,6 +2,7 @@
 title: "About Me"
 description: "Sobre mí"
 layout: ../layouts/BlogPost.astro
+pubdescription: ''
 pubDate: 2024-01-01T00:00:00.000Z
 heroImage: ../assets/blog-placeholder-about.jpg
 ---
