@@ -1,24 +1,51 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<'a'>;
+type Props = HTMLAttributes<"a">;
 
 const { href, class: className, ...props } = Astro.props;
-const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
+
+// pathname relativo al BASE_URL
+const base = import.meta.env.BASE_URL ?? "/";
+let pathname = Astro.url.pathname.replace(base, "");
+
+// normaliza: siempre con "/" delante
+if (!pathname.startsWith("/")) {
+  pathname = "/" + pathname;
+}
+if (pathname === "") {
+  pathname = "/";
+}
+
+// primer segmento (/blog/lo-que-sea → "blog")
 const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
+const firstSegment = subpath?.[0] || "";
+
+// regla: consideramos que la home ("/") pertenece a la sección "blog"
+const isBlogLike =
+  pathname === "/" || pathname === "/blog" || pathname.startsWith("/blog/");
+
+// activo si:
+// 1) coincide exactamente
+// 2) coincide por primer segmento
+// 3) el link es "/blog" y la URL actual es home o cualquier /blog/*
+const isActive =
+  href === pathname ||
+  href === "/" + firstSegment ||
+  (href === "/blog" && isBlogLike);
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
-	<slot />
+  <slot />
 </a>
+
 <style>
-	a {
-		display: inline-block;
-		text-decoration: none;
-	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
-	}
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  a.active {
+    font-weight: bolder;
+    text-decoration: underline;
+  }
 </style>
