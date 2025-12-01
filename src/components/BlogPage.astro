@@ -136,7 +136,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
               const isFeatured = page === 1 && i === 0;
               return (
                 <li class={isFeatured ? "featured" : ""}>
-                  <a href={`/blog/${post.id}/`}>
+                  <a href={`/${post.id}/`}>
                     {post.data.heroImage && (
                       <div class="thumb">
                         <Image

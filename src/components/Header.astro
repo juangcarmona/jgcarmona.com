@@ -61,10 +61,21 @@ import HeaderLink from "./HeaderLink.astro";
   header {
     margin: 0;
     padding: 0 1em;
-    
     background-color: #0d0f17;
     color: rgb(var(--gray-light));
     box-shadow: 0 2px 8px rgba(var(--dark-light), 5%);
+    position: relative;
+  }
+
+  header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #33353e;
+    pointer-events: none;
   }
   h2 {
     margin: 0;
