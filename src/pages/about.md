@@ -43,10 +43,10 @@ I’m a software & AI architect focused on **secure, scalable platforms** and **
 - **Clean Code:** Domain-driven design, clean architecture
 - **Mentorship:** Coaching developers, engineering teams, startup founders, and tech leaders
 
-I help companies—from startups to enterprises—ship **reliable, secure, and cost-aware** software. Hands-on or leading teams, I bring calm execution, technical excellence, and a bias for outcomes.
+I help companies, from startups to enterprises, ship **reliable, secure, and cost-aware** software. Hands-on or leading teams, I bring calm execution, technical excellence, and a bias for outcomes.
 
 <p align="center">
-  <img src="https://jgcarmona.com/wp-content/uploads/2025/05/IMG-20250425-WA0066.jpg" alt="Juan G Carmona" width="800" />
+  <img src="https://camo.githubusercontent.com/8358c1853150dd2b42f8d7513be7ee0801e13a313af34ecad6c5f56b86f76182/68747470733a2f2f6a676361726d6f6e612e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032352f30352f494d472d32303235303432352d5741303036362e6a7067" alt="Juan G Carmona" width="800" />
 </p>
 
 ## 👥 How I Work
@@ -57,7 +57,7 @@ I help companies—from startups to enterprises—ship **reliable, secure, and c
 - **Mentorship:** I form and coach teams that integrate seamlessly into client organizations.
 - **Community:** I share knowledge, build open source, and support fellow engineers.
 
-## 🐶 Some of my Pet Projects 🐱
+## Some of my recent Projects
 
 - **[Sentra Brain (org)](https://github.com/sentra-brain):** Private, **modular AI platform** (LLM orchestration, RAG pipelines, agentic runtime, FastAPI gateway, React frontends, Microsfot Agent Framework). Built for **privacy-first** deployments. [https://sentrabrain.com/](https://sentrabrain.com/)
 - **[Star Wars Death Star arc42 Documentation](https://github.com/juangcarmona/starwars-deathstar-arc42-documentation):** Inspired by the Star Wars universe, this project provides an **educational example of applying arc42**, a popular framework for structured software architecture documentation, to a complex system, exploring each section in detail.
@@ -72,7 +72,7 @@ I help companies—from startups to enterprises—ship **reliable, secure, and c
 Outside of tech, I’m an alpinist, climber, skydiver, and ski mountaineer. I like to push limits, both on the ground and at 3,000 meters.
 
 <p align="center">
-  <img src="https://jgcarmona.com/wp-content/uploads/2025/04/IMG-20250425-WA0063.jpg" alt="Juan G Carmona" width="400" />
+  <img src="https://camo.githubusercontent.com/0181a2b39bea122ea3dd6a80aa1625897c75ad1b05ba5256804d78cd7b5dcd44/68747470733a2f2f6a676361726d6f6e612e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032352f30342f494d472d32303235303432352d5741303036332e6a7067" alt="Juan G Carmona" width="400" />
 </p>
 <h2  align="center" style="font-size: xx-large;"><i>Build for today, design for tomorrow, and never stop exploring.</i></h2 >
 
