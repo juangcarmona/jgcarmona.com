@@ -2,12 +2,11 @@
 import BlogPage from "../../components/BlogPage.astro";
 import { getCollection } from "astro:content";
 
-// misma lógica que página 1
 const allPosts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-let pageSize = 10 + 1; // porque /blog/1 añade uno
+let pageSize = 10 + 1; 
 const page = 1;
 const start = 0;
 const end = pageSize;
@@ -15,7 +14,6 @@ const end = pageSize;
 const posts = allPosts.slice(start, end);
 const totalPages = Math.ceil(allPosts.length / pageSize);
 
-// mismo compact que en /blog/[page].astro
 const paginationItems = [];
 for (let p = 1; p <= totalPages; p++) {
   const near = Math.abs(p - page) <= 1;

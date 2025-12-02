@@ -1,13 +1,11 @@
 ---
-title: "About Me"
+title: "Hi, I'm Juan G. Carmona"
 description: "Sobre mí"
-layout: ../layouts/BlogPost.astro
+layout: ../layouts/Page.astro
 pubdescription: ''
 pubDate: 2024-01-01T00:00:00.000Z
-heroImage: ../assets/blog-placeholder-about.jpg
+heroImage: ''
 ---
-
-
 
 <h1 align="center">Hi, I'm Juan G. Carmona </h1>
 <h3 align="center">
