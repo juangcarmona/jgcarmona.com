@@ -1,6 +1,6 @@
 ---
 title: "Branching, versionado y CI/CD: los tres pilares del DevOps moderno"
-description: ''
+description: 'Principios claros de branching, versionado y CI/CD para estabilizar lanzamientos y automatizar pipelines en equipos modernos.'
 pubDate: 2025-07-08
 heroImage: "images/los-3-pilares-del-devops-branching-versionado-cicd.png"
 ---

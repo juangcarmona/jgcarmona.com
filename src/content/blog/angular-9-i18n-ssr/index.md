@@ -1,6 +1,6 @@
 ---
 title: "Angular 9 + i18n + SSR"
-description: ''
+description: 'Guía para integrar i18n y SSR en Angular 9: soluciones a problemas de internacionalización, Angular Universal y mejoras SEO.'
 pubDate: 2020-08-13
 categories: 
   - "ai"

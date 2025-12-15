@@ -1,6 +1,6 @@
 ---
 title: "UML de batalla"
-description: ''
+description: 'Referencia rápida de UML para desarrolladores: clases, secuencias, estados y buenas prácticas para modelar y comunicar diseño de software.'
 pubDate: 2012-09-03
 categories: 
   - "arquitectura-software"

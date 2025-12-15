@@ -1,6 +1,6 @@
 ---
 title: "Mi primera aplicación Android: Gredos 3D"
-description: ''
+description: 'Relato técnico y práctico de la creación de Gredos 3D: mapas, heightmaps y programación 3D en Android con OpenGL.'
 pubDate: 2012-08-28
 categories: 
   - "aventura"

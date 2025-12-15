@@ -1,6 +1,6 @@
 ---
 title: "El método Kanban (Introducción)"
-description: ''
+description: 'Introducción a Kanban: principios, visualización del flujo y limitación de WIP para mejorar eficiencia y entrega de software.'
 pubDate: 2012-08-13
 categories: 
   - "desarrollo-software"

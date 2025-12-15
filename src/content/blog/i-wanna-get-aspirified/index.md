@@ -1,6 +1,6 @@
 ---
 title: "I wanna get Aspirified"
-description: ''
+description: 'Aspire migration experiment: reorganize infra, containers and pipelines to modernize Sentra.'
 pubDate: 2025-11-20
 categories: 
   - "arquitectura-software"

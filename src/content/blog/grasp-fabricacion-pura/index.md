@@ -1,6 +1,6 @@
 ---
 title: "GRASP: Fabricación pura"
-description: ''
+description: 'Cómo usar la fabricación pura (factory classes) para reducir acoplamiento y mejorar cohesión en tus diseños.'
 pubDate: 2012-09-07
 categories: 
   - "desarrollo-software"

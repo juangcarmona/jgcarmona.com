@@ -1,6 +1,6 @@
 ---
 title: "GRASP: Controlador"
-description: ''
+description: 'Descripción del patrón Controlador en GRASP: coordinar casos de uso y separar presentación de lógica de negocio.'
 pubDate: 2012-09-07
 categories: 
   - "arquitectura-software"

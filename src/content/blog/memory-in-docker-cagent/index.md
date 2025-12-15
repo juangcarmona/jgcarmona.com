@@ -1,6 +1,6 @@
 ---
 title: "Teaching Agents to Remember: Memory in Docker cagent"
-description: ''
+description: 'Cómo añadir memoria persistente a agentes Docker cagent: diseño, SQLite y ejemplos prácticos para asistentes locales.'
 pubDate: 2025-10-01
 categories: 
   - "ai"

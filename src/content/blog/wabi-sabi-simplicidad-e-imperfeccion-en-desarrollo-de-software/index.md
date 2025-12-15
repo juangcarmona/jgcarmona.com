@@ -1,6 +1,6 @@
 ---
 title: "Wabi-Sabi - Simplicidad e Imperfección en Desarrollo de Software"
-description: ''
+description: 'Aplicación de la filosofía wabi-sabi al desarrollo de software: simplicidad, belleza en la imperfección y diseño sostenible.'
 pubDate: 2023-07-06
 categories: 
   - "desarrollo-software"

@@ -1,6 +1,6 @@
 ---
 title: "GRASP: Experto en información"
-description: ''
+description: 'Aplicar el principio "Experto en información": asigna responsabilidades a la clase que conoce los datos para mejorar cohesión y reducir acoplamiento.'
 pubDate: 2012-09-07
 categories: 
   - "arquitectura-software"

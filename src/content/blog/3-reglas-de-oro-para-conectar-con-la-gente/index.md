@@ -1,6 +1,6 @@
 ---
 title: "3 reglas de oro para conectar con la gente"
-description: ''
+description: 'Tres reglas para conectar mejor: positividad, reconocimiento y motivación. Técnicas prácticas para mejorar relaciones, liderazgo y comunicación.'
 pubDate: 2025-06-08
 categories: 
   - "desarrollo-personal"

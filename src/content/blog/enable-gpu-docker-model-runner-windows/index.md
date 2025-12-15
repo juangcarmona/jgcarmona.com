@@ -1,6 +1,6 @@
 ---
 title: "Running Models Locally with DMR (Docker Model Runner)"
-description: ''
+description: 'Step-by-step guide to run models locally with Docker Model Runner using GPU: enable DMR, pull and run models, and expose them via REST API.'
 pubDate: 2025-09-29
 categories: 
   - "ai"

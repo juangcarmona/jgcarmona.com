@@ -1,6 +1,6 @@
 ---
 title: "GRASP: Polimorfismo"
-description: ''
+description: 'Introducción al polimorfismo en GRASP: cómo usar interfaces y polimorfismo para diseñar código más flexible.'
 pubDate: 2012-09-07
 categories: 
   - "arquitectura-software"

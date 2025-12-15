@@ -1,6 +1,6 @@
 ---
 title: "SCRUM BOARDS"
-description: ''
+description: 'Guía práctica para diseñar y usar una Scrum Board: columnas, flujo, testing y verificación del Product Owner para gestionar sprints.'
 pubDate: 2012-08-23
 categories: 
   - "desarrollo-software"

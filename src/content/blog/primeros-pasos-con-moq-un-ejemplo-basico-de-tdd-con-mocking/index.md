@@ -1,6 +1,6 @@
 ---
 title: "Primeros pasos con Moq: un ejemplo básico de TDD con Mocking"
-description: ''
+description: 'Ejemplo práctico de TDD con Moq: cómo escribir tests, usar mocks y refactorizar para mejorar la calidad del código.'
 pubDate: 2012-09-12
 categories: 
   - "arquitectura-software"
