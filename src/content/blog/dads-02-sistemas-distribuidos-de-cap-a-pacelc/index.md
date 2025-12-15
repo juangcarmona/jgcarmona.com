@@ -1,6 +1,6 @@
 ---
 title: "DADS #02: CAP y PACELC en Sistemas Distribuidos"
-description: ''
+description: 'Explicación clara de CAP y PACELC para arquitectos: cómo elegir entre consistencia, disponibilidad y latencia en sistemas distribuidos.'
 pubDate: 2024-09-18
 categories: 
   - "proyectos"

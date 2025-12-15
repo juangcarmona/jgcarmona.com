@@ -1,6 +1,6 @@
 ---
 title: "DADS #01: Introducción a los Sistemas Distribuidos"
-description: ''
+description: 'Introducción a sistemas distribuidos: consistencia, disponibilidad y decisiones de arquitectura para plataformas escalables.'
 pubDate: 2024-09-10
 categories: 
   - "desarrollo-software"

@@ -1,6 +1,6 @@
 ---
 title: "Cómo Automatizar la Subida de Imágenes a Azure Blob Storage y Evitar Problemas de Caché en WordPress con MAVIS"
-description: ''
+description: 'Automatiza la subida de imágenes a Azure Blob Storage con MAVIS y evita problemas de caché en WordPress.'
 pubDate: 2024-12-12
 categories: 
   - "arquitectura-software"

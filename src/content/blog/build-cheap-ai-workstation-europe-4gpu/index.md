@@ -1,6 +1,6 @@
 ---
 title: "How to Build a Cost-Efficient AI Workstation"
-description: ''
+description: 'How to build a cost‑efficient 4‑GPU AI workstation in Europe, balancing price and performance for local LLM training.'
 pubDate: 2025-08-30
 categories: 
   - "ai"

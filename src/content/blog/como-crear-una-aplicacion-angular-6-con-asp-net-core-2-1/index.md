@@ -1,6 +1,6 @@
 ---
 title: "Como crear una aplicación Angular 6 con ASP NET Core 2.1"
-description: ''
+description: 'Tutorial paso a paso para integrar Angular 6 con ASP.NET Core 2.1 y desplegar una SPA con API en wwwroot.'
 pubDate: 2018-06-06
 categories: 
   - "desarrollo-software"

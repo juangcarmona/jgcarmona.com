@@ -1,6 +1,6 @@
 ---
 title: "Comienzo un Nuevo Ciclo"
-description: ''
+description: 'Relato del cierre de JGCarmona Consulting: razones, aprendizajes y planes tras la disolución de la empresa.'
 pubDate: 2025-09-21
 categories: 
   - "blog"

@@ -1,6 +1,6 @@
 ---
 title: "Las 7 cualidades que definen a un gran líder técnico"
-description: ''
+description: 'Las 7 cualidades esenciales de un líder técnico: aprendizaje, influencia y habilidades humanas para liderar equipos de software.'
 pubDate: 2025-06-26
 categories: 
   - "desarrollo-personal"
