@@ -1,6 +1,6 @@
 ---
 title: "Lean, principios básicos de las metodologías ágiles"
-description: ''
+description: 'Resumen práctico de los principios Lean aplicados al desarrollo de software para eliminar desperdicio, entregar rápido y mejorar continuamente.'
 pubDate: 2012-08-12
 categories: 
   - "desarrollo-software"

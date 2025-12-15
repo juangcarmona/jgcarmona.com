@@ -1,6 +1,6 @@
 ---
 title: "How to Stop LLMs and Agents from Leaking Sensitive Data"
-description: ''
+description: 'Arquitectura y medidas para evitar exfiltración por LLMs: identity propagation, adapters seguros, provenance, auditoría y defensa contra prompt injection.'
 pubDate: 2025-09-12
 categories: 
   - "ai"

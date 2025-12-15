@@ -1,6 +1,6 @@
 ---
-title: "Hara Hachi Bu: El Arte Japonés del Equilibrio aplicado al Software"
-description: ''
+title: "Hara Hachi Bu: el arte japonés del equilibrio aplicado al software"
+description: 'Aplica el principio Hara Hachi Bu al desarrollo de software para prevenir el agotamiento y mejorar la eficiencia y el equilibrio laboral.'
 pubDate: 2023-07-11
 categories: 
   - "desarrollo-software"

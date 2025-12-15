@@ -1,6 +1,6 @@
 ---
 title: "Retomar la divulgación"
-description: ''
+description: 'Reflexión sobre volver a compartir trabajo técnico: lecciones, plantillas y cómo reaparecer en la comunidad Open Source.'
 pubDate: 2018-06-06
 categories: 
   - "desarrollo-software"

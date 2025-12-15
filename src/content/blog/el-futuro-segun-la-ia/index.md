@@ -1,6 +1,6 @@
 ---
 title: "EL FUTURO SEGÚN LA IA"
-description: ''
+description: 'Cuatro escenarios sobre el futuro con IA, combinando conversaciones con modelos y análisis filosófico-práctico sobre riesgos y oportunidades.'
 pubDate: 2024-10-17
 categories: 
   - "ai"

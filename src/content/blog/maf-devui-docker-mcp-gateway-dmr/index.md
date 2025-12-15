@@ -1,6 +1,6 @@
 ---
 title: "MAF + DevUI + Docker MCP Gateway with DMR: a working setup"
-description: ''
+description: 'Configure MAF with DevUI and Docker MCP Gateway + DMR: integration pattern, workaround for streaming and examples in Python.'
 pubDate: 2025-10-16
 categories: 
   - "ai"

@@ -1,6 +1,6 @@
 ---
 title: "A Fast and Private AI-Coding Assistant"
-description: ''
+description: 'Guía para ejecutar un asistente de codificación local con Tabby ML en Windows/WSL usando GPU: instalación, configuración y arranque.'
 pubDate: 2025-04-02
 categories: 
   - "ai"

@@ -1,6 +1,6 @@
 ---
 title: "Tests unitarios y refactorización: hacia una arquitectura de microservicios (1)"
-description: ''
+description: 'Cómo usar tests unitarios y refactorización para transformar un monolito hacia microservicios: estrategias, ejemplos y buenas prácticas.'
 pubDate: 2018-06-26
 categories: 
   - "desarrollo-software"

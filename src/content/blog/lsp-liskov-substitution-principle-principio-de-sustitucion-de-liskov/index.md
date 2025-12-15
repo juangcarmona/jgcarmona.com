@@ -1,6 +1,6 @@
 ---
 title: "LSP: Liskov Substitution Principle // Principio de sustitución de Liskov"
-description: ''
+description: 'Explicación y ejemplos del Principio de Sustitución de Liskov (LSP) con soluciones de diseño para evitar comportamientos inesperados.'
 pubDate: 2012-09-02
 categories: 
   - "desarrollo-software"

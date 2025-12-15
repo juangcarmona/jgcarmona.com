@@ -1,6 +1,6 @@
 ---
 title: "¿Quién es quién en el ecosistema de la Inteligencia Artificial?"
-description: ''
+description: 'Mapa práctico del ecosistema IA: modelos, ML, Deep Learning, RAG y agentes; para entender qué herramientas y enfoques elegir por caso de uso.'
 pubDate: 2025-07-28
 categories: 
   - "ai"

@@ -1,6 +1,6 @@
 ---
 title: "Gredos Virtual 3D 1.2"
-description: ''
+description: 'Actualizaciones de Gredos Virtual 3D: mejoras en texturas y controles para una experiencia 3D en Android.'
 pubDate: 2012-08-30
 categories: 
   - "aventura"

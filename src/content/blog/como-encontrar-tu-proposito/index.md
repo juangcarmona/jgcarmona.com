@@ -1,6 +1,6 @@
 ---
 title: "Descubre tu propósito en 9 pasos"
-description: ''
+description: 'Guía práctica en 9 pasos, inspirada en Ikigai, para descubrir tu propósito personal y profesional y tomar decisiones alineadas.'
 pubDate: 2025-06-24
 categories: 
   - "desarrollo-personal"

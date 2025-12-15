@@ -1,6 +1,6 @@
 ---
 title: "RADICLE.XYZ - CHEAT SHEE"
-description: ''
+description: 'Cheat sheet esencial para Radicle: comandos para instalar, crear identidades, gestionar repositorios y colaborar en la red P2P de código.'
 pubDate: 2025-01-15
 categories: 
   - "blog"

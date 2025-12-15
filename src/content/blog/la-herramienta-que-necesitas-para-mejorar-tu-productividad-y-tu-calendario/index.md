@@ -1,6 +1,6 @@
 ---
 title: "La herramienta que necesitas para mejorar tu productividad (y tu calendario)"
-description: ''
+description: 'Cómo usar la Matriz de Eisenhower para distinguir lo urgente de lo importante y recuperar foco, productividad y planificación efectiva.'
 pubDate: 2025-06-07
 categories: 
   - "desarrollo-personal"

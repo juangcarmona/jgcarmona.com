@@ -1,6 +1,6 @@
 ---
 title: "Mi resumen de SCRUM"
-description: ''
+description: 'Resumen práctico de SCRUM: roles, eventos y artefactos para aplicar metodologías ágiles en equipos de software.'
 pubDate: 2012-08-23
 categories: 
   - "desarrollo-software"

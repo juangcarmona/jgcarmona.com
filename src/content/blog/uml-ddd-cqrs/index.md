@@ -1,6 +1,6 @@
 ---
 title: "DADS #04: UML al Rescate"
-description: ''
+description: 'Uso de UML para diseñar sistemas con DDD y CQRS: diagramas, casos prácticos y cómo comunicar arquitectura en proyectos complejos.'
 pubDate: 2024-10-01
 categories: 
   - "proyectos"

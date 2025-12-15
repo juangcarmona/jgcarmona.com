@@ -1,6 +1,6 @@
 ---
 title: "IWT2 DojoUS :: SOLID y GRASP"
-description: ''
+description: 'Material y ejercicios del dojo IWT2 sobre principios SOLID y GRASP: guía, katas y prácticas para mejorar diseño y pruebas.'
 pubDate: 2012-11-05
 categories: 
   - "arquitectura-software"

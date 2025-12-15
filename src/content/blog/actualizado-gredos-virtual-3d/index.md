@@ -1,6 +1,6 @@
 ---
 title: "Actualizado Gredos Virtual 3D"
-description: ''
+description: 'Gredos Virtual 3D 2.0: actualización con interfaz mejorada, modo paseo continuo, brújula y modo niebla para navegación 3D en Android.'
 pubDate: 2012-11-19
 categories: 
   - "aventura"

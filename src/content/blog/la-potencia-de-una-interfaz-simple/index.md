@@ -1,6 +1,6 @@
 ---
 title: "La potencia de una interfaz simple"
-description: ''
+description: 'Ejemplos prácticos del poder de las interfaces en diseño: patrones con ITarea, tareas compuestas, nulos seguros y control de ejecución.'
 pubDate: 2012-09-04
 categories: 
   - "desarrollo-software"

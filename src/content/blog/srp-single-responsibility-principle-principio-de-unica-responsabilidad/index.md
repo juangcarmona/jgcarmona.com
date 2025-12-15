@@ -1,6 +1,6 @@
 ---
 title: "SRP: Single Responsibility Principle // Principio de Única Responsabilidad"
-description: ''
+description: 'Explicación práctica del Principio de Única Responsabilidad (SRP) con ejemplos y refactorizaciones para mejorar mantenibilidad del código.'
 pubDate: 2012-09-02
 categories: 
   - "arquitectura-software"

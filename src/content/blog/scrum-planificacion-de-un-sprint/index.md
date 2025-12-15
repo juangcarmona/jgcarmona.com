@@ -1,6 +1,6 @@
 ---
 title: "SCRUM: Planificación de un Sprint"
-description: ''
+description: 'Guía sobre la planificación de un Sprint: selección de historias, estimación con Scrum Poker y cómo cuantificar tareas para un sprint efectivo.'
 pubDate: 2012-08-24
 categories: 
   - "desarrollo-software"

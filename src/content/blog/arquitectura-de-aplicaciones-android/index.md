@@ -1,6 +1,6 @@
 ---
 title: "Arquitectura de aplicaciones Android"
-description: ''
+description: 'Patrones y buenas prácticas para diseñar arquitecturas Android robustas, mantenibles y escalables con ejemplos prácticos.'
 pubDate: 2012-11-28
 categories: 
   - "arquitectura-software"
