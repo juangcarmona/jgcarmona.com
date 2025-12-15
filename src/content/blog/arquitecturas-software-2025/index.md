@@ -4,6 +4,7 @@ description: 'Catálogo de 30+ patrones y estilos de arquitectura software con e
 pubDate: 2025-07-10
 heroImage: "images/Patrones-y-Arqutiecturas1.png"
 ---
+---
 
 ## ****Elegir la arquitectura adecuada puede marcar la diferencia entre una solución elegante y una pesadilla técnica.****
 

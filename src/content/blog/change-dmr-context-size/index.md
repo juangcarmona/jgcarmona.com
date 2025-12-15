@@ -1,11 +1,11 @@
 ---
 title: "How to change context size (max_tokens / context window) for Docker Model Runner (DMR)"
-description: ''
+description: 'Guide to increase Docker Model Runner context window (max_tokens) to support long multi-tool reasoning sessions.'
 pubDate: 2025-10-13
-categories: 
+categories:
   - "ai"
   - "devops"
-tags: 
+tags:
   - "ai"
   - "devops"
   - "dmr"

@@ -1,6 +1,6 @@
 ---
 title: "ASP NET Core 2.1 + Angular 6 - Autenticación y autorización en 10 pasos"
-description: ''
+description: 'Guía práctica en 10 pasos para implementar autenticación y autorización con ASP.NET Core 2.1 y Angular 6 (JWT, Identity, roles).'
 pubDate: 2018-06-18
 categories: 
   - "ciberseguridad"
