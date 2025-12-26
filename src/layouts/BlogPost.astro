@@ -17,7 +17,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<style>
 			main {
 				width: calc(100%);
-				max-width: 100%;				
+				max-width: 100%;
 			}
 			.hero-image {
 				width: 100vw;
@@ -42,6 +42,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				padding: 1em;
 				color: rgb(var(--gray-light));
 			}
+
+			/* Center images in markdown posts */
+			.prose :global(p:has(> img)) {
+				text-align: center;
+			}
+
+			.prose :global(img) {
+				display: inline-block;
+				margin: 0 auto;
+			}
+
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
