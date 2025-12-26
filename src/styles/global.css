@@ -50,9 +50,11 @@ body {
 }
 main {
 	width: 720px;
-	max-width: calc(100% - 2em);
+		max-width: calc(100%);
 	margin: auto;
-	padding: 3.5em 1em;
+	padding: 0em 1em;
+
+	/* padding: 3.5em 1em; */
 }
 h1,
 h2,
@@ -95,6 +97,7 @@ p {
 .prose p {
 	margin-bottom: 2em;
 }
+
 textarea {
 	width: 100%;
 	font-size: 16px;

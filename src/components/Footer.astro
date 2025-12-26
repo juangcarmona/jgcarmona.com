@@ -3,7 +3,7 @@ const today = new Date();
 ---
 
 <footer>
-  &copy; {today.getFullYear()} Juan G. Carmona -  <a href="https://creativecommons.org/licenses/by/4.0/deed.en" target="_blank"> CC BY 4.0.</a>
+  &copy; {today.getFullYear()} Juan G. Carmona - CC BY 4.0.
 
   <div class="social-links">
     <a href="https://www.linkedin.com/in/juangcarmona" target="_blank">
@@ -52,11 +52,13 @@ const today = new Date();
 
 <style>
   footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1em 1em 0em 1em;
     background-color: #0d0f17;
     color: rgb(var(--gray-light));
-    text-align: center;
-    font-size: smaller;
+
     border-top: 1px solid rgba(0, 140, 255, 0.4);
   }
 
@@ -65,6 +67,12 @@ const today = new Date();
     justify-content: center;
     gap: 1em;
     margin-top: 1em;
+  }
+
+  .social-links svg {
+    width: 32px;
+    height: 32px;
+    display: block;
   }
 
   .social-links a {
