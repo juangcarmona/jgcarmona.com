@@ -138,4 +138,4 @@ Por mucho que te lo cuenten, lo mejor es hacerlo de la mano de alguien que te gu
 Si estás leyendo esto, es porque este tema te interesa.  
 Y si es así, **me encantaría conocerte y ver si puedo ser yo quien te ayude**.
 
-**[Hablemos. Hablar conmigo es gratis.](/contact)**
+**[Hablemos. Hablar conmigo es gratis.](malto:juan@jgcarmona.com)**

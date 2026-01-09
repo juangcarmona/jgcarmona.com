@@ -56,4 +56,4 @@ Este documento no es una visión. Es una hoja de ruta ejecutable. Y merece ser e
 **Aquí puedes descargar el plan completo:**  
 [NAVMC 3000.1 - Artificial Intelligence Implementation Plan (2025–2030)](https://www.marines.mil/Portals/1/Publications/NAVMC%203000.1%20\(SECURED\).pdf)
 
-Y si quieres aprender más sobre inteligencia artificial aplicada, bueno, [**aquí me tienes**](/contact), soy Juan G Carmona, arquitecto de software, estratega técnico y alguien que, como ves, también lee documentos militares de madrugada.
+Y si quieres aprender más sobre inteligencia artificial aplicada, bueno, [**aquí me tienes**](mailto:juan@jgcarmona.com), soy Juan G Carmona, arquitecto de software, estratega técnico y alguien que, como ves, también lee documentos militares de madrugada.

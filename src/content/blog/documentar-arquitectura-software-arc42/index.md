@@ -45,4 +45,4 @@ Para todo el equipo. Para hoy… y también para dentro de n años.
 
 🤝 Por cierto, siempre estoy abierto a debatir ideas y a colaborar en nuevos proyectos de consultoría o arquitectura.
 
-**[Si te interesa trabajar conmigo, no dudes en escribirme.](/contact)**
+**[Si te interesa trabajar conmigo, no dudes en escribirme.](mailto:juan@jgcarmona.com)**

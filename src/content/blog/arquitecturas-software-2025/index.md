@@ -18,7 +18,7 @@ Esta guía no es un glosario ni una colección superficial. Es una herramienta p
 > 
 > De hecho, tras cada uno de los patrones mencionados aquí vendrá un artículo aún más exhaustivo, dedicado exclusivamente a analizarlo en detalle.
 > 
-> Si ves errores, tienes ideas o quieres contribuir, **[estaré encantado de recibir tus comentarios](/contact)**. Gracias por leer con espíritu constructivo.
+> Si ves errores, tienes ideas o quieres contribuir, **[estaré encantado de recibir tus comentarios](mailto:juan@jgcarmona.com)**. Gracias por leer con espíritu constructivo.
 
 Si lideras decisiones técnicas, este artículo no es solo para leerlo en diagonal y olvidarlo. Voy a mantenerlo vivo y a mejorarlo con sugerencias de otros lectores que, como tu, quieren hacer brillar contenido técnico de calidad y en español. Guárdalo en favoritos, compartelo para atraer feedback y para consultarlo cada vez que tengas que diseñar, escalar o migrar un sistema.
 

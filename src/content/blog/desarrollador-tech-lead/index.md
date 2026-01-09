@@ -46,7 +46,7 @@ Otras veces, basta con **[un espacio seguro para pensar en voz alta](https://jgc
 
 En ambos casos, dejar de dar vueltas como una peonza y comenzar a avanzar en la dirección adecuada es más fácil cuando no se hace solo. ¿Te gustaría que te eche una mano?
 
-[👉 Ver si trabajar juntos tiene sentido](/contact)
+[👉 Ver si trabajar juntos tiene sentido](mailto:juan@jgcarmona.com)
 
 A mi me encantaría conocerte y ver si puedo ayudarte. Quizá todavía no es el momento, pero cuando lo sea, aquí estaré. Hasta entonces, te sigo contando cosillas...
 
@@ -102,4 +102,4 @@ Y si te has sentido identificado con esas preguntas que he lanzado o sientes que
 
 …quizá hablarlo con alguien como yo te ayude a descubrir qué pasos necesitas dar.
 
-[👉 Ver si trabajar juntos tiene sentido →](/contact)
+[👉 Ver si trabajar juntos tiene sentido →](mailto:juan@jgcarmona.com)

@@ -322,7 +322,7 @@ Si te estás planteando usar IA en tu empresa —y quieres hacerlo bien—, **Se
 
 > **Tu IA, tus datos, tus reglas.**
 
-👉 [**Escríbeme**](/contact). Solicita una demo. O pregúntame cómo crees que se puede adaptar esta tecnología a tu sector. Me encantará charlar contigo.
+👉 [**Escríbeme**](mailto:juan@jgcarmona.com). Solicita una demo. O pregúntame cómo crees que se puede adaptar esta tecnología a tu sector. Me encantará charlar contigo.
 
 **La pregunta ya no es si puedes tener tu propia IA.  
 La pregunta es: ¿por qué seguir usando la de otros?**

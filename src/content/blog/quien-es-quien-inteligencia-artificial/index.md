@@ -185,4 +185,4 @@ Ahora estamos en pleno hype, igual que lo tuvimos con la nube o con blockchain..
 > Se trata de usarla para resolver problemas reales y hacerlo con criterio.
 
 ¿Te pierdes con la IA? ¿Te gustaría que analice cómo aplicar estos enfoques a tu equipo, tu app o tu caso concreto?  
-💬 [Escríbeme](/contact). Estás a un clic de distancia y la primera consulta siempre es gratuíta.
+💬 [Escríbeme](mailto:juan@jgcarmona.com). Estás a un clic de distancia y la primera consulta siempre es gratuíta.

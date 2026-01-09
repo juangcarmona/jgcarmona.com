@@ -63,7 +63,7 @@ Con solo 30 minutos aplicando esta herramienta, muchas personas encuentran foco,
 ✅ Si sientes que no llegas a lo importante  
 ✅ O si simplemente quieres claridad para tomar mejores decisiones…
 
-[Reserva](/contact) una sesión de [mentoring](https://jgcarmona.com/mentorias/) conmigo.  
+[Reserva](mailto:juan@jgcarmona.com) una sesión de [mentoring](https://jgcarmona.com/mentorias/) conmigo.  
 Trabajo con desarrolladores, ingenieros y líderes técnicos para ayudarles a mejorar no solo su productividad, sino su claridad estratégica.
 
 [¿Te enseño a gestionarte mejor?](https://jgcarmona.com/coaching/)

@@ -132,4 +132,4 @@ Muchos equipos se lanzan a desarollar microservicios buscando una “solución m
 ### ¿Tienes un monolito que crece sin control?
 
   
-[**Escríbeme**](/contact) y lo revisamos juntos. A veces no necesitas romperlo, solo diseñarlo bien.
+[**Escríbeme**](mailto:juan@jgcarmona.com) y lo revisamos juntos. A veces no necesitas romperlo, solo diseñarlo bien.

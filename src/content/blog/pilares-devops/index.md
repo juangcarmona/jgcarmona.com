@@ -130,4 +130,4 @@ Puedes empezar poco a poco, hoy mismo:
 
 - Automatiza uno de esos pasos conflictivos.
 
-El DevOps no es una moda. DevOps va de **recuperar el control técnico del producto**. Y si necesitas ayuda para aterrizarlo en tu proyecto o formar a tu equipo para dominar su entorno, [escríbeme](/contact).
+El DevOps no es una moda. DevOps va de **recuperar el control técnico del producto**. Y si necesitas ayuda para aterrizarlo en tu proyecto o formar a tu equipo para dominar su entorno, [escríbeme](mailto:juan@jgcarmona.com).
