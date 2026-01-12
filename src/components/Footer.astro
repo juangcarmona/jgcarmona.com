@@ -56,31 +56,32 @@ const today = new Date();
     flex-direction: column;
     align-items: center;
     padding: 1em 1em 0em 1em;
-    background-color: #0d0f17;
+    background-color: var(--header-bg);
     color: rgb(var(--gray-light));
-
-    border-top: 1px solid rgba(0, 140, 255, 0.4);
+    border-top: 1px solid var(--header-border);
   }
 
   .social-links {
     display: flex;
     justify-content: center;
-    gap: 1em;
+    gap: 1.5em;
     margin-top: 1em;
   }
 
   .social-links svg {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     display: block;
   }
 
   .social-links a {
     text-decoration: none;
     color: rgb(var(--gray-light));
+    transition: all 0.2s ease;
   }
 
   .social-links a:hover {
-    color: rgb(var(--gray));
+    color: var(--accent);
+    transform: translateY(-2px);
   }
 </style>

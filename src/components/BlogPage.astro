@@ -15,6 +15,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import Header from "../components/Header.astro";
+import ArticleCard from "../components/ArticleCard.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
@@ -26,6 +27,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     <style>
       main {
         width: 960px;
+        margin-top: 2em;
       }
 
       ul {
@@ -40,6 +42,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       /* ===== ITEMS ===== */
 
       ul li {
+        width: calc(50% - 1rem);
+      }
+
+      ul li.card-item {
         width: calc(50% - 1rem);
       }
 
@@ -94,6 +100,29 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
         max-width: 720px;
       }
 
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        margin-top: 0.5rem;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 0.25em 0.75em;
+        background-color: rgba(var(--gray-dark), 0.5);
+        border-radius: 4px;
+        font-size: 0.75em;
+        color: rgb(var(--gray));
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .tag:hover {
+        background-color: var(--accent);
+        color: white;
+      }
+
       /* ===== THUMB ===== */
 
       .thumb {
@@ -123,7 +152,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       /* ===== MOBILE ===== */
 
       @media (max-width: 720px) {
-        ul li {
+        ul li,
+        ul li.card-item {
           width: 100%;
         }
       }
@@ -156,30 +186,49 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
             posts.map((post, i) => {
               const isFeatured = page === 1 && i === 0;
 
-              return (
-                <li class={isFeatured ? "featured" : ""}>
-                  <a href={`/${post.id}/`}>
-                    {post.data.heroImage && (
-                      <div class="thumb">
-                        <Image
-                          width={720}
-                          height={360}
-                          src={post.data.heroImage}
-                          alt=""
-                        />
-                      </div>
+              if (isFeatured) {
+                return (
+                  <li class="featured">
+                    <a href={`/${post.id}/`}>
+                      {post.data.heroImage && (
+                        <div class="thumb">
+                          <Image
+                            width={720}
+                            height={360}
+                            src={post.data.heroImage}
+                            alt=""
+                          />
+                        </div>
+                      )}
+
+                      <h4 class="title">{post.data.title}</h4>
+
+                      <p class="date">
+                        <FormattedDate date={post.data.pubDate} />
+                      </p>
+                    </a>
+
+                    {post.data.description && (
+                      <p class="excerpt">{post.data.description}</p>
                     )}
 
-                    <h4 class="title">{post.data.title}</h4>
+                    {post.data.tags && post.data.tags.length > 0 && (
+                      <div class="tags">
+                        {post.data.tags.slice(0, 3).map((tag) => (
+                          <a href={`/tags/${tag}`} class="tag">
+                            {tag}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                );
+              }
 
-                    <p class="date">
-                      <FormattedDate date={post.data.pubDate} />
-                    </p>
-                  </a>
-
-                  {post.data.description && (
-                    <p class="excerpt">{post.data.description}</p>
-                  )}
+              // Use ArticleCard for non-featured posts
+              return (
+                <li class="card-item">
+                  <ArticleCard post={post} />
                 </li>
               );
             })

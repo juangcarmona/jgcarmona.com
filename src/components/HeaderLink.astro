@@ -21,18 +21,12 @@ if (pathname === "") {
 const subpath = pathname.match(/[^\/]+/g);
 const firstSegment = subpath?.[0] || "";
 
-// regla: consideramos que la home ("/") pertenece a la sección "blog"
-const isBlogLike =
-  pathname === "/" || pathname === "/blog" || pathname.startsWith("/blog/");
-
 // activo si:
 // 1) coincide exactamente
-// 2) coincide por primer segmento
-// 3) el link es "/blog" y la URL actual es home o cualquier /blog/*
+// 2) coincide por primer segmento (pero no confundir / con /blog)
 const isActive =
   href === pathname ||
-  href === "/" + firstSegment ||
-  (href === "/blog" && isBlogLike);
+  (href !== "/" && href === "/" + firstSegment);
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
