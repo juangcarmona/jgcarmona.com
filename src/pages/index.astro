@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, YOUTUBE_COURSES } from '../consts';
+import { SITE_SEO_TITLE, SITE_DESCRIPTION, YOUTUBE_COURSES } from '../consts';
 
 const allPosts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -68,7 +68,7 @@ const youtubeCourses = [
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_SEO_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
@@ -79,8 +79,17 @@ const youtubeCourses = [
 				<!-- Text Content (left on desktop, below on mobile) -->
 				<div class="hero-text">
 					<h1>Juan G. Carmona</h1>
-					<p class="hero-bio">
-						Software & AI Architect specializing in secure, scalable platforms and agentic AI systems. Leading full-stack solutions with strong DevSecOps practices. Privacy-first AI: LLM orchestration, RAG pipelines, and tool integrations.
+					<p class="hero-bio">					
+					  Software Architect at
+						<a
+							href="https://www.plainconcepts.com/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Plain Concepts
+						</a>.
+						I design secure and scalable software systems and apply AI, cloud,
+						and DevSecOps with engineering discipline.
 					</p>
 					<div class="hero-social">
 						<a href="https://www.linkedin.com/in/juangcarmona" target="_blank" rel="noopener noreferrer" aria-label="Follow on LinkedIn">
@@ -117,16 +126,16 @@ const youtubeCourses = [
 				</div>
 			</section>
 
-			<!-- Featured Articles -->
-			<section class="featured-articles">
-				<h2>Featured Articles</h2>
-				<div class="articles-grid">
+			<!-- Featured Posts -->
+			<section class="featured-posts">
+				<h2>Featured Posts</h2>
+				<div class="posts-grid">
 					{displayPosts.map((post) => (
 						<ArticleCard post={post} />
 					))}
 				</div>
 				<div class="section-cta">
-					<a href="/blog" class="cta-button">View all articles →</a>
+					<a href="/blog" class="cta-button">View all posts →</a>
 				</div>
 			</section>
 
@@ -446,7 +455,7 @@ const youtubeCourses = [
 	}
 
 	/* Featured Articles */
-	.articles-grid {
+	.posts-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		gap: 2em;
@@ -590,7 +599,7 @@ const youtubeCourses = [
 			font-size: 1.1em;
 		}
 
-		.articles-grid,
+		.posts-grid,
 		.courses-grid {
 			grid-template-columns: 1fr;
 		}
