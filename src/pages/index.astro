@@ -1,10 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import ArticleCard from '../components/ArticleCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, YOUTUBE_COURSES } from '../consts';
 
 const allPosts = (await getCollection('blog')).sort(
@@ -110,34 +110,7 @@ const youtubeCourses = [
 				<h2>Featured Articles</h2>
 				<div class="articles-grid">
 					{displayPosts.map((post) => (
-						<article class="article-card">
-							<a href={`/${post.id}/`}>
-								{post.data.heroImage && (
-									<div class="article-image">
-										<Image
-											src={post.data.heroImage}
-											alt={post.data.title}
-											width={400}
-											height={225}
-										/>
-									</div>
-								)}
-								<div class="article-content">
-									<h3>{post.data.title}</h3>
-									<p class="article-date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-									<p class="article-description">{post.data.description}</p>
-									{post.data.tags && post.data.tags.length > 0 && (
-										<div class="article-tags">
-											{post.data.tags.slice(0, 3).map((tag) => (
-												<span class="article-tag">{tag}</span>
-											))}
-										</div>
-									)}
-								</div>
-							</a>
-						</article>
+						<ArticleCard post={post} />
 					))}
 				</div>
 				<div class="section-cta">
@@ -333,78 +306,6 @@ const youtubeCourses = [
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		gap: 2em;
-	}
-
-	.article-card {
-		background-color: rgb(var(--gray-dark));
-		border-radius: 12px;
-		overflow: hidden;
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
-	}
-
-	.article-card:hover {
-		transform: translateY(-4px);
-		box-shadow: var(--box-shadow);
-	}
-
-	.article-card a {
-		text-decoration: none;
-		display: block;
-	}
-
-	.article-image {
-		width: 100%;
-		aspect-ratio: 16 / 9;
-		overflow: hidden;
-	}
-
-	.article-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform 0.3s ease;
-	}
-
-	.article-card:hover .article-image img {
-		transform: scale(1.05);
-	}
-
-	.article-content {
-		padding: 1.5em;
-	}
-
-	.article-content h3 {
-		color: rgb(var(--gray-light));
-		margin: 0 0 0.5em 0;
-		font-size: 1.3em;
-		line-height: 1.3;
-	}
-
-	.article-date {
-		color: rgb(var(--gray));
-		font-size: 0.85em;
-		margin-bottom: 0.75em;
-	}
-
-	.article-description {
-		color: rgb(var(--gray-light));
-		line-height: 1.5;
-		margin-bottom: 1em;
-		font-size: 0.95em;
-	}
-
-	.article-tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5em;
-	}
-
-	.article-tag {
-		padding: 0.25em 0.75em;
-		background-color: rgba(var(--gray), 0.2);
-		border-radius: 4px;
-		font-size: 0.8em;
-		color: rgb(var(--gray));
 	}
 
 	/* YouTube Courses */

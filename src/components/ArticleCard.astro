@@ -1,0 +1,125 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+	showExcerpt?: boolean;
+}
+
+const { post, showExcerpt = true } = Astro.props;
+---
+
+<article class="article-card">
+	<a href={`/${post.id}/`}>
+		{post.data.heroImage && (
+			<div class="article-image">
+				<Image
+					src={post.data.heroImage}
+					alt={post.data.title}
+					width={400}
+					height={225}
+				/>
+			</div>
+		)}
+		<div class="article-content">
+			<h3>{post.data.title}</h3>
+			<p class="article-date">
+				<FormattedDate date={post.data.pubDate} />
+			</p>
+			{showExcerpt && post.data.description && (
+				<p class="article-description">{post.data.description}</p>
+			)}
+			{post.data.tags && post.data.tags.length > 0 && (
+				<div class="article-tags">
+					{post.data.tags.slice(0, 3).map((tag) => (
+						<span class="article-tag">{tag}</span>
+					))}
+				</div>
+			)}
+		</div>
+	</a>
+</article>
+
+<style>
+	.article-card {
+		background-color: rgb(var(--gray-dark));
+		border-radius: 12px;
+		overflow: hidden;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		height: 100%;
+	}
+
+	.article-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--box-shadow);
+	}
+
+	.article-card a {
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.article-image {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+	}
+
+	.article-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.article-card:hover .article-image img {
+		transform: scale(1.05);
+	}
+
+	.article-content {
+		padding: 1.5em;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.article-content h3 {
+		color: rgb(var(--gray-light));
+		margin: 0 0 0.5em 0;
+		font-size: 1.3em;
+		line-height: 1.3;
+	}
+
+	.article-date {
+		color: rgb(var(--gray));
+		font-size: 0.85em;
+		margin-bottom: 0.75em;
+	}
+
+	.article-description {
+		color: rgb(var(--gray-light));
+		line-height: 1.5;
+		margin-bottom: 1em;
+		font-size: 0.95em;
+		flex: 1;
+	}
+
+	.article-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em;
+		margin-top: auto;
+	}
+
+	.article-tag {
+		padding: 0.25em 0.75em;
+		background-color: rgba(var(--gray), 0.2);
+		border-radius: 4px;
+		font-size: 0.8em;
+		color: rgb(var(--gray));
+	}
+</style>
