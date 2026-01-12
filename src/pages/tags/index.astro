@@ -32,6 +32,16 @@ const sortedTags = Array.from(tagCounts.entries())
 <html lang="en">
 	<head>
 		<BaseHead title={`Tags - ${SITE_TITLE}`} description={`Browse posts by tag on ${SITE_TITLE}`} />
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+			main {
+				flex: 1;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
@@ -57,7 +67,6 @@ const sortedTags = Array.from(tagCounts.entries())
 <style>
 	main {
 		width: 960px;
-		min-height: calc(100vh - 200px);
 	}
 
 	h1 {
