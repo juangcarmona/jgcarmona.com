@@ -6,6 +6,7 @@
 
 :root {
 	--accent: #4da3ff;
+	--accent-rgb: 77, 163, 255;
 	--accent-light: #8fc2ff;
 	--accent-dark: #1f6fd1;
 	--box-shadow:
@@ -40,7 +41,7 @@ html.theme-light {
 	--gray: 120, 135, 165;         /* secondary text */
 	--gray-light: 30, 35, 50;      /* primary text (dark text on light bg) */
 	--gray-gradient: rgba(var(--gray-light), 50%), #000;
-	--bg-color: #ffffff;
+	--bg-color: #f8f9fa;
 	--header-bg: #f8f9fa;
 	--header-border: rgba(0, 0, 0, 0.1);
 	--header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -144,9 +145,8 @@ img {
 }
 code {
 	padding: 2px 5px;
-	background-color: var(--code-bg);
+	background-color: rgb(var(--gray-dark));
 	border-radius: 2px;
-	color: rgb(var(--gray-light));
 }
 pre {
 	padding: 1.5em;

@@ -44,7 +44,7 @@ I’m a software & AI architect focused on **secure, scalable platforms** and **
 I help companies, from startups to enterprises, ship **reliable, secure, and cost-aware** software. Hands-on or leading teams, I bring calm execution, technical excellence, and a bias for outcomes.
 
 <p align="center">
-  <img src="https://camo.githubusercontent.com/8358c1853150dd2b42f8d7513be7ee0801e13a313af34ecad6c5f56b86f76182/68747470733a2f2f6a676361726d6f6e612e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032352f30352f494d472d32303235303432352d5741303036362e6a7067" alt="Juan G Carmona" width="800" />
+  <img src="https://jgcarmona.com/_astro/IMG-20250425-WA0066.BpEC4XeS_2tUiWd.webp" alt="Juan G Carmona" width="800" />
 </p>
 
 ## 👥 How I Work
@@ -70,7 +70,7 @@ I help companies, from startups to enterprises, ship **reliable, secure, and cos
 Outside of tech, I’m an alpinist, climber, skydiver, and ski mountaineer. I like to push limits, both on the ground and at 3,000 meters.
 
 <p align="center">
-  <img src="https://camo.githubusercontent.com/0181a2b39bea122ea3dd6a80aa1625897c75ad1b05ba5256804d78cd7b5dcd44/68747470733a2f2f6a676361726d6f6e612e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032352f30342f494d472d32303235303432352d5741303036332e6a7067" alt="Juan G Carmona" width="400" />
+  <img src="http://localhost:4321/_astro/OIP.webp" alt="Juan G Carmona" width="400" />
 </p>
 <h2  align="center" style="font-size: xx-large;"><i>Build for today, design for tomorrow, and never stop exploring.</i></h2 >
 
