@@ -94,6 +94,29 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
         max-width: 720px;
       }
 
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        margin-top: 0.5rem;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 0.25em 0.75em;
+        background-color: rgba(var(--gray-dark), 0.5);
+        border-radius: 4px;
+        font-size: 0.75em;
+        color: rgb(var(--gray));
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .tag:hover {
+        background-color: var(--accent);
+        color: white;
+      }
+
       /* ===== THUMB ===== */
 
       .thumb {
@@ -179,6 +202,16 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
                   {post.data.description && (
                     <p class="excerpt">{post.data.description}</p>
+                  )}
+
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <div class="tags">
+                      {post.data.tags.slice(0, 3).map((tag) => (
+                        <a href={`/tags/${tag}`} class="tag">
+                          {tag}
+                        </a>
+                      ))}
+                    </div>
                   )}
                 </li>
               );

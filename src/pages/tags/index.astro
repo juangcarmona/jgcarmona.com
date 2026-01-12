@@ -1,0 +1,112 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+
+const posts = await getCollection('blog');
+
+// Count posts per tag
+const tagCounts = new Map<string, number>();
+posts.forEach((post) => {
+	const tags = post.data.tags || [];
+	tags.forEach((tag) => {
+		tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+	});
+});
+
+// Convert to array and sort by count (desc), then alphabetically
+const sortedTags = Array.from(tagCounts.entries())
+	.sort((a, b) => {
+		// First by count descending
+		if (b[1] !== a[1]) {
+			return b[1] - a[1];
+		}
+		// Then alphabetically
+		return a[0].localeCompare(b[0]);
+	});
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Tags - ${SITE_TITLE}`} description={`Browse posts by tag on ${SITE_TITLE}`} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section>
+				<h1>Tags</h1>
+				<p>Browse posts by topic</p>
+				
+				<div class="tags-grid">
+					{sortedTags.map(([tag, count]) => (
+						<a href={`/tags/${tag}`} class="tag-card">
+							<span class="tag-name">{tag}</span>
+							<span class="tag-count">{count} {count === 1 ? 'post' : 'posts'}</span>
+						</a>
+					))}
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 960px;
+	}
+
+	h1 {
+		margin-bottom: 0.5em;
+	}
+
+	p {
+		color: rgb(var(--gray));
+		margin-bottom: 2em;
+	}
+
+	.tags-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		gap: 1em;
+		margin-top: 2em;
+	}
+
+	.tag-card {
+		display: flex;
+		flex-direction: column;
+		padding: 1.5em;
+		background-color: rgb(var(--gray-dark));
+		border-radius: 8px;
+		border: 1px solid transparent;
+		text-decoration: none;
+		transition: all 0.2s ease;
+	}
+
+	.tag-card:hover {
+		border-color: var(--accent);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(var(--accent-dark), 0.2);
+	}
+
+	.tag-name {
+		font-size: 1.2em;
+		font-weight: 700;
+		color: rgb(var(--gray-light));
+		margin-bottom: 0.5em;
+	}
+
+	.tag-count {
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+	}
+
+	@media (max-width: 720px) {
+		.tags-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
