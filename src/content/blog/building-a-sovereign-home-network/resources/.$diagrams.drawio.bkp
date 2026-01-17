@@ -1,0 +1,31 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="Page-1" id="GeImeatf0fzrLZB0xHDK">
+    <mxGraphModel dx="624" dy="514" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="q0kHC-LzAq-76_TerrPj-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;" value="" vertex="1">
+          <mxGeometry height="130" width="300" x="270" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div&gt;Edge Hub (VPS)&lt;/div&gt;&lt;div&gt;DNS · TLS · Ingress&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="360" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;WireGuard Overlay&lt;/div&gt;&lt;div&gt;10.10.0.0/24&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="170" x="329" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-7" edge="1" parent="1" source="q0kHC-LzAq-76_TerrPj-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="q0kHC-LzAq-76_TerrPj-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Home Node&lt;/div&gt;&lt;div&gt;Execution&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="280" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-6" edge="1" parent="1" source="q0kHC-LzAq-76_TerrPj-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="q0kHC-LzAq-76_TerrPj-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Second Node&lt;/div&gt;&lt;div&gt;Execution&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="439" y="360" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

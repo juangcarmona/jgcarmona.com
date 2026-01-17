@@ -1,0 +1,223 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0" pages="4">
+  <diagram name="Global Architecture" id="GeImeatf0fzrLZB0xHDK">
+    <mxGraphModel dx="624" dy="514" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="z79B6nGUUhY_utsCOPcp-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="290" width="330" x="255" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-8" edge="1" parent="1" source="q0kHC-LzAq-76_TerrPj-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;" target="q0kHC-LzAq-76_TerrPj-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;" value="" vertex="1">
+          <mxGeometry height="140" width="300" x="270" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div&gt;Edge Hub (VPS)&lt;/div&gt;&lt;div&gt;DNS · TLS · Ingress&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="360" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Private&amp;nbsp;WireGuard Overlay&lt;/div&gt;&lt;div&gt;10.10.0.0/24&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="170" x="329" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Home Node&lt;/div&gt;&lt;div&gt;(Execution)&lt;br&gt;10.10.0.20&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="280.5" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Second Home Node&lt;/div&gt;&lt;div&gt;(Execution)&lt;br&gt;10.10.0.10&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="439.5" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Outbound-only&lt;/div&gt;&lt;div&gt;WireGuard tunnel&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="100" x="430" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="q0kHC-LzAq-76_TerrPj-10" parent="1" style="text;whiteSpace=wrap;fontSize=10;" value="No inbound connections to residential networks" vertex="1">
+          <mxGeometry height="20" width="220" x="350" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="ILx9yxLu_BfS2y3KemER" name="Split-Horizon">
+    <mxGraphModel dx="910" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5RflO7i2pHcCrubIaArn-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="540" width="330" x="215" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="YO2kR6-iul97ssjGc_1o-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Internet" vertex="1">
+          <mxGeometry height="60" width="120" x="320" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="YO2kR6-iul97ssjGc_1o-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;span data-start=&quot;2225&quot; data-end=&quot;2252&quot;&gt;Public DNS (Cloudflare&lt;/span&gt;&lt;strong data-start=&quot;2225&quot; data-end=&quot;2252&quot;&gt;)&lt;/strong&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="320" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="EsIQk8ifqFbweuXg0AM5-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div&gt;Edge Hub (VPS)&lt;/div&gt;&lt;div&gt;DNS · TLS · Ingress&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="320" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="8mlJtISURg3QYiC0wWFz-7" edge="1" parent="1" source="8mlJtISURg3QYiC0wWFz-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;" target="EsIQk8ifqFbweuXg0AM5-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0_18TxDc5iFgN-zZ5usM-1" connectable="0" parent="8mlJtISURg3QYiC0wWFz-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="WireGuard" vertex="1">
+          <mxGeometry relative="1" x="0.03" as="geometry">
+            <mxPoint x="40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8mlJtISURg3QYiC0wWFz-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;" value="" vertex="1">
+          <mxGeometry height="205" width="300" x="230" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="8mlJtISURg3QYiC0wWFz-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Private&amp;nbsp;WireGuard Overlay&lt;/div&gt;&lt;div&gt;10.10.0.0/24&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="170" x="289" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="8mlJtISURg3QYiC0wWFz-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Home Node&lt;/div&gt;&lt;div&gt;(Execution)&lt;br&gt;&amp;nbsp;Unbound DNS&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="240.5" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="8mlJtISURg3QYiC0wWFz-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Second Home Node&lt;/div&gt;&lt;div&gt;(Execution)&lt;br&gt;&amp;nbsp;Unbound DNS&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="399.5" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="8mlJtISURg3QYiC0wWFz-8" edge="1" parent="1" source="EsIQk8ifqFbweuXg0AM5-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="YO2kR6-iul97ssjGc_1o-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="455" as="sourcePoint" />
+            <mxPoint x="510" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8mlJtISURg3QYiC0wWFz-11" connectable="0" parent="8mlJtISURg3QYiC0wWFz-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&amp;nbsp;A/AAAA → Edge IP" vertex="1">
+          <mxGeometry relative="1" x="0.3105" as="geometry">
+            <mxPoint x="60" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8mlJtISURg3QYiC0wWFz-9" edge="1" parent="1" source="YO2kR6-iul97ssjGc_1o-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="YO2kR6-iul97ssjGc_1o-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="325" as="sourcePoint" />
+            <mxPoint x="480" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8mlJtISURg3QYiC0wWFz-10" connectable="0" parent="8mlJtISURg3QYiC0wWFz-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Public DNS" vertex="1">
+          <mxGeometry relative="1" x="0.4438" as="geometry">
+            <mxPoint x="40" y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="service.example.com&#xa;10.10.0.20" id="0_18TxDc5iFgN-zZ5usM-2">
+          <mxCell parent="1" style="text;whiteSpace=wrap;fontSize=10;fillColor=#ECFFEB;strokeColor=#82b366;" vertex="1">
+            <mxGeometry height="30" width="107" x="247" y="670" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="0_18TxDc5iFgN-zZ5usM-4" edge="1" parent="1" source="0_18TxDc5iFgN-zZ5usM-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="8mlJtISURg3QYiC0wWFz-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="545" as="sourcePoint" />
+            <mxPoint x="440" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_18TxDc5iFgN-zZ5usM-5" connectable="0" parent="0_18TxDc5iFgN-zZ5usM-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Private DNS" vertex="1">
+          <mxGeometry relative="1" x="0.03" as="geometry">
+            <mxPoint x="40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="mIPTpYFtC4Wbp5-vGg35" name="Remote Access Patterns">
+    <mxGraphModel dx="910" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KKzR35bUvScrKAl55kWd-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="500" width="330" x="249" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-2" edge="1" parent="1" source="KKzR35bUvScrKAl55kWd-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;" target="KKzR35bUvScrKAl55kWd-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-13" edge="1" parent="1" source="KKzR35bUvScrKAl55kWd-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.803;exitY=-0.014;exitDx=0;exitDy=0;dashed=1;dashPattern=8 8;exitPerimeter=0;strokeColor=#474747;strokeWidth=2;" target="KKzR35bUvScrKAl55kWd-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505" y="370" />
+              <mxPoint x="414" y="370" />
+            </Array>
+            <mxPoint x="504" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-22" connectable="0" parent="KKzR35bUvScrKAl55kWd-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;Static Route (Client-side)&lt;/div&gt;&lt;div&gt;via Home Node (10.10.0.20)&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.2542" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;" value="" vertex="1">
+          <mxGeometry height="140" width="300" x="264" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div&gt;Edge Hub (VPS)&lt;/div&gt;&lt;div&gt;DNS · TLS · Ingress&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;SSH / HTTPS&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Private&amp;nbsp;WireGuard Overlay&lt;/div&gt;&lt;div&gt;10.10.0.0/24&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="170" x="323" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Home Node&lt;/div&gt;&lt;div&gt;(Execution)&lt;br&gt;10.10.0.20&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="274.5" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Second Home Node&lt;/div&gt;&lt;div&gt;(Execution)&lt;br&gt;10.10.0.10&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="433.5" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-9" parent="1" style="text;whiteSpace=wrap;fontSize=10;" value="No inbound connections to residential networks" vertex="1">
+          <mxGeometry height="20" width="220" x="344" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-14" edge="1" parent="1" source="KKzR35bUvScrKAl55kWd-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;" target="KKzR35bUvScrKAl55kWd-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-18" connectable="0" parent="KKzR35bUvScrKAl55kWd-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&amp;nbsp;Public IP / Internet" vertex="1">
+          <mxGeometry relative="1" x="-0.4662" as="geometry">
+            <mxPoint y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="Admin Laptop&lt;div&gt;SSH key-based identity&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="274.5" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="KKzR35bUvScrKAl55kWd-19" parent="1" style="text;whiteSpace=wrap;" value="Administrative identity is independent of network path.&#xa;Residential nodes are reachable only via WireGuard." vertex="1">
+          <mxGeometry height="50" width="320" x="264" y="680" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Reverse Proxy &amp; Home Assistant Exposure" id="h5Dj3BgyaawALv551XTM">
+    <mxGraphModel dx="1092" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="Gg1V9X1S5zznfbQ6HRO9-0" />
+        <mxCell id="Gg1V9X1S5zznfbQ6HRO9-1" parent="Gg1V9X1S5zznfbQ6HRO9-0" />
+        <mxCell id="Gg1V9X1S5zznfbQ6HRO9-2" parent="Gg1V9X1S5zznfbQ6HRO9-1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="440" width="330" x="249" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="Gg1V9X1S5zznfbQ6HRO9-3" edge="1" parent="Gg1V9X1S5zznfbQ6HRO9-1" source="mtlKqpCod3Rn3_ioUREM-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;" target="Gg1V9X1S5zznfbQ6HRO9-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mtlKqpCod3Rn3_ioUREM-0" connectable="0" parent="Gg1V9X1S5zznfbQ6HRO9-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="HTTP (TLS)&lt;div&gt;Public Virtual Host&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.3287" as="geometry">
+            <mxPoint x="56" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mtlKqpCod3Rn3_ioUREM-2" edge="1" parent="Gg1V9X1S5zznfbQ6HRO9-1" source="Gg1V9X1S5zznfbQ6HRO9-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;" target="mtlKqpCod3Rn3_ioUREM-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mtlKqpCod3Rn3_ioUREM-3" connectable="0" parent="mtlKqpCod3Rn3_ioUREM-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="WireGuard" vertex="1">
+          <mxGeometry relative="1" x="0.156" y="-4" as="geometry">
+            <mxPoint x="42" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gg1V9X1S5zznfbQ6HRO9-6" parent="Gg1V9X1S5zznfbQ6HRO9-1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;" value="" vertex="1">
+          <mxGeometry height="180" width="300" x="264" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="Gg1V9X1S5zznfbQ6HRO9-7" parent="Gg1V9X1S5zznfbQ6HRO9-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;User / Client&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;Browser / HA Movile App&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="146" x="341" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="Gg1V9X1S5zznfbQ6HRO9-8" parent="Gg1V9X1S5zznfbQ6HRO9-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Private&amp;nbsp;WireGuard Overlay&lt;/div&gt;&lt;div&gt;10.10.0.0/24&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="170" x="323" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="Gg1V9X1S5zznfbQ6HRO9-9" parent="Gg1V9X1S5zznfbQ6HRO9-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Home Node&lt;/div&gt;&lt;div&gt;Home Assistant&lt;br&gt;http://:8123&lt;br&gt;10.10.0.20&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="274.5" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="Gg1V9X1S5zznfbQ6HRO9-10" parent="Gg1V9X1S5zznfbQ6HRO9-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;Second Home Node&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Home Assistant&lt;/span&gt;&lt;/div&gt;&lt;div&gt;http://:8123&lt;br&gt;10.10.0.10&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="433.5" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="mtlKqpCod3Rn3_ioUREM-1" parent="Gg1V9X1S5zznfbQ6HRO9-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;Edge Hub (VPS)&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;Reverse Proxy&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="146" x="341" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="mtlKqpCod3Rn3_ioUREM-5" parent="Gg1V9X1S5zznfbQ6HRO9-1" style="text;whiteSpace=wrap;" value="No direct exposure of home services. All public access is mediated through the edge reverse proxy." vertex="1">
+          <mxGeometry height="40" width="285.5" x="274.5" y="670" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
