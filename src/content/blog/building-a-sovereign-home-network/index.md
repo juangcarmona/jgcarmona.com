@@ -143,17 +143,6 @@ The edge hub is responsible for:
 
 It holds no business logic, no home automation state, and no device control. This is why it can be small (and cheap).
 
-### Control-Plane-Only Clarification 
-
-The edge hub is **control plane only**.
-
-It provides:
-
-* Public DNS anchoring
-* TLS termination
-* Reverse proxy and ingress routing
-* WireGuard coordination point
-
 It explicitly does **not** provide:
 
 * Home Assistant instances
@@ -162,8 +151,7 @@ It explicitly does **not** provide:
 * Zigbee, MQTT, or IoT services
 * Persistent application state
 
-All stateful execution lives inside the homes.
-The edge can be destroyed and rebuilt without data loss.
+All stateful execution lives inside the homes.The edge can be destroyed and rebuilt without data loss.
 
 ## 4. Network Overlay: WireGuard as the Backbone
 
@@ -182,7 +170,7 @@ Each node receives:
 * One stable IP
 * One cryptographic identity
 
-IP addresses are assigned manually and documented. No dynamic allocation.
+IP addresses are assigned manually and documented.
 
 ### Trust Model
 
@@ -211,7 +199,7 @@ Direct peer-to-peer links between homes are intentionally avoided.
 Keys are:
 
 * Generated per node
-* Stored outside the machines (password manager)
+* Stored outside the machines
 * Versioned alongside configuration
 
 Rotation is manual and infrequent. Simplicity and auditability take priority over automation.
@@ -256,7 +244,7 @@ Each location has its own internal namespace, mapped to the same private network
 
 Examples:
 
-* `home.lan`
+* `first.lan`
 * `second.lan`
 
 > Examples shown here are illustrative; actual names follow the same pattern.
@@ -289,7 +277,7 @@ The diagram below illustrates how Home Assistant instances remain local to each 
 
 Each home has an execution node: a quiet, always-on machine that hosts local services and participates as a full peer in the private overlay. It exists to keep the home operational without depending on the edge or the other site.
 
-The architecture treats homes as separate failure domains with the same responsibilities and the same rules. There is no primary/secondary relationship to “fail over” into. Consistency comes from conventions—naming, boundaries, and where state is allowed to live—not from centralization.
+The architecture treats homes as separate failure domains with the same responsibilities and the same rules. There is no primary/secondary relationship to “fail over” into. Consistency comes from conventions—naming, boundaries, and where state is allowed to live, not from centralization.
 
 Differences between nodes are allowed, but only as a consequence of the physical environment. Devices and local constraints diverge; the trust model and the shape of the system do not.
 
@@ -319,4 +307,8 @@ I think of this system as a small distributed network with a simple moral: owner
 
 The private overlay is the connective tissue, not the point. The point is that each home remains a complete, local system with boundaries and predictable behavior—something you can understand by reading it, and rebuild without negotiating with a vendor or a UI.
 
-If the architecture holds to those invariants—local-first execution, explicit trust, and disciplined separation of concerns—then change stays affordable, and failure stays survivable.
+If the architecture holds to those invariants, local-first execution, explicit trust, and disciplined separation of concerns; then change stays affordable, and failure stays survivable.
+
+> Now, me and my family, can control our homes. 
+
+Do you want to know more?
