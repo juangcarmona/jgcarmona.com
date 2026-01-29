@@ -44,7 +44,7 @@ I’m a software & AI architect focused on **secure, scalable platforms** and **
 I help companies, from startups to enterprises, ship **reliable, secure, and cost-aware** software. Hands-on or leading teams, I bring calm execution, technical excellence, and a bias for outcomes.
 
 <p align="center">
-  <img src="/blog-placeholder.webp" alt="Juan G Carmona" width="800" />
+  <img src="/juangcarmona_to_the_world.webp" alt="Juan G Carmona" width="800" />
 </p>
 
 ## 👥 How I Work
