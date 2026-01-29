@@ -44,7 +44,7 @@ I’m a software & AI architect focused on **secure, scalable platforms** and **
 I help companies, from startups to enterprises, ship **reliable, secure, and cost-aware** software. Hands-on or leading teams, I bring calm execution, technical excellence, and a bias for outcomes.
 
 <p align="center">
-  <img src="https://jgcarmona.com/_astro/IMG-20250425-WA0066.BpEC4XeS_2tUiWd.webp" alt="Juan G Carmona" width="800" />
+  <img src="/blog-placeholder.webp" alt="Juan G Carmona" width="800" />
 </p>
 
 ## 👥 How I Work
@@ -70,7 +70,7 @@ I help companies, from startups to enterprises, ship **reliable, secure, and cos
 Outside of tech, I’m an alpinist, climber, skydiver, and ski mountaineer. I like to push limits, both on the ground and at 3,000 meters.
 
 <p align="center">
-  <img src="http://localhost:4321/_astro/OIP.webp" alt="Juan G Carmona" width="400" />
+  <img src="/OIP.webp" alt="Juan G Carmona" width="400" />
 </p>
 <h2  align="center" style="font-size: xx-large;"><i>Build for today, design for tomorrow, and never stop exploring.</i></h2 >
 

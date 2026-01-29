@@ -202,7 +202,8 @@ hr {
 	}
 
 	main {
-		padding: 1em;
+		padding: 0;
+		max-width: calc(95%);
 	}
 
 	h1 {
@@ -219,10 +220,6 @@ hr {
 
 	h4 {
 		font-size: 0.9em;
-	}
-
-	header {
-		width: 100%;
 	}
 
 	nav {
