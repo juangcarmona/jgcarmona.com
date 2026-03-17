@@ -161,6 +161,26 @@ input {
 
 table {
 	width: 100%;
+	border-collapse: collapse;
+	margin: 1.5em 0;
+	border: 1px solid rgba(var(--gray), 0.4);
+	background: rgb(var(--gray-dark));
+}
+
+th,
+td {
+	padding: 0.6em 0.8em;
+	border: 1px solid rgba(var(--gray), 0.35);
+	text-align: left;
+}
+
+th {
+	background: rgba(var(--accent-rgb), 0.12);
+	font-weight: 700;
+}
+
+tr:nth-child(even) td {
+	background: rgba(var(--gray), 0.05);
 }
 
 img {
