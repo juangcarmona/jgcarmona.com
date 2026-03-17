@@ -12,7 +12,7 @@ slug: "github-copilot-pru-usage"
 
 ## TL;DR
 
-> Autocomplete is free.** Inline Copilot suggestions do not consume PRUs.
+> Autocomplete is free. Inline Copilot suggestions do not consume PRUs.
 > Chat, CLI, and coding agents may consume PRUs depending on the model > ed.
 > Code reviews, Spark, and third-party agents always consume PRUs.
 > Use autocomplete for daily coding and expect PRU consumption when invoking models explicitly.
