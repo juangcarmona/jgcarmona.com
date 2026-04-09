@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Soluciones de Visión por Computadora"
 description: 'Módulo práctico para crear soluciones de visión por computadora con Azure AI: clasificación, OCR, reconocimiento facial y ejemplos en Python y C#.'
 pubDate: 2024-07-26

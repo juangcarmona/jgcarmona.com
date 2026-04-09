@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Aplicación de Google Maps Android API v2 desde cero"
 description: 'Tutorial paso a paso para crear una app Android con Google Maps API v2: insertar mapas, localizar puntos y mejorar usabilidad.'
 pubDate: 2012-12-21

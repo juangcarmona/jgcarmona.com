@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "GRASP: Creador"
 description: 'Principio GRASP "Creador": quién debe instanciar objetos para mantener bajo acoplamiento y buena cohesión en el diseño.'
 pubDate: 2012-09-07

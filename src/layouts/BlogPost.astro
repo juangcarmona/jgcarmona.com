@@ -6,25 +6,45 @@ import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import Header from "../components/Header.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = {
+	title: string;
+	description: string;
+	pubDate: Date;
+	updatedDate?: Date;
+	heroImage?: string;
+	tags?: string[];
+	isTranslation?: boolean;
+	lang?: 'en' | 'es';
+};
 
-const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags, isTranslation, lang } = Astro.props;
 ---
 
-<html lang="en">
+<html lang={lang}>
 	<head>
-		<BaseHead title={title} description={description} image={heroImage} />
+		<BaseHead 
+			title={title} 
+			description={description} 
+			image={heroImage} 
+			article={true}
+			publishedTime={pubDate ? pubDate.toISOString() : undefined}
+			modifiedTime={updatedDate ? updatedDate.toISOString() : undefined}
+			author="Juan G. Carmona"
+			tags={tags}
+		/>
 		<style>
 			main {
 				width: calc(100%);
 				max-width: 100%;
 			}
 			.hero-image {
-				width: 100vw;
-				margin-left: calc(50% - 50vw);
-				margin-right: calc(50% - 50vw);
+				width: 100%;
+				max-width: 100%;
+				margin-left: auto;
+				margin-right: auto;
 				max-height: 280px;
 				overflow: hidden;
+				position: relative;
 			}
 
 			.hero-image img {
@@ -33,6 +53,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 				object-fit: cover;
 				display: block;
 				border-radius: 0;
+				min-height: 100px; /* Ensure minimum visibility */
 			}
 
 			.prose {
@@ -73,6 +94,14 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 				font-style: italic;
 			}
 
+			.translation-disclaimer {
+				color: var(--accent);
+				font-size: 1.2em;
+				margin: 0.5em 0 1em 0;
+				font-style: italic;
+				background-color: rgb(var(--gray-light));
+			}
+
 			.tags {
 				display: flex;
 				flex-wrap: wrap;
@@ -98,10 +127,31 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 				color: white;
 				transform: translateY(-2px);
 			}
+			
+			/* Reading progress indicator */
+			.progress-container {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 4px;
+				background-color: transparent;
+				z-index: 1000;
+			}
+			
+			.progress-bar {
+				height: 100%;
+				background-color: var(--accent);
+				width: 0%;
+				transition: width 0.1s ease;
+			}
 		</style>
 	</head>
 
 	<body>
+		<div class="progress-container">
+			<div class="progress-bar" id="progressBar"></div>
+		</div>
 		<Header />
 		<main>
 			<article>
@@ -113,7 +163,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 								height={400}
 								src={heroImage}
 								alt=""
-								priority
+								loading="lazy"
 							/>
 						</div>
 					)
@@ -136,6 +186,12 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 						</div>
 					</div>
 
+					{isTranslation && (
+						<p class="translation-disclaimer">
+							⚠️ Please note that this content has been translated using an automated tool. While I have reviewed the output, some nuances may have been lost.
+						</p>
+					)}
+
 					<slot />
 
 					{tags && tags.length > 0 && (
@@ -151,5 +207,23 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 			</article>
 		</main>
 		<Footer />
+		
+		<script>
+			// Reading progress indicator
+			document.addEventListener('DOMContentLoaded', () => {
+				const progressBar = document.getElementById('progressBar');
+				
+				function updateProgress() {
+					const scrollTop = window.scrollY;
+					const docHeight = document.body.offsetHeight;
+					const winHeight = window.innerHeight;
+					const progress = (scrollTop / (docHeight - winHeight)) * 100;
+					progressBar.style.width = `${Math.min(progress, 100)}%`;
+				}
+				
+				window.addEventListener('scroll', updateProgress);
+				updateProgress();
+			});
+		</script>
 	</body>
 </html>

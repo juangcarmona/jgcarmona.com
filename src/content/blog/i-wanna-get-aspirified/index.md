@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "I wanna get Aspirified"
 description: 'Aspire migration experiment: reorganize infra, containers and pipelines to modernize Sentra.'
 pubDate: 2025-11-20

@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Crear aplicaciones Multiidioma para Android"
 description: 'Cómo internacionalizar apps Android: estructura de `values-xx`, `strings.xml` y mejores prácticas para soportar múltiples idiomas.'
 pubDate: 2012-12-26

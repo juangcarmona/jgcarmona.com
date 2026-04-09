@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Sobre Migraciones con Entity Framework Core"
 description: 'Lecciones y pasos para gestionar migraciones en EF Core en proyectos reales: refactorizaciones seguras, squash de migraciones y estrategias de despliegue.'
 pubDate: 2020-08-07

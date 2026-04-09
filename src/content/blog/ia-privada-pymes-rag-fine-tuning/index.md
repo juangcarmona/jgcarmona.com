@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "IA privada con RAG y fine-tuning para PYMES: cómo entrenar tu propia inteligencia artificial"
 description: 'Cómo PYMES pueden entrenar IA privada combinando RAG y fine-tuning para proteger datos y obtener modelos personalizados.'
 pubDate: 2025-07-25

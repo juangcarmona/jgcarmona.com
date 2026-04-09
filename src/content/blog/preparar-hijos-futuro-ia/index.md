@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Cómo preparar a nuestros hijos para el mundo que viene"
 description: 'Reflexión sobre qué habilidades enseñar a los niños ante la llegada de la IA: pensamiento crítico, empatía y colaboración humano-máquina.'
 pubDate: 2025-06-16

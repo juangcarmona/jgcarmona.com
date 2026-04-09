@@ -74,7 +74,7 @@ function getReadingTime(post: CollectionEntry<'blog'>): string {
 				<ul class="posts-list">
 					{posts.map((post) => (
 						<li class="post-item">
-							<a href={`/${post.id}/`}>
+							<a href={`/${post.data.lang}/${post.id}/`}>
 								<h2>{post.data.title}</h2>
 								<div class="post-meta">
 									<FormattedDate date={post.data.pubDate} />

@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Guía básica de Linux para Administradores de Red"
 description: 'Guía práctica para administradores de red: herramientas (nmap, masscan, snmp), comandos clave y técnicas para mapear y auditar redes con Linux.'
 pubDate: 2025-07-09

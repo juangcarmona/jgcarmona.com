@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Google Maps API key para apk firmados"
 description: 'Mini receta para obtener la SHA1 y configurar la API key de Google Maps para APK firmados en Android.'
 pubDate: 2013-01-28

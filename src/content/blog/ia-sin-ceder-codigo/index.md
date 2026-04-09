@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Tu IA, tus reglas."
 description: 'Guía para usar IA en desarrollo sin ceder código ni datos: alternativas autocustodiadas y criterios de seguridad.'
 pubDate: 2025-05-20

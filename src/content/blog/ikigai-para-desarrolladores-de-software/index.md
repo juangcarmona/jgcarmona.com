@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Ikigai para desarrolladores de software"
 description: 'Cómo aplicar el Ikigai para encontrar propósito y motivación en tu carrera como desarrollador: pasos prácticos para más satisfacción y rendimiento.'
 pubDate: 2023-06-29

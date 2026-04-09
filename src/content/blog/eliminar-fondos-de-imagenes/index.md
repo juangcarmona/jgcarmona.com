@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Eliminar Fondos de Imágenes"
 description: 'Cómo crear una CLI con Azure AI para eliminar fondos de imágenes (individual y por lotes). Rápida, multiplataforma y con código abierto.'
 pubDate: 2024-07-18

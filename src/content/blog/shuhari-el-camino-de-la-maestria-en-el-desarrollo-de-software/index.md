@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Shuhari: El Camino de la Maestría en el Desarrollo de Software"
 description: 'Aplicación del concepto Shuhari al aprendizaje de desarrollo de software: etapas para progresar de aprendiz a maestro.'
 pubDate: 2023-07-11

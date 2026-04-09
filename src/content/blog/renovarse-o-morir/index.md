@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Renovarse o Morir"
 description: 'Reflexiones y acciones para renovar tu marca personal y contenido: estrategias para crecer en YouTube y consolidar tu presencia técnica online.'
 pubDate: 2024-09-09

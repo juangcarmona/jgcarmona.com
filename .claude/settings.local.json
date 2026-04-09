@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Bash(node src/utils/addLangToPosts.ts)",
+      "Bash(node -e \"\nconst fs = require\\(''fs''\\);\nconst path = require\\(''path''\\);\n\nconst filePath = ''./src/content/blog/angular-9-i18n-ssr/index.md'';\nconst content = fs.readFileSync\\(filePath, ''utf-8''\\);\nconst lines = content.split\\(''\\\\n''\\);\nconsole.log\\(''Total lines:'', lines.length\\);\nconsole.log\\(''First 5 lines:'', lines.slice\\(0, 5\\)\\);\nconsole.log\\(''Has ---?'', lines.includes\\(''---''\\)\\);\nconsole.log\\(''First line chars:'', lines[0].substring\\(0, 100\\)\\);\n\")"
+    ]
+  }
+}

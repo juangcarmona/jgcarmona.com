@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "DIP: Dependency Inversion Principle // Principio de Inversión de Dependencias"
 description: 'Explicación práctica del Principio de Inversión de Dependencias (DIP) con ejemplos y cómo aplicar inyección de dependencias para código más flexible.'
 pubDate: 2012-09-02

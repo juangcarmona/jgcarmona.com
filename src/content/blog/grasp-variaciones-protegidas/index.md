@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "GRASP: Variaciones protegidas"
 description: 'Explicación del principio GRASP de variaciones protegidas para diseñar sistemas flexibles frente al cambio.'
 pubDate: 2012-09-07

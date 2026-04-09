@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Sobre arquitecturas en Android"
 description: 'Reflexiones y guía sobre arquitecturas Android: aplicar Clean Architecture, inyección de dependencias y buenas prácticas para código mantenible.'
 pubDate: 2015-08-31

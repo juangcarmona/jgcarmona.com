@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "What If Your Identity Provider Goes Down?"
 description: "Designing authentication resilience when Azure Entra ID is unavailable, using dual auth strategies, role-based authorization, and .NET Aspire."
 pubDate: 2025-12-26

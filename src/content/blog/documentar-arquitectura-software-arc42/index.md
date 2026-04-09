@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "La necesidad de tomar decisiones arquitectónicas claras y documentarlas bien"
 description: 'Por qué documentar decisiones arquitectónicas con arc42 mejora la comunicación, trazabilidad y calidad del software.'
 pubDate: 2025-07-09

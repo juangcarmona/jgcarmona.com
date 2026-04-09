@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Principios SOLID"
 description: 'Introducción a los principios SOLID: qué son, por qué importan y cómo aplicarlos para mejorar la calidad y mantenibilidad del código.'
 pubDate: 2012-09-02

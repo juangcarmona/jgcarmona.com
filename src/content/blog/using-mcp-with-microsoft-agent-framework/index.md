@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Using MCP with Microsoft Agent Framework"
 description: 'Cómo usar el Model Context Protocol (MCP) con Microsoft Agent Framework: conectar herramientas locales, DMR y crear agentes que actúen con seguridad.'
 pubDate: 2025-10-14

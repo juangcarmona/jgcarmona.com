@@ -7,8 +7,8 @@ const blog = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: ({ image }) =>
 		z.object({
-			title: z.string(),
-			description: z.string(),
+			title: z.string().min(5),
+			description: z.string().min(10).max(300),
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
@@ -16,6 +16,7 @@ const blog = defineCollection({
 			tags: z.array(z.string()).optional().default([]),
 			featured: z.boolean().optional().default(false),
 			featuredOrder: z.number().optional(),
+			lang: z.enum(['en', 'es']).default('en'),
 		}),
 });
 

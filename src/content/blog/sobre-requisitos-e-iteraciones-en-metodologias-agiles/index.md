@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Sobre requisitos e iteraciones en metodologías ágiles"
 description: 'Reflexión sobre gestionar requisitos e iteraciones en metodologías ágiles: adaptación, priorización y entrega iterativa de valor.'
 pubDate: 2013-02-24

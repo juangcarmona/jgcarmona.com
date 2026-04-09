@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Installing Docker Desktop on Different Drive"
 description: 'Cómo instalar Docker Desktop y mover sus datos a otra unidad (p.ej. D:) en Windows: comandos, opciones y pasos para evitar llenar C:.'
 pubDate: 2025-09-29

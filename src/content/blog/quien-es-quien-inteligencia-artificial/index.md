@@ -9,6 +9,7 @@ tags:
   - "sw-architecture"
   - "devops"
   - "software"
+lang: "es"
 heroImage: "images/ChatGPT-Image-Jul-28-2025-03_22_49-PM.png"
 ---
 

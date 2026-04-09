@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "SOLID Y GRASP. Buenas prácticas hacia el éxito en el desarrollo de software."
 description: 'Principios SOLID y patrones GRASP: buenas prácticas para diseñar software mantenible y escalable, con ejemplos y recursos para arquitectos y desarrolladores.'
 pubDate: 2012-11-15

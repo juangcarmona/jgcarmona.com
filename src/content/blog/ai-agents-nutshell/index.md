@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "AI Agents in a Nutshell"
 description: 'Resumen claro de qué son los AI agents: ciclo SPAR (Sense, Plan, Act, Reflect), cómo funcionan y qué se necesita para implementarlos de forma segura.'
 pubDate: 2025-09-30

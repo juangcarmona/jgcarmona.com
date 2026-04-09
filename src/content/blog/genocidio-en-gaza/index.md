@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Del sionismo al genocidio: cronología de la colonización de Palestina (1882–2025)"
 description: 'Cronología documentada de la colonización de Palestina y los hechos que llevan a alegaciones de genocidio entre 1882 y 2025.'
 pubDate: 2025-09-01

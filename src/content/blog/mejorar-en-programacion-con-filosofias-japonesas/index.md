@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Mejorar en Programación con Filosofías Japonesas"
 description: 'Serie que aplica filosofías japonesas (Ikigai, Kaizen, Shuhari) para mejorar la práctica y la disciplina en programación.'
 pubDate: 2023-06-29

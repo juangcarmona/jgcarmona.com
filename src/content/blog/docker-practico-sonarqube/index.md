@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Docker práctico: SonarQube"
 description: 'Cómo desplegar SonarQube con Docker, configurar SonarScanner y medir calidad y cobertura de tus proyectos .NET.'
 pubDate: 2018-06-18

@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "El primer paso siempre es el más difícil"
 description: 'Historia personal y consejos para dar el primer paso creativo y profesional: perseverancia y aprendizaje en la trayectoria.'
 pubDate: 2022-10-27

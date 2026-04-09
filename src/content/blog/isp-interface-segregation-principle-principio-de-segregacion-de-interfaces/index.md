@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "ISP: Interface Segregation Principle // Principio de Segregación de Interfaces"
 description: 'Explicación del Principio de Segregación de Interfaces (ISP) con ejemplos prácticos para diseñar interfaces pequeñas y cohesivas.'
 pubDate: 2012-09-02

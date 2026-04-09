@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Toma las riendas y recupera el control de tu vida profesional en 30 minutos"
 description: 'Ejercicio práctico y rápido para recuperar claridad profesional, definir objetivos y diseñar un plan de acción en 30 minutos.'
 pubDate: 2025-07-04

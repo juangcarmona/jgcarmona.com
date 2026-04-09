@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Principios SOLID"
 description: 'Introducción a los principios SOLID para diseñar código flexible y mantenible, con ejemplos y recomendaciones prácticas.'
 pubDate: 2012-08-20

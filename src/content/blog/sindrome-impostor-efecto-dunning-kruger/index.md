@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Hablar o callar: paradojas de la confianza en nosotros mismos"
 description: 'Explora el Síndrome del Impostor y el efecto Dunning-Kruger: por qué la confianza no siempre indica competencia y cómo gestionarlo en equipos.'
 pubDate: 2025-06-13

@@ -7,12 +7,28 @@ import { SITE_TITLE } from '../consts';
 interface Props {
 	title: string;
 	description: string;
-	image: string;
+	image?: string;
+	article?: boolean;
+	publishedTime?: string;
+	modifiedTime?: string;
+	author?: string;
+	tags?: string[];
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "https://jgcarmona.com/juangcarmona_to_the_world.webp" } = Astro.props;
+const { title, description, image, article = false, publishedTime, modifiedTime, author, tags } = Astro.props;
+
+// Sanitize content to prevent XSS
+function sanitizeForJSON(str: string): string {
+	if (!str) return '';
+	return str
+		.replace(/\\/g, '\\\\')
+		.replace(/"/g, '\\"')
+		.replace(/\n/g, '\\n')
+		.replace(/\r/g, '\\r')
+		.replace(/\t/g, '\\t');
+}
 ---
 
 <!-- Global Metadata -->
@@ -43,16 +59,70 @@ const { title, description, image = "https://jgcarmona.com/juangcarmona_to_the_w
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
+<!-- Structured Data (JSON-LD) -->
+{article && (
+<script is:inline type="application/ld+json">
+{`{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "${sanitizeForJSON(Astro.url.href)}"
+  },
+  "headline": "${sanitizeForJSON(title)}",
+  "description": "${sanitizeForJSON(description)}",
+  "url": "${sanitizeForJSON(Astro.url.href)}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "${sanitizeForJSON(author || "Juan G. Carmona")}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jgcarmona.com/images/logo.png",
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "image": "${image || "https://jgcarmona.com/images/og-default.png"}",
+  "datePublished": "${publishedTime || new Date().toISOString()}",
+  "dateModified": "${modifiedTime || new Date().toISOString()}",
+  "author": {
+    "@type": "Person",
+    "name": "${sanitizeForJSON(author || "Juan G. Carmona")}"
+  },
+  "keywords": "${tags?.join(',') || ''}"
+}`}
+</script>
+)}
+
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={article ? "article" : "website"} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={image || "https://jgcarmona.com/images/og-default.png"} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={title} />
+{article && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{article && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+{article && author && <meta property="article:author" content={author} />}
+{article && tags && tags.length > 0 && <meta property="article:tag" content={tags.join(',')} />}
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={image || "https://jgcarmona.com/images/og-default.png"} />
+<meta property="twitter:image:alt" content={title} />
+
+<!-- hreflang for internationalization -->
+<link rel="alternate" hreflang="en" href={`https://jgcarmona.com/en${Astro.url.pathname}`} />
+<link rel="alternate" hreflang="es" href={`https://jgcarmona.com/es${Astro.url.pathname}`} />
+<link rel="alternate" hreflang="x-default" href={`https://jgcarmona.com${Astro.url.pathname}`} />
+
+<!-- Additional SEO Meta Tags -->
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Juan G. Carmona" />
+<meta name="language" content="en" />
+<meta name="theme-color" content="#4da3ff" />

@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Aplicaciones de Google Maps v2 desde cero (II)"
 description: 'Segunda parte del tutorial de Google Maps Android API v2: centrado, sensores, animaciones y publicación de una versión BETA.'
 pubDate: 2012-12-24

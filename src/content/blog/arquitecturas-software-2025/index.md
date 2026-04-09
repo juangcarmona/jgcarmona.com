@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "30+ Patrones y Estilos de Arquitectura de Software que todo arquitecto debería dominar (con ejemplos y comparativas)"
 description: 'Catálogo de 30+ patrones y estilos de arquitectura software con ejemplos y comparativas para arquitectos en 2025.'
 pubDate: 2025-07-10

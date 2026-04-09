@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "OCP: Open Closed Principle // Principio Abierto/Cerrado"
 description: 'Explicación y ejemplos del Principio Abierto/Cerrado (OCP) para diseñar software extensible sin modificar código existente.'
 pubDate: 2012-09-02

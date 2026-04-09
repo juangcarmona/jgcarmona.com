@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Monolito (N‑Tier / Layered): claridad estructural y simplicidad operacional en un solo despliegue"
 description: 'Explicación del patrón monolítico por capas: cuándo usarlo, ventajas y desventajas y ejemplos prácticos.'
 pubDate: 2025-07-10

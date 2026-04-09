@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "TFST: Una nueva plataforma freelance open-source"
 description: 'TFST, plataforma freelance open-source que conecta talento IT con empresas mediante contratos inteligentes, reputación verificada y comisiones justas.'
 pubDate: 2025-03-05

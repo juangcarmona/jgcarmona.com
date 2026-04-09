@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Radicle: La colaboración descentralizada en Git explicada para todos"
 description: 'Introducción a Radicle: colaboración Git descentralizada P2P, privacidad y guía práctica para publicar y sincronizar repositorios.'
 pubDate: 2025-05-27

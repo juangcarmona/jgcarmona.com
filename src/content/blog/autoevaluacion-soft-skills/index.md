@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Evalúa tus Soft Skills: La herramienta que todo profesional debería usar al menos una vez al año"
 description: 'Autoevaluación práctica de 29 soft skills para mejorar liderazgo, comunicación y rendimiento profesional.'
 pubDate: 2025-06-21

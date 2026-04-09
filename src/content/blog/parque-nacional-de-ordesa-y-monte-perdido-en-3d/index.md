@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Parque Nacional de Ordesa y Monte Perdido en 3D"
 description: 'Recorrido virtual en 3D por Ordesa y Monte Perdido: creación del heightmap, texturas y proceso para publicar la app en Google Play.'
 pubDate: 2012-08-28

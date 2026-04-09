@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Running Claude Code Against Your Local GPU with Docker Model Runner"
 description: 'Bridging the API gap between Claude Code (Anthropic) and local models using a lightweight proxy. Complete guide with architecture diagrams and autostart configuration.'
 pubDate: 2026-01-25

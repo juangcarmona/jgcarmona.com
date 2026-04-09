@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Patrones generales de asignación de responsabilidades"
 description: 'Resumen práctico de los patrones GRASP para asignar responsabilidades y diseñar software con alta cohesión y bajo acoplamiento.'
 pubDate: 2012-09-07

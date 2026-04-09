@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Protege tu privacidad online: cómo blindar tu conexión usando Quad9 y DNS personalizados"
 description: 'Protege tu privacidad cambiando a Quad9 y DNS personalizados: pasos y configuración para blindar tus consultas DNS.'
 pubDate: 2025-05-27

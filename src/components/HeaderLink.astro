@@ -29,7 +29,7 @@ const isActive =
   (href !== "/" && href === "/" + firstSegment);
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} {...props}>
+<a href={href} class:list={[className, { active: isActive }]} {...props} aria-current={isActive ? "page" : undefined}>
   <slot />
 </a>
 

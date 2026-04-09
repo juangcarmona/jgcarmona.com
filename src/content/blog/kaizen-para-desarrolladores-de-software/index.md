@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "Kaizen para Desarrolladores de Software"
 description: 'Aplica Kaizen al desarrollo: mejora continua con pequeños cambios, prácticas y métricas para elevar calidad y productividad del equipo.'
 pubDate: 2023-06-30

@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "La IA no va de modelos. Va de operaciones."
 description: 'Lecciones prácticas del Cuerpo de Marines para implementar IA a escala: foco en datos, operaciones, equipos y resultados, no solo modelos.'
 pubDate: 2025-05-27
