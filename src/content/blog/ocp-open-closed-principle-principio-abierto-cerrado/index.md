@@ -11,6 +11,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Open / Closed Principle  
@@ -50,3 +51,4 @@ public abstract class Forma{    public abstract void Dibujar();}public class Rec
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

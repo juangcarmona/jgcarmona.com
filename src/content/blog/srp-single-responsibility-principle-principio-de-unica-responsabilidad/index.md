@@ -10,6 +10,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 **Single Responsibility Principle**  
@@ -73,3 +74,4 @@ Ahora la clase Empleado puede buscar empeados y decirnos el salario de uno de el
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

@@ -10,6 +10,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 [Gredos 3D](https://play.google.com/store/apps/details?id=com.jgc.gredos_3d) es mi primera app para Android. Tenía ganas de meterme de lleno en el mundillo de la programación de aplicaciones móviles y sin habérmelo propuesto he aprendido mucho sobre mapas, cartografía y modelos digitales del terreno así como de OpenGL y la programación 3D.
@@ -112,3 +113,4 @@ Aquí tenéis los enlaces a las cuatro aplicaciones 3D que llevo hechas hasta el
   
 
 Y desde [aquí](https://play.google.com/store/apps/developer?id=Juan+Garc%C3%ADa+Carmona) podéis acceder a todas mis aplicaciones en el [Google Play](https://play.google.com/store).
+

@@ -7,6 +7,7 @@ categories:
   - "blog"
   - "desarrollo-software"
   - "proyectos"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Tras las últimas batallas con arquitecturas Android he decidido darle una oportunidad a [Xamarin](https://xamarin.com/) ya que los problemas que estaba teniendo con Android Studio estoy acostumbrado a resolverlos a diario con Visual Studio, el entorno con el que habitualmente trabajo. Estoy muy contento pues he estado migrando la aplicación en la que más usuarios activos tengo y el proceso no ha sido demasiado costoso.  
@@ -32,3 +33,4 @@ Además, de esto añadí varios servicios, un bradcast reciever y ahora estoy ad
   
   
 Y de momento eso es todo por ahora, voy a seguir más actividades y dejando el código bonito, como a mi me gusta. ¡Que viva C#!
+

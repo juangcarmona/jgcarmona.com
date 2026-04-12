@@ -10,6 +10,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Como muchos sabéis el otro día impartí una conferencia a través de Internet titulada "**SOLID y GRASP, buenas prácticas hacia el éxito en el desarrollo de software**". Dicha conferencia la organizó el grupo de investigación de **Ingeniería Web y Testing Temprano** (**IWT2**) fue dada a través de Internet utilizando Skype para el audio y el vídeo y compartiendo parte de mi pantalla con la sala de la **Escuela Técnica Superior de Ingeniería Informática** de la **Universidad de Sevilla** donde se encontraban los asistentes gracias a [screenleap](http://www.screenleap.com/). 
@@ -43,3 +44,4 @@ Juan García Carmona
 [Celebrado Dojo #IWT2: Principios SOLID y patrones GRASP](http://www.surcodigo.com/celebrado-dojo-iwt2-principios-solid-y-patrones-grasp/)
 
 ### [Resumen del #IWT2 DojoUS 9 de noviembre. Principios SOLID y GRASP](http://iwt2-javierj.tumblr.com/post/35781055793/resumen-del-iwt2-dojous-9-de-noviembre-principios)
+

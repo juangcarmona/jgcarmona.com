@@ -8,6 +8,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Liskov Substitution Principle
@@ -75,3 +76,4 @@ Nuestra suposición inicial fue la causa de nuestro error de programación pero 
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

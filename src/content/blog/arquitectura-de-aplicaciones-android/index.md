@@ -11,6 +11,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Estos días ando con varias peleas con la nueva versión de Gredos Virtual 3D pero tengo pendiente desde hace bastante tiempo publicar un artículo destripando un poco la arquitectura de ésta aplicación. En concreto de lo que quiero hablar aquí es de un diseño que me ha demostrado ser bastante eficiente y que creo que es reutilizable en casi cualquier futura aplicación Android tanto por su versatilidad como por su robustez. 
@@ -95,3 +96,4 @@ Un saludo.
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

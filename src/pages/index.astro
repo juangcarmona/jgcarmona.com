@@ -75,6 +75,21 @@ const skipLink = {
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_SEO_TITLE} description={SITE_DESCRIPTION} />
+		<!-- Structured Data for Website -->
+		<script is:inline type="application/ld+json">
+		{`{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Juan G. Carmona Blog",
+			"url": "https://jgcarmona.com/",
+			"description": "Software Architecture, AI, Cloud Computing, and DevOps blog by Juan G. Carmona",
+			"publisher": {
+				"@type": "Person",
+				"name": "Juan G. Carmona",
+				"url": "https://jgcarmona.com/about"
+			}
+		}`}
+		</script>
 	</head>
 	<body>
 		<a href="#main-content" class="skip-link sr-only sr-only-focusable" aria-label="Skip to main content">Skip to main content</a>

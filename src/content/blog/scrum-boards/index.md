@@ -12,6 +12,7 @@ categories:
 tags: 
   - "leadership"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Al anterior artículo, "[Mi resumen de SCRUM](http://juan-garcia-carmona.blogspot.com.es/2012/08/mi-resumen-de-scrum.html)", le ha faltado, y ha sido a propósito, una parte muy importante: la Scrum Board. 
@@ -102,3 +103,4 @@ Bueno, creo que por hoy ya he dicho bastante sobre Scrum, me apunto en mi backlo
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

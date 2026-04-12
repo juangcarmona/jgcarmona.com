@@ -6,6 +6,7 @@ pubDate: 2012-12-21
 categories: 
   - "aventura"
   - "desarrollo-software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Hola a tod@s. En ésta entrada quiero compartir con los lectores el proceso de creación de una aplicación desde cero. Tengo como objetivo aprender a utilizar los mapas de [+Google Maps](http://plus.google.com/111401917971052287374) en [+Android](http://plus.google.com/104629412415657030658) y se me ha ocurrido que un buen comienzo puede ser la creación de una aplicación que nos diga en qué dirección se encuentra un punto concreto. Para éste ejemplo voy a hacer algo que espero sea útil a la comunidad muslumana hispano hablante puesto el punto concreto que he decidido utilizar en éste ejemplo es La Meca.  

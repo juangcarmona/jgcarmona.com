@@ -6,6 +6,7 @@ pubDate: 2018-06-06
 categories: 
   - "desarrollo-software"
   - "devops"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 En éste artículo os voy a enseñar como se crea una aplicación de ASP NET Core 2.1 con Angular 6. En mi entorno de trabajo tengo instalado npm 6.1.0, NodeJS v8.11.2 y dotnet 2.1.300, la primera versión estable de .Net Core 2.1. 
@@ -114,3 +115,4 @@ Juan
 
   
 PD: Parece que éste va a ser el primer artículo de una serie enfocada a ASP NET Core, hay varios temas en el tientero, autenticación y autorización, Covertura de código y TDD en el backend. DAL's (SQL y NoSQL).... Si tienes alguna temática que te gustaría que tratara estoy abierto a nuevos retos.
+

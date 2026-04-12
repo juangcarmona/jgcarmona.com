@@ -7,6 +7,7 @@ categories:
   - "ai"
   - "aventura"
   - "desarrollo-software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 En los dos últimos artículos intenté mostrar todo el proceso de creación de una aplicación y, sobretodo, cómo dar los primeros pasos desarrollando aplicaciones de mapas utilizando Google Maps Android API v2. En ésta ocasión y a raiz de que creo que la aplicación que desarrollé a modo de ejemplo podría tener algo de tirón dentro de toda la comunidad de musulmanes a nivel internacional y no sólo entre los musulmanes hispanohablantes como pensé en un principio he decidido hacer multi-idioma dicha aplicación para que cualquier musulman del planeta la pueda utilizar.
@@ -121,3 +122,4 @@ Kung nalaman mo ang anumang Maling pagtutugma ng pagsasalin paki-tama sa akin.
 
   
  La aplicación la podréis descargar en muy poco tiempo, actualizaré ésta misma entrada con el enlace a la descarga.
+

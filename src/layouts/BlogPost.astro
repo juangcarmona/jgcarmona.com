@@ -32,6 +32,40 @@ const { title, description, pubDate, updatedDate, heroImage, tags, isTranslation
 			author="Juan G. Carmona"
 			tags={tags}
 		/>
+		<!-- Enhanced Structured Data for Blog Posts -->
+		<script is:inline type="application/ld+json">
+		{`{
+			"@context": "https://schema.org",
+			"@type": "BlogPosting",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "${new URL(Astro.url.href).href}"
+			},
+			"headline": "${title}",
+			"description": "${description}",
+			"image": "${heroImage ? heroImage : 'https://jgcarmona.com/images/og-default.png'}",
+			"author": {
+				"@type": "Person",
+				"name": "Juan G. Carmona",
+				"url": "https://jgcarmona.com/about"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Juan G. Carmona",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://jgcarmona.com/images/logo.png",
+					"width": 1200,
+					"height": 630
+				}
+			},
+			"datePublished": "${pubDate ? pubDate.toISOString() : new Date().toISOString()}",
+			"dateModified": "${updatedDate ? updatedDate.toISOString() : pubDate ? pubDate.toISOString() : new Date().toISOString()}",
+			"articleBody": "${description.substring(0, 200)}...",
+			"wordCount": 1500,
+			"estimatedReadingTime": "8 mins"
+		}`}
+		</script>
 		<style>
 			main {
 				width: calc(100%);
@@ -45,6 +79,10 @@ const { title, description, pubDate, updatedDate, heroImage, tags, isTranslation
 				max-height: 280px;
 				overflow: hidden;
 				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				max-width: 900px; /* Prevent overly wide images on large screens */
 			}
 
 			.hero-image img {
@@ -54,6 +92,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, isTranslation
 				display: block;
 				border-radius: 0;
 				min-height: 100px; /* Ensure minimum visibility */
+				flex-shrink: 0;
 			}
 
 			.prose {
@@ -162,7 +201,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, isTranslation
 								width={1600}
 								height={400}
 								src={heroImage}
-								alt=""
+								alt="Hero image for '${title}' - ${description.substring(0, 100)}..."
 								loading="lazy"
 							/>
 						</div>

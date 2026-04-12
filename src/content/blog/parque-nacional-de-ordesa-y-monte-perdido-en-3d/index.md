@@ -10,6 +10,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 A lo largo de la tarde y siguiendo las directrices de la anterior entrada de éste blog he publicado dos aplicaciones en el Market, en Google Play.
@@ -61,3 +62,4 @@ Un saludo.
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

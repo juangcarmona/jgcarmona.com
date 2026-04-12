@@ -9,6 +9,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Interface Segregation Principle   
@@ -105,3 +106,4 @@ De nuevo estamos aportando sencillez a nuestro código de forma elegante, dividi
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

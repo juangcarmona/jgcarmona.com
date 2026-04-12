@@ -10,6 +10,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 He seguido "jugando" con los mapas buscando optimizar al máximo y mejorar la usabilidad de las aplicaciones Android de las que hablaba en anteriores entradas. 
@@ -52,3 +53,4 @@ Las dos primeras imágenes muestran las lagunas pequeñas y en las dos siguiente
 [Juan García Carmona](http://juan-garcia-carmona.blogspot.com.es/)
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

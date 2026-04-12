@@ -7,6 +7,7 @@ categories:
   - "desarrollo-software"
   - "gestion-proyectos"
   - "proyectos"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 El **objetivo de un Sprint** es **entregar** cierta **cantidad de producto** con cierta **calidad** y en cierto **intervalo de tiempo**. Si hablamos de software estamos hablando de funcionalidades, si por ejemplo hablamos de ventas o de marketing podríamos hablar de alcanzar ciertos objetivos o comenzar ciertas campañas. En el fondo **el Sprint busca convertir pequeños objetivos en grandes logros**.
@@ -100,3 +101,4 @@ También existen muchas **aplicaciones de escritorio y apps Android**, quizá ha
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

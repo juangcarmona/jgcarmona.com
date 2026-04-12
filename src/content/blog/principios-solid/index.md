@@ -10,6 +10,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Éste es el primero de una serie de cinco artículos sobre los que hablaré de los principios SOLID. No voy a reinventar la rueda ni a redefinirlos, una clara definición de los principios SOLID la podemos encontrar en wikipedia:
@@ -44,3 +45,4 @@ Espero que estas explicaciones y los propios principios SOLID le sean útiles ta
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

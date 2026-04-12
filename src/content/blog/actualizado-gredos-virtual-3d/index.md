@@ -5,10 +5,11 @@ description: 'Gredos Virtual 3D 2.0: actualización con interfaz mejorada, modo 
 pubDate: 2012-11-19
 categories: 
   - "aventura"
-  - "desarrollo-software"
+  - "software-development"
 tags: 
-  - "sw-architecture"
-  - "software"
+  - "software-architecture"
+  - "best-practices"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Para los que han seguido los desarrollos para Android que he estado haciendo estos meses y a los que ya les gustaban las aplicaciones de mapas en 3D que estaban en marcha tengo una buena noticia: 
