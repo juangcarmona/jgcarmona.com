@@ -87,12 +87,39 @@ function sanitizeForJSON(str: string): string {
   "dateModified": "${modifiedTime || new Date().toISOString()}",
   "author": {
     "@type": "Person",
-    "name": "${sanitizeForJSON(author || "Juan G. Carmona")}"
+    "name": "${sanitizeForJSON(author || "Juan G. Carmona")}",
+    "url": "https://jgcarmona.com/about",
+    "sameAs": [
+      "https://www.linkedin.com/in/juangcarmona",
+      "https://github.com/juangcarmona",
+      "https://youtube.com/@juangcarmona"
+    ]
   },
   "keywords": "${tags?.join(',') || ''}"
 }`}
 </script>
 )}
+<!-- Author Structured Data -->
+<script is:inline type="application/ld+json">
+{`{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Juan G. Carmona",
+  "url": "https://jgcarmona.com/",
+  "sameAs": [
+    "https://www.linkedin.com/in/juangcarmona",
+    "https://github.com/juangcarmona",
+    "https://youtube.com/@juangcarmona"
+  ],
+  "jobTitle": "Software Architect",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Plain Concepts"
+  },
+  "description": "Software Architect specializing in secure and scalable software systems, AI, cloud computing, and DevSecOps with engineering discipline.",
+  "image": "https://avatars.githubusercontent.com/u/2834629?v=4"
+}`}
+</script>
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={article ? "article" : "website"} />
@@ -126,3 +153,8 @@ function sanitizeForJSON(str: string): string {
 <meta name="author" content="Juan G. Carmona" />
 <meta name="language" content="en" />
 <meta name="theme-color" content="#4da3ff" />
+<!-- HTTP Headers for better LLM indexing -->
+<meta name="google" content="notranslate" />
+<meta name="format-detection" content="telephone=no" />
+<!-- Performance optimization -->
+<meta http-equiv="Accept-CH" content="Sec-CH-Prefers-Reduced-Motion, Sec-CH-Prefers-Color-Scheme">

@@ -1,0 +1,26 @@
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Disallow: /tmp/
+
+Sitemap: https://jgcarmona.com/sitemap-index.xml
+
+# Allow crawling of all content
+Allow: /
+Allow: /en/
+Allow: /es/
+
+# Crawl-delay for search engines (optional)
+Crawl-delay: 10
+
+# Google-specific directives
+User-agent: Googlebot
+Disallow: /private/
+Allow: /en/
+Allow: /es/
+
+# Bing-specific directives  
+User-agent: Bingbot
+Disallow: /private/
+Allow: /en/
+Allow: /es/

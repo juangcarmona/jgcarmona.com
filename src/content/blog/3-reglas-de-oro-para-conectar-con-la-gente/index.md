@@ -4,9 +4,10 @@ title: "3 reglas de oro para conectar con la gente"
 description: 'Tres reglas prácticas para conectar mejor con las personas y mejorar la comunicación en entornos personales y profesionales.'
 pubDate: 2025-06-08
 categories: 
-  - "desarrollo-personal"
+  - "personal-development"
 tags: 
   - "leadership"
+  - "best-practices"
 heroImage: "images/file_000000009c0c61f59f0e0ddd976410ff.png"
 ---
 

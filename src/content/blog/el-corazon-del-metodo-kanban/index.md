@@ -8,6 +8,7 @@ categories:
   - "desarrollo-personal"
   - "gestion-proyectos"
   - "proyectos"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
   
@@ -86,3 +87,4 @@ En próximas entradas hablaré sobre la organización de las pizarras kanban y s
   
 
 Juan García Carmona
+

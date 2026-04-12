@@ -9,6 +9,7 @@ categories:
   - "testing-software"
 tags: 
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Después de "[Introducción a los Tests Unitarios, TDD y Mocking](http://juan-garcia-carmona.blogspot.com.es/2012/09/introduccion-los-tests-unitarios-tdd-y.html)" y tras la serie de artículos sobre GRASP hoy me he decidido a mostrar de forma práctica el TDD con Mocking. Quiero hacerlo así, con uno o dos ejemplos sencillos porque estoy preparando unas sesiones de TDD para patrones de diseño, es decir, como enfocar un desarrollo guiado por pruebas cuando se va a atacar cierto patrón de diseño. 
@@ -240,3 +241,4 @@ Tanto si te ha sido de ayuda éste u otro tutorial o artículo o tienes alguna d
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

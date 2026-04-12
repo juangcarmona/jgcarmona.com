@@ -9,6 +9,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 ¿Sabes depurar tu código mientras se ejecuta dentro de un contenedor? ¿Sabes inyectar variables de entorno a Docker? ¿Sabes como medir la cobertura de tus tests unitarios? En este artículo quiero presentarte una serie de trucos para que mejores tus habilidades y destrezas desarrollando aplicaciones y microservicios con Python, Docker y Visual Studio Code. ¿Te interesa? Sigue leyendo.
@@ -311,3 +312,4 @@ Tenemos que ajustar el mapeo de las rutas (path mapping) para que la raíz local
 ```
 
 Una vez realizados estos cambios ya podemos depurar como he explicado más arriba.
+

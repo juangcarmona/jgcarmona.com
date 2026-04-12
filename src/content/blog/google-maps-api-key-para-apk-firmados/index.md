@@ -7,6 +7,7 @@ categories:
   - "aventura"
   - "ciberseguridad"
   - "desarrollo-software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Es la tercera vez que me tengo que poner a buscar cómo sacar la key de una aplicación para que ésta pueda acceder al API de Google Maps y he decidido hacer una mini receta para tenerla a mano.
@@ -72,3 +73,4 @@ Hasta las próxima entrada.
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

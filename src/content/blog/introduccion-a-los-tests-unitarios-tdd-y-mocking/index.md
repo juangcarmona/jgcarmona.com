@@ -11,6 +11,7 @@ categories:
 tags: 
   - "sw-architecture"
   - "software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 > "El testing puede probar la presencia de errores pero no la ausencia de ellos."
@@ -375,3 +376,4 @@ Como comentario final quiero insistir en que merece la pena tener siempre presen
 Juan García Carmona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+

@@ -9,6 +9,7 @@ categories:
   - "gestion-proyectos"
   - "proyectos"
   - "testing-software"
+heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 > Para empezar éste artículo tengo que decir que no soy SCRUM Master ni tengo ninguna certificación en SCRUM. Creo más en las capacidades reales de la gente que en sus certificaciones. No quiero hacer comparaciones porque las comparaciones son odiosas pero he tenido compañeros, físicos  de carrera, que ejercían increíblemente bien de arquitectos de software y de desarrolladores sin tener ninguna certificación en la materia. Aunque no soy un experto en SCRUM ni estoy certificado como tal mis conocimientos sobre la materia me los dan la experiencia y la práctica en dos implementaciones de SCRUM distintas en dos equipos de desarrollo distintos. 
@@ -146,3 +147,4 @@ Quisiera que éste resumen de SCRUM sirviera de base a distintos departamentos y
 Juan García Camona
 
 [d.jgc.it@gmail.com](mailto:d.jgc.it@gmail.com)
+
