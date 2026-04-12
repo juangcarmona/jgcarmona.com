@@ -1,0 +1,147 @@
+---
+// Basic search page
+import { getCollection } from 'astro:content';
+import BlogPage from '../components/BlogPage.astro';
+import BaseHead from '../components/BaseHead.astro';
+
+const allPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Get search query from URL
+const searchQuery = Astro.url.searchParams.get('q') || '';
+
+// Filter posts based on search query
+let filteredPosts = [];
+if (searchQuery.trim()) {
+  const query = searchQuery.toLowerCase();
+  filteredPosts = allPosts.filter(post => 
+    post.data.title.toLowerCase().includes(query) ||
+    post.data.description.toLowerCase().includes(query) ||
+    (post.data.tags && post.data.tags.some(tag => tag.toLowerCase().includes(query))) ||
+    post.data.lang.toLowerCase().includes(query)
+  );
+} else {
+  filteredPosts = allPosts.slice(0, 10);
+}
+
+// Pagination settings
+const pageSize = 10;
+const page = parseInt(Astro.url.searchParams.get('page') || '1');
+const start = (page - 1) * pageSize;
+const end = start + pageSize;
+const posts = filteredPosts.slice(start, end);
+const totalPages = Math.ceil(filteredPosts.length / pageSize);
+
+// Generate pagination items
+const paginationItems = [];
+for (let p = 1; p <= totalPages; p++) {
+  const near = Math.abs(p - page) <= 1;
+  const edge = p === 1 || p === totalPages;
+
+  if (near || edge) paginationItems.push(p);
+  else paginationItems.push(null);
+}
+
+const compact = [];
+for (let i = 0; i < paginationItems.length; i++) {
+  const item = paginationItems[i];
+  if (item === null) {
+    if (compact[compact.length - 1] !== "ellipsis") {
+      compact.push("ellipsis");
+    }
+  } else {
+    compact.push(item);
+  }
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead 
+      title={`Search Results for "${searchQuery}"`} 
+      description={`Search results for "${searchQuery}" on Juan G. Carmona's blog`}
+    />
+  </head>
+  <body>
+    <main>
+      <div class="search-results-container">
+        <h1>Search Results</h1>
+        <p>Found {filteredPosts.length} results for "{searchQuery}"</p>
+        
+        {searchQuery && (
+          <div class="search-bar-section">
+            <form action="/search" method="GET" class="search-form">
+              <input 
+                type="search" 
+                name="q" 
+                placeholder="Search blog posts..." 
+                value={searchQuery}
+                class="search-input"
+              />
+              <button type="submit" class="search-button">🔍</button>
+            </form>
+          </div>
+        )}
+        
+        {filteredPosts.length > 0 ? (
+          <BlogPage posts={posts} page={page} totalPages={totalPages} compact={compact} />
+        ) : (
+          <p>No results found for "{searchQuery}". Try a different search term.</p>
+        )}
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+.search-results-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 1em;
+}
+
+.search-bar-section {
+  margin: 2em 0;
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75em 1em;
+  border: 1px solid rgba(var(--gray), 0.3);
+  border-radius: 4px;
+  background-color: rgb(var(--gray-dark));
+  color: rgb(var(--gray-light));
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.search-button {
+  padding: 0.75em 1.5em;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: var(--accent-dark);
+}
+</style>
