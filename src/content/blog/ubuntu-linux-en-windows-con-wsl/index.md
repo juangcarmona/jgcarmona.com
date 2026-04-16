@@ -6,7 +6,10 @@ pubDate: 2025-07-09
 tags:
   - "infra"
   - "devex"
-heroImage: "images/24235.600x4501.jpg" sin salir de Windows? Con **WSL (Windows Subsystem for Linux)** puedes tener Ubuntu en tu PC en 5 minutos.
+heroImage: "images/24235.600x4501.jpg"
+---
+
+## ¿Quieres empezar a usar Linux sin salir de Windows? Con **WSL (Windows Subsystem for Linux)** puedes tener Ubuntu en tu PC en 5 minutos.
 
 ![Tres pingüinos como símbolo de Linux para ilustrar Ubuntu Linux en Windows con WSL](images/24235.600x4501.jpg)
 

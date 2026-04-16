@@ -71,10 +71,10 @@
 
 ## 8. Verification
 
-- [ ] 8.1 Run `npm run build` and confirm no schema validation errors.
-- [ ] 8.2 Verify `/tags/devex` page renders with ≥20 posts.
-- [ ] 8.3 Verify `/tags/sw-craftsmanship` page renders with ≥74 posts (the renamed ones plus newly tagged).
-- [ ] 8.4 Verify `/tags/software` page no longer exists in the build output.
-- [ ] 8.5 Confirm no post frontmatter contains `categories:` key (grep check).
-- [ ] 8.6 Confirm all 26 old singleton/deprecated tags are gone from the corpus (grep check).
-- [ ] 8.7 Confirm every post has at least one tag (build-time validation or grep check).
+- [x] 8.1 Run `npm run build` and confirm no schema validation errors.
+- [x] 8.2 Verify `/tags/devex` page renders with ≥20 posts.
+- [x] 8.3 Verify `/tags/sw-craftsmanship` page renders with ≥74 posts (the renamed ones plus newly tagged).
+- [x] 8.4 Verify `/tags/software` page no longer exists in the build output.
+- [x] 8.5 Confirm no post frontmatter contains `categories:` key (grep check).
+- [x] 8.6 Confirm all 26 old singleton/deprecated tags are gone from the corpus (grep check).
+- [x] 8.7 Confirm every post has at least one tag (build-time validation or grep check).
