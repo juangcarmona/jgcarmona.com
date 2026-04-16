@@ -1,0 +1,63 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Search — ${SITE_TITLE}`}
+			description="Search all posts and pages on jgcarmona.com"
+		/>
+		<meta name="robots" content="noindex" />
+		<link href="/_pagefind/pagefind-ui.css" rel="stylesheet" />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 900px;
+				margin: 2em auto;
+				padding: 1em;
+				color: rgb(var(--gray-light));
+			}
+
+			h1 {
+				margin-bottom: 1em;
+				color: rgb(var(--gray-light));
+			}
+
+			/* Pagefind UI theme overrides using site CSS variables */
+			#search {
+				--pagefind-ui-scale: 1;
+				--pagefind-ui-primary: var(--accent);
+				--pagefind-ui-text: rgb(var(--gray-light));
+				--pagefind-ui-background: var(--bg-color);
+				--pagefind-ui-border: rgba(var(--gray), 0.3);
+				--pagefind-ui-border-width: 1px;
+				--pagefind-ui-border-radius: 4px;
+				--pagefind-ui-tag: rgba(var(--gray-dark), 0.8);
+				--pagefind-ui-font: inherit;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Search</h1>
+			<div id="search"></div>
+		</main>
+		<Footer />
+		<script src="/_pagefind/pagefind-ui.js" is:inline></script>
+		<script is:inline>
+			window.addEventListener('DOMContentLoaded', () => {
+				new PagefindUI({
+					element: '#search',
+					showSubResults: true,
+					resetStyles: false,
+				});
+			});
+		</script>
+	</body>
+</html>

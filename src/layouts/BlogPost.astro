@@ -154,7 +154,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, isTranslation
 		</div>
 		<Header />
 		<main>
-			<article>
+			<article data-pagefind-body data-pagefind-filter={`lang:${lang || 'en'}`}>
 				{
 					heroImage && (
 						<div class="hero-image">
@@ -169,6 +169,9 @@ const { title, description, pubDate, updatedDate, heroImage, tags, isTranslation
 					)
 				}
 				<div class="prose">
+					{tags && tags.map((tag) => (
+						<span data-pagefind-filter={`tag:${tag}`} style="display:none;"></span>
+					))}
 					<div class="title">
 						<h1>{title}</h1>
 
