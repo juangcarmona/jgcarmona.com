@@ -19,7 +19,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image, article = false, publishedTime, modifiedTime, author, tags } = Astro.props;
 
-// Sanitize content to prevent XSS
+// Sanitize content to prevent XSS and JSON parsing issues
 function sanitizeForJSON(str: string): string {
 	if (!str) return '';
 	return str
@@ -27,7 +27,79 @@ function sanitizeForJSON(str: string): string {
 		.replace(/"/g, '\\"')
 		.replace(/\n/g, '\\n')
 		.replace(/\r/g, '\\r')
-		.replace(/\t/g, '\\t');
+		.replace(/\t/g, '\\t')
+		.replace(/\u0000/g, '') // Remove null bytes
+		.replace(/\u0001/g, '') // Remove control characters
+		.replace(/\u0002/g, '')
+		.replace(/\u0003/g, '')
+		.replace(/\u0004/g, '')
+		.replace(/\u0005/g, '')
+		.replace(/\u0006/g, '')
+		.replace(/\u0007/g, '')
+		.replace(/\u0008/g, '')
+		.replace(/\u000B/g, '')
+		.replace(/\u000C/g, '')
+		.replace(/\u000E/g, '')
+		.replace(/\u000F/g, '')
+		.replace(/\u0010/g, '')
+		.replace(/\u0011/g, '')
+		.replace(/\u0012/g, '')
+		.replace(/\u0013/g, '')
+		.replace(/\u0014/g, '')
+		.replace(/\u0015/g, '')
+		.replace(/\u0016/g, '')
+		.replace(/\u0017/g, '')
+		.replace(/\u0018/g, '')
+		.replace(/\u0019/g, '')
+		.replace(/\u001A/g, '')
+		.replace(/\u001B/g, '')
+		.replace(/\u001C/g, '')
+		.replace(/\u001D/g, '')
+		.replace(/\u001E/g, '')
+		.replace(/\u001F/g, '')
+		.replace(/'/g, "\\'"); // Escape single quotes
+}
+
+// Helper function to properly escape JSON strings for JSON-LD
+function escapeJSONString(str: string): string {
+	if (!str) return '';
+	// Properly escape for JSON string context
+	return str
+		.replace(/\\/g, '\\\\')
+		.replace(/"/g, '\\"')
+		.replace(/\n/g, '\\n')
+		.replace(/\r/g, '\\r')
+		.replace(/\t/g, '\\t')
+		.replace(/\u0000/g, '')
+		.replace(/\u0001/g, '')
+		.replace(/\u0002/g, '')
+		.replace(/\u0003/g, '')
+		.replace(/\u0004/g, '')
+		.replace(/\u0005/g, '')
+		.replace(/\u0006/g, '')
+		.replace(/\u0007/g, '')
+		.replace(/\u0008/g, '')
+		.replace(/\u000B/g, '')
+		.replace(/\u000C/g, '')
+		.replace(/\u000E/g, '')
+		.replace(/\u000F/g, '')
+		.replace(/\u0010/g, '')
+		.replace(/\u0011/g, '')
+		.replace(/\u0012/g, '')
+		.replace(/\u0013/g, '')
+		.replace(/\u0014/g, '')
+		.replace(/\u0015/g, '')
+		.replace(/\u0016/g, '')
+		.replace(/\u0017/g, '')
+		.replace(/\u0018/g, '')
+		.replace(/\u0019/g, '')
+		.replace(/\u001A/g, '')
+		.replace(/\u001B/g, '')
+		.replace(/\u001C/g, '')
+		.replace(/\u001D/g, '')
+		.replace(/\u001E/g, '')
+		.replace(/\u001F/g, '')
+		.replace(/'/g, "\\'");
 }
 ---
 
@@ -67,14 +139,14 @@ function sanitizeForJSON(str: string): string {
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "${sanitizeForJSON(Astro.url.href)}"
+    "@id": "${escapeJSONString(Astro.url.href)}"
   },
-  "headline": "${sanitizeForJSON(title)}",
-  "description": "${sanitizeForJSON(description)}",
-  "url": "${sanitizeForJSON(Astro.url.href)}",
+  "headline": "${escapeJSONString(title)}",
+  "description": "${escapeJSONString(description)}",
+  "url": "${escapeJSONString(Astro.url.href)}",
   "publisher": {
     "@type": "Organization",
-    "name": "${sanitizeForJSON(author || "Juan G. Carmona")}",
+    "name": "${escapeJSONString(author || "Juan G. Carmona")}",
     "logo": {
       "@type": "ImageObject",
       "url": "https://jgcarmona.com/images/logo.png",
@@ -87,9 +159,9 @@ function sanitizeForJSON(str: string): string {
   "dateModified": "${modifiedTime || new Date().toISOString()}",
   "author": {
     "@type": "Person",
-    "name": "${sanitizeForJSON(author || "Juan G. Carmona")}"
+    "name": "${escapeJSONString(author || "Juan G. Carmona")}"
   },
-  "keywords": "${tags?.join(',') || ''}"
+  "keywords": "${tags?.map(tag => escapeJSONString(tag)).join(',') || ''}"
 }`}
 </script>
 )}
