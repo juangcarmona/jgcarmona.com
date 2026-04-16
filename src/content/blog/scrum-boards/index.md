@@ -6,6 +6,7 @@ pubDate: 2012-08-23
 tags:
   - "leadership"
   - "sw-craftsmanship"
+  - "agile"
 ---
 
 Al anterior artículo, "[Mi resumen de SCRUM](http://juan-garcia-carmona.blogspot.com.es/2012/08/mi-resumen-de-scrum.html)", le ha faltado, y ha sido a propósito, una parte muy importante: la Scrum Board. 
