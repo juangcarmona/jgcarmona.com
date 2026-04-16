@@ -5,6 +5,7 @@ description: 'Consejos prácticos para planificar y ejecutar migraciones a Azure
 pubDate: 2023-01-14
 tags:
   - "azure"
+  - "devops"
 heroImage: "images/way-clouds-seat-belts-direction-52531.jpeg"
 ---
 

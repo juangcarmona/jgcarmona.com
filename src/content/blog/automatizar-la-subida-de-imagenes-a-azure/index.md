@@ -6,6 +6,8 @@ pubDate: 2024-12-12
 tags:
   - "sw-architecture"
   - "sw-craftsmanship"
+  - "devops"
+  - "azure"
 heroImage: "images/image-7.png"
 ---
 

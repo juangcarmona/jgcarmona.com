@@ -41,11 +41,11 @@
 
 ## 5. Untagged Posts — Methodology & Process Cluster
 
-- [ ] 5.1 Tag Kanban series with `agile`: `el-metodo-kanban-introduccion`, `el-corazon-del-metodo-kanban`, `el-tablero-kanban`.
-- [ ] 5.2 Tag Scrum posts with `agile`: `mi-resumen-de-scrum`, `scrum-boards`, `scrum-planificacion-de-un-sprint`.
-- [ ] 5.3 Tag Lean/Agile posts with `agile`: `principios-lean-metodologias-agiles`, `sobre-requisitos-e-iteraciones-en-metodologias-agiles`, `waterfall-agile-modelo-hibrido-desarrollo-software`.
-- [ ] 5.4 Tag DevOps posts with `devops`: `pilares-devops`, `automatizar-la-subida-de-imagenes-a-azure`, `claves-migrar-azure`.
-- [ ] 5.5 Commit methodology and devops tagging batch.
+- [x] 5.1 Tag Kanban series with `agile`: `el-metodo-kanban-introduccion`, `el-corazon-del-metodo-kanban`, `el-tablero-kanban`.
+- [x] 5.2 Tag Scrum posts with `agile`: `mi-resumen-de-scrum`, `scrum-boards`, `scrum-planificacion-de-un-sprint`.
+- [x] 5.3 Tag Lean/Agile posts with `agile`: `principios-lean-metodologias-agiles`, `sobre-requisitos-e-iteraciones-en-metodologias-agiles`, `waterfall-agile-modelo-hibrido-desarrollo-software`.
+- [x] 5.4 Tag DevOps posts with `devops`: `pilares-devops`, `automatizar-la-subida-de-imagenes-a-azure`, `claves-migrar-azure`.
+- [x] 5.5 Commit methodology and devops tagging batch.
 
 ## 6. Untagged Posts — AI & Azure Cluster
 
