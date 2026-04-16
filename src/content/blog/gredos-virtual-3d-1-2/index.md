@@ -6,9 +6,8 @@ pubDate: 2012-08-30
 tags:
   - "sw-architecture"
   - "sw-craftsmanship"
----
-
-He seguido "jugando" con los mapas buscando optimizar al máximo y mejorar la usabilidad de las aplicaciones Android de las que hablaba en anteriores entradas. 
+  - "personal"
+--- "jugando" con los mapas buscando optimizar al máximo y mejorar la usabilidad de las aplicaciones Android de las que hablaba en anteriores entradas. 
 
   
 

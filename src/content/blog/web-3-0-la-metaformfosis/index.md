@@ -5,6 +5,7 @@ description: 'Introducción a Web 3.0: qué es, cómo blockchain e IA la impulsa
 pubDate: 2022-11-07
 tags:
   - "ai"
+  - "personal"
 heroImage: "images/pexels-photo-6439696.jpeg"
 ---
 

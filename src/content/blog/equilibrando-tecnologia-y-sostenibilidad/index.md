@@ -3,6 +3,8 @@ lang: es
 title: "Equilibrando Tecnología y Sostenibilidad"
 description: 'Reflexiones y propuestas para alinear innovación tecnológica con sostenibilidad y reducir huella ecológica.'
 pubDate: 2024-01-29
+tags:
+  - "personal"
 heroImage: "images/pexels-photo-3058211.jpeg"
 ---
 

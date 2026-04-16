@@ -6,6 +6,7 @@ pubDate: 2025-07-01
 tags:
   - "sw-architecture"
   - "sw-craftsmanship"
+  - "leadership"
 heroImage: "images/pexels-photo-80828931.jpeg"
 ---
 

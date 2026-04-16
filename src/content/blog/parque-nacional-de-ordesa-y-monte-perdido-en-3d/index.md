@@ -6,9 +6,8 @@ pubDate: 2012-08-28
 tags:
   - "sw-architecture"
   - "sw-craftsmanship"
----
-
-A lo largo de la tarde y siguiendo las directrices de la anterior entrada de éste blog he publicado dos aplicaciones en el Market, en Google Play.
+  - "personal"
+--- de la tarde y siguiendo las directrices de la anterior entrada de éste blog he publicado dos aplicaciones en el Market, en Google Play.
 
   
 

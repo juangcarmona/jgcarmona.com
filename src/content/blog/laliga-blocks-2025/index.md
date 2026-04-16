@@ -3,6 +3,8 @@ lang: en
 title: "How LaLiga Broke My Site (and many more)"
 description: "How anti-piracy measures by LaLiga and Spanish ISPs are causing widespread collateral damage, affecting innocent websites and digital rights."
 pubDate: 2025-12-01
+tags:
+  - "personal"
 heroImage: './images/laliga_logo.webp'
 ---
 
