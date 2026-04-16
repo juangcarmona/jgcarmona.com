@@ -1,15 +1,11 @@
----
+﻿---
 lang: es
 title: "Actualizado Gredos Virtual 3D"
 description: 'Gredos Virtual 3D 2.0: actualización con interfaz mejorada, modo paseo continuo, brújula y modo niebla para navegación 3D en Android.'
 pubDate: 2012-11-19
-categories: 
-  - "aventura"
-  - "software-development"
-tags: 
-  - "software-architecture"
-  - "best-practices"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
+tags:
+  - "sw-architecture"
+  - "sw-craftsmanship"
 ---
 
 Para los que han seguido los desarrollos para Android que he estado haciendo estos meses y a los que ya les gustaban las aplicaciones de mapas en 3D que estaban en marcha tengo una buena noticia: 

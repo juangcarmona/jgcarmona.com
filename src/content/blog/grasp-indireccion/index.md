@@ -1,14 +1,11 @@
----
+﻿---
 lang: es
 title: "GRASP: Indirección"
 description: 'Patrón de indirección para reducir acoplamiento: usar mediadores y adaptadores para proteger el código frente a cambios.'
 pubDate: 2012-09-07
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/just-write-grasp.png"
 ---
 

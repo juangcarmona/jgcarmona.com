@@ -1,13 +1,11 @@
----
+﻿---
 lang: es
 title: "DADS #03: Concurrencia y Paralelismo"
 description: 'Concurrencia vs paralelismo: conceptos, ejemplos y aplicaciones prácticas desde CPU hasta sistemas distribuidos.'
 pubDate: 2024-09-20
-categories: 
-  - "proyectos"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/image-16.png"
 ---
 

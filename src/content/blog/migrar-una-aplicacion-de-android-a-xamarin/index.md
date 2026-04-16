@@ -3,11 +3,9 @@ lang: es
 title: "Migrar una aplicación de Android a Xamarin"
 description: 'Pasos prácticos para migrar una app Android a Xamarin: estructura del proyecto, recursos, activities y ajustes necesarios para compilar en Visual Studio.'
 pubDate: 2015-09-20
-categories: 
-  - "blog"
-  - "desarrollo-software"
-  - "proyectos"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
+tags:
+  - "sw-craftsmanship"
+  - "devex"
 ---
 
 Tras las últimas batallas con arquitecturas Android he decidido darle una oportunidad a [Xamarin](https://xamarin.com/) ya que los problemas que estaba teniendo con Android Studio estoy acostumbrado a resolverlos a diario con Visual Studio, el entorno con el que habitualmente trabajo. Estoy muy contento pues he estado migrando la aplicación en la que más usuarios activos tengo y el proceso no ha sido demasiado costoso.  

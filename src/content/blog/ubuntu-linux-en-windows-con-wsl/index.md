@@ -3,10 +3,10 @@ lang: es
 title: "Introducción a Linux en 3 pasos: cómo empezar con Ubuntu desde Windows"
 description: 'Guía rápida para instalar y empezar con Ubuntu en Windows usando WSL: comandos iniciales, recursos y cómo usar Windows Terminal.'
 pubDate: 2025-07-09
-heroImage: "images/24235.600x4501.jpg"
----
-
-## ¿Quieres empezar a usar Linux sin salir de Windows? Con **WSL (Windows Subsystem for Linux)** puedes tener Ubuntu en tu PC en 5 minutos.
+tags:
+  - "infra"
+  - "devex"
+heroImage: "images/24235.600x4501.jpg" sin salir de Windows? Con **WSL (Windows Subsystem for Linux)** puedes tener Ubuntu en tu PC en 5 minutos.
 
 ![Tres pingüinos como símbolo de Linux para ilustrar Ubuntu Linux en Windows con WSL](images/24235.600x4501.jpg)
 

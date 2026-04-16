@@ -1,15 +1,11 @@
----
+﻿---
 lang: es
 title: "La potencia de una interfaz simple"
 description: 'Ejemplos prácticos del poder de las interfaces en diseño: patrones con ITarea, tareas compuestas, nulos seguros y control de ejecución.'
 pubDate: 2012-09-04
-categories: 
-  - "desarrollo-software"
-  - "gestion-proyectos"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
+  - "sw-craftsmanship"
 ---
 
 > El propósito de este artículo es completar con diagramas de clase y con código lo poco que hablé de las Interfaces en otros artículos anteriores, "[UML de batalla](https://jgcarmona.com/uml-de-batalla/)" e "[ISP: Interface Segregation Principle // Principio de Segregación de Interfaces](https://jgcarmona.com/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/)", y demostrar de forma práctica algunas de sus bondades y/o las virguerías que podemos hacer nosotros con ellas.

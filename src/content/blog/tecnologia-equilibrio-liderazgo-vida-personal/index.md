@@ -1,15 +1,11 @@
----
+﻿---
 lang: es
 title: "Cuando tu estilo de vida también mejora tu forma de trabajar"
 description: 'Reflexiones y consejos para integrar carrera tecnológica, liderazgo y vida personal sin sacrificar rendimiento ni bienestar.'
 pubDate: 2025-05-20
-categories: 
-  - "aventura"
-  - "blog"
-  - "desarrollo-personal"
-tags: 
+tags:
   - "leadership"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/IMG-20250425-WA0066.jpg"
 ---
 

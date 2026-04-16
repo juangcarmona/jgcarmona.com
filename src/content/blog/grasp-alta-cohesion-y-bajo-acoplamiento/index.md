@@ -3,10 +3,6 @@ lang: es
 title: "GRASP: Alta cohesión y bajo acoplamiento"
 description: 'Introducción al principio GRASP de alta cohesión y bajo acoplamiento para diseñar software mantenible y modular.'
 pubDate: 2012-09-07
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-  - "gestion-proyectos"
 heroImage: "images/create-an-abstract-image-figuring-two-concepts-haugh-cohesion-and.png"
 ---
 

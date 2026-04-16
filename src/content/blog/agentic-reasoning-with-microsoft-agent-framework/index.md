@@ -1,19 +1,15 @@
----
+﻿---
 lang: en
 title: "Agentic Reasoning with Microsoft Agent Framework (MAF)"
 description: 'Laboratorio práctico con MAF: implementar el ciclo SPAR (Sense, Plan, Act, Reflect) usando Docker Model Runner y MCP para reasoning local.'
 pubDate: 2025-10-13
-categories: 
-  - "artificial-intelligence"
-  - "software-development"
-  - "devops"
-tags: 
+tags:
   - "ai"
   - "devops"
   - "agents"
   - "docker"
   - "maf"
-  - "software-architecture"
+  - "sw-craftsmanship"
 heroImage: "images/spar_maf_dmr.png"
 ---
 

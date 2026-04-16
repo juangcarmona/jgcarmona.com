@@ -1,16 +1,11 @@
----
+﻿---
 lang: es
 title: "IWT2 DojoUS :: SOLID y GRASP"
 description: 'Material y ejercicios del dojo IWT2 sobre principios SOLID y GRASP: guía, katas y prácticas para mejorar diseño y pruebas.'
 pubDate: 2012-11-05
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-  - "testing-software"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
+  - "sw-craftsmanship"
 ---
 
 Éste viernes 9 de noviembre de 2012 voy a dar una pequeña charla en la Universidad de Sevilla. Hace tiempo me puse en contacto con Javier Gutierrez, profesor de la Universidad de Sevilla, entusiasta del TDD y miembro de IWT2, grupo de Ingeniería Web y Testing Temprano. A raiz de algunas conversaciones que tuvimos en cuanto a la formación de ingeniería de software y de TDD me ofreció hacer una ponencia sobre éste tema ya que es algo que en muchas ocasiones se menciona en libros y blogs sobre la materia pero en lo que pocas veces se profundiza.

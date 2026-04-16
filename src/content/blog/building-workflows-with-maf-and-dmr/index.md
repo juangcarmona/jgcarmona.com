@@ -1,19 +1,15 @@
----
+﻿---
 lang: en
 title: "Building Agentic Workflows with Microsoft Agent Framework and Docker Model Runner"
 description: 'Cómo diseñar y orquestar workflows para agentes usando Microsoft Agent Framework y Docker Model Runner (MAF + DMR).'
 pubDate: 2025-10-22
-categories: 
-  - "ai"
-  - "desarrollo-software"
-  - "devops"
-tags: 
+tags:
   - "ai"
   - "devops"
   - "dmr"
   - "infra"
   - "maf"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/AI_Workflows_MAF_DMR.png"
 ---
 

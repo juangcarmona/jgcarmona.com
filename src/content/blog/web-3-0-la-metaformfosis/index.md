@@ -1,13 +1,9 @@
----
+﻿---
 lang: es
 title: "WEB 3.0: LA METAFORMFÓSIS"
 description: 'Introducción a Web 3.0: qué es, cómo blockchain e IA la impulsan y qué retos y oportunidades presenta para empresas y usuarios.'
 pubDate: 2022-11-07
-categories: 
-  - "ai"
-  - "ciberseguridad"
-  - "desarrollo-software"
-tags: 
+tags:
   - "ai"
 heroImage: "images/pexels-photo-6439696.jpeg"
 ---

@@ -1,18 +1,11 @@
----
+﻿---
 lang: es
 title: "SCRUM BOARDS"
 description: 'Guía práctica para diseñar y usar una Scrum Board: columnas, flujo, testing y verificación del Product Owner para gestionar sprints.'
 pubDate: 2012-08-23
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-  - "gestion-proyectos"
-  - "proyectos"
-  - "testing-software"
-tags: 
+tags:
   - "leadership"
-  - "software"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
+  - "sw-craftsmanship"
 ---
 
 Al anterior artículo, "[Mi resumen de SCRUM](http://juan-garcia-carmona.blogspot.com.es/2012/08/mi-resumen-de-scrum.html)", le ha faltado, y ha sido a propósito, una parte muy importante: la Scrum Board. 

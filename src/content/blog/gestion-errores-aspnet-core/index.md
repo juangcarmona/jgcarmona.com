@@ -1,15 +1,12 @@
----
+﻿---
 lang: es
 title: "Gestión de Errores en ASP.NET Core: Buenas Prácticas y Ejemplo Real"
 description: 'Guía práctica para implementar manejo de errores en ASP.NET Core: Problem Details, middleware global y registro con ejemplos.'
 pubDate: 2024-12-09
-categories: 
-  - "arquitectura-software"
-  - "blog"
-  - "desarrollo-software"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
+  - "devex"
 heroImage: "images/generate-an-image-representing-error-handling.png"
 ---
 

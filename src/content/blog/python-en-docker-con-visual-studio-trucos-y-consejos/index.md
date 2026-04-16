@@ -1,15 +1,13 @@
----
+﻿---
 lang: es
 title: "Python en Docker con Visual Studio - Trucos y consejos"
 description: 'Trucos para desarrollar, depurar y testear aplicaciones Python dentro de Docker usando Visual Studio Code: launch, tasks y buenas prácticas.'
 pubDate: 2022-10-30
-categories: 
-  - "desarrollo-software"
-  - "devops"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
+  - "sw-craftsmanship"
+  - "docker"
+  - "devex"
 ---
 
 ¿Sabes depurar tu código mientras se ejecuta dentro de un contenedor? ¿Sabes inyectar variables de entorno a Docker? ¿Sabes como medir la cobertura de tus tests unitarios? En este artículo quiero presentarte una serie de trucos para que mejores tus habilidades y destrezas desarrollando aplicaciones y microservicios con Python, Docker y Visual Studio Code. ¿Te interesa? Sigue leyendo.

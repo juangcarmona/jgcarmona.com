@@ -1,14 +1,13 @@
----
+﻿---
 lang: es
 title: "Cómo crear Pull Requests y hacer buenas revisiones de código"
 description: 'Guía práctica para crear pull requests claros y realizar revisiones de código efectivas que mejoran calidad y colaboración.'
 pubDate: 2025-06-24
-categories: 
-  - "desarrollo-software"
-tags: 
+tags:
   - "sw-architecture"
   - "azure"
-  - "software"
+  - "sw-craftsmanship"
+  - "devex"
 heroImage: "images/pull_requests.png"
 ---
 

@@ -3,11 +3,6 @@ lang: es
 title: "Sobre requisitos e iteraciones en metodologías ágiles"
 description: 'Reflexión sobre gestionar requisitos e iteraciones en metodologías ágiles: adaptación, priorización y entrega iterativa de valor.'
 pubDate: 2013-02-24
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-  - "gestion-proyectos"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
 ---
 
 Cuando se trata de la creación de aplicaciones a medida, muchos de nosotros creemos que es posible predecir con exactitud el tiempo que un grupo de desarrolladores necesita para crear el software que cumpla con nuestros requisitos. También queremos creer que sabemos cuáles son esos requisitos desde el principio, antes incluso de haber hecho ningún análisis o haber oído las necesidades del cliente en profundidad pensando que los requisitos no van a cambiar durante el desarrollo. Ayer mismo oí que "el problema de éste proyecto es que los requisitos están cambiando constantemente" y eso es lo que hoy me lleva a escribir ésta pequeña entrada.

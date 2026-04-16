@@ -1,16 +1,13 @@
----
+﻿---
 lang: es
 title: "Waterfall + Agile: un enfoque que funciona"
 description: 'Explica cómo combinar Waterfall y Agile en un modelo híbrido que aporta estructura y flexibilidad para proyectos reales.'
 pubDate: 2025-05-20
-categories: 
-  - "desarrollo-software"
-  - "gestion-proyectos"
-tags: 
+tags:
   - "agile"
   - "sw-architecture"
   - "leadership"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/climbing-the-john-harlin-route-photo-b1.jpg"
 ---
 

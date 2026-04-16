@@ -1,16 +1,10 @@
----
+﻿---
 lang: es
 title: "Mis montañas en 3D"
 description: 'Proyectos personales de mapas topográficos en 3D: Gredos, Ordesa y Peñalara, con enfoque en rendimiento, texturas y funcionalidades para montañeros.'
 pubDate: 2012-09-19
-categories: 
-  - "arquitectura-software"
-  - "aventura"
-  - "desarrollo-software"
-  - "devops"
-  - "proyectos"
-tags: 
-  - "software"
+tags:
+  - "sw-craftsmanship"
 heroImage: "images/7b724-unnamed.jpg"
 ---
 

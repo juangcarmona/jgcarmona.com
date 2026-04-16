@@ -1,11 +1,9 @@
----
+﻿---
 lang: en
 title: "Teaching Agents to Act: Tools in Docker cagent"
 description: 'How to add and control tools in declarative agents with Docker cagent: shell, filesystem, MCP and local execution risks.'
 pubDate: 2025-10-02
-categories: 
-  - "ai"
-tags: 
+tags:
   - "ai"
   - "sw-architecture"
   - "dmr"

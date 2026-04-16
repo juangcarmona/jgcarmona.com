@@ -3,8 +3,6 @@ lang: es
 title: "El Gran Engaño del Cambio Climático"
 description: 'Análisis crítico de la evidencia científica sobre el cambio climático y por qué la narrativa negacionista falla frente a los datos.'
 pubDate: 2025-05-27
-categories: 
-  - "blog"
 heroImage: "images/create-a-highly-detailed-high-resolution-image-that-depicts-the-theme.png"
 ---
 
