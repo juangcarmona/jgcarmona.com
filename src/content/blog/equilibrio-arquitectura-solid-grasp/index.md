@@ -1,12 +1,9 @@
----
+﻿---
 lang: es
 title: "Arquitectura de software y principios SOLID y GRASP: encontrando el equilibrio"
 description: 'Cómo equilibrar SOLID y GRASP en la arquitectura de software para lograr sistemas modulares, mantenibles y escalables.'
 pubDate: 2023-01-14
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-tags: 
+tags:
   - "sw-architecture"
 heroImage: "images/just-write-solid-and-grasp.png"
 ---

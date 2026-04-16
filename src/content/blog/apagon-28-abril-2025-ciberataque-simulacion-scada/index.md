@@ -1,14 +1,11 @@
----
+﻿---
 lang: es
 title: "El apagón de las 12:34 - Una hipótesis que merece ser investigada"
 description: 'Análisis técnico sobre el apagón del 28/04/2025: hipótesis de inyección de datos en SCADA, vulnerabilidades críticas y posibles escenarios de sabotaje.'
 pubDate: 2025-05-01
-categories: 
-  - "blog"
-  - "ciberseguridad"
-tags: 
+tags:
   - "cybersecurity"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/4_weird_hackers.png"
 ---
 

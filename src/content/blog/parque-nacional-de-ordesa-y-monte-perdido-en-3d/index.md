@@ -1,15 +1,11 @@
----
+﻿---
 lang: es
 title: "Parque Nacional de Ordesa y Monte Perdido en 3D"
 description: 'Recorrido virtual en 3D por Ordesa y Monte Perdido: creación del heightmap, texturas y proceso para publicar la app en Google Play.'
 pubDate: 2012-08-28
-categories: 
-  - "aventura"
-  - "desarrollo-software"
-  - "devops"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 ---
 
 A lo largo de la tarde y siguiendo las directrices de la anterior entrada de éste blog he publicado dos aplicaciones en el Market, en Google Play.

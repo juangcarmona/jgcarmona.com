@@ -1,15 +1,11 @@
----
+﻿---
 lang: es
 title: "GRASP: Controlador"
 description: 'Descripción del patrón Controlador en GRASP: coordinar casos de uso y separar presentación de lógica de negocio.'
 pubDate: 2012-09-07
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-  - "gestion-proyectos"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/just-write-grasp.png"
 ---
 

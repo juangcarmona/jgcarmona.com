@@ -3,11 +3,6 @@ lang: es
 title: "El corazón del método Kanban"
 description: 'Explicación de los principios y prácticas esenciales de Kanban para gestionar flujo, limitar WIP y mejorar procesos.'
 pubDate: 2012-08-13
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-  - "gestion-proyectos"
-  - "proyectos"
 ---
 
   

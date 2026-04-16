@@ -3,9 +3,6 @@ lang: es
 title: "Personal Branding"
 description: 'Estrategias de personal branding para desarrolladores: posicionamiento, contenido técnico y cómo construir una reputación profesional online.'
 pubDate: 2020-08-05
-categories: 
-  - "desarrollo-personal"
-  - "proyectos"
 heroImage: "images/image-5.png"
 ---
 

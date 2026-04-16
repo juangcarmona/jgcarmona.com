@@ -1,13 +1,9 @@
----
+﻿---
 lang: es
 title: "Backdoor en Next.js y ataque a desarrolladores"
 description: 'Análisis de un backdoor en un repositorio Next.js y lecciones sobre seguridad y prácticas para proteger desarrolladores y cadenas de suministro.'
 pubDate: 2025-04-29
-categories: 
-  - "blog"
-  - "ciberseguridad"
-  - "desarrollo-software"
-tags: 
+tags:
   - "cybersecurity"
 heroImage: "images/pexels-photo-54832481.jpeg"
 ---

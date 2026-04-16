@@ -1,16 +1,11 @@
----
+﻿---
 lang: es
 title: "Arquitectura de aplicaciones Android"
 description: 'Patrones y buenas prácticas para diseñar arquitecturas Android robustas, mantenibles y escalables con ejemplos prácticos.'
 pubDate: 2012-11-28
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-  - "devops"
-  - "gestion-proyectos"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 ---
 
 Estos días ando con varias peleas con la nueva versión de Gredos Virtual 3D pero tengo pendiente desde hace bastante tiempo publicar un artículo destripando un poco la arquitectura de ésta aplicación. En concreto de lo que quiero hablar aquí es de un diseño que me ha demostrado ser bastante eficiente y que creo que es reutilizable en casi cualquier futura aplicación Android tanto por su versatilidad como por su robustez. 

@@ -1,14 +1,13 @@
----
+﻿---
 lang: es
 title: "Tu IA, tus reglas."
 description: 'Guía para usar IA en desarrollo sin ceder código ni datos: alternativas autocustodiadas y criterios de seguridad.'
 pubDate: 2025-05-20
-categories: 
-  - "ai"
-tags: 
+tags:
   - "ai"
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
+  - "devex"
 heroImage: "images/pexels-photo-28682171.jpeg"
 ---
 

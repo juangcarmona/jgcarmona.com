@@ -1,15 +1,11 @@
----
+﻿---
 lang: es
 title: "SOLID Y GRASP. Buenas prácticas hacia el éxito en el desarrollo de software."
 description: 'Principios SOLID y patrones GRASP: buenas prácticas para diseñar software mantenible y escalable, con ejemplos y recursos para arquitectos y desarrolladores.'
 pubDate: 2012-11-15
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-  - "proyectos"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 ---
 
 Como muchos sabéis el otro día impartí una conferencia a través de Internet titulada "**SOLID y GRASP, buenas prácticas hacia el éxito en el desarrollo de software**". Dicha conferencia la organizó el grupo de investigación de **Ingeniería Web y Testing Temprano** (**IWT2**) fue dada a través de Internet utilizando Skype para el audio y el vídeo y compartiendo parte de mi pantalla con la sala de la **Escuela Técnica Superior de Ingeniería Informática** de la **Universidad de Sevilla** donde se encontraban los asistentes gracias a [screenleap](http://www.screenleap.com/). 

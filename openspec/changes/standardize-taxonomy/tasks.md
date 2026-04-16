@@ -1,29 +1,29 @@
 ## 1. Tier 1 — Scriptable Bulk Operations
 
-- [ ] 1.1 Run PowerShell script to remove `categories:` blocks from all post frontmatter (regex multiline strip). Inspect `git diff` before committing.
-- [ ] 1.2 Run PowerShell script to rename tag `software` → `sw-craftsmanship` in all post frontmatter (74 files). Inspect `git diff`, then commit as `chore: rename software tag to sw-craftsmanship`.
-- [ ] 1.3 Run PowerShell script to rename tag `security` → `cybersecurity` in all frontmatter. Inspect `git diff`, then commit as `chore: merge security into cybersecurity`.
+- [x] 1.1 Run PowerShell script to remove `categories:` blocks from all post frontmatter (regex multiline strip). Inspect `git diff` before committing.
+- [x] 1.2 Run PowerShell script to rename tag `software` → `sw-craftsmanship` in all post frontmatter (74 files). Inspect `git diff`, then commit as `chore: rename software tag to sw-craftsmanship`.
+- [x] 1.3 Run PowerShell script to rename tag `security` → `cybersecurity` in all frontmatter. Inspect `git diff`, then commit as `chore: merge security into cybersecurity`.
 
 ## 2. Singleton Tag Absorption
 
-- [ ] 2.1 Absorb network/home-lab singletons into `infra`: find posts tagged `network-architecture`, `self-hosting`, `home-assistant`, `home-automation`, `dns`, `wireguard` — replace with `infra`.
-- [ ] 2.2 Absorb identity/auth singletons into `cybersecurity`: find posts tagged `authentication`, `identity`, `azure-entra-id` — replace with `cybersecurity` (add `azure` where Azure-specific).
-- [ ] 2.3 Absorb misc singletons: `local-llm` → `ai` + `devex`; `dotnet` → `sw-craftsmanship`; `aspire` → `azure` + `devex`; `resilience` → `sw-architecture`. Update each affected post.
-- [ ] 2.4 Commit singleton absorptions: `chore: absorb singleton tags into canonical vocabulary`.
+- [x] 2.1 Absorb network/home-lab singletons into `infra`: find posts tagged `network-architecture`, `self-hosting`, `home-assistant`, `home-automation`, `dns`, `wireguard` — replace with `infra`.
+- [x] 2.2 Absorb identity/auth singletons into `cybersecurity`: find posts tagged `authentication`, `identity`, `azure-entra-id` — replace with `cybersecurity` (add `azure` where Azure-specific).
+- [x] 2.3 Absorb misc singletons: `local-llm` → `ai` + `devex`; `dotnet` → `sw-craftsmanship`; `aspire` → `azure` + `devex`; `resilience` → `sw-architecture`. Update each affected post.
+- [x] 2.4 Commit singleton absorptions: `chore: absorb singleton tags into canonical vocabulary`.
 
 ## 3. DevEx Backfill — Tooling & Environment
 
-- [ ] 3.1 Add `devex` tag to posts about local dev setup, Docker dev workflows, editor/IDE tooling:
+- [x] 3.1 Add `devex` tag to posts about local dev setup, Docker dev workflows, editor/IDE tooling:
   `installing-docker-desktop-on-different-drive`, `enable-gpu-docker-model-runner-windows`, `ubuntu-linux-en-windows-con-wsl`, `python-en-docker-con-visual-studio-trucos-y-consejos`, `docker-practico-sonarqube`, `eliminar-fondos-de-imagenes`, `linux-para-administradores-de-red`.
-- [ ] 3.2 Add `devex` tag to posts about AI-assisted coding and local LLMs:
+- [x] 3.2 Add `devex` tag to posts about AI-assisted coding and local LLMs:
   `github-copilot-pru-usage`, `claude-code-local-glm-4-7-flash`, `ia-sin-ceder-codigo`, `run-ai-locally-with-tabby-ml`.
-- [ ] 3.3 Add `devex` tag to posts about collaboration, PRs, and version control workflow:
+- [x] 3.3 Add `devex` tag to posts about collaboration, PRs, and version control workflow:
   `crear-pull-requests-revisiones-codigo`, `colaboracion-descentralizada-git-radicle`, `radicle-decentralized-git-collaboration`, `radicle-xyz-cheat-sheet`, `using-mcp-with-microsoft-agent-framework`.
-- [ ] 3.4 Add `devex` tag to posts about testing practices and code quality:
+- [x] 3.4 Add `devex` tag to posts about testing practices and code quality:
   `introduccion-a-los-tests-unitarios-tdd-y-mocking`, `primeros-pasos-con-moq-un-ejemplo-basico-de-tdd-con-mocking`, `tests-unitarios-y-refactorizacion-hacia-una-arquitectura-de-microservicios-1`, `gestion-errores-aspnet-core`.
-- [ ] 3.5 Add `devex` tag to posts about API design, documentation, and architecture communication:
+- [x] 3.5 Add `devex` tag to posts about API design, documentation, and architecture communication:
   `rest-api-best-practices`, `guia-rest-api`, `comunica-arquitectura-software-c4`, `documentar-arquitectura-software-arc42`, `dads-06-documenta-arquitectura-de-software-con-arc42`.
-- [ ] 3.6 Add `devex` tag to remaining framework/tooling posts:
+- [x] 3.6 Add `devex` tag to remaining framework/tooling posts:
   `run-agent-framework-locally`, `i-wanna-get-aspirified`, `sobre-migraciones-con-entity-framework-core`, `como-crear-una-aplicacion-angular-6-con-asp-net-core-2-1`, `angular-9-i18n-ssr`, `aplicacion-de-google-maps-android-api-v2-desde-cero`, `aplicaciones-de-google-maps-v2-desde-cero-ii`, `google-maps-api-key-para-apk-firmados`, `crear-aplicaciones-multiidioma-para-android`, `migrar-una-aplicacion-de-android-a-xamarin`.
 - [ ] 3.7 Commit devex backfill: `feat: add devex tag to developer experience post cluster`.
 

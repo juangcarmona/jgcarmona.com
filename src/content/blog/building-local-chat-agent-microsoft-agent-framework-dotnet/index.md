@@ -1,17 +1,15 @@
----
+﻿---
 lang: en
 title: "Building a Chat Agent with Microsoft Agent Framework (.NET + EF Core)"
 description: 'Build a local chat agent with Microsoft Agent Framework, EF Core and Docker Model Runner for persistent, offline multi‑turn conversations.'
 pubDate: 2025-10-10
-categories: 
-  - "ai"
-tags: 
+tags:
   - "ai"
   - "sw-architecture"
   - "devops"
   - "dmr"
   - "maf"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/OfflineChatWithMicrosoftAgentFrameworkAndDockerModelRunner_2.png"
 ---
 

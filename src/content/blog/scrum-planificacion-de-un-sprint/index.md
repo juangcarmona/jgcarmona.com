@@ -3,10 +3,6 @@ lang: es
 title: "SCRUM: Planificación de un Sprint"
 description: 'Guía sobre la planificación de un Sprint: selección de historias, estimación con Scrum Poker y cómo cuantificar tareas para un sprint efectivo.'
 pubDate: 2012-08-24
-categories: 
-  - "desarrollo-software"
-  - "gestion-proyectos"
-  - "proyectos"
 ---
 
 El **objetivo de un Sprint** es **entregar** cierta **cantidad de producto** con cierta **calidad** y en cierto **intervalo de tiempo**. Si hablamos de software estamos hablando de funcionalidades, si por ejemplo hablamos de ventas o de marketing podríamos hablar de alcanzar ciertos objetivos o comenzar ciertas campañas. En el fondo **el Sprint busca convertir pequeños objetivos en grandes logros**.

@@ -3,10 +3,10 @@ lang: es
 title: "Tests unitarios y refactorización: hacia una arquitectura de microservicios (1)"
 description: 'Cómo usar tests unitarios y refactorización para transformar un monolito hacia microservicios: estrategias, ejemplos y buenas prácticas.'
 pubDate: 2018-06-26
-categories: 
-  - "desarrollo-software"
-  - "devops"
-  - "testing-software"
+tags:
+  - "sw-architecture"
+  - "sw-craftsmanship"
+  - "devex"
 ---
 
 Siguiendo con el ejemplo que me ha traído hasta aquí ([1](https://juan-garcia-carmona.blogspot.com/2018/06/asp-net-core-21-angular-6.html), [2](https://juan-garcia-carmona.blogspot.com/2018/06/asp-net-core-21-angular-6-autenticacion.html) y [3](https://juan-garcia-carmona.blogspot.com/2018/06/docker-practico-sonarqube.html)) el objetivo de este artículo es ver como podemos organizar, dividiéndolo en librerías y organizando la solución por carpetas, un servicio que pretende aplicar DDD. Digo pretende porque en nuestro caso el dominio es quizá demasiado simple pues solo hablamos de usuarios y prácticamente no hemos añadido nada a Identity pero lo vamos a estructurar así porque el objetivo de este proyecto es crecer y aplicar una arquitectura basada en microservicios. ¿Qué va a tener ésta futura arquitectura? En cuanto a servicios, a grandes rasgos el objetivo es tener:

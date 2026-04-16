@@ -3,10 +3,9 @@ lang: es
 title: "Google Maps API key para apk firmados"
 description: 'Mini receta para obtener la SHA1 y configurar la API key de Google Maps para APK firmados en Android.'
 pubDate: 2013-01-28
-categories: 
-  - "aventura"
-  - "ciberseguridad"
-  - "desarrollo-software"
+tags:
+  - "sw-craftsmanship"
+  - "devex"
 ---
 
 Es la tercera vez que me tengo que poner a buscar cómo sacar la key de una aplicación para que ésta pueda acceder al API de Google Maps y he decidido hacer una mini receta para tenerla a mano.

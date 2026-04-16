@@ -1,15 +1,11 @@
----
+﻿---
 lang: es
 title: "Principios SOLID"
 description: 'Introducción a los principios SOLID: qué son, por qué importan y cómo aplicarlos para mejorar la calidad y mantenibilidad del código.'
 pubDate: 2012-09-02
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-  - "gestion-proyectos"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 ---
 
 Éste es el primero de una serie de cinco artículos sobre los que hablaré de los principios SOLID. No voy a reinventar la rueda ni a redefinirlos, una clara definición de los principios SOLID la podemos encontrar en wikipedia:

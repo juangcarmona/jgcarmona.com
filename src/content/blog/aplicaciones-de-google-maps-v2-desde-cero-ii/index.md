@@ -3,9 +3,9 @@ lang: es
 title: "Aplicaciones de Google Maps v2 desde cero (II)"
 description: 'Segunda parte del tutorial de Google Maps Android API v2: centrado, sensores, animaciones y publicación de una versión BETA.'
 pubDate: 2012-12-24
-categories: 
-  - "aventura"
-  - "desarrollo-software"
+tags:
+  - "sw-craftsmanship"
+  - "devex"
 ---
 
 Antes de ayer le dediqué la mañana a aprender lo básico de programación con el API de Google Maps para Android y de paso a escribir [un breve artículo](http://juan-garcia-carmona.blogspot.com.es/2012/12/aplicacion-de-google-maps-android-api.html) exponiendo sin tapujos mis cábalas, lo que me iba pasando por la cabeza... Estuvo entretenido pero, como digo, me llevó toda la mañana incrustar un mapa en mi aplicación. Es cierto que tuve que leer bastante y también es cierto que tuve distracciones ya que estuve leyendo las noticias, mirando el facebook y haciendo alguna "tarea del hogar" pero no fue sencillo del todo. En pocas palabras, el anterior artículo se resume en:

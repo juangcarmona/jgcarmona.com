@@ -1,14 +1,12 @@
----
+﻿---
 lang: es
 title: "IA privada con RAG y fine-tuning para PYMES: cómo entrenar tu propia inteligencia artificial"
 description: 'Cómo PYMES pueden entrenar IA privada combinando RAG y fine-tuning para proteger datos y obtener modelos personalizados.'
 pubDate: 2025-07-25
-categories: 
-  - "ai"
-tags: 
+tags:
   - "ai"
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/ChatGPT-Image-Jul-25-2025-08_21_35-AM.png"
 ---
 

@@ -1,11 +1,9 @@
----
+﻿---
 lang: es
 title: "Introducción a los Servicios de Azure AI"
 description: 'Introducción práctica a los servicios Azure AI: cómo empezar, configurar recursos y ejemplos con Python, .NET y Postman para crear soluciones IA.'
 pubDate: 2024-07-26
-categories: 
-  - "ai"
-tags: 
+tags:
   - "ai"
 heroImage: "images/introduccion-a-azure-ai-services-2.png"
 ---

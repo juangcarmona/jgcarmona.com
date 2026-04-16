@@ -1,15 +1,11 @@
----
+﻿---
 lang: es
 title: "Patrones de Diseño Creacionales: la base de una arquitectura sólida"
 description: 'Resumen práctico de patrones de diseño creacionales (Factory, Builder, Prototype, Singleton) para arquitecturas robustas.'
 pubDate: 2024-12-16
-categories: 
-  - "arquitectura-software"
-  - "blog"
-  - "desarrollo-software"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/quiero-una-mezcla-de-codigo-fuente-y-cientos-de-obra.png"
 ---
 

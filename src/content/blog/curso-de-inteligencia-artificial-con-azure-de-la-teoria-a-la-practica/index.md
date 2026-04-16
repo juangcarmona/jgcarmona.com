@@ -1,13 +1,9 @@
----
+﻿---
 lang: es
 title: "Curso de Inteligencia Artificial con Azure: De la Teoría a la Práctica"
 description: 'Curso práctico de Azure AI con labs en Python y C#: visión por computadora, NLP, minería de conocimiento y despliegue.'
 pubDate: 2024-07-26
-categories: 
-  - "ai"
-  - "desarrollo-software"
-  - "devops"
-tags: 
+tags:
   - "ai"
 heroImage: "images/0.png"
 ---

@@ -1,17 +1,12 @@
----
+﻿---
 lang: es
 title: "El tablero Kanban"
 description: 'Guía sobre cómo diseñar y usar un tablero Kanban: límites WIP, flujo de trabajo y prácticas para mejorar el rendimiento y la entrega.'
 pubDate: 2012-08-14
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-  - "gestion-proyectos"
-  - "proyectos"
-tags: 
+tags:
   - "agile"
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/image-1.png"
 ---
 

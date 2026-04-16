@@ -1,19 +1,12 @@
----
+﻿---
 lang: en
 title: "Building a Sovereign Home Network: Multi-Home, Cloudless, and Resilient"
 description: "How to design and operate a fully self-owned, multi-home network with WireGuard, Docker, and Home Assistant—no cloud, no vendor lock-in. Covers edge VPS, overlay networking, split-horizon DNS, automation, security, and failure recovery."
 pubDate: 2026-01-28
-categories:
-  - "networking"
 tags:
-  - "home-automation"
-  - "wireguard"
+  - "infra"
   - "docker"
-  - "self-hosting"
-  - "network-architecture"
-  - "home-assistant"
-  - "dns"
-  - "security"
+  - "cybersecurity"
 heroImage: "images/SovereignHomeNetwork_Architecture.png"
 ---
 

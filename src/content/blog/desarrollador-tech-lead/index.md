@@ -1,13 +1,11 @@
----
+﻿---
 lang: es
 title: "De desarrollador a Technical Lead"
 description: 'Consejos prácticos para pasar de desarrollador a technical lead: habilidades, liderazgo técnico y crecimiento profesional.'
 pubDate: 2025-07-01
-categories: 
-  - "liderazgo"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/pexels-photo-80828931.jpeg"
 ---
 

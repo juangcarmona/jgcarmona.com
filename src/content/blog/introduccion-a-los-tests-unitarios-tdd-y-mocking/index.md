@@ -1,16 +1,12 @@
----
+﻿---
 lang: es
 title: "Introducción a los Tests Unitarios, TDD y Mocking"
 description: 'Guía práctica sobre tests unitarios, TDD y mocking: por qué importan, buenas prácticas y cómo usarlos para mejorar calidad y mantenimiento del código.'
 pubDate: 2012-09-06
-categories: 
-  - "desarrollo-software"
-  - "devops"
-  - "gestion-proyectos"
-  - "testing-software"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
+  - "devex"
 ---
 
 > "El testing puede probar la presencia de errores pero no la ausencia de ellos."
