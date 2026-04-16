@@ -5,6 +5,7 @@ description: 'Protege tu privacidad cambiando a Quad9 y DNS personalizados: paso
 pubDate: 2025-05-27
 tags:
   - "cybersecurity"
+  - "infra"
 heroImage: "images/image-9.png"
 ---
 

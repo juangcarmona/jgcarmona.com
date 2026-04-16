@@ -6,6 +6,7 @@ pubDate: 2025-10-01
 tags:
   - "ai"
   - "devops"
+  - "maf"
   - "sw-craftsmanship"
 heroImage: "images/teaching_agents_to_remember.png"
 ---

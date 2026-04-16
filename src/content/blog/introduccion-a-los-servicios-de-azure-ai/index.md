@@ -5,6 +5,7 @@ description: 'Introducción práctica a los servicios Azure AI: cómo empezar, c
 pubDate: 2024-07-26
 tags:
   - "ai"
+  - "azure"
 heroImage: "images/introduccion-a-azure-ai-services-2.png"
 ---
 

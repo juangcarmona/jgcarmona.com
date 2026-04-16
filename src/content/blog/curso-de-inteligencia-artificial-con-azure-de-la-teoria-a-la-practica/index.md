@@ -5,6 +5,7 @@ description: 'Curso práctico de Azure AI con labs en Python y C#: visión por c
 pubDate: 2024-07-26
 tags:
   - "ai"
+  - "azure"
 heroImage: "images/0.png"
 ---
 
