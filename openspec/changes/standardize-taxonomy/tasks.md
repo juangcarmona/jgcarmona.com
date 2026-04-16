@@ -49,13 +49,13 @@
 
 ## 6. Untagged Posts — AI & Azure Cluster
 
-- [ ] 6.1 Tag AI-focused posts with `ai`:
+- [x] 6.1 Tag AI-focused posts with `ai`:
   `ai-agents-nutshell`, `agentic-reasoning-with-microsoft-agent-framework`, `el-futuro-segun-la-ia`, `ia-privada-pymes-rag-fine-tuning`, `quien-es-quien-inteligencia-artificial`, `soluciones-de-vision-por-computadora`, `implementacion-ia-us-marines`, `preparar-hijos-futuro-ia`, `stop-llms-from-leaking-data`.
-- [ ] 6.2 Tag MAF series posts with `maf` + `ai`:
+- [x] 6.2 Tag MAF series posts with `maf` + `ai`:
   `building-local-chat-agent-microsoft-agent-framework-dotnet`, `building-workflows-with-maf-and-dmr`, `memory-in-docker-cagent`, `teaching-agents-to-act-tools-in-docker-cagent`, `what-is-docker-cagent-a-first-look-at-declarative-ai-agents`, `change-dmr-context-size`.
-- [ ] 6.3 Tag Azure posts with `azure`: `introduccion-a-los-servicios-de-azure-ai`, `curso-de-inteligencia-artificial-con-azure-de-la-teoria-a-la-practica`, `configurar-wordpress-multisite-en-azure-10-pasos`, `asp-net-core-2-1-angular-6-autenticacion-y-autorizacion-en-10-pasos`, `automatizar-la-subida-de-imagenes-a-azure`.
-- [ ] 6.4 Tag infrastructure and cybersecurity posts: `build-cheap-ai-workstation-europe-4gpu` → `ai` + `infra`; `building-a-sovereign-home-network` → `infra`; `dns-quad9-privacidad-seguridad` → `infra` + `cybersecurity`; `ataque-a-desarrolladores` → `cybersecurity`; `apagon-28-abril-2025-ciberataque-simulacion-scada` → `cybersecurity`; `como-sobrevivir-a-cryptowall-3-0` → `cybersecurity`; `what-if-your-identity-provider-goes-down` → `cybersecurity` + `infra`; `stop-llms-from-leaking-data` → `cybersecurity` + `ai`.
-- [ ] 6.5 Commit AI, Azure, infra, and cybersecurity tagging batch.
+- [x] 6.3 Tag Azure posts with `azure`: `introduccion-a-los-servicios-de-azure-ai`, `curso-de-inteligencia-artificial-con-azure-de-la-teoria-a-la-practica`, `configurar-wordpress-multisite-en-azure-10-pasos`, `asp-net-core-2-1-angular-6-autenticacion-y-autorizacion-en-10-pasos`, `automatizar-la-subida-de-imagenes-a-azure`.
+- [x] 6.4 Tag infrastructure and cybersecurity posts: `build-cheap-ai-workstation-europe-4gpu` → `ai` + `infra`; `building-a-sovereign-home-network` → `infra`; `dns-quad9-privacidad-seguridad` → `infra` + `cybersecurity`; `ataque-a-desarrolladores` → `cybersecurity`; `apagon-28-abril-2025-ciberataque-simulacion-scada` → `cybersecurity`; `como-sobrevivir-a-cryptowall-3-0` → `cybersecurity`; `what-if-your-identity-provider-goes-down` → `cybersecurity` + `infra`; `stop-llms-from-leaking-data` → `cybersecurity` + `ai`.
+- [x] 6.5 Commit AI, Azure, infra, and cybersecurity tagging batch.
 
 ## 7. Untagged Posts — Personal, Leadership & Mindset Cluster
 

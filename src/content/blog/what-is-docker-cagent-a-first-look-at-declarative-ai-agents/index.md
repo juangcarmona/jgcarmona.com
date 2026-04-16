@@ -8,6 +8,7 @@ tags:
   - "sw-architecture"
   - "devops"
   - "infra"
+  - "maf"
 heroImage: "images/create-a-whale-it-is-a-robotic-whale-and-behind.png"
 ---
 

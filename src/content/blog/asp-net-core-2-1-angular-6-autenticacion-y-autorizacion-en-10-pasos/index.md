@@ -7,6 +7,7 @@ tags:
   - "cybersecurity"
   - "sw-craftsmanship"
   - "devex"
+  - "azure"
 heroImage: "images/merge-angular-and-asp-net-and-authentication-and-authorization-security.png"
 ---
 
