@@ -25,19 +25,19 @@
   `rest-api-best-practices`, `guia-rest-api`, `comunica-arquitectura-software-c4`, `documentar-arquitectura-software-arc42`, `dads-06-documenta-arquitectura-de-software-con-arc42`.
 - [x] 3.6 Add `devex` tag to remaining framework/tooling posts:
   `run-agent-framework-locally`, `i-wanna-get-aspirified`, `sobre-migraciones-con-entity-framework-core`, `como-crear-una-aplicacion-angular-6-con-asp-net-core-2-1`, `angular-9-i18n-ssr`, `aplicacion-de-google-maps-android-api-v2-desde-cero`, `aplicaciones-de-google-maps-v2-desde-cero-ii`, `google-maps-api-key-para-apk-firmados`, `crear-aplicaciones-multiidioma-para-android`, `migrar-una-aplicacion-de-android-a-xamarin`.
-- [ ] 3.7 Commit devex backfill: `feat: add devex tag to developer experience post cluster`.
+- [x] 3.7 Commit devex backfill: `feat: add devex tag to developer experience post cluster`.
 
 ## 4. Untagged Posts — SW Craftsmanship & Architecture Cluster
 
-- [ ] 4.1 Tag GRASP series (all 8 posts) with `sw-craftsmanship`:
+- [x] 4.1 Tag GRASP series (all 8 posts) with `sw-craftsmanship`:
   `grasp-alta-cohesion-y-bajo-acoplamiento`, `grasp-controlador`, `grasp-creador`, `grasp-experto-en-informacion`, `grasp-fabricacion-pura`, `grasp-indireccion`, `grasp-polimorfismo`, `grasp-variaciones-protegidas`.
-- [ ] 4.2 Tag SOLID principle posts with `sw-craftsmanship`:
+- [x] 4.2 Tag SOLID principle posts with `sw-craftsmanship`:
   `srp-single-responsibility-principle-...`, `ocp-open-closed-principle-...`, `lsp-liskov-substitution-principle-...`, `isp-interface-segregation-principle-...`, `dip-dependency-inversion-principle-...`, `principios-solid`, `principios-solid-2`, `solid-y-grasp-buenas-practicas-...`, `iwt2-dojous-solid-y-grasp`, `equilibrio-arquitectura-solid-grasp`, `patrones-generales-de-asignacion-de-responsabilidades`.
-- [ ] 4.3 Tag design pattern and clean code posts with `sw-craftsmanship`:
+- [x] 4.3 Tag design pattern and clean code posts with `sw-craftsmanship`:
   `creational-design-patterns`, `la-potencia-de-una-interfaz-simple`, `mastering-software-development`.
-- [ ] 4.4 Tag software architecture posts with `sw-architecture`:
+- [x] 4.4 Tag software architecture posts with `sw-architecture`:
   `arquitectura-monolito`, `arquitectura-de-aplicaciones-android`, `arquitecturas-software-2025`, `sobre-arquitecturas-en-android`, `dads-01-introduccion-sistemas-distribuidos`, `dads-02-sistemas-distribuidos-de-cap-a-pacelc`, `dads-03-concurrencia-y-paralelismo`, `uml-ddd-cqrs`, `uml-de-batalla`.
-- [ ] 4.5 Commit sw-craftsmanship and sw-architecture tagging batch.
+- [x] 4.5 Commit sw-craftsmanship and sw-architecture tagging batch.
 
 ## 5. Untagged Posts — Methodology & Process Cluster
 
