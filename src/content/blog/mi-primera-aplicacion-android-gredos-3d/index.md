@@ -6,9 +6,8 @@ pubDate: 2012-08-28
 tags:
   - "sw-architecture"
   - "sw-craftsmanship"
----
-
-[Gredos 3D](https://play.google.com/store/apps/details?id=com.jgc.gredos_3d) es mi primera app para Android. Tenía ganas de meterme de lleno en el mundillo de la programación de aplicaciones móviles y sin habérmelo propuesto he aprendido mucho sobre mapas, cartografía y modelos digitales del terreno así como de OpenGL y la programación 3D.
+  - "personal"
+---(https://play.google.com/store/apps/details?id=com.jgc.gredos_3d) es mi primera app para Android. Tenía ganas de meterme de lleno en el mundillo de la programación de aplicaciones móviles y sin habérmelo propuesto he aprendido mucho sobre mapas, cartografía y modelos digitales del terreno así como de OpenGL y la programación 3D.
 
   
 

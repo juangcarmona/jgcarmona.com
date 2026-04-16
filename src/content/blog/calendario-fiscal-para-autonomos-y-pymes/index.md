@@ -3,6 +3,8 @@ lang: es
 title: "Calendario fiscal para autónomos y PYMES"
 description: 'Calendario fiscal práctico con fechas clave y obligaciones para autónomos y PYMES en España, con checklist y exportable.'
 pubDate: 2025-06-17
+tags:
+  - "personal"
 heroImage: "images/ChatGPT-Image-Jun-17-2025-03_19_46-PM.png"
 ---
 

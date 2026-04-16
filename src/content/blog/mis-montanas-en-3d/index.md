@@ -5,6 +5,7 @@ description: 'Proyectos personales de mapas topográficos en 3D: Gredos, Ordesa 
 pubDate: 2012-09-19
 tags:
   - "sw-craftsmanship"
+  - "personal"
 heroImage: "images/7b724-unnamed.jpg"
 ---
 

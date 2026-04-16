@@ -59,15 +59,15 @@
 
 ## 7. Untagged Posts — Personal, Leadership & Mindset Cluster
 
-- [ ] 7.1 Tag leadership and tech lead posts with `leadership`:
+- [x] 7.1 Tag leadership and tech lead posts with `leadership`:
   `3-reglas-de-oro-para-conectar-con-la-gente`, `autoevaluacion-soft-skills`, `cualidades-lider-tecnico`, `coaching-vs-mentoring-tecnologia`, `desarrollador-tech-lead`, `personal-branding`, `sindrome-impostor-efecto-dunning-kruger`, `recuperar-control-vida-profesional`, `renovarse-o-morir`, `tecnologia-equilibrio-liderazgo-vida-personal`.
-- [ ] 7.2 Tag Japanese philosophy and personal mindset posts with `personal`:
+- [x] 7.2 Tag Japanese philosophy and personal mindset posts with `personal`:
   `ikigai-para-desarrolladores-de-software`, `kaizen-para-desarrolladores-de-software`, `shuhari-el-camino-de-la-maestria-en-el-desarrollo-de-software`, `wabi-sabi-simplicidad-e-imperfeccion-en-desarrollo-de-software`, `nintai-perseveancia-desarrollo-software`, `hara-hachi-bu-el-arte-japones-del-equilibrio-aplicado-al-software`, `ganbatte-para-desarrolladores-enfrentar-los-desafios-con-valentia`, `oubaitoori-mejorando-el-desarrollo-de-software-...`, `yugen-profundizando-en-la-conciencia-del-universo-del-software`.
-- [ ] 7.3 Tag personal career and life posts with `personal`:
+- [x] 7.3 Tag personal career and life posts with `personal`:
   `back-to-engineering-plain-concepts`, `cierre-jgcarmona-consulting`, `como-encontrar-tu-proposito`, `el-primer-paso-siempre-es-el-mas-dificil`, `retomar-la-divulgacion`, `equilibrando-tecnologia-y-sostenibilidad`, `open-source-freelance-platform`, `tfst-una-nueva-plataforma-freelance-open-source`, `la-herramienta-que-necesitas-para-mejorar-tu-productividad-y-tu-calendario`, `mejorar-en-programacion-con-filosofias-japonesas`, `muda-mejorando-la-eficiencia-en-el-desarrollo-de-software`.
-- [ ] 7.4 Tag Gredos/mountain posts and off-topic personal content with `personal`:
+- [x] 7.4 Tag Gredos/mountain posts and off-topic personal content with `personal`:
   `actualizado-gredos-virtual-3d`, `gredos-virtual-3d-1-2`, `mis-montanas-en-3d`, `mi-primera-aplicacion-android-gredos-3d`, `parque-nacional-de-ordesa-y-monte-perdido-en-3d`, `laliga-blocks-2025`, `genocidio-en-gaza`, `gran-engano-cambio-climatico`, `web-3-0-la-metaformfosis`, `calendario-fiscal-para-autonomos-y-pymes`.
-- [ ] 7.5 Commit personal and leadership tagging batch.
+- [x] 7.5 Commit personal and leadership tagging batch.
 
 ## 8. Verification
 

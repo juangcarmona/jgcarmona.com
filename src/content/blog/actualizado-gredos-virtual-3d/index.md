@@ -6,9 +6,8 @@ pubDate: 2012-11-19
 tags:
   - "sw-architecture"
   - "sw-craftsmanship"
----
-
-Para los que han seguido los desarrollos para Android que he estado haciendo estos meses y a los que ya les gustaban las aplicaciones de mapas en 3D que estaban en marcha tengo una buena noticia: 
+  - "personal"
+--- los desarrollos para Android que he estado haciendo estos meses y a los que ya les gustaban las aplicaciones de mapas en 3D que estaban en marcha tengo una buena noticia: 
 
   
 

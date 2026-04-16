@@ -5,6 +5,7 @@ description: 'Presentación de TFST, una plataforma freelance open-source que bu
 pubDate: 2025-03-05
 tags:
   - "sw-craftsmanship"
+  - "personal"
 heroImage: "images/Full-Stack-Team1.jpg"
 ---
 
