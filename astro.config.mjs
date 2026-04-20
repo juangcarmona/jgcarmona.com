@@ -8,11 +8,8 @@ import mermaid from 'astro-mermaid';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://jgcarmona.com',
-
 	integrations: [
-		mermaid({ autoTheme: true }),
-		mdx(),
-		sitemap({
+		mermaid({ autoTheme: true }), mdx(), sitemap({
 			filter: (page) => !page.includes('/search') && !page.includes('/tags-data.json'),
 		})],
 	vite: {
@@ -21,5 +18,5 @@ export default defineConfig({
 				external: ['/_pagefind/pagefind.js'],
 			},
 		},
-	}
+	},
 });
