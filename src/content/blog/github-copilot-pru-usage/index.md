@@ -5,12 +5,10 @@ pubDate: 2026-03-17
 tags:
   - "ai"
   - "devex"
-heroImage: "images/github-copilot-pru-usage.png"
-slug: "github-copilot-pru-usage"
-tags:
-  - "ai"
   - "devops"
   - "best-practices"
+heroImage: "images/github-copilot-pru-usage.png"
+slug: "github-copilot-pru-usage"
 ---
 
 ## TL;DR
