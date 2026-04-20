@@ -8,6 +8,13 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://jgcarmona.com',
 	integrations: [mdx(), sitemap({
-		filter: (page) => !page.includes('/search'),
+		filter: (page) => !page.includes('/search') && !page.includes('/tags-data.json'),
 	})],
+	vite: {
+		build: {
+			rollupOptions: {
+				external: ['/_pagefind/pagefind.js'],
+			},
+		},
+	},
 });
