@@ -11,8 +11,15 @@ export default defineConfig({
 
 	integrations: [
 		mermaid({ autoTheme: true }),
-		mdx(), 
+		mdx(),
 		sitemap({
-		filter: (page) => !page.includes('/search'),
-	})]
+			filter: (page) => !page.includes('/search') && !page.includes('/tags-data.json'),
+		})],
+	vite: {
+		build: {
+			rollupOptions: {
+				external: ['/_pagefind/pagefind.js'],
+			},
+		},
+	}
 });

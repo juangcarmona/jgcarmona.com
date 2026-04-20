@@ -1,0 +1,203 @@
+---
+// TagGraph.astro — D3.js force-directed tag graph
+// Host page must provide: <div id="graph-results" hidden aria-live="polite"></div>
+interface Props {}
+---
+
+<div class="tag-graph-wrapper">
+<svg id="tag-graph" aria-label="Tag co-occurrence graph" role="img"></svg>
+<p class="mobile-hint">Tag graph available on larger screens</p>
+</div>
+
+<script>
+import { forceSimulation, forceLink, forceManyBody, forceCenter, forceCollide, select, drag } from 'd3';
+
+const PALETTE = [
+'#1971c2', '#c92a2a', '#2f9e44', '#e67700',
+'#7048e8', '#c2255c', '#0c8599', '#5c940d',
+'#862e9c', '#1098ad', '#d6336c', '#364fc7',
+'#f76707', '#2b8a3e',
+];
+const CHAR_W = 7;
+const PAD_X = 12;
+const NODE_H = 28;
+const MIN_W = 64;
+
+function nodeWidth(label: string) {
+return Math.max(MIN_W, label.length * CHAR_W + PAD_X * 2);
+}
+
+let _pagefind: any = null;
+async function getPagefind() {
+if (!_pagefind) {
+_pagefind = await import(/* @vite-ignore */ '/_pagefind/pagefind.js');
+await _pagefind.init();
+}
+return _pagefind;
+}
+
+async function initGraph() {
+const svgEl = document.getElementById('tag-graph') as SVGSVGElement | null;
+if (!svgEl) return;
+
+const width = svgEl.clientWidth || 900;
+const height = svgEl.clientHeight || 450;
+
+let data: { nodes: { id: string; count: number }[]; links: { source: string; target: string; weight: number }[] };
+try {
+const res = await fetch('/tags-data.json');
+if (!res.ok) return;
+data = await res.json();
+} catch { return; }
+if (!data.nodes.length) return;
+
+const sortedIds = [...data.nodes].sort((a, b) => a.id.localeCompare(b.id)).map(n => n.id);
+const colorMap = new Map(sortedIds.map((id, i) => [id, PALETTE[i % PALETTE.length]]));
+
+const nodes: any[] = data.nodes.map(n => ({ ...n, w: nodeWidth(n.id), color: colorMap.get(n.id)! }));
+const links: any[] = data.links.map(l => ({ ...l }));
+
+const svgSel = select(svgEl).attr('width', width).attr('height', height);
+const g = svgSel.append('g');
+
+const simulation = forceSimulation(nodes)
+.force('link', forceLink(links).id((d: any) => d.id).distance(130).strength(0.35))
+.force('charge', forceManyBody().strength(-500))
+.force('center', forceCenter(width / 2, height / 2))
+.force('collide', forceCollide().radius((d: any) => d.w / 2 + 8));
+
+const linkSel = g.append('g').attr('class', 'graph-links').selectAll('line').data(links).join('line');
+
+let selectedNode: string | null = null;
+
+function getResults(): HTMLElement | null {
+return document.getElementById('graph-results') as HTMLElement | null;
+}
+
+function clearSelection() {
+selectedNode = null;
+nodeGroup.selectAll<SVGRectElement, any>('rect').classed('node-dimmed', false);
+const rd = getResults();
+if (rd) { rd.innerHTML = ''; rd.hidden = true; }
+}
+
+const nodeGroup = g.append('g').attr('class', 'graph-nodes')
+.selectAll<SVGGElement, any>('g').data(nodes).join('g')
+.attr('cursor', 'pointer')
+.call(drag<SVGGElement, any>()
+.on('start', (ev: any, d: any) => { if (!ev.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+.on('drag',  (ev: any, d: any) => { d.fx = ev.x; d.fy = ev.y; })
+.on('end',   (ev: any, d: any) => { if (!ev.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+)
+.on('click', (ev: any, d: any) => {
+ev.stopPropagation();
+if (selectedNode === d.id) { clearSelection(); return; }
+selectedNode = d.id;
+nodeGroup.selectAll<SVGRectElement, any>('rect').classed('node-dimmed', (n: any) => n.id !== d.id);
+loadTagResults(d.id);
+});
+
+nodeGroup.append('rect').attr('class', 'graph-node')
+.attr('width', (d: any) => d.w)
+.attr('height', NODE_H)
+.attr('x', (d: any) => -d.w / 2)
+.attr('y', -NODE_H / 2)
+.attr('rx', 4)
+.style('fill', (d: any) => d.color);
+
+nodeGroup.append('text').attr('class', 'graph-label').text((d: any) => d.id);
+nodeGroup.append('title').text((d: any) => `${d.id} — ${d.count} posts`);
+
+svgSel.on('click', (ev: any) => {
+if ((ev.target as Element).closest?.('g.graph-nodes')) return;
+clearSelection();
+});
+
+simulation.on('tick', () => {
+nodes.forEach((d: any) => {
+const hw = d.w / 2, hh = NODE_H / 2;
+d.x = Math.max(hw + 2, Math.min(width - hw - 2, d.x ?? width / 2));
+d.y = Math.max(hh + 2, Math.min(height - hh - 2, d.y ?? height / 2));
+});
+linkSel.attr('x1', (d: any) => d.source.x).attr('y1', (d: any) => d.source.y)
+       .attr('x2', (d: any) => d.target.x).attr('y2', (d: any) => d.target.y);
+nodeGroup.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
+});
+}
+
+async function loadTagResults(tag: string) {
+const rd = document.getElementById('graph-results') as HTMLElement | null;
+if (!rd) return;
+rd.innerHTML = '<p>Loading…</p>';
+rd.hidden = false;
+try {
+const pf = await getPagefind();
+const search = await pf.search(null, { filters: { tag } });
+const results = await Promise.all(search.results.slice(0, 20).map((r: any) => r.data()));
+if (!results.length) {
+rd.innerHTML = `<p>No posts found for <strong>${tag}</strong>.</p>`;
+return;
+}
+rd.innerHTML = `<h3>Posts tagged: ${tag}</h3><ul>${results.map((r: any) =>
+`<li><a href="${r.url}">${r.meta?.title ?? r.url}</a>${r.excerpt ? `<p>${r.excerpt}</p>` : ''}</li>`
+).join('')}</ul>`;
+} catch (err) {
+console.error('[TagGraph] Pagefind error:', err);
+rd.innerHTML = `<p>Could not load results for <strong>${tag}</strong>.</p>`;
+}
+}
+
+if (document.readyState === 'loading') {
+document.addEventListener('DOMContentLoaded', initGraph);
+} else {
+initGraph();
+}
+</script>
+
+<style>
+.tag-graph-wrapper { margin-bottom: 0; }
+
+#tag-graph {
+width: 100%;
+height: clamp(350px, 55vh, 600px);
+border-radius: 4px;
+border: 1px solid rgba(var(--gray), 0.2);
+background: var(--bg-color);
+display: block;
+}
+
+:global(.graph-links line) {
+stroke: rgb(var(--gray));
+stroke-opacity: 0.4;
+stroke-width: 1;
+}
+
+:global(.graph-node) {
+stroke: none;
+transition: opacity 0.15s;
+}
+:global(.graph-node.node-dimmed) { opacity: 0.15; }
+
+:global(.graph-label) {
+fill: #fff;
+font-size: 11px;
+font-weight: 600;
+text-anchor: middle;
+dominant-baseline: central;
+pointer-events: none;
+user-select: none;
+}
+
+.mobile-hint {
+display: none;
+text-align: center;
+color: rgb(var(--gray));
+font-size: 0.85em;
+margin-top: 0.25em;
+}
+
+@media (max-width: 767px) {
+#tag-graph { display: none; }
+.mobile-hint { display: block; }
+}
+</style>

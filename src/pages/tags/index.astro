@@ -3,7 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import TagGraph from '../../components/TagGraph.astro';
+import { SITE_TITLE } from '../../consts';
 
 const posts = await getCollection('blog');
 
@@ -17,49 +18,45 @@ posts.forEach((post) => {
 });
 
 // Convert to array and sort by count (desc), then alphabetically
-const sortedTags = Array.from(tagCounts.entries())
-	.sort((a, b) => {
-		// First by count descending
-		if (b[1] !== a[1]) {
-			return b[1] - a[1];
-		}
-		// Then alphabetically
-		return a[0].localeCompare(b[0]);
-	});
+const sortedTags = Array.from(tagCounts.entries()).sort((a, b) => {
+	if (b[1] !== a[1]) return b[1] - a[1];
+	return a[0].localeCompare(b[0]);
+});
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Tags - ${SITE_TITLE}`} description={`Browse posts by tag on ${SITE_TITLE}`} />
-		<style>
-			body {
-				display: flex;
-				flex-direction: column;
-				min-height: 100vh;
-			}
-			main {
-				flex: 1;
-                margin-top: 2em;
-			}
-		</style>
+		<BaseHead title={`Tags — ${SITE_TITLE}`} description={`Browse posts by tag on ${SITE_TITLE}`} />
+		<link href="/_pagefind/pagefind-ui.css" rel="stylesheet" />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<section>
-				<h1>Tags</h1>
-				<p>Browse posts by topic</p>
-				
-				<div class="tags-grid">
-					{sortedTags.map(([tag, count]) => (
-						<a href={`/tags/${tag}`} class="tag-card">
-							<span class="tag-name">{tag}</span>
-							<span class="tag-count">{count} {count === 1 ? 'post' : 'posts'}</span>
-						</a>
-					))}
+			<div class="tags-layout">
+				<!-- Left column: force-directed tag graph -->
+				<div class="graph-col">
+					<h1>Tags</h1>
+					<p class="subtitle">Click a tag node to filter posts</p>
+					<TagGraph />
 				</div>
-			</section>
+
+				<!-- Right column: results panel + tag grid -->
+				<div class="content-col">
+					<div id="graph-results" hidden aria-live="polite" class="results-panel"></div>
+					<div id="tags-grid-wrapper">
+						<h2 class="grid-heading">All tags</h2>
+						<div class="tags-grid">
+							{sortedTags.map(([tag, count]) => (
+								<a href={`/tags/${tag}`} class="tag-card">
+									<span class="tag-name">{tag}</span>
+									<span class="tag-count">{count} {count === 1 ? 'post' : 'posts'}</span>
+								</a>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 		<Footer />
 	</body>
@@ -67,57 +64,113 @@ const sortedTags = Array.from(tagCounts.entries())
 
 <style>
 	main {
-		width: 960px;
+		width: calc(100% - 2em);
+		max-width: 1280px;
+		margin: 2em auto;
+		padding: 0 1em;
 	}
 
-	h1 {
-		margin-bottom: 0.5em;
+	.tags-layout {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		gap: 2em;
+		align-items: start;
 	}
 
-	p {
+	.graph-col h1 { margin-bottom: 0.25em; }
+
+	.subtitle {
 		color: rgb(var(--gray));
-		margin-bottom: 2em;
+		font-size: 0.9em;
+		margin-bottom: 0.75em;
+	}
+
+	.content-col {
+		position: sticky;
+		top: 5em;
+		max-height: calc(100vh - 7em);
+		overflow-y: auto;
+	}
+
+	/* Results panel — written by TagGraph JS */
+	.results-panel { margin-bottom: 1.5em; }
+	.results-panel[hidden] { display: none; }
+
+	.results-panel :global(h3) {
+		font-size: 1em;
+		font-weight: 700;
+		margin-bottom: 0.75em;
+		color: var(--accent);
+	}
+	.results-panel :global(ul) { list-style: none; padding: 0; margin: 0; }
+	.results-panel :global(li) {
+		padding: 0.6em 0;
+		border-bottom: 1px solid rgba(var(--gray), 0.2);
+	}
+	.results-panel :global(li a) {
+		font-weight: 600;
+		color: rgb(var(--gray-light));
+		text-decoration: none;
+		display: block;
+	}
+	.results-panel :global(li a:hover) { color: var(--accent); }
+	.results-panel :global(li p) {
+		font-size: 0.85em;
+		margin: 0.2em 0 0;
+		color: rgb(var(--gray));
+	}
+
+	/* Tag grid */
+	.grid-heading {
+		font-size: 0.85em;
+		font-weight: 600;
+		color: rgb(var(--gray));
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.75em;
 	}
 
 	.tags-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-		gap: 1em;
-		margin-top: 2em;
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		gap: 0.5em;
 	}
 
 	.tag-card {
 		display: flex;
 		flex-direction: column;
-		padding: 1.5em;
+		padding: 0.75em 1em;
 		background-color: rgb(var(--gray-dark));
-		border-radius: 8px;
+		border-radius: 6px;
 		border: 1px solid transparent;
 		text-decoration: none;
-		transition: all 0.2s ease;
+		transition: all 0.15s ease;
 	}
 
 	.tag-card:hover {
 		border-color: var(--accent);
-		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(var(--accent-dark), 0.2);
+		transform: translateY(-1px);
 	}
 
 	.tag-name {
-		font-size: 1.2em;
+		font-size: 0.9em;
 		font-weight: 700;
 		color: rgb(var(--gray-light));
-		margin-bottom: 0.5em;
+		margin-bottom: 0.2em;
 	}
 
 	.tag-count {
-		font-size: 0.9em;
+		font-size: 0.8em;
 		color: rgb(var(--gray));
 	}
 
-	@media (max-width: 720px) {
-		.tags-grid {
-			grid-template-columns: 1fr;
-		}
+	@media (max-width: 860px) {
+		.tags-layout { grid-template-columns: 1fr; }
+		.content-col { position: static; max-height: none; }
+	}
+
+	@media (max-width: 480px) {
+		.tags-grid { grid-template-columns: repeat(2, 1fr); }
 	}
 </style>
+
