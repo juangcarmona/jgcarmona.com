@@ -1,14 +1,11 @@
----
+﻿---
 lang: es
 title: "Nintai: la perseverancia en el desarrollo de software"
 description: 'Reflexión sobre la perseverancia (Nintai) y cómo mantener el esfuerzo diario para lograr resultados en desarrollo de software.'
 pubDate: 2023-07-11
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-tags: 
+tags:
   - "leadership"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/pexels-photo-119562.jpeg"
 ---
 

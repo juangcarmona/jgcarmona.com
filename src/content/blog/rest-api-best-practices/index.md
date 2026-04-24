@@ -1,15 +1,12 @@
----
+﻿---
 lang: en
 title: "REST API Cheat Sheet: Best Practices and Guidelines"
 description: 'Cheat sheet de buenas prácticas para diseñar APIs REST: métodos HTTP, paginación, seguridad, versionado y manejo de errores.'
 pubDate: 2024-08-21
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-  - "devops"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
+  - "devex"
 heroImage: "images/api1.png"
 ---
 

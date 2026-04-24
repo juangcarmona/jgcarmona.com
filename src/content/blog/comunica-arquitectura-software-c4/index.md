@@ -1,13 +1,12 @@
----
+﻿---
 lang: es
 title: "DADS #05: C4 - Nuestra Mejor Arma Como Arquitectos De Software"
 description: 'Cómo usar el modelo C4 para documentar y comunicar arquitecturas de software mediante diagramas por niveles y ejemplos prácticos.'
 pubDate: 2024-10-15
-categories: 
-  - "proyectos"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
+  - "devex"
 heroImage: "images/DADS-05.png"
 ---
 

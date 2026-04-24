@@ -1,16 +1,14 @@
----
+﻿---
 lang: en
 title: "What is Docker cagent? A First Look at Declarative AI Agents"
 description: 'Introducción a Docker cagent: agentes AI en YAML, ejecución local con DMR y por qué declarative agents facilitan reproducibilidad y experimentación.'
 pubDate: 2025-09-30
-categories: 
-  - "ai"
-  - "devops"
-tags: 
+tags:
   - "ai"
   - "sw-architecture"
   - "devops"
   - "infra"
+  - "maf"
 heroImage: "images/create-a-whale-it-is-a-robotic-whale-and-behind.png"
 ---
 

@@ -3,6 +3,8 @@ lang: en
 title: "Back to engineering"
 description: 'A personal reset after shutting down a company, navigating months of interviews and bureaucracy, and deliberately returning to hands-on software engineering in the right environment.'
 pubDate: 2025-11-25
+tags:
+  - "personal"
 heroImage: "images/image-13.png"
 ---
 

@@ -3,6 +3,9 @@ lang: es
 title: "Introducción a Linux en 3 pasos: cómo empezar con Ubuntu desde Windows"
 description: 'Guía rápida para instalar y empezar con Ubuntu en Windows usando WSL: comandos iniciales, recursos y cómo usar Windows Terminal.'
 pubDate: 2025-07-09
+tags:
+  - "infra"
+  - "devex"
 heroImage: "images/24235.600x4501.jpg"
 ---
 

@@ -1,15 +1,12 @@
----
+﻿---
 lang: es
 title: "10 pasos para configurar WordPress Multisite en Azure"
 description: 'Guía práctica en 10 pasos para desplegar WordPress Multisite en Azure: App Service, dominios, base de datos y ajustes clave.'
 pubDate: 2023-06-13
-categories: 
-  - "blog"
-  - "devops"
-tags: 
+tags:
   - "sw-architecture"
   - "azure"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/pexels-photo-4160094.jpeg"
 ---
 

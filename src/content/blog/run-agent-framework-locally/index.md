@@ -1,17 +1,16 @@
----
+﻿---
 lang: en
 title: "Run Microsoft Agent Framework Locally with Docker Model Runner"
 description: 'Practical guide to running Microsoft Agent Framework locally with Docker Model Runner: examples in .NET and Python, offline and without keys.'
 pubDate: 2025-10-06
-categories: 
-  - "ai"
-tags: 
+tags:
   - "ai"
   - "devops"
   - "dmr"
   - "infra"
   - "maf"
-  - "software"
+  - "sw-craftsmanship"
+  - "devex"
 heroImage: "images/MicrosoftAgentFrameworkWithDockerModelRunner.png"
 ---
 

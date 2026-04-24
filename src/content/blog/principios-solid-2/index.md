@@ -1,17 +1,11 @@
----
+﻿---
 lang: es
 title: "Principios SOLID"
 description: 'Introducción a los principios SOLID para diseñar código flexible y mantenible, con ejemplos y recomendaciones prácticas.'
 pubDate: 2012-08-20
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-  - "gestion-proyectos"
-  - "proyectos"
-  - "testing-software"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/image-3.png"
 ---
 

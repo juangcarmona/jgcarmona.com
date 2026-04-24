@@ -9,8 +9,14 @@ import mermaid from 'astro-mermaid';
 export default defineConfig({
 	site: 'https://jgcarmona.com',
 	integrations: [
-		mermaid({ autoTheme: true }),
-		mdx(),
-		sitemap(),
-	],
+		mermaid({ autoTheme: true }), mdx(), sitemap({
+			filter: (page) => !page.includes('/search') && !page.includes('/tags-data.json'),
+		})],
+	vite: {
+		build: {
+			rollupOptions: {
+				external: ['/_pagefind/pagefind.js'],
+			},
+		},
+	},
 });

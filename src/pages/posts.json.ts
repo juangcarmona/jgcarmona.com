@@ -11,6 +11,8 @@ export async function GET() {
       date: p.data.pubDate.toISOString(),
       description: p.data.description ?? "",
       hero: p.data.heroImage ?? "",
+      lang: p.data.lang ?? "en",
+      tags: p.data.tags ?? [],
       slug: p.id
     }));
 

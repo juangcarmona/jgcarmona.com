@@ -4,50 +4,56 @@ import BlogPost from '../../layouts/BlogPost.astro';
 import Comments from '../../components/Comments.astro';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+const posts = await getCollection('blog');
+const paths = [];
+const seen = new Set<string>();
 
-	const paths = [];
-	for (const post of posts) {
-		// Original language route
-		paths.push({
-			params: { lang: post.data.lang, slug: post.id },
-			props: post,
-		});
+for (const post of posts) {
+// Original language route
+const langKey = `${post.data.lang || 'en'}/${post.id}`;
+if (!seen.has(langKey)) {
+seen.add(langKey);
+paths.push({
+params: { lang: post.data.lang || 'en', slug: post.id },
+props: post,
+});
+}
 
-		// Translation routes
-		if (post.data.lang === 'es') {
-			paths.push({
-				params: { lang: 'en', slug: post.id },
-				props: { ...post, data: { ...post.data, isTranslation: true } },
-			});
-		} else if (post.data.lang === 'en') {
-			paths.push({
-				params: { lang: 'es', slug: post.id },
-				props: { ...post, data: { ...post.data, isTranslation: true } },
-			});
-		}
-	}
-
-	return paths;
+// Translation route (cross-language)
+const transLang = post.data.lang === 'es' ? 'en' : 'es';
+const transKey = `${transLang}/${post.id}`;
+if (!seen.has(transKey)) {
+seen.add(transKey);
+paths.push({
+params: { lang: transLang, slug: post.id },
+props: { ...post, data: { ...post.data, isTranslation: true } },
+});
+}
+}
+return paths;
 }
 
 type Props = CollectionEntry<'blog'>;
-
 const post = Astro.props;
 const { Content } = await render(post);
 ---
 
 <BlogPost {...post.data}>
-	<Content />
-	<Comments />
+{post.data.isTranslation && (
+<div class="translation-disclaimer">
+{post.data.lang === 'es' ? 'This is an English translation of the original Spanish post.' : 'Esta es una traducción al espa\u00F1ol del post original en ingl\u00E9s.'}
+</div>
+)}
+<Content />
+<Comments />
 </BlogPost>
 
 <style>
-	.translation-disclaimer {
-		color: var(--accent);
-		font-size: 1.2em;
-		margin: 0.5em 0 1em 0;
-		font-style: italic;
-		background-color: black;
-	}
+.translation-disclaimer {
+color: var(--accent);
+font-size: 1.2em;
+margin: 0.5em 0 1em 0;
+font-style: italic;
+background-color: black;
+}
 </style>

@@ -3,9 +3,9 @@ lang: es
 title: "Muda: Mejorando la Eficiencia en el Desarrollo de Software"
 description: 'Aplica el concepto japonés Muda para identificar y eliminar desperdicios en el desarrollo de software y mejorar eficiencia y calidad.'
 pubDate: 2023-07-11
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
+tags:
+  - "leadership"
+  - "personal"
 heroImage: "images/muda.jpg"
 ---
 

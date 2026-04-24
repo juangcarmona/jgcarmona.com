@@ -3,11 +3,9 @@ lang: es
 title: "Crear aplicaciones Multiidioma para Android"
 description: 'Cómo internacionalizar apps Android: estructura de `values-xx`, `strings.xml` y mejores prácticas para soportar múltiples idiomas.'
 pubDate: 2012-12-26
-categories: 
-  - "ai"
-  - "aventura"
-  - "desarrollo-software"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
+tags:
+  - "sw-craftsmanship"
+  - "devex"
 ---
 
 En los dos últimos artículos intenté mostrar todo el proceso de creación de una aplicación y, sobretodo, cómo dar los primeros pasos desarrollando aplicaciones de mapas utilizando Google Maps Android API v2. En ésta ocasión y a raiz de que creo que la aplicación que desarrollé a modo de ejemplo podría tener algo de tirón dentro de toda la comunidad de musulmanes a nivel internacional y no sólo entre los musulmanes hispanohablantes como pensé en un principio he decidido hacer multi-idioma dicha aplicación para que cualquier musulman del planeta la pueda utilizar.

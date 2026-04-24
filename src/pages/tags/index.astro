@@ -3,7 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import TagGraph from '../../components/TagGraph.astro';
+import { SITE_TITLE } from '../../consts';
 
 const posts = await getCollection('blog');
 
@@ -17,48 +18,47 @@ posts.forEach((post) => {
 });
 
 // Convert to array and sort by count (desc), then alphabetically
-const sortedTags = Array.from(tagCounts.entries())
-	.sort((a, b) => {
-		// First by count descending
-		if (b[1] !== a[1]) {
-			return b[1] - a[1];
-		}
-		// Then alphabetically
-		return a[0].localeCompare(b[0]);
-	});
+const sortedTags = Array.from(tagCounts.entries()).sort((a, b) => {
+	if (b[1] !== a[1]) return b[1] - a[1];
+	return a[0].localeCompare(b[0]);
+});
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Tags - ${SITE_TITLE}`} description={`Browse posts by tag on ${SITE_TITLE}`} />
-		<style>
-			body {
-				display: flex;
-				flex-direction: column;
-				min-height: 100vh;
-			}
-			main {
-				flex: 1;
-                margin-top: 2em;
-			}
-		</style>
+		<BaseHead title={`Tags — ${SITE_TITLE}`} description={`Browse posts by tag on ${SITE_TITLE}`} />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<section>
-				<h1>Tags</h1>
-				<p>Browse posts by topic</p>
-				
-				<div class="tags-grid">
-					{sortedTags.map(([tag, count]) => (
-						<a href={`/tags/${tag}`} class="tag-card">
-							<span class="tag-name">{tag}</span>
-							<span class="tag-count">{count} {count === 1 ? 'post' : 'posts'}</span>
-						</a>
-					))}
+			<section class="tags-page">
+				<header class="tags-header">
+					<h1>Tags</h1>
+					<p>Browse posts by topic.</p>
+				</header>
+
+				<div class="tags-view-toggle" aria-label="Tags view">
+					<button type="button" data-view="graph" class="toggle-btn active">Graph</button>
+					<button type="button" data-view="grid" class="toggle-btn">Grid</button>
 				</div>
+
+				<section class="tags-browser">
+					<div class="tags-graph-panel">
+						<TagGraph />
+					</div>
+
+					<nav class="tags-grid-panel" aria-label="All tags">
+						<h2>All tags</h2>
+						<ul class="tags-grid">
+							{sortedTags.map(([tag, count]) => (
+								<li>
+									<a href={`/tags/${tag}`}>{tag} ({count})</a>
+								</li>
+							))}
+						</ul>
+					</nav>
+				</section>
 			</section>
 		</main>
 		<Footer />
@@ -66,58 +66,147 @@ const sortedTags = Array.from(tagCounts.entries())
 </html>
 
 <style>
-	main {
-		width: 960px;
+	.tags-page {
+		width: calc(100% - 2em);
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 0 1em 2em;
 	}
 
-	h1 {
-		margin-bottom: 0.5em;
+	.tags-header {
+		margin-bottom: 1.5em;
 	}
 
-	p {
+	.tags-header h1 {
+		margin-bottom: 0.25em;
+	}
+
+	.tags-header p {
 		color: rgb(var(--gray));
-		margin-bottom: 2em;
+		margin: 0;
+	}
+
+	/* View toggle — hidden on desktop, visible on mobile */
+	.tags-view-toggle {
+		display: none;
+		gap: 0.5em;
+		margin-bottom: 1em;
+	}
+
+	.toggle-btn {
+		padding: 0.4em 1em;
+		font-size: 0.85em;
+		font-family: inherit;
+		border: 1px solid rgba(var(--gray), 0.3);
+		border-radius: 4px;
+		background: transparent;
+		color: rgb(var(--gray));
+		cursor: pointer;
+		transition: all 0.15s ease;
+	}
+
+	.toggle-btn.active {
+		color: var(--accent);
+		border-color: var(--accent);
+	}
+
+	/* Two-column layout: graph + grid */
+	.tags-browser {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 2rem;
+		align-items: start;
+	}
+
+	.tags-graph-panel {
+		position: sticky;
+		top: 2em;
+	}
+
+	.tags-grid-panel h2 {
+		font-size: 0.85em;
+		font-weight: 600;
+		color: rgb(var(--gray));
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.75em;
 	}
 
 	.tags-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-		gap: 1em;
-		margin-top: 2em;
+		grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+		gap: 0.35rem 0.75rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
 	}
 
-	.tag-card {
-		display: flex;
-		flex-direction: column;
-		padding: 1.5em;
-		background-color: rgb(var(--gray-dark));
-		border-radius: 8px;
-		border: 1px solid transparent;
-		text-decoration: none;
-		transition: all 0.2s ease;
+	.tags-grid li {
+		padding: 0;
 	}
 
-	.tag-card:hover {
-		border-color: var(--accent);
-		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(var(--accent-dark), 0.2);
-	}
-
-	.tag-name {
-		font-size: 1.2em;
-		font-weight: 700;
+	.tags-grid a {
+		display: block;
+		padding: 0.3em 0;
 		color: rgb(var(--gray-light));
-		margin-bottom: 0.5em;
-	}
-
-	.tag-count {
+		text-decoration: none;
 		font-size: 0.9em;
-		color: rgb(var(--gray));
+		transition: color 0.15s ease;
 	}
 
-	@media (max-width: 720px) {
-		.tags-grid {
+	.tags-grid a:hover {
+		color: var(--accent);
+	}
+
+	@media (max-width: 860px) {
+		.tags-browser {
 			grid-template-columns: 1fr;
+		}
+
+		.tags-graph-panel {
+			position: static;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.tags-view-toggle {
+			display: flex;
+		}
+
+		/* Mobile: show graph by default, hide grid */
+		.tags-graph-panel {
+			display: block;
+		}
+
+		.tags-grid-panel {
+			display: none;
+		}
+
+		/* Toggle states */
+		[data-active-view="grid"] .tags-graph-panel {
+			display: none;
+		}
+
+		[data-active-view="grid"] .tags-grid-panel {
+			display: block;
 		}
 	}
 </style>
+
+<script client:load>
+(function() {
+	const toggle = document.querySelector('.tags-view-toggle');
+	if (!toggle) return;
+
+	const btns = toggle.querySelectorAll('.toggle-btn');
+
+	btns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			const view = btn.dataset.view;
+			btns.forEach(b => b.classList.remove('active'));
+			btn.classList.add('active');
+			document.documentElement.setAttribute('data-active-view', view);
+		});
+	});
+})();
+</script>

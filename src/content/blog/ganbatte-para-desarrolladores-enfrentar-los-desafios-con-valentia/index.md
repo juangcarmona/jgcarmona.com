@@ -1,14 +1,11 @@
----
+﻿---
 lang: es
 title: "Ganbatte para desarrolladores – Enfrentar los desafíos con valentía"
 description: 'Aplica el espíritu Ganbatte al desarrollo: técnicas y hábitos para afrontar desafíos y mejorar continuamente como desarrollador.'
 pubDate: 2023-07-07
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-tags: 
+tags:
   - "leadership"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/pexels-photo-2403502.jpeg"
 ---
 

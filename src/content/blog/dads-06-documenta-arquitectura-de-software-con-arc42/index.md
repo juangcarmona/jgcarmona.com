@@ -1,17 +1,12 @@
----
+﻿---
 lang: es
 title: "DADS #06: Documenta Arquitectura de Software con arc42"
 description: 'Cómo usar arc42 para documentar arquitectura de software: plantilla, secciones y ejemplos para comunicar diseños claros.'
 pubDate: 2024-10-31
-categories: 
-  - "arquitectura-software"
-  - "blog"
-  - "desarrollo-software"
-  - "gestion-proyectos"
-  - "proyectos"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
+  - "devex"
 heroImage: "images/arc42-site-logo.webp"
 ---
 

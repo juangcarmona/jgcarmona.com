@@ -1,13 +1,11 @@
----
+﻿---
 lang: es
 title: "Migrar a la nube: una guía para una migración exitosa a Azure"
 description: 'Consejos prácticos para planificar y ejecutar migraciones a Azure: estrategias, errores comunes y checklist operativo.'
 pubDate: 2023-01-14
-categories: 
-  - "desarrollo-software"
-  - "devops"
-tags: 
+tags:
   - "azure"
+  - "devops"
 heroImage: "images/way-clouds-seat-belts-direction-52531.jpeg"
 ---
 

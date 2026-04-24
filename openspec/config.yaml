@@ -1,0 +1,48 @@
+schema: spec-driven
+
+context: |
+  Personal blog/portfolio for Juan G. Carmona (Software Architect at Plain Concepts).
+  Site: https://jgcarmona.com — fully static, no SSR, no backend, no database.
+
+  Tech stack: Astro 5.x (SSG), TypeScript strict (strictNullChecks), MDX, @astrojs/sitemap, @astrojs/rss, Sharp.
+  No CSS framework. Styles use CSS variables defined in src/styles/global.css.
+  Images: always use the Image component from astro:assets, never raw <img>. Post images live in src/content/blog/{slug}/images/.
+
+  Content: all blog posts are in src/content/blog/{slug}/index.md (or index.mdx).
+  Required frontmatter: title (min 5 chars), description (10-300 chars), pubDate (ISO date).
+  Optional frontmatter: updatedDate, heroImage (relative path), tags[], featured (bool), featuredOrder (number), lang ('en'|'es', default 'en').
+  WARNING: many posts also have a categories[] field that is NOT in the schema — Astro ignores it silently.
+
+  Routing: canonical URLs are /{lang}/{post-id}/. The root [...slug].astro is a legacy WordPress compat layer only.
+  Bilingual: ~70% of posts are Spanish (lang: es), ~30% English. lang must be set explicitly — the default 'en' is misleading.
+  isTranslation is injected at getStaticPaths() in [lang]/[slug].astro, not stored in frontmatter.
+
+  Layout chain for all pages: BaseHead -> Header -> <main> -> Footer.
+  All component prop sets must use `interface Props`. Post data uses CollectionEntry<'blog'>.
+  Build: npm run build. Dev: npm run dev.
+
+rules:
+  proposal:
+    - State whether the change affects SEO surface (OG tags, sitemap, canonical URLs, BaseHead.astro structured data)
+    - State whether the change affects bilingual routing, lang detection, or the translation disclaimer mechanism
+    - State whether the change requires frontmatter schema updates in content.config.ts (cascades to all posts)
+    - Keep proposals under 400 words
+    - Include a Non-goals section
+
+  specs:
+    - Define behavior for both lang values ('en' and 'es') if the change touches routing, rendering, or filtering
+    - Specify frontmatter fields by name if the spec depends on content schema
+    - Do not spec machine translation — all content is manually authored per language
+
+  design:
+    - New Astro components must define props with `interface Props`; no untyped Astro.props destructuring
+    - New pages must follow the BaseHead -> Header -> <main> -> Footer layout chain
+    - Schema changes in content.config.ts must be called out explicitly; they affect every post at build time
+    - Do not introduce new npm dependencies unless no built-in Astro or Sharp mechanism exists
+    - CSS changes must use existing CSS variables; no hardcoded colors, shadows, or spacing values
+
+  tasks:
+    - Any task touching getStaticPaths() must be flagged — it affects the full set of generated routes
+    - Frontmatter schema changes must be a standalone task with explicit migration note for existing posts
+    - Final task in every change must be: run npm run build and confirm zero errors
+    - Keep individual tasks to 1-2 hours of focused work

@@ -1,14 +1,11 @@
----
+﻿---
 lang: es
 title: "Yugen: Profundizando en la Conciencia del Universo del Software"
 description: 'Reflexión sobre Yugen aplicada al desarrollo: profundidad, intuición y apreciación del software como práctica creativa y profesional.'
 pubDate: 2023-07-11
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-tags: 
+tags:
   - "leadership"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/yugen-20141.jpg"
 ---
 

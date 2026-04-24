@@ -1,19 +1,13 @@
----
+﻿---
 lang: es
 title: "Mi primera aplicación Android: Gredos 3D"
 description: 'Relato técnico y práctico de la creación de Gredos 3D: mapas, heightmaps y programación 3D en Android con OpenGL.'
 pubDate: 2012-08-28
-categories: 
-  - "aventura"
-  - "desarrollo-software"
-  - "devops"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
----
-
-[Gredos 3D](https://play.google.com/store/apps/details?id=com.jgc.gredos_3d) es mi primera app para Android. Tenía ganas de meterme de lleno en el mundillo de la programación de aplicaciones móviles y sin habérmelo propuesto he aprendido mucho sobre mapas, cartografía y modelos digitales del terreno así como de OpenGL y la programación 3D.
+  - "sw-craftsmanship"
+  - "personal"
+---(https://play.google.com/store/apps/details?id=com.jgc.gredos_3d) es mi primera app para Android. Tenía ganas de meterme de lleno en el mundillo de la programación de aplicaciones móviles y sin habérmelo propuesto he aprendido mucho sobre mapas, cartografía y modelos digitales del terreno así como de OpenGL y la programación 3D.
 
   
 

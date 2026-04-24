@@ -1,17 +1,14 @@
----
-title: "GitHub Copilot: What Consumes Premium Request Units (PRUs)"
+﻿---
+title: "GitHub Copilot: What Consumes Premium Request"
 description: "Practical guide to GitHub Copilot Premium Request Units (PRUs): what features consume them, what doesn't, and how to optimize usage when using Copilot autocomplete, chat, CLI, agents, and code reviews."
 pubDate: 2026-03-17
-categories:
-  - "software-development"
-  - "artificial-intelligence"
-  - "devops"
-heroImage: "images/github-copilot-pru-usage.png"
-slug: "github-copilot-pru-usage"
 tags:
   - "ai"
+  - "devex"
   - "devops"
   - "best-practices"
+heroImage: "images/github-copilot-pru-usage.png"
+slug: "github-copilot-pru-usage"
 ---
 
 ## TL;DR

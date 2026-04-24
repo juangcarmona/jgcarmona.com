@@ -1,14 +1,11 @@
----
+﻿---
 lang: es
 title: "Oubaitoori: Mejorando el Desarrollo de Software a través de la Observación y el Estudio"
 description: 'Aplica la filosofía Oubaitoori al desarrollo: observa, estudia y mejora habilidades individuales y en equipo.'
 pubDate: 2023-07-07
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-tags: 
+tags:
   - "leadership"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/pexels-photo-336407.jpeg"
 ---
 

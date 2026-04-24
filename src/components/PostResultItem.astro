@@ -1,0 +1,162 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const heroImage = post.data.heroImage;
+const DEFAULT_IMAGE = '/juangcarmona_to_the_world.webp';
+---
+
+<article
+  class="post-result-item"
+  data-title={post.data.title}
+  data-description={post.data.description}
+  data-tags={(post.data.tags || []).join(' ')}
+>
+  <a class="post-result-image-link" href={`/${post.data.lang}/${post.id}/`}>
+      {heroImage ? (
+        <Image
+          class="post-result-image"
+          src={heroImage}
+          alt={post.data.title}
+          width={96}
+          height={96}
+          loading="lazy"
+        />
+      ) : (
+        <img
+          class="post-result-image"
+          src={DEFAULT_IMAGE}
+          alt=""
+          width={96}
+          height={96}
+          loading="lazy"
+        />
+      )}
+    </a>
+
+  <div class="post-result-content">
+    <h2 class="post-result-title">
+      <a href={`/${post.data.lang}/${post.id}/`}>{post.data.title}</a>
+    </h2>
+
+    <p class="post-result-excerpt">{post.data.description}</p>
+
+    <div class="post-result-meta">
+      <time datetime={post.data.pubDate.toISOString()}>
+        <FormattedDate date={post.data.pubDate} />
+      </time>
+      {post.data.tags && post.data.tags.length > 0 && (
+        <ul class="post-result-tags">
+          {post.data.tags.map((tag) => (
+            <li><a href={`/tags/${tag}`}>{tag}</a></li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</article>
+
+<style>
+  .post-result-item {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(var(--gray), 0.18);
+    background: transparent;
+  }
+
+  .post-result-item[hidden] {
+    display: none !important;
+  }
+
+  .post-result-item:last-child {
+    border-bottom: none;
+  }
+
+  .post-result-image-link {
+    display: block;
+  }
+
+  .post-result-image {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .post-result-content {
+    min-width: 0;
+  }
+
+  .post-result-title {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .post-result-title a {
+    color: rgb(var(--gray-light));
+    text-decoration: none;
+  }
+
+  .post-result-title a:hover {
+    color: var(--accent);
+  }
+
+  .post-result-excerpt {
+    margin: 0 0 0.45rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: rgb(var(--gray));
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .post-result-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: rgb(var(--gray));
+  }
+
+  .post-result-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .post-result-tags a {
+    color: rgb(var(--gray));
+    text-decoration: none;
+  }
+
+  .post-result-tags a:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    .post-result-item {
+      grid-template-columns: 72px 1fr;
+      gap: 0.75rem;
+    }
+
+    .post-result-image {
+      width: 72px;
+      height: 72px;
+    }
+  }
+</style>

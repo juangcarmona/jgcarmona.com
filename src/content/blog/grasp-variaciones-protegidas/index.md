@@ -1,14 +1,11 @@
----
+﻿---
 lang: es
 title: "GRASP: Variaciones protegidas"
 description: 'Explicación del principio GRASP de variaciones protegidas para diseñar sistemas flexibles frente al cambio.'
 pubDate: 2012-09-07
-categories: 
-  - "arquitectura-software"
-  - "desarrollo-software"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
+  - "sw-craftsmanship"
 heroImage: "images/just-write-grasp.png"
 ---
 

@@ -1,12 +1,10 @@
----
+﻿---
 lang: es
 title: "MASTERING SOFTWARE DEVELOPMENT"
 description: 'Serie sobre herramientas, habilidades y mentalidad para avanzar en tu carrera como desarrollador: arquitectura, testing, DevOps y soft skills.'
 pubDate: 2023-07-16
-categories: 
-  - "desarrollo-software"
-tags: 
-  - "software"
+tags:
+  - "sw-craftsmanship"
 heroImage: "images/filosofias_japonesas.jpg"
 ---
 

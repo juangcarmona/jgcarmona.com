@@ -1,13 +1,9 @@
----
+﻿---
 lang: es
 title: "Como sobrevivir a CryptoWall 3.0"
 description: 'Experiencia práctica para detectar y eliminar CryptoWall 3.0: pasos de limpieza, rutas comunes y recomendaciones de recuperación.'
 pubDate: 2015-09-16
-categories: 
-  - "ciberseguridad"
-  - "desarrollo-software"
-  - "devops"
-tags: 
+tags:
   - "cybersecurity"
 heroImage: "images/image.png"
 ---

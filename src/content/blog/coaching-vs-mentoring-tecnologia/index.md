@@ -1,14 +1,9 @@
----
+﻿---
 lang: es
 title: "Coaching vs Mentoring en Tecnología"
 description: 'Comparativa práctica entre coaching y mentoring en tecnología para impulsar tu carrera y elegir el enfoque correcto.'
 pubDate: 2024-09-27
-categories: 
-  - "blog"
-  - "desarrollo-personal"
-  - "gestion-proyectos"
-  - "proyectos"
-tags: 
+tags:
   - "leadership"
 heroImage: "images/image-22.png"
 ---

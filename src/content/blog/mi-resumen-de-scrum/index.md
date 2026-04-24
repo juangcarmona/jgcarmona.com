@@ -3,13 +3,8 @@ lang: es
 title: "Mi resumen de SCRUM"
 description: 'Resumen práctico de SCRUM: roles, eventos y artefactos para aplicar metodologías ágiles en equipos de software.'
 pubDate: 2012-08-23
-categories: 
-  - "desarrollo-software"
-  - "desarrollo-personal"
-  - "gestion-proyectos"
-  - "proyectos"
-  - "testing-software"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
+tags:
+  - "agile"
 ---
 
 > Para empezar éste artículo tengo que decir que no soy SCRUM Master ni tengo ninguna certificación en SCRUM. Creo más en las capacidades reales de la gente que en sus certificaciones. No quiero hacer comparaciones porque las comparaciones son odiosas pero he tenido compañeros, físicos  de carrera, que ejercían increíblemente bien de arquitectos de software y de desarrolladores sin tener ninguna certificación en la materia. Aunque no soy un experto en SCRUM ni estoy certificado como tal mis conocimientos sobre la materia me los dan la experiencia y la práctica en dos implementaciones de SCRUM distintas en dos equipos de desarrollo distintos. 

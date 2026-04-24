@@ -1,19 +1,13 @@
----
+﻿---
 lang: es
 title: "Gredos Virtual 3D 1.2"
 description: 'Actualizaciones de Gredos Virtual 3D: mejoras en texturas y controles para una experiencia 3D en Android.'
 pubDate: 2012-08-30
-categories: 
-  - "aventura"
-  - "desarrollo-software"
-  - "devops"
-tags: 
+tags:
   - "sw-architecture"
-  - "software"
-heroImage: "../back-to-engineering-plain-concepts/images/image-13.png"
----
-
-He seguido "jugando" con los mapas buscando optimizar al máximo y mejorar la usabilidad de las aplicaciones Android de las que hablaba en anteriores entradas. 
+  - "sw-craftsmanship"
+  - "personal"
+--- "jugando" con los mapas buscando optimizar al máximo y mejorar la usabilidad de las aplicaciones Android de las que hablaba en anteriores entradas. 
 
   
 
