@@ -1,31 +1,27 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BlogPost from '../layouts/BlogPost.astro';
-import Comments from '../components/Comments.astro'
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+    const posts = await getCollection('blog');
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: { lang: post.data.lang || 'en' },
+    }));
 }
 
-type Props = CollectionEntry<'blog'>;
-
-const post = Astro.props;
-const { Content } = await render(post);
+const { lang } = Astro.props;
+const slug = Astro.params.slug || '';
 ---
 
-<BlogPost 
-	{...post.data}
-	pubDate={post.data.pubDate}
-	updatedDate={post.data.updatedDate}
-	heroImage={post.data.heroImage}
-	tags={post.data.tags}
-	isTranslation={post.data.isTranslation}
-	lang={post.data.lang}
->
-	<Content />
-	<Comments/>
-</BlogPost>
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="refresh" content="0; url={lang}/${slug}/" />
+        <link rel="canonical" href={`/${lang}/${slug}/`} />
+        <title>Redirecting...</title>
+    </head>
+    <body>
+        <p>Redirecting to <a href={`/${lang}/${slug}/`}>/${lang}/{slug}/</a>...</p>
+    </body>
+</html>

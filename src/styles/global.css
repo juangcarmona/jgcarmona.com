@@ -90,6 +90,10 @@ body {
 	/* Optimize for performance */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	/* Sticky footer: body stretches to full viewport */
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 main {
@@ -97,6 +101,8 @@ main {
 	max-width: calc(100%);
 	margin: auto;
 	padding: 0em 1em;
+	/* Stretch to push footer to bottom */
+	flex: 1;
 
 	/* padding: 3.5em 1em; */
 }

@@ -3,210 +3,102 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
+import PostResultItem from '../../components/PostResultItem.astro';
 import { SITE_TITLE } from '../../consts';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	
-	// Get all unique tags
-	const tags = new Set<string>();
-	posts.forEach((post) => {
-		const postTags = post.data.tags || [];
-		postTags.forEach((tag) => tags.add(tag));
-	});
+const posts = await getCollection('blog');
 
-	// Generate a path for each tag
-	return Array.from(tags).map((tag) => {
-		const filteredPosts = posts
-			.filter((post) => (post.data.tags || []).includes(tag))
-			.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+// Get all unique tags
+const tags = new Set<string>();
+posts.forEach((post) => {
+const postTags = post.data.tags || [];
+postTags.forEach((tag) => tags.add(tag));
+});
 
-		return {
-			params: { tag },
-			props: { posts: filteredPosts, tag },
-		};
-	});
+// Generate a path for each tag
+return Array.from(tags).map((tag) => {
+const filteredPosts = posts
+.filter((post) => (post.data.tags || []).includes(tag))
+.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+return {
+params: { tag },
+props: { posts: filteredPosts, tag },
+};
+});
 }
 
 interface Props {
-	posts: CollectionEntry<'blog'>[];
-	tag: string;
+posts: CollectionEntry<'blog'>[];
+tag: string;
 }
 
 const { posts, tag } = Astro.props;
-
-// Calculate reading time (rough estimate: 200 words per minute)
-function getReadingTime(post: CollectionEntry<'blog'>): string {
-	// This is a simple estimate. For accurate reading time, you'd need to count words in the content
-	// For now, return a placeholder
-	return '5 min read';
-}
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead 
-			title={`Posts tagged "${tag}" - ${SITE_TITLE}`} 
-			description={`Browse all posts tagged with ${tag}`} 
-		/>
-		<style>
-			body {
-				display: flex;
-				flex-direction: column;
-				min-height: 100vh;
-			}
-			main {
-				flex: 1;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<div class="header-section">
-					<h1>Posts tagged <span class="tag-highlight">"{tag}"</span></h1>
-					<p>{posts.length} {posts.length === 1 ? 'post' : 'posts'}</p>
-				</div>
+<head>
+<BaseHead
+title={`Posts tagged "${tag}" — ${SITE_TITLE}`}
+description={`Browse all posts tagged with ${tag}`}
+/>
+</head>
+<body>
+<Header />
+<main>
+<section>
+<div class="header-section">
+<h1>Posts tagged <span class="tag-highlight">"{tag}"</span></h1>
+<p>{posts.length} {posts.length === 1 ? 'post' : 'posts'}</p>
+</div>
 
-				<ul class="posts-list">
-					{posts.map((post) => (
-						<li class="post-item">
-							<a href={`/${post.data.lang}/${post.id}/`}>
-								<h2>{post.data.title}</h2>
-								<div class="post-meta">
-									<FormattedDate date={post.data.pubDate} />
-									<span class="separator">•</span>
-									<span class="reading-time">{getReadingTime(post)}</span>
-								</div>
-								<p class="post-description">{post.data.description}</p>
-								{post.data.tags && post.data.tags.length > 0 && (
-									<div class="post-tags">
-										{post.data.tags.slice(0, 3).map((postTag) => (
-											<span class="post-tag" class:list={{ active: postTag === tag }}>
-												{postTag}
-											</span>
-										))}
-									</div>
-								)}
-							</a>
-						</li>
-					))}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+<div class="results-list">
+{posts.map((post) => (
+<PostResultItem post={post} />
+))}
+</div>
+</section>
+</main>
+<Footer />
+</body>
 </html>
 
 <style>
-	main {
-		width: 960px;
-	}
+main {
+width: 960px;
+max-width: calc(100% - 2em);
+margin: 0 auto;
+padding: 0 1em;
+}
 
-	.header-section {
-		margin-bottom: 3em;
-	}
+.header-section {
+margin-bottom: 2em;
+}
 
-	h1 {
-		margin-bottom: 0.5em;
-		line-height: 1.3;
-	}
+h1 {
+margin-bottom: 0.5em;
+line-height: 1.3;
+}
 
-	.tag-highlight {
-		color: var(--accent);
-	}
+.tag-highlight {
+color: var(--accent);
+}
 
-	.header-section > p {
-		color: rgb(var(--gray));
-		font-size: 1.1em;
-	}
+.header-section > p {
+color: rgb(var(--gray));
+font-size: 1.1em;
+}
 
-	.posts-list {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-	}
+.results-list {
+display: flex;
+flex-direction: column;
+}
 
-	.post-item {
-		margin-bottom: 2.5em;
-		padding-bottom: 2.5em;
-		border-bottom: 1px solid rgba(var(--gray), 0.2);
-	}
-
-	.post-item:last-child {
-		border-bottom: none;
-	}
-
-	.post-item a {
-		text-decoration: none;
-		display: block;
-		transition: transform 0.2s ease;
-	}
-
-	.post-item a:hover {
-		transform: translateX(4px);
-	}
-
-	.post-item h2 {
-		margin: 0 0 0.5em 0;
-		color: rgb(var(--gray-light));
-		font-size: 1.8em;
-		transition: color 0.2s ease;
-	}
-
-	.post-item a:hover h2 {
-		color: var(--accent);
-	}
-
-	.post-meta {
-		display: flex;
-		align-items: center;
-		gap: 0.5em;
-		color: rgb(var(--gray));
-		font-size: 0.9em;
-		margin-bottom: 0.75em;
-	}
-
-	.separator {
-		color: rgb(var(--gray));
-	}
-
-	.reading-time {
-		color: rgb(var(--gray));
-	}
-
-	.post-description {
-		color: rgb(var(--gray));
-		line-height: 1.6;
-		margin-bottom: 1em;
-	}
-
-	.post-tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5em;
-	}
-
-	.post-tag {
-		display: inline-block;
-		padding: 0.25em 0.75em;
-		background-color: rgba(var(--gray-dark), 0.5);
-		border-radius: 4px;
-		font-size: 0.85em;
-		color: rgb(var(--gray));
-	}
-
-	.post-tag.active {
-		background-color: var(--accent);
-		color: white;
-	}
-
-	@media (max-width: 720px) {
-		.post-item h2 {
-			font-size: 1.4em;
-		}
-	}
+@media (max-width: 720px) {
+h1 {
+font-size: 1.4em;
+}
+}
 </style>

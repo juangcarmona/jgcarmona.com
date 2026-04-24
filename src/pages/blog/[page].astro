@@ -3,54 +3,59 @@ import BlogPage from "../../components/BlogPage.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  const pageSize = 10;
-  const totalPages = Math.ceil(posts.length / pageSize);
+    const posts = await getCollection("blog");
+    const PAGE_SIZE = 10;
+    const FEATURED_BONUS = 1;
+    const PAGE1_SIZE = PAGE_SIZE + FEATURED_BONUS;
+    const remainingAfterFirst = posts.length - PAGE1_SIZE;
+    const extraPages = Math.max(0, Math.ceil(remainingAfterFirst / PAGE_SIZE));
+    const totalPages = 1 + extraPages;
 
-  return Array.from({ length: totalPages }, (_, i) => ({
-    params: { page: (i + 1).toString() },
-  }));
+    return Array.from({ length: totalPages }, (_, i) => ({
+        params: { page: (i + 1).toString() },
+    }));
 }
 
+const PAGE_SIZE = 10;
+const FEATURED_BONUS = 1;
+const PAGE1_SIZE = PAGE_SIZE + FEATURED_BONUS;
+
 const allPosts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
 const page = Number(Astro.params.page) || 1;
-let pageSize = 10;
-if (page == 1) {
-  pageSize = pageSize + 1;
-}
-
-const start = (page - 1) * pageSize;
-const end = start + pageSize;
+const currentPageSize = page === 1 ? PAGE1_SIZE : PAGE_SIZE;
+const start = page === 1 ? 0 : PAGE1_SIZE + (page - 2) * PAGE_SIZE;
+const end = start + currentPageSize;
 
 const posts = allPosts.slice(start, end);
 
-const totalPages = Math.ceil(allPosts.length / pageSize);
+const remainingAfterFirst = allPosts.length - PAGE1_SIZE;
+const extraPages = Math.max(0, Math.ceil(remainingAfterFirst / PAGE_SIZE));
+const totalPages = 1 + extraPages;
 
 const paginationItems = [];
 for (let p = 1; p <= totalPages; p++) {
-  const near = Math.abs(p - page) <= 1;
-  const edge = p === 1 || p === totalPages;
+    const near = Math.abs(p - page) <= 1;
+    const edge = p === 1 || p === totalPages;
 
-  if (near || edge) {
-    paginationItems.push(p);
-  } else {
-    paginationItems.push(null);
-  }
+    if (near || edge) {
+        paginationItems.push(p);
+    } else {
+        paginationItems.push(null);
+    }
 }
 
-// collapse nulls → single ellipses
-const compact: (number | "ellipsis")[] = [];
+const compact = [];
 for (let i = 0; i < paginationItems.length; i++) {
-  if (paginationItems[i] === null) {
-    if (compact[compact.length - 1] !== "ellipsis") {
-      compact.push("ellipsis");
+    if (paginationItems[i] === null) {
+        if (compact[compact.length - 1] !== "ellipsis") {
+            compact.push("ellipsis");
+        }
+    } else {
+        compact.push(paginationItems[i]);
     }
-  } else {
-    compact.push(paginationItems[i]);
-  }
 }
 ---
 

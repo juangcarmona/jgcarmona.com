@@ -1,118 +1,193 @@
 ---
-// Basic search page
 import { getCollection } from 'astro:content';
-import BlogPage from '../components/BlogPage.astro';
 import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PostResultItem from '../components/PostResultItem.astro';
+import { SITE_TITLE } from '../consts';
 
-const allPosts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-// Get search query from URL
-const searchQuery = Astro.url.searchParams.get('q') || '';
-
-// Filter posts based on search query
-let filteredPosts = [];
-if (searchQuery.trim()) {
-  const query = searchQuery.toLowerCase();
-  filteredPosts = allPosts.filter(post => 
-    post.data.title.toLowerCase().includes(query) ||
-    post.data.description.toLowerCase().includes(query) ||
-    (post.data.tags && post.data.tags.some(tag => tag.toLowerCase().includes(query))) ||
-    post.data.lang.toLowerCase().includes(query)
-  );
-} else {
-  filteredPosts = allPosts.slice(0, 10);
-}
-
-// Pagination settings
-const pageSize = 10;
-const page = parseInt(Astro.url.searchParams.get('page') || '1');
-const start = (page - 1) * pageSize;
-const end = start + pageSize;
-const posts = filteredPosts.slice(start, end);
-const totalPages = Math.ceil(filteredPosts.length / pageSize);
-
-// Generate pagination items
-const paginationItems = [];
-for (let p = 1; p <= totalPages; p++) {
-  const near = Math.abs(p - page) <= 1;
-  const edge = p === 1 || p === totalPages;
-
-  if (near || edge) paginationItems.push(p);
-  else paginationItems.push(null);
-}
-
-const compact = [];
-for (let i = 0; i < paginationItems.length; i++) {
-  const item = paginationItems[i];
-  if (item === null) {
-    if (compact[compact.length - 1] !== "ellipsis") {
-      compact.push("ellipsis");
-    }
-  } else {
-    compact.push(item);
-  }
-}
+// Load all posts for client-side search filtering
+const allPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead 
-      title={`Search Results for "${searchQuery}"`} 
-      description={`Search results for "${searchQuery}" on Juan G. Carmona's blog`}
+    <BaseHead
+      title={`Search — ${SITE_TITLE}`}
+      description={`Search blog posts on ${SITE_TITLE}`}
     />
   </head>
   <body>
+    <Header />
     <main>
-      <div class="search-results-container">
-        <h1>Search Results</h1>
-        <p>Found {filteredPosts.length} results for "{searchQuery}"</p>
-        
-        {searchQuery && (
-          <div class="search-bar-section">
-            <form action="/search" method="GET" class="search-form">
-              <input 
-                type="search" 
-                name="q" 
-                placeholder="Search blog posts..." 
-                value={searchQuery}
-                class="search-input"
-              />
-              <button type="submit" class="search-button">🔍</button>
-            </form>
-          </div>
-        )}
-        
-        {filteredPosts.length > 0 ? (
-          <BlogPage posts={posts} page={page} totalPages={totalPages} compact={compact} />
-        ) : (
-          <p>No results found for "{searchQuery}". Try a different search term.</p>
-        )}
+      <div id="search-container" class="search-container initial">
+        <h1>Search</h1>
+
+        <form id="search-form" class="search-form">
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search blog posts..."
+            value=""
+            class="search-input"
+            aria-label="Search blog posts"
+          />
+          <button type="submit" class="search-button" aria-label="Search">🔍</button>
+        </form>
+
+        <div class="search-hints">
+          Try: architecture, ai, devex, copilot, spec-kit
+        </div>
+
+        <p id="search-count" class="results-count" hidden></p>
+        <p id="search-empty" class="search-empty" hidden>No posts found.</p>
+
+        <section id="search-results" hidden>
+          {allPosts.map((post) => (
+            <PostResultItem post={post} />
+          ))}
+        </section>
       </div>
     </main>
+    <Footer />
   </body>
 </html>
 
+<script is:inline>
+(function() {
+  const container = document.getElementById('search-container');
+  const form = document.getElementById('search-form');
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  const count = document.getElementById('search-count');
+  const empty = document.getElementById('search-empty');
+  const items = [...document.querySelectorAll('.post-result-item')];
+
+  function setInitialState() {
+    container.classList.add('initial');
+    container.classList.remove('searched');
+    results.hidden = true;
+    count.hidden = true;
+    empty.hidden = true;
+    items.forEach(item => item.setAttribute('hidden', ''));
+  }
+
+  function runSearch(rawQuery) {
+    const query = rawQuery.trim().toLowerCase();
+
+    if (!query) {
+      setInitialState();
+      return;
+    }
+
+    container.classList.remove('initial');
+    container.classList.add('searched');
+    results.hidden = false;
+
+    let visible = 0;
+
+    for (const item of items) {
+      const haystack = [
+        item.dataset.title || '',
+        item.dataset.description || '',
+        item.dataset.tags || ''
+      ].join(' ').toLowerCase();
+
+      const match = haystack.includes(query);
+
+      if (match) {
+        item.removeAttribute('hidden');
+        visible++;
+      } else {
+        item.setAttribute('hidden', '');
+      }
+    }
+
+    count.hidden = false;
+    count.textContent = `Found ${visible} result${visible === 1 ? '' : 's'} for "${rawQuery.trim()}"`;
+    empty.hidden = visible !== 0;
+  }
+
+  const initialQuery = new URLSearchParams(window.location.search).get('q') || '';
+  input.value = initialQuery;
+
+  if (initialQuery.trim()) {
+    runSearch(initialQuery);
+  } else {
+    setInitialState();
+  }
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const query = input.value.trim();
+    const url = new URL(window.location.href);
+
+    if (query) {
+      url.searchParams.set('q', query);
+    } else {
+      url.searchParams.delete('q');
+    }
+
+    window.history.replaceState({}, '', url);
+    runSearch(query);
+  });
+})();
+</script>
+
 <style>
-.search-results-container {
-  max-width: 1200px;
+.search-container {
+  max-width: 800px;
   margin: 0 auto;
   padding: 2em 1em;
 }
 
-.search-bar-section {
-  margin: 2em 0;
+h1 {
+  font-size: 2em;
+  margin-bottom: 1.5em;
   text-align: center;
+  color: var(--accent);
 }
 
-.search-form {
+/* Initial (hero) state */
+.search-container.initial .search-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  max-width: 600px;
+  margin: 0 auto 1.5em;
+}
+
+.search-container.initial .search-input {
+  padding: 1em 1.25em;
+  font-size: 1.15rem;
+}
+
+.search-container.initial .search-button {
+  padding: 1em 2em;
+  font-size: 1.05rem;
+}
+
+.search-hints {
+  text-align: center;
+  color: rgb(var(--gray));
+  font-size: 0.85rem;
+  margin-bottom: 0.5em;
+}
+
+.search-container.searched .search-hints {
+  display: none;
+}
+
+/* Searched (compact) state */
+.search-container.searched .search-form {
   display: flex;
   justify-content: center;
   gap: 0.5em;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 1.5em;
 }
 
 .search-input {
@@ -122,6 +197,7 @@ for (let i = 0; i < paginationItems.length; i++) {
   border-radius: 4px;
   background-color: rgb(var(--gray-dark));
   color: rgb(var(--gray-light));
+  font-family: inherit;
   font-size: 1rem;
 }
 
@@ -143,5 +219,44 @@ for (let i = 0; i < paginationItems.length; i++) {
 
 .search-button:hover {
   background-color: var(--accent-dark);
+}
+
+.results-count {
+  text-align: center;
+  color: rgb(var(--gray));
+  margin-bottom: 1.5em;
+}
+
+.results-count[hidden] {
+  display: none;
+}
+
+.search-empty {
+  text-align: center;
+  color: rgb(var(--gray));
+  padding: 2em 1em;
+}
+
+.search-empty[hidden] {
+  display: none;
+}
+
+#search-results {
+  display: flex;
+  flex-direction: column;
+}
+
+#search-results[hidden] {
+  display: none;
+}
+
+:global(.post-result-item[hidden]) {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
 }
 </style>

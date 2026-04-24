@@ -27,7 +27,7 @@ export async function GET() {
 	const nodes = Array.from(tagCounts.entries()).map(([id, count]) => ({ id, count }));
 
 	const links = Array.from(coOccurrence.entries())
-		.filter(([, weight]) => weight >= 2)
+		.filter(([, weight]) => weight >= 1)
 		.map(([key, weight]) => {
 			const [source, target] = key.split('::');
 			return { source, target, weight };
