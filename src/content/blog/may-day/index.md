@@ -1,7 +1,7 @@
 ﻿---
 lang: en
 title: "Mayday! Mayday! We're Running Out of Fuel!"
-description: "Running out of tokens? Will you be part of this new form of slavery or will join the local ai rebellion? Tour AI. Your rules."
+description: "Running out of tokens? Will you be part of this new form of slavery or will join the local ai rebellion? Your AI. Your rules."
 pubDate: 2026-05-01
 tags:
   - ai
