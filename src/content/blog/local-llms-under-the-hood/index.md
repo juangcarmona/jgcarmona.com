@@ -2,13 +2,13 @@
 lang: en
 title: "Local LLMs Under the Hood"
 description: "Text becomes tokens, tokens become vectors, vectors consume memory, and memory pressure adds latency. A complete breakdown of the LLM inference pipeline."
-pubDate: 2026-05-01
+pubDate: 2026-05-02
 tags:
   - ai
   - local-ai
   - llm
   - software-architecture
-heroImage: "images/github_copilot_plane_out_of_fuel.png"
+heroImage: "images/local-llms-under-the-hood-hero.png"
 ---
 
 # Local LLMs Under the Hood
@@ -437,3 +437,11 @@ Remember:
 - Hugging Face Transformers documentation: [tokenizers](https://huggingface.co/docs/transformers/en/fast_tokenizers) and [KV cache](https://huggingface.co/docs/transformers/en/kv_cache)
 - NVIDIA Developer Blog: [Mastering LLM Techniques: Inference Optimization](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/)
 - Shazeer, [*Fast Transformer Decoding: One Write-Head is All You Need*](https://arxiv.org/abs/1911.02150)
+
+
+# Final note
+
+After many hours writing and shaping this article I asked ChatGPT to help me generating the hero iamge, I gave him also the entire article to fix typos and make some grammar coerractions (No, I havne't lied at you, the article has been antirely written by me, then AI just help me reviewing it...) And, well, it generated these two iamges I MUST share with you because are very visual. I hope you liked the entire content I cooked today.
+
+![](images/local-llms-under-the-hood.png)
+![](images/local-llms-under-the-hood-2.png)
