@@ -153,7 +153,7 @@ flowchart LR
 
 ## Step 2: From Token IDs to Vectors
 
-Models cannot operate just with integers, it needs continuous values so each token ID is used to look up a vector in a matrix. It is called **Embedding Matrix**, and it is the numeric space where computation happens. 
+Models cannot operate just with integers, they need continuous values so each token ID is used to look up a vector in a matrix. It is called **Embedding Matrix**, and it is a lookup table that maps each token ID to a vector. It is the numeric space where computation happens. 
 
 Think of it like this:
 
@@ -165,14 +165,16 @@ flowchart LR
 
 This matrix has a fixed shape:
 ```
-EmbeddingMatrix[vocab_size][hidden_dimension]
+embedding_matrix[vocab_size][hidden_dimension]
 ```
+
 For example:
 ```
 vocab_size ≈ 50,000
 hidden_dimension ≈ 4096
 ```
-So, this is what we get in this second step. Every token ID maps to a vector with thousands of dimensions. This is important. Just coordinates, per Token ID, in a very large space.
+
+So, this is what we get in this second step. Every token ID maps to a vector with thousands of dimensions. This is important. Just coordinates per Token ID in a very large space.
 
 Thousands of dimensions are hard to imagine, so let’s cheat with two. Here is an example to visualize it:
 
@@ -188,17 +190,22 @@ Once understood the purpose of these vectors, scale that idea to thousands of di
 
 This is the result of training a model. During training, the model adjusts these vectors so tokens used in similar contexts tend to occupy nearby regions of this space. Then, patterns emerge when all values are considered together.
 
-> If there is any kind of magic, it is here.
-
 Let's recap:
 
-Text -> Tokens -> Token IDs -> Vectors
+> Text -> Tokens -> Token IDs -> Vectors
 
-From this point forward, the model does not work with tokens or IDs anymore. It works with vectors. The algorithm, the model, will spend the rest of its time handling these vectors.
+From this point forward, the model does not work with tokens or IDs anymore. It works with vectors. The embedding is just the first of many vector transformations. The algorithm, the model, will spend the rest of its time handling these vectors.
 
 - attention compares vectors
 - KV cache stores vectors
 - every layer transforms vectors
+
+And let me add an important distinction here, it can be confusing otherwise...
+
+> An embedding is just the first vector representation of a token.
+
+- Token ID → embedding vector (lookup in the embedding matrix)
+- That embedding is then transformed again and again by the model
 
 Let's continue...
 
@@ -366,7 +373,7 @@ At this point, people assume:
 
 > “More GPU power = faster generation”
 
-Wrong. I hope you already understood why, but just in case, I'll repeat myself. The bottleneck is memory.
+Wrong. I hope you already understood why, but just in case, I'll repeat myself. The bottleneck is memory. The more memory a GPU can reserve, the more powerful it will be... And therefore, the more expensive. 
 
 During each decode step, the model must:
 
