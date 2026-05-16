@@ -13,8 +13,6 @@ tags:
 heroImage: "images/github_copilot_plane_out_of_fuel.png"
 ---
 
-# Mayday! Mayday! We're running out of fuel!
-
 > DISCLAIMER: these are my own words. Human words. No em dashes or "this is not X, but Y" sentences here and there. Just human intelligence and thoughts packed for your enjoyment. I just used ChatGPT to generate these funny images.
 
 Today is May 1, 2026. War in the Persian Gulf is shaking the planet's energy foundations, and the investors in the large corporations that own our beloved AI have decided it's time to get a return on their investment. Panic is gripping thousands of professional developers and millions of vibe coders hooked on the indiscriminate use of those erratic and verbose reasoning engines that we call AI.
@@ -88,7 +86,18 @@ And as I want to help you ride the second wave, in further articles, I will help
 - how runtimes change performance
 - how tokens and KV cache drive cost
 
-This series of articles will go layer by layer until you can operate, not just use, your own AI systems. 
+This series of articles will go layer by layer until you can operate, not just use, your own AI systems.
+
+## This series
+
+1. **You are here** — Mayday! Mayday! We're Running Out of Fuel!
+2. [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) — setup and wiring
+3. [MCP Is How Local Copilot Becomes Useful](/en/copilot-cli-mcp-tools/) — tools, not magic
+4. [Copilot Instructions, Agents, and Skills](/en/copilot-instructions-agents-skills/) — governance
+5. [Running SDD Workflows with Local Copilot](/en/copilot-cli-sdd-workflows/) — specification-driven development
+6. [The VS Code Agents Window Is the Harness](/en/vscode-agents-window/) — the convergence
+
+---
 
 Remember:
 
