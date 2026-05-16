@@ -2,7 +2,7 @@
 lang: en
 title: "Quantization: Making LLMs Smaller Without Making Them Stupid"
 description: "What LLM quantization is, how GPTQ, AWQ, QLoRA, and GGUF work, and how to choose the right method for local inference, GPU serving, or fine-tuning."
-pubDate: 2026-05-15
+pubDate: 2026-05-16
 tags:
   - ai
   - llm
