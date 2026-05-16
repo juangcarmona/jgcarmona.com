@@ -188,18 +188,9 @@ This is validation pressure. The agent cannot push code that violates policy bec
 
 ## The agent loop with MCP
 
-When Copilot CLI has MCP tools available and the model supports tool-calling (which is why I run vLLM with `--enable-auto-tool-choice`), the agent can work autonomously in loops:
+When Copilot CLI has MCP tools available and the model supports tool-calling (which is why I run vLLM with `--enable-auto-tool-choice`), the agent can work autonomously. It searches the codebase for relevant files, reads them, writes or modifies code, runs the tests, sees what breaks, fixes it, checks linting, and verifies again.
 
-1. Read the task from context or prompt
-2. Search the codebase for relevant files
-3. Read the files
-4. Write or modify code
-5. Run tests
-6. Check linting
-7. Fix issues
-8. Verify again
-
-That's a real agentic workflow. The model is not just generating text and hoping for the best. It's operating in a constrained environment with feedback.
+That's a real feedback loop. The model is not just generating text and hoping for the best; it's operating in a constrained environment where it sees the results of its own actions.
 
 And the constraint is the point. Constraints make agents predictable, and predictability is what makes them actually useful in a real workflow.
 
@@ -250,7 +241,7 @@ Give it tools. Give it rules. Give it constraints. You're not limiting the model
 3. **You are here** — MCP Is How Local Copilot Becomes Useful
 4. [Copilot Instructions, Agents, and Skills](/en/copilot-instructions-agents-skills/) — governance
 5. [Running SDD Workflows with Local Copilot](/en/copilot-cli-sdd-workflows/) — specification-driven development
-6. [The VS Code Agents Window Is the Harness](/en/vscode-agents-window/) — the convergence
+6. [VSCode Agents Window: An AI Harness Inside Visual Studio Code](/en/vscode-agents-window/), the convergence
 
 ## References
 

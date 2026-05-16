@@ -1,6 +1,6 @@
 ---
 lang: en
-title: "The VS Code Agents Window Is the Harness: Why Your IDE Became an Agent Operating System"
+title: "VSCode Agents Window: An AI Harness Inside Visual Studio Code"
 description: "VS Code's Agents Window is not just a UI: it's a multi-engine harness hosting Copilot CLI, Claude, and cloud agents. How the IDE became an operating system for software engineering agents."
 pubDate: 2026-05-16
 tags:
@@ -25,30 +25,21 @@ VS Code's Agents Window will become an operating system for software engineering
 
 ## The model is no longer the product
 
-We spent years obsessing over models but somehitng is changing fast (including pricing models). As soon as agents entered the scene, the bottleneck stopped being the raw intelligence of the model itself and became the runtime around it because autonomous workflows introduce entirely different problems:
+For years, AI focused, mostly, on releasing new models: bigger, smarter with better better benchmarks. But with the rise of agents, the challenge shifted from model intelligence, which is always welcome, to runtime execution. Why is that? Autonomous workflows introduce problems like context management, retries, orchestration, permissions, isolation, observability, governance, and, recently, input and output token usage as well as cost control. These are not model problems, these are runtime problems, and solve them all was really challenging.
 
-- context management
-- memory pressure
-- retries
-- validation
-- governance
-- tool orchestration
-- permissions
-- sandboxing
-- observability
-- isolation
-- cost control
-- multi-agent coordination
-
-And those are not model problems, they are runtime problems and this is where the idea of the harness starts making sense.
+That is why the idea of harnesses started to emerge, and, interestingly, it emerged almost simultaneously across different companies, teams, and ecosystems facing the exact same runtime problems.
 
 ## So... WTF is a harness?
 
-The best definition I can give is:
+The best definition I can give today is this one:
 
 > A harness is the runtime system around the model.
 
-The model generates tokens and the harness is the engineering system that can let us turn those tokens into something valuable. Let's say it is a well integrated AI and agentic workflow set of tools that allows you to fine tune the entire process end to end. Like if you compare and IDE with a text editor, in the case of AI-assistend coding, the harness centralices management and is resposible for:
+Another definition could be:
+
+> A harness is an Agentic Operating System
+
+At the end of the day, the harness is the engineering system that can let us turn those tokens into something valuable. Let's say it is a `well integrated with AI and agentic workflows, set of tools that allows us to fine tune the entire process, end to end`. Much like the difference between a text editor and a modern IDE, the harness centralizes execution, coordination, context, governance, and operational control. In AI-assisted coding, it becomes responsible for:
 
 - filesystem access
 - terminal execution
@@ -219,7 +210,7 @@ Your AI. Your runtime. Your rules.
 3. [MCP Is How Local Copilot Becomes Useful](/en/copilot-cli-mcp-tools/): tools, not magic
 4. [Copilot Instructions, Agents, and Skills](/en/copilot-instructions-agents-skills/): governance
 5. [Running SDD Workflows with Local Copilot](/en/copilot-cli-sdd-workflows/): specification-driven development
-6. **You are here**: The VS Code Agents Window Is the Harness
+6. **You are here**: VSCode Agents Window, An AI Harness Inside Visual Studio Code
 
 ## References
 
