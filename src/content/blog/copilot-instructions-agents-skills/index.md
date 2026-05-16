@@ -139,35 +139,7 @@ This is especially useful when you have different workflows for different parts 
 
 Skills are where things get really interesting. While instructions tell the agent *what*, skills tell it *how*.
 
-On this blog I have OpenSpec skills installed in `.github/skills/`. Each skill is a directory with a `SKILL.md` file that defines a structured workflow:
-
-- **openspec-propose**: Generate a complete change proposal with design, specs, and tasks
-- **openspec-apply**: Implement tasks from a proposal step by step
-- **openspec-explore**: Think through a problem before committing to a solution
-- **openspec-archive**: Archive completed changes
-
-Each skill file contains:
-
-- A description of what the skill does
-- Step-by-step instructions the agent should follow
-- Tool usage patterns (which tools to call and when)
-- Expected inputs and outputs
-
-Here's the structure:
-
-```
-.github/skills/
-  openspec-propose/
-    SKILL.md
-  openspec-apply-change/
-    SKILL.md
-  openspec-explore/
-    SKILL.md
-  openspec-archive-change/
-    SKILL.md
-```
-
-The important thing here is that skills turn the agent from a freestyle improviser into a protocol follower. Instead of asking "please propose a change" and hoping for the best, the agent reads the skill, follows the steps, uses the right tools, and produces structured output.
+On this blog I have OpenSpec skills installed in `.github/skills/`. Each skill is a directory with a `SKILL.md` file that defines a structured workflow: what steps to follow, which tools to call and when, and what the expected output looks like. Four of them: propose, apply, explore, and archive. Instead of asking "please propose a change" and hoping for the best, the agent reads the skill, follows the steps, uses the right tools, and produces structured output.
 
 You stop hoping. You start orchestrating.
 
@@ -222,7 +194,7 @@ A few practical tips from my experience:
 3. [MCP Is How Local Copilot Becomes Useful](/en/copilot-cli-mcp-tools/) — tools, not magic
 4. **You are here** — Copilot Instructions, Agents, and Skills
 5. [Running SDD Workflows with Local Copilot](/en/copilot-cli-sdd-workflows/) — specification-driven development
-6. [The VS Code Agents Window Is the Harness](/en/vscode-agents-window/) — the convergence
+6. [VSCode Agents Window: An AI Harness Inside Visual Studio Code](/en/vscode-agents-window/), the convergence
 
 ## References
 

@@ -33,7 +33,7 @@ SDD says: separate *what/why* from *how*. Write specifications that define inten
 
 Copilot CLI says: here is a terminal agent with file access, shell commands, MCP tools, custom instructions, and skills.
 
-The connection is obvious. Copilot CLI is the execution engine. SDD is the methodology. They fit together naturally.
+They click together. The CLI is the execution engine. SDD is the methodology.
 
 But there's a third piece: cost. SDD is inherently iterative. You propose, you refine, you apply, you verify, you archive. Each step involves the model reading context, generating artifacts, checking results. On cloud billing, that iteration has a cost you feel. On local hardware, that cost is amortized.
 
@@ -174,7 +174,7 @@ No revolution here. Just a practical workflow that becomes affordable when you o
 3. [MCP Is How Local Copilot Becomes Useful](/en/copilot-cli-mcp-tools/) — tools, not magic
 4. [Copilot Instructions, Agents, and Skills](/en/copilot-instructions-agents-skills/) — governance
 5. **You are here** — Running SDD Workflows with Local Copilot
-6. [The VS Code Agents Window Is the Harness](/en/vscode-agents-window/) — the convergence
+6. [VSCode Agents Window: An AI Harness Inside Visual Studio Code](/en/vscode-agents-window/), the convergence
 
 ## References
 

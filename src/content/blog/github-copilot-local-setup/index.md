@@ -328,7 +328,7 @@ You get a controllable engineering workflow. On your hardware. Under your rules.
 3. [MCP Is How Local Copilot Becomes Useful](/en/copilot-cli-mcp-tools/) — tools, not magic
 4. [Copilot Instructions, Agents, and Skills](/en/copilot-instructions-agents-skills/) — governance
 5. [Running SDD Workflows with Local Copilot](/en/copilot-cli-sdd-workflows/) — specification-driven development
-6. [The VS Code Agents Window Is the Harness](/en/vscode-agents-window/) — the convergence
+6. [VSCode Agents Window: An AI Harness Inside Visual Studio Code](/en/vscode-agents-window/), the convergence
 
 ## References
 
