@@ -2,7 +2,7 @@
 lang: en
 title: "Running SDD Workflows with Local Copilot"
 description: "How Copilot CLI hosts OpenSpec and Spec Kit flows on local hardware: propose, apply, archive. Why bounded inference cost makes specification-driven iteration practical."
-pubDate: 2026-05-07
+pubDate: 2026-05-12
 tags:
   - ai
   - local-ai
@@ -11,12 +11,12 @@ tags:
   - engineering
   - github
   - github-copilot
+  - copilot-cli
   - sdd
+heroImage: "images/copilot-cli-sdd-workflows.png"
 ---
 
-# Running SDD Workflows with Local Copilot
-
-> This is article 5 of a series. Start with [How I Made GitHub Copilot CLI Mine](https://jgcarmona.com/en/github-copilot-cli-with-local-llms-and-sdd/) for the full picture.
+> This is article 5 of a series. Start with [Mayday! We're Running Out of Fuel!](/en/may-day/) for the manifesto, or [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) for the setup story.
 
 I already wrote about Spec-Driven Development extensively:
 
@@ -103,7 +103,7 @@ flowchart TD
     G -->|Yes| H[Archive change]
 ```
 
-That is a development workflow. Not a chat session.
+That is a development workflow, not a chat session. And once you work this way, going back to unstructured prompting feels like coding without version control.
 
 ## Specs as context anchors
 
@@ -165,19 +165,20 @@ And when the agent runs on your own hardware, the cost barrier disappears. You c
 
 That is what changes when you combine local Copilot with specification-driven development.
 
-Not a new paradigm. Not a revolution. Just a practical workflow that becomes affordable when you own the inference.
+No revolution here. Just a practical workflow that becomes affordable when you own the inference. And honestly? That's more than enough.
 
 ## This series
 
-1. [How I Made GitHub Copilot CLI Mine](https://jgcarmona.com/en/github-copilot-cli-with-local-llms-and-sdd/) — the manifesto and real setup story
-2. [Running GitHub Copilot CLI Against a Local LLM](https://jgcarmona.com/en/copilot-cli-local-llm-setup/) — the complete wiring guide
-3. [MCP Is How Local Copilot Becomes Useful](https://jgcarmona.com/en/copilot-cli-mcp-tools/) — tools, not magic
-4. [Copilot Instructions, Agents, and Skills: The Missing Control Layer](https://jgcarmona.com/en/copilot-instructions-agents-skills/) — the control surface
+1. [Mayday! Mayday! We're Running Out of Fuel!](/en/may-day/) — the manifesto
+2. [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) — setup and wiring
+3. [MCP Is How Local Copilot Becomes Useful](/en/copilot-cli-mcp-tools/) — tools, not magic
+4. [Copilot Instructions, Agents, and Skills](/en/copilot-instructions-agents-skills/) — governance
 5. **You are here** — Running SDD Workflows with Local Copilot
+6. [The VS Code Agents Window Is the Harness](/en/vscode-agents-window/) — the convergence
 
 ## References
 
-- [How I Made GitHub Copilot CLI Mine](https://jgcarmona.com/en/github-copilot-cli-with-local-llms-and-sdd/) — the setup story
+- [How I Set Up GitHub Copilot CLI on Local Hardware](https://jgcarmona.com/en/github-copilot-local-setup/) — the setup and wiring guide
 - [Spec-Driven Development: Controlling AI-Generated Drift](https://jgcarmona.com/en/spec-driven-done-right/) — SDD foundations
 - [Moving Toward SDD with OpenSpec or Spec Kit](https://jgcarmona.com/en/moving-toward-spec-driven-development/) — frameworks and practical usage
 - [MCP Is How Local Copilot Becomes Useful](https://jgcarmona.com/en/copilot-cli-mcp-tools/) — the tool layer

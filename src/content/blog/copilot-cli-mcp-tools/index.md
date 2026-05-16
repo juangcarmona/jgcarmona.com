@@ -1,8 +1,8 @@
 ---
 lang: en
 title: "MCP Is How Local Copilot Becomes Useful"
-description: "How Model Context Protocol servers turn a local LLM from a token generator into a real agent: test runners, linters, semantic search, and why tool access compensates for weaker reasoning."
-pubDate: 2026-05-03
+description: "How MCP servers turn a local LLM into a real agent: test runners, linters, semantic search, and why tool access compensates for weaker reasoning."
+pubDate: 2026-05-07
 tags:
   - ai
   - local-ai
@@ -11,14 +11,14 @@ tags:
   - engineering
   - github
   - github-copilot
+  - copilot-cli
   - mcp
+heroImage: "images/copilot-cli-mcp-tools.png"
 ---
 
-# MCP Is How Local Copilot Becomes Useful
+> This is article 3 of a series. Start with [Mayday! We're Running Out of Fuel!](/en/may-day/) for the manifesto, or [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) for the setup story.
 
-> This is article 3 of a series. Start with [How I Made GitHub Copilot CLI Mine](https://jgcarmona.com/en/github-copilot-cli-with-local-llms-and-sdd/) for the full picture.
-
-In the [wiring guide](https://jgcarmona.com/en/copilot-cli-local-llm-setup/) I showed how to get Copilot CLI talking to a local LLM. Great. You have a terminal agent running on your hardware. Now what?
+In the [setup guide](https://jgcarmona.com/en/github-copilot-local-setup/) I showed how to get Copilot CLI talking to a local LLM. Great. You have a terminal agent running on your hardware. Now what?
 
 A local model, by itself, is just a token generator. It predicts the next word. That's all it does. What turns it into a development tool is giving it *actions*. The ability to read files, run commands, execute tests, lint code, search context. That's what MCP does.
 
@@ -43,7 +43,7 @@ The model does not need to know how to run tests. It needs to know that there is
 
 ## Why MCP matters more for local models
 
-Here's the key insight that most people miss: MCP is even more important when you run a local model than when you run a cloud frontier model.
+Let me tell you something that took me a while to understand: MCP is *even more important* when you run a local model than when you run a cloud frontier model.
 
 Cloud models like GPT-4 or Claude can often brute-force their way through tasks with sheer reasoning power. They can generate code, predict test outcomes, imagine file contents, and sometimes get it right purely from internal knowledge.
 
@@ -51,7 +51,7 @@ A local 7B or 27B model cannot do that as reliably. Its reasoning is more fragil
 
 But a local model that can *check* its work is a completely different animal. If it can run the tests after writing code, it can iterate. If it can lint its output, it can fix itself. If it can search the codebase for relevant context, it does not need to hallucinate it.
 
-Tool access compensates for weaker reasoning. That is the fundamental trade-off.
+Tool access compensates for weaker reasoning. I learned this the hard way after watching my local model hallucinate file paths that didn't exist, when all it needed was a search tool to find the real ones.
 
 ## Setting up MCP servers
 
@@ -119,7 +119,7 @@ An MCP server that wraps your test framework. When the agent writes or modifies 
 }
 ```
 
-The agent writes a function, calls `run_tests`, sees a failure, reads the error, fixes the code, runs tests again. That's a feedback loop. That's engineering.
+The agent writes a function, calls `run_tests`, sees a failure, reads the error, fixes the code, runs tests again. That's a feedback loop. That's actual engineering happening without you babysitting every step.
 
 ### Linter / formatter
 
@@ -201,7 +201,7 @@ When Copilot CLI has MCP tools available and the model supports tool-calling (wh
 
 That's a real agentic workflow. The model is not just generating text and hoping for the best. It's operating in a constrained environment with feedback.
 
-And the constraint is the point. Constraints make agents predictable. Predictability makes them useful.
+And the constraint is the point. Constraints make agents predictable, and predictability is what makes them actually useful in a real workflow.
 
 ## Local model limitations with tool-calling
 
@@ -241,22 +241,20 @@ MCP is the mechanism that turns a local model from "interesting experiment" to "
 
 And the less powerful your model is, the more it needs tools. That's counterintuitive but true. A brilliant model can sometimes get away with pure reasoning. A modest model needs guardrails and feedback loops.
 
-Give it tools. Give it rules. Give it constraints.
-
-That's not limiting the model. That's engineering a system.
+Give it tools. Give it rules. Give it constraints. You're not limiting the model, you're building an engineering system around it. And that's the whole point of this series.
 
 ## This series
 
-1. [How I Made GitHub Copilot CLI Mine](https://jgcarmona.com/en/github-copilot-cli-with-local-llms-and-sdd/) -> the manifesto and real setup story
-2. [Running GitHub Copilot CLI Against a Local LLM](https://jgcarmona.com/en/copilot-cli-local-llm-setup/) -> the complete wiring guide
-3. **You are here** -> MCP Is How Local Copilot Becomes Useful
-4. [Copilot Instructions, Agents, and Skills: The Missing Control Layer](https://jgcarmona.com/en/copilot-instructions-agents-skills/) -> the control surface
-5. [Running SDD Workflows with Local Copilot](https://jgcarmona.com/en/copilot-cli-sdd-workflows/) -> specification-driven development end-to-end
+1. [Mayday! Mayday! We're Running Out of Fuel!](/en/may-day/) — the manifesto
+2. [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) — setup and wiring
+3. **You are here** — MCP Is How Local Copilot Becomes Useful
+4. [Copilot Instructions, Agents, and Skills](/en/copilot-instructions-agents-skills/) — governance
+5. [Running SDD Workflows with Local Copilot](/en/copilot-cli-sdd-workflows/) — specification-driven development
+6. [The VS Code Agents Window Is the Harness](/en/vscode-agents-window/) — the convergence
 
 ## References
 
-- [How I Made GitHub Copilot CLI Mine](https://jgcarmona.com/en/github-copilot-cli-with-local-llms-and-sdd/) -> the setup story
-- [Running GitHub Copilot CLI Against a Local LLM](https://jgcarmona.com/en/copilot-cli-local-llm-setup/) -> the wiring guide
+- [How I Set Up GitHub Copilot CLI on Local Hardware](https://jgcarmona.com/en/github-copilot-local-setup/) -> the setup and wiring guide
 - [Model Context Protocol specification](https://modelcontextprotocol.io/) -> the protocol itself
 - [Mayday! We're Running Out of Fuel](https://jgcarmona.com/en/may-day/) -> why cost control matters
 - [Local LLMs Under the Hood](https://jgcarmona.com/en/local-llms-under-the-hood/) -> the inference pipeline

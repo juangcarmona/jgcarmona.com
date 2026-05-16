@@ -1,8 +1,8 @@
 ---
 lang: en
 title: "Copilot Instructions, Agents, and Skills: The Missing Control Layer"
-description: "How custom instructions, AGENTS.md, and .github/skills/ give your local Copilot the context it needs to stop making stupid mistakes. Why smaller models need them even more."
-pubDate: 2026-05-04
+description: "How custom instructions, AGENTS.md, and skills give your local Copilot the context it needs to stop making stupid mistakes."
+pubDate: 2026-05-09
 tags:
   - ai
   - local-ai
@@ -11,13 +11,13 @@ tags:
   - engineering
   - github
   - github-copilot
+  - copilot-cli
+heroImage: "images/copilot-instructions-agents-skills.png"
 ---
 
-# Copilot Instructions, Agents, and Skills: The Missing Control Layer
+> This is article 4 of a series. Start with [Mayday! We're Running Out of Fuel!](/en/may-day/) for the manifesto, or [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) for the setup story.
 
-> This is article 4 of a series. Start with [How I Made GitHub Copilot CLI Mine](https://jgcarmona.com/en/github-copilot-cli-with-local-llms-and-sdd/) for the full picture.
-
-In the [wiring guide](https://jgcarmona.com/en/copilot-cli-local-llm-setup/) I showed how to connect Copilot CLI to a local model. In the [MCP article](https://jgcarmona.com/en/copilot-cli-mcp-tools/) I showed how tools give the agent actions. Today I want to talk about the third layer: the one that tells the agent *who it is*, *what your project is*, and *how it should behave*.
+In the [setup guide](https://jgcarmona.com/en/github-copilot-local-setup/) I showed how to connect Copilot CLI to a local model. In the [MCP article](https://jgcarmona.com/en/copilot-cli-mcp-tools/) I showed how tools give the agent actions. Today I want to talk about the third layer: the one that tells the agent *who it is*, *what your project is*, and *how it should behave*.
 
 This is the control surface. And most people skip it entirely.
 
@@ -167,9 +167,9 @@ Here's the structure:
     SKILL.md
 ```
 
-The key insight is that skills turn the agent from a freestyle improviser into a protocol follower. Instead of asking "please propose a change" and hoping for the best, the agent reads the skill, follows the steps, uses the right tools, and produces structured output.
+The important thing here is that skills turn the agent from a freestyle improviser into a protocol follower. Instead of asking "please propose a change" and hoping for the best, the agent reads the skill, follows the steps, uses the right tools, and produces structured output.
 
-That is orchestration, not autocomplete.
+You stop hoping. You start orchestrating.
 
 ## The hierarchy: instructions vs agents vs skills vs MCP
 
@@ -183,9 +183,7 @@ These four layers serve different purposes and work together:
 | **Skills** | Structured multi-step workflows | On-demand |
 | **MCP servers** | External tool access (tests, lint, search) | Always available |
 
-Instructions set the baseline. Agents define the role. Skills define the protocol. MCP provides the tools.
-
-Together they form the control surface that turns a raw LLM into a governed agent.
+Instructions set the baseline. Agents define the role. Skills define the protocol. MCP provides the tools. Together, they give you the control surface that turns a raw LLM into something you can actually trust with your codebase.
 
 ## Real example: how my blog is wired
 
@@ -201,7 +199,7 @@ On this blog (the one you're reading), the control surface looks like this:
 
 The result: I can sit at my terminal, type `copilot-local`, and get an agent that understands my project, follows my workflows, uses my tools, and runs entirely on my hardware.
 
-That's not a demo. That's infrastructure.
+And yes, it works. Daily. Not as a demo, but as part of my actual development infrastructure.
 
 ## Writing good instructions for local models
 
@@ -219,15 +217,16 @@ A few practical tips from my experience:
 
 ## This series
 
-1. [How I Made GitHub Copilot CLI Mine](https://jgcarmona.com/en/github-copilot-cli-with-local-llms-and-sdd/) -> the manifesto and real setup story
-2. [Running GitHub Copilot CLI Against a Local LLM](https://jgcarmona.com/en/copilot-cli-local-llm-setup/) -> the complete wiring guide
-3. [MCP Is How Local Copilot Becomes Useful](https://jgcarmona.com/en/copilot-cli-mcp-tools/) -> tools, not magic
-4. **You are here** -> Copilot Instructions, Agents, and Skills: The Missing Control Layer
-5. [Running SDD Workflows with Local Copilot](https://jgcarmona.com/en/copilot-cli-sdd-workflows/) -> specification-driven development end-to-end
+1. [Mayday! Mayday! We're Running Out of Fuel!](/en/may-day/) — the manifesto
+2. [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) — setup and wiring
+3. [MCP Is How Local Copilot Becomes Useful](/en/copilot-cli-mcp-tools/) — tools, not magic
+4. **You are here** — Copilot Instructions, Agents, and Skills
+5. [Running SDD Workflows with Local Copilot](/en/copilot-cli-sdd-workflows/) — specification-driven development
+6. [The VS Code Agents Window Is the Harness](/en/vscode-agents-window/) — the convergence
 
 ## References
 
-- [How I Made GitHub Copilot CLI Mine](https://jgcarmona.com/en/github-copilot-cli-with-local-llms-and-sdd/) -> the setup story
+- [How I Set Up GitHub Copilot CLI on Local Hardware](https://jgcarmona.com/en/github-copilot-local-setup/) -> the setup and wiring guide
 - [MCP Is How Local Copilot Becomes Useful](https://jgcarmona.com/en/copilot-cli-mcp-tools/) -> the tool layer
 - [Spec-Driven Development: Controlling AI-Generated Drift](https://jgcarmona.com/en/spec-driven-done-right/) -> why structure matters
 - [Moving Toward SDD with OpenSpec or Spec Kit](https://jgcarmona.com/en/moving-toward-spec-driven-development/) -> frameworks for structured development
