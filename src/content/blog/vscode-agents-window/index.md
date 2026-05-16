@@ -2,7 +2,7 @@
 lang: en
 title: "VSCode Agents Window: An AI Harness Inside Visual Studio Code"
 description: "VS Code's Agents Window is not just a UI: it's a multi-engine harness hosting Copilot CLI, Claude, and cloud agents. How the IDE became an operating system for software engineering agents."
-pubDate: 2026-05-16
+pubDate: 2026-05-15
 tags:
   - ai
   - local-ai
