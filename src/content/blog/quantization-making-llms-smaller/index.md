@@ -15,7 +15,7 @@ tags:
 heroImage: "images/quantization-in-a-nutshell-hero.png"
 ---
 
-A few weeks ago, after publishing [Local LLMs Under the Hood](/blog/local-llms-under-the-hood/), I received a comment from Alfonso (altromon) that stuck with me:
+A few weeks ago, after publishing [Local LLMs Under the Hood](/en/local-llms-under-the-hood/), I received a comment from Alfonso (altromon) that stuck with me:
 
 > *"Thanks for this explanatory article. I would like to read your thoughts about quantization: how it affects performance and/or how to select an appropriate one. I look forward to reading from you!"*
 
