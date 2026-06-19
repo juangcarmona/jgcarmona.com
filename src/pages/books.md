@@ -1,4 +1,5 @@
 ---
+lang: es
 title: "MIS LIBROS"
 description: ''
 layout: ../layouts/BlogPost.astro

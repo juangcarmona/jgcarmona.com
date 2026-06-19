@@ -1,4 +1,5 @@
 ---
+lang: en
 title: "Hi, I'm Juan G. Carmona"
 description: "Sobre mí"
 layout: ../layouts/Page.astro
