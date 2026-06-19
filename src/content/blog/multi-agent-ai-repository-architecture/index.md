@@ -183,8 +183,6 @@ Four checks: structure exists, wrappers reference `.ai/`, no broken links, no hi
 - **Fast vendor onboarding.** New tool = new wrapper. Minutes.
 - **Governance that enforces.** CI catches drift before merge.
 
----
-
 ## Tradeoffs
 
 - **More structure.** Overhead for a single-tool, single-engineer repo. Worth it when N > 2 tools or team > 3 engineers.
@@ -192,8 +190,6 @@ Four checks: structure exists, wrappers reference `.ai/`, no broken links, no hi
 - **Wrappers still exist.** They're thin, but they need updates when vendor formats change. (No silver bullets, sorry)
 - **Immature ecosystem.** Vendor instruction systems are still evolving. The wrapper layer absorbs the churn, but absorption costs something.
 - **Migration cost.** Consolidating existing vendor files into `.ai/` is real work. Do it incrementally, start with the highest-value conventions.
-
----
 
 ## The Bigger Picture
 
@@ -207,4 +203,4 @@ This canonical semantic layer is not the final answer. Not the silver bullet, bu
 
 Those are my two cents on this topic.
 
-Start before it explodes in your hands.
+> ### Start doing something before it explodes in your hands.
