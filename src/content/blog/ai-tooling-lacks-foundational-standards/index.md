@@ -11,15 +11,9 @@ lang: 'en'
 
 ## The Problem
 
-AI-assisted development is becoming part of modern software engineering.
-
-But while we standardize APIs, dependencies, containers, contracts, and infrastructure, one foundational layer remains completely fragmented.
-
-**AI tooling has no shared architectural standard.**
+As I stated yesterday, AI-assisted development is already part of modern software engineering. Every team is moving their entire SDLC towards AI powered SDLC, but one foundational layer remains completely fragmented because **AI tooling has no shared architectural standard.**
 
 ![Foundational Standards Would Achieve](images/foundational-standards.png)
-
----
 
 ## We Are Repeating The Same Mistake
 
@@ -36,20 +30,16 @@ AGENTS.md
 .opencode/*
 ```
 
-Different folder structures. Different discovery mechanisms. Different formats. Different assumptions.
+We are being force to deal with different folder structures, different discovery mechanisms, different formats and bear in mind different assumptions.
 
-This is not a new pattern. The industry has seen this before. Before OpenAPI, every API had its own documentation format. Before Docker, every deployment had its own packaging model. Before Protobuf, every service had its own contract definition.
+The software industry has seen this before. Some simple examples: before OpenAPI, every API had its own documentation forma; before Docker, every deployment had its own packaging model; before Protobuf, every service had its own contract definition.
 
-The immediate consequences are familiar:
+Consequences sound familiar to many of us, right?
 
-- **Semantic duplication** — The same instructions repeated across multiple vendor-specific files
-- **Vendor lock-in** — Repository structure coupled to specific tooling choices
-- **Synchronization drift** — Updates to one convention miss others
-- **Maintenance overhead** — Scales linearly with every new tool a team adopts
-
----
-
-## The Obvious Engineering Instinct
+- **Semantic duplication**: The same instructions repeated across multiple vendor-specific files
+- **Vendor lock-in**: Repository structure coupled to specific tooling choice or choices
+- **Synchronization drift**: Updates to one convention miss others, and that impacts maintainability 
+- **Maintenance overhead**: Scales linearly with every new tool a team adopts
 
 The natural engineering response is to create a vendor-agnostic canonical structure:
 
@@ -62,59 +52,31 @@ The natural engineering response is to create a vendor-agnostic canonical struct
   workflows/
 ```
 
-Single source of truth. Deterministic structure. Vendor independent.
+This idea came directly from an architecture I described yesterday in my previous article, **[Multi-Agent AI Repository Architecture](/multi-agent-ai-repository-architecture)**, where I proposed a vendor-agnostic semantic layer for repository-level AI governance.
 
-This idea came directly from an architecture I described in my previous article, **[Multi-Agent AI Repository Architecture](/multi-agent-ai-repository-architecture)**, where I proposed a vendor-agnostic semantic layer for repository-level AI governance.
+On paper, centralizing semantics feels like the correct architectural move... But I was wrong... (Nothing new)
 
-On paper, centralizing semantics feels like the correct architectural move.
+## Because A Single Source Of Truth Is Not Enough
 
----
+The implementation looked straightforward. The canonical `.ai/` layer contained the semantic definition and vendor-specific wrappers referenced that canonical layer.
 
-## Why Single Source Of Truth Was Not Enough
+At first, it looked elegant but trying an implementation I realized on that the duplication was simply moved elsewhere. The architecture had added an indirection layer without solving the underlying discovery problem.
 
-The implementation looked straightforward. The canonical `.ai/` layer contained the semantic definitions. Vendor-specific wrappers referenced that canonical layer. Bootstrap enforcement logic was designed to force every agent to resolve the canonical instructions before continuing execution.
+A colleague at Plain Concepts told me that the idea of a canonical layer is spot on and pointed out that, in real teams, agents are still inconsistent at following references across files, so wrappers that point to .ai/ end up working in theory but flaky in practice.
 
-At first, it looked elegant.
+He then recommended a compile step, something that I initially discarded, same idea of one canonical source, but adding a small build step that generates each vendor file with the actual content inlined, not a pointer to it. So AGENTS.md, the Copilot instructions, the Cursor rules, all become generated artifacts, each one fully self contained. The compiler handles scope (which rules go to which file via globs) and conflict resolution, and CI fails the build if a generated file is stale or hand edited. That's what actually keeps the single source of truth honest. And he also reminded me that I had APM on my research TODO...
 
-Then the realization became clear.
-
-The duplication problem was not eliminated. It was simply moved elsewhere.
-
-The canonical layer existed. The vendor wrappers still existed. The synchronization problem still existed. The architecture had added an indirection layer without solving the underlying discovery problem.
+Then I re-discovered [Microsoft APM](https://github.com/microsoft/apm).
 
 ---
 
-## The Build Model Looked Like The Right Answer
-
-The pattern was familiar from `package.json`, npm, NuGet, protobuf, and OpenAPI generation. The repository stores only the canonical definition. A build step generates vendor-specific outputs.
-
-```
-.ai/*
-ai-manifest.yaml
-      ↓
-build-ai
-      ↓
-.github/*
-.claude/*
-.cursor/*
-.opencode/*
-```
-
-Generated locally. Gitignored. No committed duplication.
-
-This initially looked like the cleanest resolution. The canonical source remained the single truth. Vendor artifacts were ephemeral build outputs. No synchronization drift because nothing was committed.
-
-Then I discovered [Microsoft APM](https://github.com/microsoft/apm).
-
----
-
-## Then I Found Microsoft APM
+## What about Microsoft APM?
 
 APM forced me to partially reconsider the architecture I had been building.
 
 APM introduces something genuinely important to the ecosystem: a package management model for AI capabilities. Reusable prompts, reusable instructions, reusable agents, vendor abstraction, installable packages.
 
-For the first time, I saw an attempt to treat AI capabilities as software artifacts.
+For the first time, I saw an attempt to treat AI capabilities as software artifacts. Great!
 
 ```
 apm.yml
@@ -126,9 +88,9 @@ apm install
 .cursor/*
 ```
 
-[Felip Martín Ferrari](https://felipmartin.com) pointed me toward APM after reviewing my initial article. He also argued that vendors would eventually converge on a standard layer — some form of MCP, tooling protocol, or foundational abstraction — and that we would not need to solve this manually.
+Felipe also argued that vendors would eventually converge on a standard layer, some form of MCP, tooling protocol, or foundational abstraction, and that we would not need to solve this manually.
 
-That is a reasonable expectation. It is also not the reality today.
+That is a reasonable expectation but is not the reality today.
 
 ---
 
