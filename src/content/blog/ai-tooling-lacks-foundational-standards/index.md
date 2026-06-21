@@ -2,86 +2,94 @@
 title: 'The Missing Standard Behind AI-Assisted Development'
 description: 'While designing a vendor-agnostic AI architecture for repositories, I discovered the ecosystem is missing a fundamental standard: a shared discovery protocol for AI artifacts. The problem is not prompt engineering or package management. It is architecture.'
 pubDate: 'Jun 21 2026'
-heroImage: 'images/hero-placeholder.png'
+heroImage: 'images/ai-tooling-lacks-foundational-standards.png'
 tags: ['ai-sdlc', 'devex', 'platform-engineering', 'architecture', 'standards', 'multi-agent', 'ai-infrastructure']
 featured: true
 featuredOrder: 2
 lang: 'en'
 ---
 
-## The Problem
+Over the last months I have been helping engineering organizations move their software delivery lifecycle toward AI-assisted development. 
 
-It is mid 2026 and every development team is moving their entire SDLC towards AI-powered SDLC. Great time to be alive but one foundational layer remains completely fragmented because **AI tooling has no shared architectural standard.**
+Prompts, agents, autonomous workflows, semantic context, Spec Driven Development, repository-level intelligence.
 
-![Foundational Standards Would Achieve](images/foundational-standards.png)
+But while we have spent decades shaping best practices and standardizing APIs, dependencies, infrastructure, contracts and packaging systems, one foundational layer remains completely fragmented.
 
-## We've seen this many times
+> **AI tooling has no shared architectural standard.**
 
-The software industry has seen this before. Some simple examples: before OpenAPI, every API had its own documentation forma; before Docker, every deployment had its own packaging model; before Protobuf, every service had its own contract definition.
+And I believe this problem will become much bigger than most people currently realize.
 
-Nowadays, every vendor defines its own repository conventions:
+We are quietly building a new big ball of mud.
+
+## We Have Seen This Before
+
+The software industry has solved this kind of fragmentation many times before. Before OpenAPI, every API had its own documentation format. Before Docker, every deployment had its own packaging model. Before Protobuf, distributed systems relied on incompatible contract definitions. Standardization emerged because fragmentation simply does not scale.
+
+And now AI tooling is entering exactly the same phase. Every vendor defines its own repository conventions. Different folder structures, discovery mechanisms, conventions and assumptions. And the consequences are predictable:
+
+- **Duplication** → same instructions repeated across multiple vendor files
+- **Vendor lock-in** → repository structure coupled to tooling choice
+- **Synchronization drift** → updates to one convention miss others
+- **Maintenance overhead** → complexity grows with every new vendor adopted
+
+## The Obvious Engineering Instinct
+
+The natural engineering reaction is straightforward: create a canonical vendor-agnostic structure. That is exactly what I did in my previous article, **[Multi-Agent AI Repository Architecture](/multi-agent-ai-repository-architecture)**, where I proposed a single source of truth with a shared semantic layer, thin vendor wrappers and CI validation.
+
+On paper, it felt like the correct architectural direction. In reality, it solved nothing. It simply moved the duplication problem somewhere else. Let me explain why.
+
+## A Single Source Of Truth Was Not Enough
+
+I implemented the architecture in a real repository. The canonical `.ai/` layer contained the semantic definitions, and vendor-specific wrappers pointed to the canonical layer. I even introduced bootstrap enforcement logic to force every agent to resolve canonical instructions before execution, something like this:
 
 ```
-CLAUDE.md
-AGENTS.md
-.github/prompts/*
-.github/instructions/*
-.github/agents/*
+You MUST load canonical instructions from .ai/
+
+Read these files:
+
+'.ai/file1.md'
+'.ai/file2.md'
+
+If unavailable:
+
+STOP immediately
+
+Warn the user
+
+Do not continue execution
+```
+
+I also added CI validation to ensure artifact consistency. Architecturally it looked elegant, then I started seeing the cracks.
+
+## The Build Model Looked Much Better
+
+Then a colleague at Plain Concepts challenged the approach. His point was simple: even if wrappers point to canonical files, agents today are still inconsistent when resolving references across files. In theory, wrappers should work. In practice, behavior is often unreliable. And honestly… he was right.
+
+> Public thanks to **Felipe Martín Ferrari** for pushing me to revisit the problem.
+
+He proposed something I had initially discarded: treat AI artifacts like software build artifacts. The repository stores only the canonical source, and a build step generates vendor-specific outputs:
+
+```
+.ai/*
+ai-manifest.yaml
+      ↓
+build-ai
+      ↓
+.github/*
 .claude/*
-.cursor/rules/*
+.cursor/*
 .opencode/*
 ```
 
-We are being forced to deal with different folder structures, different discovery mechanisms, different formats and bear in mind different assumptions.
+Generated locally, gitignored, no committed duplication. This immediately felt much cleaner.
 
+And then he reminded me about something I had on my research TODO list: Microsoft APM. 
 
-Consequences sound familiar to many of us, right?
+## Enter Microsoft APM
 
-- **Duplication**: The same instructions repeated across multiple vendor-specific files
-- **Vendor lock-in**: Repository structure coupled to specific tooling choice or choices
-- **Synchronization drift**: Updates to one convention miss others
-- **Maintenance overhead**: Scales linearly with every new tool a team adopts
+APM introduces something genuinely important to the ecosystem. For the first time I saw a serious attempt to treat AI capabilities as software artifacts: prompts, instructions, agents, vendor abstraction, installable packages.
 
-The natural engineering response is to create a vendor-agnostic canonical structure:
-
-```
-.ai/
-  prompts/
-  instructions/
-  agents/
-  skills/
-  workflows/
-```
-
-This idea came directly from an architecture I described yesterday in my previous article, **[Multi-Agent AI Repository Architecture](/multi-agent-ai-repository-architecture)**, where I proposed a vendor-agnostic semantic layer for repository-level AI governance.
-
-On paper, centralizing semantics feels like the correct architectural move... But I was wrong... (Nothing new)
-
-## A Single Source Of Truth Is Not Enough
-
-The implementation looked straightforward. The canonical `.ai/` layer contained the semantic definition and vendor-specific wrappers referenced that canonical layer.
-
-At first it looked elegant but trying an implementation I realized on that the duplication was simply moved elsewhere. The architecture had added an indirection layer without solving the underlying discovery problem.
-
-A colleague at Plain Concepts told me that the idea of a canonical layer was spot on, and pointed out that, in real teams, agents are still inconsistent at following references across files, so wrappers that point to .ai/ end up working in theory but flaky in practice. 
-
-> 100% true!
-
-He recommended a compile step, something that I initially discarded.  It is the same idea of one canonical source, but adding a small build step that generates each vendor files with the actual content inlined, not just a pointer to the canonical layer. So all become generated artifacts, each one fully self contained. The compiler handles scope (which rules go to which file via globs) and conflict resolution, and CI fails the build if a generated file is stale or hand edited. He also reminded me that I had APM on my research TODO... 
-
-> Public thanks to Felipe Martin Ferrari 
-
-Then I re-discovered [Microsoft APM](https://github.com/microsoft/apm). I knew it existed but the deep dive was pending...
-
----
-
-## What is Microsoft APM?
-
-APM introduces something important to the ecosystem: a package management model for AI capabilities. Reusable prompts, reusable instructions, reusable agents, vendor abstraction, installable packages.
-
-APM forced me to partially reconsider the architecture I had been building.
-
-For the first time, I saw an attempt to treat AI capabilities as software artifacts. Great!
+A package management model for AI.
 
 ```
 apm.yml
@@ -93,9 +101,9 @@ apm install
 .cursor/*
 ```
 
-Looks great but it does not fully solves duplication or maintainability, and it still lacks the canonical layer I was seeking. It is an elegant first approach but it is not perfect yet.
+At first glance I thought: damn… Microsoft might already be solving what I've been thinking about for days. So, I got deep into it.
 
-## APM Solves Distribution, Not Discovery
+## Why I Immediately Liked APM
 
 ![What APM Achieves](images/what-apm-achieves.png)
 
@@ -105,42 +113,32 @@ APM enables reusable AI capabilities distributed as packages:
 apm install company/security-review
 apm install my-org/coding-conventions
 ```
-That's an amazing contribution to the industry. It brings package distribution, ecosystem packages, installable capabilities. This is real progress for teams that want to share AI artifacts across repositories.
 
-But as I said it does not solve artifact discovery because we are force to generate and maintain all the vendor artifacts in order it to work similar and everywhere, and I'd say this is a massive tradeoff.
+That is a meaningful contribution. It introduces package distribution, capability reuse, package ecosystems, vendor abstraction, portable AI capabilities. This is exactly the kind of thinking the industry needs.
 
-## Local Generation Creates Another Problem
+But after going deeper into the architecture, I realized something important: APM solves package distribution, but it does not solve discovery architecture.
 
-If artifacts are generated locally only, the repository itself no longer contains what vendors expect to discover.
+## Vendors Still Own Discovery
 
-Developer A has GitHub artifacts. Developer B has Claude artifacts. The CI runner has nothing. Remote environments have nothing.
+This was the key realization. Vendors do not consume abstract AI definitions, they consume hardcoded filesystem conventions. GitHub Copilot scans `.github`. Claude scans `CLAUDE.md` and `.claude`. Cursor scans `.cursor`. OpenCode scans `.opencode`. They do **not** scan `.ai/`, `.apm/` or `apm.yml`.
 
-The consequences are concrete:
+The canonical source may exist, but vendors never see it. **If artifacts are generated locally only, the repository itself no longer contains what vendors expect to discover**. Developer A has GitHub artifacts, Developer B has Claude artifacts, Developer C has Cursor artifacts... But the repository itself stops being the deterministic source of AI behavior.
 
-- CI pipelines cannot reproduce the same agent behavior
-- Remote executions lose repository-level context
-- Autonomous agents behave differently depending on the local environment
-- Repository behavior becomes non-deterministic
+Immediately new problems appear: CI pipelines cannot reproduce the same agent behavior, remote executions lose repository-level context, autonomous agents behave differently depending on local environment, and repository behavior becomes non-deterministic.
 
----
-
-## Cloud Agents Change The Equation
+## Cloud Execution Changes Everything
 
 ![What APM Does Not Achieve](images/what-apm-does-not-achieve.png)
 
-The problem deepens when you consider how modern vendors actually operate.
+The problem becomes bigger when you think about how vendors operate. Remote execution, cloud agents, repository indexing, server-side embeddings, context scanning, file caches, token caches. GitHub and Claude index repositories and build token caches. Cursor scans codebases remotely. Even local-first tools increasingly move in this direction.
 
-Vendors increasingly rely on remote execution, server-side indexing, repository embeddings, prompt caches, and background context scanning. GitHub indexes your repository. Claude builds token caches. Cursor pre-scans your codebase. You can do that by yourself at home with Open code...
+So, if artifacts exist only on the developer machine, cloud systems never see them. The result is cache inefficiency, behavior divergence, missing semantic context, and different AI behavior locally versus remotely. The same repository produces different outcomes depending on where execution happens.
 
-If these artifacts exist only locally, cloud systems never see them.
-
-The result is cache inefficiency, inconsistent cloud behavior, and remote agents that operate without the context that exists on your machine. The same repository produces different AI behavior depending on whether it runs locally or in the cloud.
-
-The industry already solved this kind of problems, this is an infrastructure problem, isn't it?
+This is where I stopped thinking about prompt engineering. Because this is clearly infrastructure architecture.
 
 ## Committing Generated Artifacts Brings Back The Original Problem
 
-The alternative is to commit the generated artifacts:
+The alternative becomes obvious: commit generated artifacts.
 
 ```
 .ai/*
@@ -150,65 +148,51 @@ The alternative is to commit the generated artifacts:
 .opencode/*
 ```
 
-And the original problem returns. Duplicated semantics. Synchronization drift. Merge conflicts. Repeated instructions. Are we moving in circles?
+And instantly the original problem returns: duplicated semantics, synchronization drift, merge conflicts, repeated instructions, maintenance complexity. 
 
-There is another issue. Some vendors recursively scan markdown files. If the same instruction exists in `.ai/security.md`, `.github/prompts/security.md`, and `CLAUDE.md`, it may be loaded multiple times into the same context window.
+And there is another issue. Some vendors recursively scan markdown files, so if the same instruction exists in `.ai/security.md`, `.github/prompts/security.md`, and `CLAUDE.md`, the same semantic content may enter context multiple times. That means token waste, prompt pollution, higher inference costs, and unpredictable behavior.
 
-That means token waste... And token prices are growing and growing... 
+## The Architectural Constraint That Emerges
 
-I just see tradeoffs.. Repeated context. Prompt pollution. Unpredictable agent behavior.
-
-## AI Tooling Trifecta
-
-We don't need a diagram for this because the pattern is clear, we cannot simultaneously achieve:
+Doing this mental and coding exercise, I realized that we cannot simultaneously achieve three things:
 
 1. Single source of truth
 2. Zero semantic duplication
 3. Native vendor integration
 
-Every current architecture eventually sacrifices one of these properties.
+This is a trifecta: every current architecture sacrifices one of these properties. A canonical source combined with native vendor compatibility introduces duplication. A canonical source without duplication requires vendors to consume abstractions they do not currently support. Native compatibility without duplication pushes semantic ownership outside the repository.
 
-Single source of truth plus native vendor integration requires duplication. 
+Today, no architecture solves all three simultaneously.
 
-Single source of truth plus zero duplication implies vendor-locking 
+## This Is Fundamentally A Standards Problem
 
-Zero duplication plus native integration loses the single source of truth.
+As the title of this article suggests, the ecosystem lacks a standardized AI artifact discovery protocol. Every vendor forces repositories to adapt to vendor-specific filesystem conventions. There is no shared mechanism, no common discovery layer, no vendor-agnostic architecture.
 
-## This is a lack standards problem
+I strongly believe the model should be inverted. Repositories should define semantics. Vendors should adapt to repositories. In terms of AI tooling, foundational standards must emerge around how repositories declare, expose, distribute, and execute AI capabilities. The industry needs a shared protocol for AI artifact discovery.
 
-The ecosystem lacks a standardized AI artifact discovery protocol. Every vendor forces repositories to adapt to vendor-specific filesystem conventions. There is no shared mechanism. No common protocol. No vendor-agnostic architecture.
-
-The current ecosystem forces developers to adapt repositories to vendors and it should be exactly the opposite.
-
-**Vendors should adapt to standardized repository semantics.**
-
-
-## AI Artifacts Are Becoming Supply Chain Artifacts
+## We Are Creating A New Software Supply Chain
 
 ![Foundational Standards Would Achieve](images/foundational-standards.png)
 
-We are rapidly introducing AI artifacts into the software development lifecycle.
+We are rapidly introducing entirely new artifact categories into software delivery itself.
+Agents, skills, commands, prompts, repository-wide instructions, technology-wide instructions, capability definitions, autonomous workflows, semantic context, specs, hooks. These are becoming first-class software artifacts inside the software supply chain.
 
-Prompts, agents, repository instructions, semantic context, capability definitions, autonomous workflows, hooks...
+I work with engineering organizations adopting AI-SDLC and DevEx practices, and I am already seeing this pattern emerge.
 
-These are no longer experimental assets, they have already become first-class software artifacts inside the software supply chain.
+Mature engineering teams want centralized AI governance, deterministic agent behavior, repository-level standards, and portable vendor-agnostic capabilities.
 
-I work with engineering organizations adopting AI-SDLC and DevEx practices. This pattern is already emerging in real teams. Mature teams increasingly want centralized AI governance, repository-level AI standards, deterministic agent behavior, and portable vendor-agnostic capabilities. They are hitting the same architectural walls documented here. This is not just my invention.
+And sooner or later they all hit the same wall.
 
-## The Industry Is Missing Its Next Standardization Movement 
+The infrastructure layer underneath AI tooling simply does not have mature standards yet.
 
-We standardized APIs through OpenAPI. We standardized dependencies through package managers. We standardized containers through Docker. We standardized contracts through Protobuf.
+## The Industry Is Missing Its Next Standardization Movement
 
-AI tooling is evolving without a shared protocol for how repositories declare, expose, and distribute AI capabilities.
+We standardized APIs through OpenAPI. We standardized dependencies through package managers. We standardized containers through Docker. We standardized contracts through Protobuf. Yet AI tooling is evolving without a shared protocol for how repositories declare, expose, distribute and execute AI capabilities.
 
-We have no equivalent of `package.json` for AI artifacts.
+We have no equivalent of `package.json` for AI artifacts, and I think that is the deeper problem. Right now the industry is solving AI tooling as an interaction problem, better prompts, better models, better chat interfaces, better agents. But the real challenge is infrastructure.
 
-The industry is currently solving AI tooling as an interaction problem. The deeper challenge is infrastructure.
+As AI agents become part of software delivery pipelines, repository architectures themselves must evolve. Because eventually the ecosystem will need to converge around foundational standards. The entire industry is building AI-native development workflows on top of filesystem conventions that were never designed to become infrastructure standards.
 
-As AI agents become part of software delivery pipelines, repository architectures themselves must evolve. The next challenge is no longer prompt engineering. It is AI-SDLC architecture.
+This is architectural technical debt accumulating underneath an ecosystem growing faster than its standards.
 
-Until the ecosystem converges around a common standard, engineering teams will continue duplicating artifacts, fighting vendor conventions, and introducing architectural inconsistencies directly into their codebases.
-
-The entire ecosystem is currently building AI-native development workflows on top of filesystem conventions that were never designed to become infrastructure standards.
-
-Eventually, that architectural debt will surface.
+That's why I strongly think that **AI tooling needs vendor-agnostic foundational standards**.
