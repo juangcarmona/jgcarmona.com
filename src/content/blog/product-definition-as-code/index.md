@@ -1,6 +1,6 @@
 ---
 lang: en
-title: "Moving Left: Product Definition as Code for the AI-SDLC"
+title: "Product Definition as Code for the AI-SDLC"
 description: 'AI accelerates software delivery and shifts the bottleneck to product thinking. I propose Product Definition as Code: a versioned graph of product artifacts that provides deterministic context to agents and humans before a single line of code is written.'
 pubDate: 2026-07-25
 heroImage: "images/product_definition_as_code_-_hero_image.png"
@@ -13,13 +13,9 @@ tags:
   - "ai"
 ---
 
-Lately, I have been working as a FDE (Forward Development Engineer) at [Plain Concepts](https://www.plainconcepts.com/who-we-are/), helping different clients introduce AI into their software development lifecycle. AI-SDLC and Spec-Driven Development are my two main areas of focus and I have been thinking a lot about the implications of AI-assisted development on the software lifecycle.
+Lately, I have been working as a FDE (Forward Development Engineer) at [Plain Concepts](https://www.plainconcepts.com/who-we-are/), helping different clients introduce AI into their software development lifecycle. AI-SDLC and Spec-Driven Development are my two main areas of focus and I have been thinking a lot about the implications of AI-assisted development on the software lifecycle in many environments, with many tools, with different workflows in many different scenarios...
 
-There is something that for me became clear a few months ago, because the technologies change; the organizations change; the constraints change... But the problems, however, are surprisingly consistent, and most of them are not really AI problems.
-
-They are **documentation problems**.
-
-That should not surprise anyone, IMHO, documentation and documentation management have always been a disaster across the software industry. (and I am being polite...)
+There is something that becomes clear as the technologies, the organizations, and the constraints change... and it is that most of them are **documentation problems**. This should not surprise anyone, IMHO, documentation and documentation management have always been a disaster across the software industry. (and I am being polite saying "disaster"...)
 
 ## AI is exposing old problems
 
@@ -34,82 +30,80 @@ For years, software teams have survived with fragmented knowledge:
 
 This was already inefficient when humans were doing most of the implementation work, but with AI-assisted development, it becomes a **structural problem**.
 
-AI can generate code very quickly. It can inspect repositories, propose changes, write tests and execute complex development loops, but it still needs to understand *what the product is supposed to do*. "The intent" is the constraint. The better the intent, the better the implementation.
+When the product definition is incomplete, contradictory or distributed across multiple tools and people's heads, AI does what engineers have always done: to guess, so it drifts and makes mistakes.
 
-When the product definition is incomplete, contradictory or distributed across multiple tools and people's heads, AI does what engineers have always done: to guess.
-When product knowledge is fragmented, AI has to reconstruct it on every invocation. it guesses, so it drifts and makes mistakes.
+(Side note: this is the same drift problem I wrote about in [*Spec-Driven Development: Controlling AI-Generated Drift*](/spec-driven-done-right/). SDD attacks it from the implementation side. This article goes one step further left side, before the spec even exists.)
 
-(Side note: this is the same drift problem I wrote about in [*Spec-Driven Development: Controlling AI-Generated Drift*](/spec-driven-done-right/). SDD attacks it from the implementation side. This article goes one step further left, before the spec even exists.)
-
-## 1. The SDLC is moving left
+## 1. Let's look at the left side of the SDLC
 
 We normally represent the software development lifecycle from left to right:
 
 ![The SDLC represented as a left-to-right timeline, with a marker showing today's focus moving left towards product definition.](images/product_definition_as_code_-_the_sdlc_is_a_timeline.png)
 
-The exact labels vary between organizations, but the direction is always the same: from left to right, from abstract ideas to concrete implementation.
+The exact labels vary between organizations, but the direction is always the same: from left to right, from abstract ideas to concrete implementation, production and maintenance.
 
-Today, most AI engineering effort is concentrated around development and the activities immediately surrounding it — code generation, testing, code review, refactoring, CI/CD, infrastructure, incident analysis, maintenance. Useful, but it addresses the **middle and right side** of the lifecycle.
+Today, most AI engineering effort is concentrated around development and the activities immediately surrounding it: code generation, testing, code review, refactoring, CI/CD, infrastructure, incident analysis, maintenance. Useful, but it addresses the **middle and right side** of the lifecycle.
 
-As implementation becomes increasingly automated, the bottleneck moves left.
+As implementation becomes increasingly automated, the bottleneck moves left (and right, but that's another story).
 
-The difficult questions are no longer only *how* should we implement this, *which* framework should we use, *how* should we test it. The difficult questions become *who* is this product for, *what* are they trying to achieve, *which* behaviour should exist, *which* rules govern that behaviour, *what* does the domain language mean, *which* requirements follow from those decisions, *what exactly* are we asking the AI to change.
+The difficult questions are now *who* is this product for, *what* are they trying to achieve, *which* behaviour should exist, *which* rules govern that behaviour, *what* does the domain language mean, *which* requirements follow from those decisions, *what exactly* are we asking the AI to change.
 
-This is where I want to focus. To the **left of development**.
+This is where I want to focus today, to the **left of development** because your inputs are the product artifacts that define what we are building.
 
 ## 2. Where AI investment is today
 
-This is not a theoretical observation. It is where the money and the engineering effort actually sit.
+Most AI effort today is concentrated in development, DevOps and operations. Code assistants, test generators, review bots, CI copilots, incident analyzers. All of them live on the right half of the timeline.
 
 ![Two timelines comparing today's AI investment, concentrated on development and operations, versus the future opportunity on the left side of the lifecycle.](images/product_definition_as_code_-_where_the_ai_investment_is_today.png)
 
-Most AI effort today is concentrated in development, DevOps and operations. Code assistants, test generators, review bots, CI copilots, incident analyzers. All of them live on the right half of the timeline.
-
 That is where the ROI was easiest to demonstrate, so it is where the industry invested first. Reasonable.
 
-But it is also a saturated frontier now. The next meaningful opportunity lies on the **left side** of the lifecycle — where product intent is formed, where language is defined, where requirements are born.
+But it is also a saturated frontier now. The next meaningful opportunity lies on the **left side** of the lifecycle, where product intent is formed, where language is defined, where requirements are born. The source of every human and AI misunderstanding, the source of drift, the source of wasted effort.
 
 The left side is harder. It is messier, less structured, and historically owned by humans talking to humans. Which is exactly why it has resisted automation so far.
 
-That resistance is the signal. The bottleneck has moved.
-
-## 3. The documentation chaos
-
-So why is the left side so hard to automate?
+## 3. Why is the left side so hard to automate?
 
 Because product knowledge is fragmented.
 
 ![A chaotic network of disconnected information sources: Jira tickets, Slack threads, docs, meetings, code comments and people's heads, with no shared model connecting them.](images/product_definition_as_code_-_the_current_documentation_chaos.png)
 
-Product decisions live in Jira. Conversations live in Slack. Long-form reasoning lives in Docs. Half of it lives in meetings that were never minuted. The rest lives in code comments and in the heads of two senior engineers who will eventually leave.
+Product decisions live in Jira. Conversations live in Slack or Teams. Long-form reasoning lives in Docs, luckily, or in chaotic Confluence pages. Half of it lives in meetings that were never minuted. The rest lives in code comments and in the heads of two senior engineers that are about to retire and a third who is frequently on vacation.
 
-AI does not have a **product model**. It has fragments. And fragments are not context. Fragments are noise that the model has to reconstruct into a model on every single invocation, with no guarantee it reconstructs the same model twice.
+AI does not have a **product model**. We are constantly feeding it with fragments, and fragments are just "noise" that the model has to reconstruct into something understandable on every single invocation, with no guarantee it reconstructs the same meanings twice. That is the opposite of determinism, our lighthouse in AI-SDLC.
 
-That is the opposite of determinism.
+This is the root cause underneath everything I wrote in [*The Missing Standard Behind AI-Assisted Development*](/ai-tooling-lacks-foundational-standards/). There, the fragmentation, was at the tooling layer, every vendor scanning its own files. Here, the fragmentation is deeper: it is at the **product knowledge layer**, before any tool even runs.
 
-This is the root cause underneath everything I wrote in [*The Missing Standard Behind AI-Assisted Development*](/ai-tooling-lacks-foundational-standards/). There, the fragmentation was at the tooling layer — every vendor scanning its own files. Here, the fragmentation is deeper: it is at the **product knowledge layer**, before any tool even runs.
-
-You cannot standardize discovery if there is nothing canonical to discover.
+> We cannot standardize discovery if there is nothing canonical to discover.
 
 ## 4. The proposed solution: Product Definition as Code
 
 The deliberately inelegant word I keep using is **artifacting**.
 
-Instead of treating product understanding as a collection of conversations, tickets and documents, we represent its different dimensions as explicit, versioned and related artifacts. Not one enormous product document. Not a 200-page specification nobody reads. A **graph of small, focused product artifacts**.
+Instead of treating product understanding as a collection of conversations, tickets and documents, we could represent its different dimensions as explicit, versioned and related artifacts. Not one enormous product document. Not a 200-page specification nobody reads. A **graph of small, focused product artifacts**.
 
 ![The proposed product model: Actors → Journeys → Use Cases → Business Rules → Domain → Requirements, with the generated product graph showing explicit relationships between artifacts.](images/product_definition_as_code_-_the_proposed_solution.png)
 
-An actor participates in a journey. A journey contains use cases. A use case is governed by business rules. Business rules and domain concepts lead to requirements.
+I recently tried this approach manually with quite a few clients, and it worked. The artifacts are, in general: 
+- Actors
+- Journeys
+- Use Cases
+- Business Rules
+- Domain Concepts
+- Requirements
 
-The documents are useful, but the real methodology is in the **relationships between them**. Those relationships make product knowledge navigable, traceable and usable by both humans and AI.
+
+An actor participates in a journey. A journey contains use cases. A use case is governed by business rules. Business rules and domain concepts lead to requirements (functional or non-functional). 
+
+The documents demonstrated to be useful, but the real methodology is in the **relationships between them**. Those relationships make product knowledge navigable, traceable and usable by both humans and AI.
 
 The working name for this idea is **Product Definition as Code**.
 
 > Everything is code. Or can become code.
 
-That is not a slogan. It is an engineering position. If a thing can be written down, it can be versioned. If it can be versioned, it can be validated. If it can be validated, it can be trusted as input to a deterministic process. Product knowledge is no exception. The moment we stop treating it as ephemeral conversation and start treating it as a first-class artifact with identity, relationships and lifecycle, it becomes code — and code is the only thing the rest of our toolchain already knows how to handle.
+That is not a slogan. It is an engineering position. If a thing can be written down, it can be versioned. If it can be versioned, it can be validated. If it can be validated, it can be trusted as input to a deterministic process. Product knowledge is no exception. The moment we stop treating it as ephemeral conversation and start treating it as a first-class artifact with identity, relationships and lifecycle, it becomes code, and code is the only thing the rest of our toolchain already knows how to handle.
 
-The basic principles are:
+### The basic principles of Product Definition as Code:
 
 - Product knowledge lives close to the software, inside the repository.
 - Markdown is the canonical representation.
@@ -147,19 +141,17 @@ So what does software engineering look like if we adopt this?
 
 ![Side-by-side comparison: Yesterday — Ideas → Stories → Code. Tomorrow — Ideas → Product Model → Product Changes → AI-assisted Delivery → Code.](images/product_definition_as_code_-_the_shift_we_are_making.png)
 
-**Yesterday:** Ideas → Stories → Code.
-
-**Tomorrow:** Ideas → Product Model → Product Changes → AI-assisted Delivery → Code.
-
-The expensive part is no longer translation from story to code — that part is collapsing. The expensive part becomes forming a coherent, versioned, machine-readable model of what the product *is* and *is becoming*.
+During 2026, within the AI-SDLC context, the most expensive part has become forming a coherent, versioned, machine-readable model of what the product *is* and *is becoming*.
 
 > AI makes product thinking the highest-leverage activity in software engineering.
 
-That is the shift. Not "AI replaces engineers." AI replaces the *translation* layer between intent and implementation — which means the quality of the intent itself becomes the constraint.
+That is the shift. Not "AI replaces engineers." AI replaces the *translation* layer between intent and implementation, which means the quality of the intent itself becomes the constraint.
 
-A vague requirement given to one engineer may result in a few questions and a delayed implementation. A vague requirement given to an autonomous development agent may result in twenty changed files, a new abstraction, six tests and a beautifully implemented misunderstanding.
+A vague requirement given to one engineer may result in a few questions and a delayed implementation. A vague requirement given to an autonomous development workflow may result in fifty changed files, a new "weird" abstraction, a couple of architectural missalignments nobody noticed at first sight, six tests and a beautifully implemented misunderstanding.
 
-The better the product context, the better the development loop. This does not make AI infallible. It makes its inputs less terrible. That is already a meaningful improvement. 🙂
+> The better the product context, the better the development loop. 
+
+That is already a meaningful improvement, with or without AI. 🙂
 
 ## In a Nutshell
 
@@ -182,13 +174,13 @@ The first version does not need to solve the entire product lifecycle. It needs 
 
 ![ProductShape — the reference implementation of Product Definition as Code.](https://raw.githubusercontent.com/juangcarmona/productshape/main/assets/branding.png)
 
-I did not stop at the idea. I built it.
+I couldn't stop at the idea, so, I built something on top of it I want to share with the world.
 
-[**ProductShape**](https://github.com/juangcarmona/productshape) is the reference implementation of the Product Definition as Code methodology. It is to Product Definition as Code what OpenSpec is to Spec-Driven Development: a TypeScript toolkit that puts a canonical, versioned, machine-validatable product definition in front of your backlog and your SDD workflow.
+[**ProductShape**](https://github.com/juangcarmona/productshape) is the reference implementation of the Product Definition as Code methodology. It is to Product Definition as Code what OpenSpec is to Spec-Driven Development: a TypeScript toolkit that puts a canonical, versioned, machine-validatable product definition in front of your backlog and your AI-driven/Agentic/SDD workflow, whatever you choose.
 
 ![ProductShape icon](https://raw.githubusercontent.com/juangcarmona/productshape/main/assets/product_shape_icon.png)
 
-The repository defines itself with its own methodology — 59 artifacts, zero diagnostics. It has delivered one real Product Change through the complete loop, from proposal to promotion, handed off into a native OpenSpec change. v0.1 is complete and published.
+It has been a beautiful exercise because the repository defines itself with its own methodology, 59 artifacts, zero diagnostics. It has delivered one real Product Change through the complete loop, from proposal to promotion, handed off into a native OpenSpec change. v0.1 is complete and published.
 
 ## The packages
 
@@ -247,17 +239,17 @@ A greenfield adoption is the cleanest path: a fresh repository, no accumulated b
 prodshape init --ai claude --sdd openspec
 ```
 
-This creates `docs/product/` (the canonical model) and `.product/` (configuration, generated graph, cache). If you requested AI integrations, it also generates managed files under `.claude/` or `.github/` — skills, `/product:*` commands, hooks. Those are generated from canonical assets and must never be edited by hand.
+This creates `docs/product/` (the canonical model) and `.product/` (configuration, generated graph, cache). If you requested AI integrations, it also generates managed files under `.claude/` or `.github/`, skills, `/product:*` commands, hooks. Those are generated from canonical assets and must never be edited by hand.
 
 **2. Author the initial baseline.**
 
-The Define operation produces the first version of your product model. Two ways to run it: with the `define-product` skill (the AI interviews you about the product and drafts schema-conformant artifacts for review — AI drafts, you decide), or by hand from `templates/` (every artifact type has a conformant template).
+The Define operation produces the first version of your product model. Two ways to run it: with the `define-product` skill (the AI interviews you about the product and drafts schema-conformant artifacts for review, AI drafts, you decide), or by hand from `templates/` (every artifact type has a conformant template).
 
 A workable authoring order, because relationships point upstream: Actors → Bounded contexts and domain terms → Use cases and journeys → Business rules → Functional, quality requirements and constraints.
 
 **3. The bootstrap exception.**
 
-The first baseline may be authored directly into `docs/product/model` — no Product Change is required to create it. This is the *only* time direct authoring into the model is allowed. Once the initial baseline is accepted, every subsequent semantic evolution must go through a Product Change.
+The first baseline may be authored directly into `docs/product/model`, no Product Change is required to create it. This is the *only* time direct authoring into the model is allowed. Once the initial baseline is accepted, every subsequent semantic evolution must go through a Product Change.
 
 **4. Validate.**
 
