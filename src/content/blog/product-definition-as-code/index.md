@@ -182,7 +182,7 @@ It has been a beautiful exercise because the repository defines itself with its 
 
 ## The packages
 
-All packages are published on npm under the [`@prodshape`](https://www.npmjs.com/settings/prodshape/packages) scope, versioned independently with [Changesets](https://github.com/changesets/changesets) and published from GitHub Actions with provenance.
+Everything is published on npm under the [`@prodshape`](https://www.npmjs.com/settings/prodshape/packages) scope, versioned independently with [Changesets](https://github.com/changesets/changesets) and published from GitHub Actions with provenance. Six packages, one job each:
 
 | Package | Purpose |
 |---|---|
@@ -205,31 +205,17 @@ Or run it once without installing:
 pnpm dlx @prodshape/cli --help
 ```
 
-The CLI ships two equivalent binaries: `prodshape` (canonical) and `product-definition` (v0.x alias, identical output, removed before v1). The `/product:*` commands are canonical; `/ps:*` is an optional shorthand.
+The CLI ships two equivalent binaries: `prodshape` (canonical) and `product-definition` (a v0.x alias, identical output, removed before v1). The `/product:*` commands are canonical; `/ps:*` is just an optional shorthand for the lazy typists, like me.
 
 ## The artifact model
 
-The product model is a set of Markdown artifacts, each with a stable, immutable ID:
+The product model is a set of Markdown artifacts, each with a stable, immutable ID. I won't paste the full table here because the [repo's README](https://github.com/juangcarmona/productshape#the-artifacts) already does it better, but the shape is: Actors, Journeys, Use Cases, Business Rules, Domain Terms, Bounded Contexts, Functional Requirements, Quality Requirements and Constraints — plus three kinds that carry the change flow: Product Changes (`CHG-`), Delivery Slices (`SLI-`) and Product Handoffs (`HOF-`).
 
-| Artifact | Prefix | What it captures |
-|---|---|---|
-| Actor | `ACT-` | Who or what interacts with the product |
-| Journey | `JRN-` | An end-to-end outcome across use cases |
-| Use Case | `UC-` | One concrete interaction and its flows |
-| Business Rule | `BR-` | Durable knowledge that governs behaviour |
-| Domain Term | `TERM-` | Shared language, defined in a bounded context |
-| Bounded Context | `BC-` | A product-language boundary |
-| Functional Requirement | `FR-` | A derived obligation: what the product must do |
-| Quality Requirement | `QR-` | A measurable quality obligation |
-| Constraint | `CON-` | An externally imposed or deliberately fixed boundary |
-
-Three further kinds carry the change flow: Product Changes (`CHG-`), Delivery Slices (`SLI-`) and Product Handoffs (`HOF-`).
-
-Each relationship is authored exactly once, in one direction, on one artifact. The graph compiler builds the full product graph from those declarations and derives all reverse views — a bounded context's owned terms, a rule's consumers, a use case's derived requirements — so nobody maintains reciprocal references. Validation over the graph is deterministic: unresolved references, disallowed target types, duplicate IDs and lifecycle violations are errors with stable codes.
+The part I like most is that each relationship is authored exactly once, in one direction, on one artifact. The graph compiler builds the full product graph from those declarations and derives all the reverse views for you, a bounded context's owned terms, a rule's consumers, a use case's derived requirements — so nobody maintains reciprocal references by hand. And validation over the graph is deterministic: unresolved references, disallowed target types, duplicate IDs and lifecycle violations are errors with stable codes. No magic, no guessing.
 
 ## Adopting in a greenfield product
 
-A greenfield adoption is the cleanest path: a fresh repository, no accumulated behaviour to recover. You initialize the layout, author the initial baseline, validate it, and then run your first Product Change.
+This is the cleanest path: a fresh repository, no accumulated behaviour to recover. You initialize the layout, author the initial baseline, validate it, and then run your first Product Change.
 
 **1. Initialize.**
 
@@ -237,7 +223,7 @@ A greenfield adoption is the cleanest path: a fresh repository, no accumulated b
 prodshape init --ai claude --sdd openspec
 ```
 
-This creates `docs/product/` (the canonical model) and `.product/` (configuration, generated graph, cache). If you requested AI integrations, it also generates managed files under `.claude/` or `.github/`, skills, `/product:*` commands, hooks. Those are generated from canonical assets and must never be edited by hand.
+This creates `docs/product/` (the canonical model) and `.product/` (configuration, generated graph, cache). If you asked for AI integrations, it also generates managed files under `.claude/` or `.github/`, skills, `/product:*` commands, hooks. Those are generated from canonical assets and must never be edited by hand.
 
 **2. Author the initial baseline.**
 
@@ -262,7 +248,7 @@ Validation is deterministic: schema conformance, ID and prefix rules, reference 
 
 ## Adopting in a brownfield product
 
-A brownfield adoption is the realistic path for most teams: existing software with behaviour, users and accumulated decisions, but no canonical product model. The path is initialize, recover a model from evidence, validate it into a baseline, then operate through Product Changes.
+This is the realistic path for most teams: existing software with behaviour, users and accumulated decisions, but no canonical product model. The path is initialize, recover a model from evidence, validate it into a baseline, then operate through Product Changes.
 
 **1. Initialize.** Same command. It creates `docs/product/` and `.product/` and touches nothing else — your source code, build and existing documentation are untouched.
 
