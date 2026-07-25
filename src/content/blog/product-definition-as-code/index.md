@@ -178,8 +178,6 @@ I couldn't stop at the idea, so, I built something on top of it I want to share 
 
 [**ProductShape**](https://github.com/juangcarmona/productshape) is the reference implementation of the Product Definition as Code methodology. It is to Product Definition as Code what OpenSpec is to Spec-Driven Development: a TypeScript toolkit that puts a canonical, versioned, machine-validatable product definition in front of your backlog and your AI-driven/Agentic/SDD workflow, whatever you choose.
 
-![ProductShape icon](https://raw.githubusercontent.com/juangcarmona/productshape/main/assets/product_shape_icon.png)
-
 It has been a beautiful exercise because the repository defines itself with its own methodology, 59 artifacts, zero diagnostics. It has delivered one real Product Change through the complete loop, from proposal to promotion, handed off into a native OpenSpec change. v0.1 is complete and published.
 
 ## The packages
@@ -337,4 +335,6 @@ The specification is normative. `docs/product` is canonical. Changes to the prod
 - [*Multi-Agent AI Repository Architecture*](/multi-agent-ai-repository-architecture/) — canonical semantic layer for AI artifacts. Product Definition as Code is what makes that layer worth discovering.
 - [OpenSpec](https://github.com/Fission-AI/OpenSpec) — lightweight, brownfield-first SDD framework.
 - [GitHub Spec Kit](https://github.com/github/spec-kit) — intent-driven SDD toolkit from GitHub.
-- [Plain Concepts](https://www.plainconcepts.com/who-we-are/) — the engineering context where these ideas are being tested against real clients.
+- [Plain Concepts](https://www.plainconcepts.com/who-we-are/) — a global IT professional services company empowering Innovation for a sustainable future.
+
+ 
