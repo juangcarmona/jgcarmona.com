@@ -1,0 +1,45 @@
+name: Scheduled publish
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: scheduled-publish
+
+jobs:
+  merge-due:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Merge due publish branches into main
+        id: merge
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          today=$(date -u +%F)
+          merged=0
+          for b in $(git for-each-ref --format='%(refname:short)' 'refs/remotes/origin/publish/*'); do
+            d=$(basename "$b" | cut -c1-10)
+            if [[ "$d" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] && [[ ! "$d" > "$today" ]]; then
+              echo "Publishing $b (due $d)"
+              git merge --no-ff "$b" -m "publish: ${b#origin/}"
+              git push origin HEAD:main
+              git push origin --delete "${b#origin/}"
+              merged=1
+            fi
+          done
+          echo "merged=$merged" >> "$GITHUB_OUTPUT"
+      - name: Trigger website deploy
+        if: steps.merge.outputs.merged == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run website-cd.yml --ref main
