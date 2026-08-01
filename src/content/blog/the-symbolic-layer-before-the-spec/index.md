@@ -149,7 +149,7 @@ This is a neurosymbolic architecture at the level of the SDLC. The neural compon
 
 ## What this changes
 
-Some of this has already happened between drafting this article and publishing it. Product Definition as Code now has a vendor-neutral home: the [PDaC specification](https://github.com/product-definition-as-code/spec) (v0.9, request for comments) lives in its own organization, separate from ProductShape, with a signable [manifesto](https://github.com/product-definition-as-code/spec/blob/main/MANIFESTO.md), a governance model and a public RFC process. The first RFCs are open, including one that makes silent edits to the product model machine-detectable through a baseline lock. The methodology's boundary was also restated end to end: the handoff is delivery-neutral, and the same package briefs an SDD framework, an AI coding agent, or a human team.
+Some of this has already happened between drafting this article and publishing it. Product Definition as Code now has a vendor-neutral home: the [PDaC specification](https://github.com/product-definition-as-code/spec) (v0.1, request for comments) lives in its own organization, separate from ProductShape, with a signable [manifesto](https://github.com/product-definition-as-code/spec/blob/main/MANIFESTO.md), a governance model and a public RFC process. The first RFCs are open, including one that makes silent edits to the product model machine-detectable through a baseline lock. The methodology's boundary was also restated end to end: the handoff is delivery-neutral, and the same package briefs an SDD framework, an AI coding agent, or a human team.
 
 What remains to change:
 
@@ -185,7 +185,7 @@ If this resonates: read and [sign the manifesto](https://github.com/product-defi
 - [RDF Schema 1.1](https://www.w3.org/TR/rdf-schema/), W3C Recommendation.
 - [OWL 2 Web Ontology Language Primer](https://www.w3.org/TR/owl2-primer/), W3C Recommendation.
 - [Shapes Constraint Language (SHACL)](https://www.w3.org/TR/shacl/), W3C Recommendation.
-- [The PDaC specification](https://github.com/product-definition-as-code/spec), v0.9 RFC, and [pdac.dev](https://pdac.dev).
+- [The PDaC specification](https://github.com/product-definition-as-code/spec), v0.1 RFC, and [pdac.dev](https://pdac.dev).
 - [ProductShape](https://github.com/juangcarmona/productshape), the reference implementation of Product Definition as Code.
 - [The PDaC Manifesto](https://github.com/product-definition-as-code/spec/blob/main/MANIFESTO.md).
 - [Product Definition as Code for the AI-SDLC](/en/product-definition-as-code/), the first article in this series.
