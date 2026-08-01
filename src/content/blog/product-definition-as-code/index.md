@@ -101,7 +101,7 @@ The working name for this idea is **Product Definition as Code**.
 
 > Everything is code. Or can become code.
 
-That is not a slogan. It is an engineering position. If a thing can be written down, it can be versioned. If it can be versioned, it can be validated. If it can be validated, it can be trusted as input to a deterministic process. Product knowledge is no exception. The moment we stop treating it as ephemeral conversation and start treating it as a first-class artifact with identity, relationships and lifecycle, it becomes code, and code is the only thing the rest of our toolchain already knows how to handle.
+That is not a slogan. It is an engineering position. If a thing can be written down, it can be versioned. If it can be versioned, it can be validated. And if it can be validated, its structure and its inconsistencies become inspectable, which is where trust starts, not where it ends: trust still requires accountable review and, downstream, delivery evidence. Product knowledge is no exception. The moment we stop treating it as ephemeral conversation and start treating it as a first-class artifact with identity, relationships and lifecycle, it becomes code, and code is the only thing the rest of our toolchain already knows how to handle.
 
 ### The basic principles of Product Definition as Code:
 
@@ -133,7 +133,7 @@ When the boundary is missing, the backlog silently becomes the product definitio
 
 This is not another SDD framework. There are already useful approaches for Spec-Driven Development, such as [OpenSpec](https://github.com/Fission-AI/OpenSpec) and [Spec Kit](https://github.com/github/spec-kit) — both of which I covered in [*Moving Toward Spec-Driven Development*](/moving-toward-spec-driven-development/). Product Definition as Code is intended to sit **before** them. It generates a stable handoff containing the relevant product subgraph for one delivery increment, and the SDD workspace remains native to the chosen framework.
 
-The relationship is intentionally **one-way**. Product knowledge feeds delivery. Delivery may reveal contradictions or missing information, but it must not silently rewrite the product definition.
+The relationship is intentionally **one-way** in authority, and two-way in learning. Product knowledge feeds delivery. Delivery may reveal contradictions or missing information, and it reports them back as evidence and proposed change, but it must not silently rewrite the product definition.
 
 ## 6. The shift we are making
 
