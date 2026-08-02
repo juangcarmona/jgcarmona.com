@@ -29,7 +29,7 @@ Karpathy published [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e
 
 - Explicitly defining what a product is.
 - Modeling it through typed artifacts: actors, journeys, use cases, rules, requirements, constraints, changes, and slices.
-- Making relationships carry normative, validable semantics.
+- Making relationships carry normative, validatable semantics.
 - Managing changes as overlays before promoting them to the current model.
 - Projecting verifiable subsets toward backlog, handoffs, and SDD workflows.
 - Keeping the model's Markdown as canonical truth governed by humans, not as automatic synthesis of sources.
@@ -54,10 +54,10 @@ The main differences:
 
 The correct formulation would be:
 
-> ProductShape applies some principles of structured, agent-friendly knowledge that also appear in LLM Wiki, but turns them into a normative, validable model oriented to the product definition and delivery cycle.
+> ProductShape applies some principles of structured, agent-friendly knowledge that also appear in LLM Wiki, but turns them into a normative, validatable model oriented to the product definition and delivery cycle.
 
 Saying they are "the same" is like saying an architecture-as-code repository is the same as a technical wiki because both use Markdown, Git, and links.
 
 And to be clear, this is not a criticism of LLM Wiki. A derived, LLM-maintained synthesis of sources is genuinely useful, and the two can coexist in one organization: the wiki compiles what you have learned; the product model states what you mean. Only one of them can be promoted, validated in CI, and handed to a delivery workflow as a contract.
 
-If you want the longer version of that contract: [Product Definition as Code](https://jgcarmona.com/en/product-definition-as-code), the [PDaC specification](https://github.com/product-definition-as-code/spec) (v0.9, request for comments), and the [manifesto you can sign](https://github.com/product-definition-as-code/spec/blob/main/MANIFESTO.md).
+If you want the longer version of that contract: [Product Definition as Code](https://jgcarmona.com/en/product-definition-as-code), the [PDaC specification](https://github.com/product-definition-as-code/spec) (v0.1, request for comments), and the [manifesto you can sign](https://github.com/product-definition-as-code/spec/blob/main/MANIFESTO.md).
