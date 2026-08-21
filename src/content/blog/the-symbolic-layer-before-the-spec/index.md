@@ -3,7 +3,7 @@ lang: en
 title: "The Symbolic Layer Before the Spec: What Ontologies Teach the AI-SDLC"
 description: "AI-assisted delivery is probabilistic, but product boundaries do not have to be. Product Definition as Code provides a bounded product ontology before the backlog and the spec, while keeping runtime enforcement where it belongs: in the software."
 pubDate: 2026-08-04
-heroImage: "images/the_ontology_before_the_spec_-_hero_image.png"
+heroImage: "images/From_chaos_to_structure.png"
 tags:
   - "ai-sdlc"
   - "product-thinking"
