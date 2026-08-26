@@ -4,6 +4,8 @@
 import '../styles/global.css';
 import { SITE_TITLE } from '../consts';
 
+const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+
 interface Props {
 	title: string;
 	description: string;
@@ -102,10 +104,39 @@ function escapeJSONString(str: string): string {
 		.replace(/'/g, "\\'");
 }
 ---
-
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+{GA_MEASUREMENT_ID && (
+  <>
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+    ></script>
+
+    <script
+      is:inline
+      define:vars={{ GA_MEASUREMENT_ID }}
+    >
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", GA_MEASUREMENT_ID, {
+        send_page_view: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+      });
+    </script>
+  </>
+)}
+
+
 <link rel="icon" type="image/svg+xml" href="/favicon.jpg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
