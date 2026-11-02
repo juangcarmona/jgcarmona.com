@@ -1,36 +1,209 @@
 ---
-import PostList from '../components/PostList.astro';
-import { SITE_DESCRIPTION, SITE_HEADLINE, SITE_SEO_TITLE, YOUTUBE_COURSES } from '../consts';
+import { Image } from 'astro:assets';
+import FormattedDate from '../components/FormattedDate.astro';
+import { PROFILES, SITE_DESCRIPTION, SITE_SEO_TITLE, YOUTUBE_COURSES } from '../consts';
+import { FLAGSHIP_PROJECTS } from '../data/projects';
+import { APPEARANCES, SPEAKER_LINKS } from '../data/speaking';
 import Base from '../layouts/Base.astro';
-import { getPosts } from '../utils/posts';
+import { getPosts, postUrl } from '../utils/posts';
 import { ecosystem } from '../utils/schema';
+import portrait from '../assets/portrait.jpg';
+import convex from '../assets/talks/convex-2026.jpg';
+import solidGrasp from '../assets/image-11.png';
+import ddd from '../assets/image-12-724x1024.png';
+import mastering from '../assets/book_cover_1-11.jpg';
 
-const posts = (await getPosts()).slice(0, 12);
+// Curated, not chronological: the articles that carry the current argument. The first one leads.
+const SELECTED = [
+	'product-definition-as-code',
+	'what-devex-means-in-2026',
+	'ai-tooling-lacks-foundational-standards',
+	'i-tried-to-prove-pdac-wrong',
+	'multi-agent-ai-repository-architecture',
+];
+
+const posts = await getPosts();
+const selected = SELECTED.map((id) => posts.find((post) => post.id === id)).filter((post) => post !== undefined);
+
+const tools = FLAGSHIP_PROJECTS.slice(0, 4);
+const recording = APPEARANCES.find((talk) => talk.videoUrl);
+const month = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', timeZone: 'UTC' });
+
+const books = [
+	{ title: 'SOLID y GRASP', cover: solidGrasp },
+	{ title: 'Domain-Driven Design', cover: ddd },
+	{ title: 'Mastering Software Development', cover: mastering },
+];
 ---
 
-<Base title={SITE_SEO_TITLE} description={SITE_DESCRIPTION} schema={ecosystem}>
-	<section class="intro">
-		<h1>Juan G. Carmona</h1>
-		<p class="headline">{SITE_HEADLINE}</p>
-		<p>
-			20+ years designing secure, scalable systems for aerospace and defence, rail and smart mobility, and motorsport,
-			for Airbus (Cassidian), Alstom, Porsche Motorsport and Solera, and as founder and CTO of Logtrip. Today I'm a
-			Software Development Engineer at <a href="https://www.plainconcepts.com/">Plain Concepts</a>, working as a
-			Forward Deployed Engineer: AI-SDLC, training, audits, assessments and SRE.
-		</p>
-		<p>
-			<strong>Building:</strong> Software Engineering 2.0, how our profession works when agents write much of the code.
-			<a href="https://talks.jgcarmona.com/software-engineering-2_0/">The talk</a> explains the idea, and
-			<a href="/projects/">PDaC, ProductShape, ArcShape and Lighthouse</a> are the tools I build for it.
-		</p>
-		<p>
-			<strong>Sharing:</strong> since 2006, when I started <em>Sharing experience and Computer Science Knowledge</em>.
-			Today: this blog, <a href="/talks/">talks</a>, <a href="/books/">books</a> and
-			<a href={YOUTUBE_COURSES[0].url}>YouTube courses</a>.
-		</p>
+<Base title={SITE_SEO_TITLE} description={SITE_DESCRIPTION} schema={ecosystem} wide>
+	<section class="frame home-hero" aria-labelledby="intro">
+		<div>
+			<p class="eyebrow">Software engineering · architecture · since 2005</p>
+			<h1 id="intro"><span>Juan G. Carmona</span></h1>
+			<p class="lede">
+				I design and build software for systems that cannot afford to fail, and I write and speak about how engineering
+				has to change now that agents write much of the code.
+			</p>
+			<p>
+				Twenty years across aerospace and defence, rail and smart mobility, motorsport and a company of my own. Sharing
+				what I learn here since 2006.
+			</p>
+			<div class="actions">
+				<a class="lh-button" href="/blog/">Read the writing</a>
+				<a class="arrow" href="/talks/">Speaking</a>
+				<a class="arrow" href="/about/">About me</a>
+			</div>
+		</div>
+		<figure class="photo">
+			<Image src={portrait} alt="Juan G. Carmona" width={460} loading="eager" fetchpriority="high" />
+			<figcaption>Writing · Speaking · Building</figcaption>
+		</figure>
 	</section>
 
-	<h2>Latest writing</h2>
-	<PostList posts={posts} />
-	<p><a href="/blog/">All posts →</a> · <a href="/tags/">Topics</a> · <a href="/search/">Search</a></p>
+	<section class="frame section" aria-labelledby="focus">
+		<div class="section-label">
+			<p class="eyebrow">Now</p>
+			<h2 id="focus">Software Engineering 2.0</h2>
+		</div>
+		<div>
+			<p class="focus">
+				For years we cut back on good engineering practice to deliver on time. Now that much of the implementation can be
+				delegated to AI, we have the chance, and the obligation, to <strong>rebuild the process end to end</strong>:
+				what we define, how we design it, and how we prove that what shipped is what was agreed.
+			</p>
+			<p class="more">
+				<a class="arrow" href="https://talks.jgcarmona.com/software-engineering-2_0/">The talk behind the idea</a>
+			</p>
+		</div>
+	</section>
+
+	<section class="frame section" aria-labelledby="writing">
+		<div class="section-label">
+			<p class="eyebrow">Writing</p>
+			<h2 id="writing">Selected articles</h2>
+			<p>{posts.length} articles in the archive, in English and Spanish.</p>
+			<a class="arrow" href="/blog/">The full archive</a>
+		</div>
+		<ol class="stories">
+			{
+				selected.map((post, i) => (
+					<li class:list={['story', { lead: i === 0 }]}>
+						<a href={postUrl(post)} hreflang={post.data.lang}>
+							{post.data.heroImage ? (
+								<Image src={post.data.heroImage} alt="" width={i === 0 ? 720 : 352} loading="lazy" />
+							) : (
+								<span class="no-image" aria-hidden="true" />
+							)}
+							<div>
+								<h3>{post.data.title}</h3>
+								<p>{post.data.description}</p>
+								<span class="meta">
+									<FormattedDate date={post.data.pubDate} />
+									{post.data.lang === 'es' && ' · ES'}
+								</span>
+							</div>
+						</a>
+					</li>
+				))
+			}
+		</ol>
+	</section>
+
+	<section class="frame section" aria-labelledby="projects">
+		<div class="section-label">
+			<p class="eyebrow">Projects</p>
+			<h2 id="projects">Open tools</h2>
+			<p>Each one stands on its own. Together they explore the same question.</p>
+			<a class="arrow" href="/projects/">All projects</a>
+		</div>
+		<ul class="projects">
+			{
+				tools.map((project) => (
+					<li>
+						<h3>
+							<a href={project.links[0].url}>{project.name}</a>
+						</h3>
+						<p>{project.tagline}</p>
+						<ul class="inline-list mono">
+							{project.links.map((link) => (
+								<li>
+									<a href={link.url}>{link.label}</a>
+								</li>
+							))}
+						</ul>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<section class="frame section" aria-labelledby="speaking">
+		<div class="section-label">
+			<p class="eyebrow">Speaking</p>
+			<h2 id="speaking">On stage</h2>
+			<p>AI-assisted engineering, software architecture and the security of the people who build software.</p>
+			<a class="arrow" href="/talks/">Talks and sessions</a>
+		</div>
+		<div class="speaking">
+			{
+				recording && (
+					<a class="recording" href={recording.videoUrl}>
+						<Image src={convex} alt={`Recording: ${recording.title}`} width={640} loading="lazy" />
+						<span class="eyebrow">{recording.event} · recording</span>
+						<strong>{recording.title}</strong>
+					</a>
+				)
+			}
+			<div>
+				<ol class="record">
+					{
+						APPEARANCES.map((talk) => (
+							<li>
+								<time datetime={talk.date}>{month(talk.date)}</time>
+								<div>
+									<strong>{talk.event}</strong>
+									<span>{talk.title ?? talk.city}</span>
+								</div>
+							</li>
+						))
+					}
+				</ol>
+				<p class="more"><a class="lh-button" data-variant="secondary" href={PROFILES.SESSIONIZE}>Invite me via Sessionize</a></p>
+			</div>
+		</div>
+	</section>
+
+	<section class="frame section" aria-labelledby="publications">
+		<div class="section-label">
+			<p class="eyebrow">Publications</p>
+			<h2 id="publications">Books, courses, decks</h2>
+			<a class="arrow" href="/books/">Books</a>
+		</div>
+		<div class="shelf">
+			{
+				books.map((book) => (
+					<a class="cover" href="/books/">
+						<Image src={book.cover} alt={`Cover of ${book.title}`} width={288} loading="lazy" />
+						<span>{book.title}</span>
+					</a>
+				))
+			}
+			<div class="courses-block">
+				<p class="eyebrow">YouTube courses</p>
+				<ul class="courses">
+					{
+						YOUTUBE_COURSES.map((course) => (
+							<li>
+								<a href={course.url}>{course.title}</a>
+							</li>
+						))
+					}
+					<li>
+						<a href={SPEAKER_LINKS.TALKS_SITE}>Slide decks at talks.jgcarmona.com</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 </Base>
