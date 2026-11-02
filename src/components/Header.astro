@@ -15,7 +15,10 @@ const section = Astro.url.pathname.split('/')[1] ?? '';
 <header class="site-header">
 	<div class="frame">
 		<a class="brand" href="/">{SITE_TITLE}</a>
-		<nav class="site-nav" aria-label="Main">
+		<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+			<span>Menu</span>
+		</button>
+		<nav class="site-nav" id="site-nav" aria-label="Main">
 			{
 				links.map(({ href, label, match }) => (
 					<a href={href} aria-current={match.includes(section) ? 'page' : undefined}>
@@ -27,3 +30,12 @@ const section = Astro.url.pathname.split('/')[1] ?? '';
 		<ThemeToggle />
 	</div>
 </header>
+
+<script>
+	const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+	toggle?.addEventListener('click', () => {
+		const open = toggle.getAttribute('aria-expanded') !== 'true';
+		toggle.setAttribute('aria-expanded', String(open));
+		toggle.closest('.site-header')?.toggleAttribute('data-open', open);
+	});
+</script>

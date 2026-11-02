@@ -10,6 +10,8 @@ export type Project = {
 	name: string;
 	/** One line that says what it is. */
 	tagline: string;
+	/** The problem it exists to solve, on its own terms. */
+	problem?: string;
 	description: string;
 	/** Its place in the toolchain. */
 	role: string;
@@ -22,6 +24,7 @@ export type Project = {
 export const FLAGSHIP_PROJECTS: Project[] = [
 	{
 		name: 'Product Definition as Code',
+		problem: 'Product decisions end up scattered across meetings, tickets, documents and prompts, and every agent reads a different version of them.',
 		tagline: 'An open specification for keeping the agreed product definition in versioned Markdown.',
 		description:
 			'PDaC treats the product definition as an architectural asset: rules, actors, journeys and requirements are defined once, changed explicitly through Product Changes, and cited by specifications, agent prompts and tests instead of being restated. The specification ships with a manifesto and conformance tests.',
@@ -39,6 +42,7 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 	},
 	{
 		name: 'ProductShape',
+		problem: 'A rule changes, and nobody can say which specs, prompts and tests still describe the old one.',
 		tagline: 'The reference implementation of Product Definition as Code.',
 		description:
 			'A CLI and a set of packages that validate a product definition deterministically, compile it into a graph, evolve it through approved Product Changes, and verify that specs and agent prompts cite the current version of each rule. It integrates with OpenSpec, Spec Kit, GitHub Copilot, Claude Code, Codex and OpenCode.',
@@ -56,6 +60,7 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 	},
 	{
 		name: 'ArcShape',
+		problem: 'Architecture documentation drifts away from the code it describes, and nobody trusts it any more.',
 		tagline: 'AI-assisted architecture documentation built on arc42.',
 		description:
 			'A CLI and agent capabilities that create and maintain arc42 architecture documentation from repository evidence, generate diagrams as SVG, PNG and Mermaid, and publish an architecture reader alongside the code it describes.',
@@ -72,6 +77,7 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 	},
 	{
 		name: 'Lighthouse',
+		problem: 'Every repository reinvents its engineering standards, and agents inherit the habits instead of the standards.',
 		tagline: 'A reusable engineering baseline for AI-driven software development.',
 		description:
 			'Package-owned guidance, profiles and deterministic checks that a repository adopts and verifies against, so every project starts from the same engineering baseline and agents inherit the team\'s standards instead of its habits.',

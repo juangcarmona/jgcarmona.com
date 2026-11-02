@@ -22,11 +22,21 @@ const SELECTED = [
 	'multi-agent-ai-repository-architecture',
 ];
 
-const posts = await getPosts();
-const selected = SELECTED.map((id) => posts.find((post) => post.id === id)).filter((post) => post !== undefined);
+// The path that leads to the current focus. Source: CV (see /about).
+const PATH = [
+	{ year: '2011', field: 'Aerospace and defence', detail: 'Systems architecture for Cassidian, the Airbus defence division' },
+	{ year: '2014', field: 'Rail and smart mobility', detail: 'The Alstom Madrid Innovation Lab, where Mastria was born' },
+	{ year: '2018', field: 'Founder', detail: 'Logtrip, as CEO and CTO' },
+	{ year: '2022', field: 'Motorsport data', detail: 'Azure architecture for the Porsche Motorsport Data Platform' },
+	{ year: '2025', field: 'AI-SDLC', detail: 'Bringing AI into the whole delivery lifecycle, not only the code' },
+];
 
+const posts = await getPosts();
+const [lead, ...stories] = SELECTED.map((id) => posts.find((post) => post.id === id)).filter((post) => post !== undefined);
+
+const slug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 const tools = FLAGSHIP_PROJECTS.slice(0, 4);
-const recording = APPEARANCES.find((talk) => talk.videoUrl);
+const [recording, ...record] = [...APPEARANCES].sort((a, b) => Number(!!b.videoUrl) - Number(!!a.videoUrl));
 const month = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', timeZone: 'UTC' });
 
 const books = [
@@ -37,17 +47,17 @@ const books = [
 ---
 
 <Base title={SITE_SEO_TITLE} description={SITE_DESCRIPTION} schema={ecosystem} wide>
-	<section class="frame home-hero" aria-labelledby="intro">
-		<div>
-			<p class="eyebrow">Software engineering · architecture · since 2005</p>
-			<h1 id="intro"><span>Juan G. Carmona</span></h1>
-			<p class="lede">
-				I design and build software for systems that cannot afford to fail, and I write and speak about how engineering
-				has to change now that agents write much of the code.
-			</p>
-			<p>
-				Twenty years across aerospace and defence, rail and smart mobility, motorsport and a company of my own. Sharing
-				what I learn here since 2006.
+	<section class="frame home-hero" aria-labelledby="name">
+		<div class="hero-copy">
+			<h1 id="name" class="name">Juan G. Carmona</h1>
+			<p class="statement">AI did not create our engineering problems. <span>It exposed them.</span></p>
+			<p class="intro">
+				For twenty years I have built critical systems: aerospace and defence, rail and smart mobility, motorsport data
+				and a company of my own. Today I work on what AI-assisted delivery needs underneath: a
+				<a href={`/projects/#${slug('Product Definition as Code')}`}>product definition</a> agents can cite,
+				<a href={`/projects/#${slug('ArcShape')}`}>architecture documentation</a> that stays true to the code, and an
+				<a href={`/projects/#${slug('Lighthouse')}`}>engineering baseline</a> every repository can verify. I call it
+				<a href="https://talks.jgcarmona.com/software-engineering-2_0/">Software Engineering 2.0</a>.
 			</p>
 			<div class="actions">
 				<a class="lh-button" href="/blog/">Read the writing</a>
@@ -56,53 +66,62 @@ const books = [
 			</div>
 		</div>
 		<figure class="photo">
-			<Image src={portrait} alt="Juan G. Carmona" width={460} loading="eager" fetchpriority="high" />
-			<figcaption>Writing · Speaking · Building</figcaption>
+			<Image src={portrait} alt="Juan G. Carmona" widths={[360, 560, 840]} sizes="(max-width: 56rem) 100vw, 420px" loading="eager" fetchpriority="high" />
+			<figcaption>Writing since 2006 · On stage since 2012</figcaption>
 		</figure>
 	</section>
 
-	<section class="frame section" aria-labelledby="focus">
-		<div class="section-label">
-			<p class="eyebrow">Now</p>
-			<h2 id="focus">Software Engineering 2.0</h2>
-		</div>
-		<div>
-			<p class="focus">
-				For years we cut back on good engineering practice to deliver on time. Now that much of the implementation can be
-				delegated to AI, we have the chance, and the obligation, to <strong>rebuild the process end to end</strong>:
-				what we define, how we design it, and how we prove that what shipped is what was agreed.
-			</p>
-			<p class="more">
-				<a class="arrow" href="https://talks.jgcarmona.com/software-engineering-2_0/">The talk behind the idea</a>
-			</p>
-		</div>
+	<section class="frame path" aria-labelledby="path">
+		<h2 id="path" class="eyebrow">The road here</h2>
+		<ol>
+			{
+				PATH.map((step) => (
+					<li>
+						<span class="year">{step.year}</span>
+						<strong>{step.field}</strong>
+						<small>{step.detail}</small>
+					</li>
+				))
+			}
+		</ol>
 	</section>
 
-	<section class="frame section" aria-labelledby="writing">
-		<div class="section-label">
-			<p class="eyebrow">Writing</p>
-			<h2 id="writing">Selected articles</h2>
-			<p>{posts.length} articles in the archive, in English and Spanish.</p>
-			<a class="arrow" href="/blog/">The full archive</a>
-		</div>
+	<section class="frame writing" aria-labelledby="writing">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Writing</p>
+				<h2 id="writing">The current argument</h2>
+			</div>
+			<p>
+				{posts.length} articles in English and Spanish.{' '}
+				<a class="arrow" href="/blog/">The full archive</a>
+			</p>
+		</header>
+		{
+			lead && (
+				<a class="lead-story" href={postUrl(lead)} hreflang={lead.data.lang}>
+					{lead.data.heroImage && <Image src={lead.data.heroImage} alt="" widths={[480, 760, 1040]} sizes="(max-width: 56rem) 100vw, 640px" loading="lazy" />}
+					<div>
+						<span class="meta"><FormattedDate date={lead.data.pubDate} /></span>
+						<h3>{lead.data.title}</h3>
+						<p>{lead.data.description}</p>
+						<span class="arrow">Read the article</span>
+					</div>
+				</a>
+			)
+		}
 		<ol class="stories">
 			{
-				selected.map((post, i) => (
-					<li class:list={['story', { lead: i === 0 }]}>
+				stories.map((post) => (
+					<li>
 						<a href={postUrl(post)} hreflang={post.data.lang}>
-							{post.data.heroImage ? (
-								<Image src={post.data.heroImage} alt="" width={i === 0 ? 720 : 352} loading="lazy" />
-							) : (
-								<span class="no-image" aria-hidden="true" />
-							)}
-							<div>
-								<h3>{post.data.title}</h3>
-								<p>{post.data.description}</p>
-								<span class="meta">
-									<FormattedDate date={post.data.pubDate} />
-									{post.data.lang === 'es' && ' · ES'}
-								</span>
-							</div>
+							{post.data.heroImage && <Image src={post.data.heroImage} alt="" width={480} loading="lazy" />}
+							<span class="meta">
+								<FormattedDate date={post.data.pubDate} />
+								{post.data.lang === 'es' && ' · ES'}
+							</span>
+							<h3>{post.data.title}</h3>
+							<p>{post.data.description}</p>
 						</a>
 					</li>
 				))
@@ -110,22 +129,76 @@ const books = [
 		</ol>
 	</section>
 
-	<section class="frame section" aria-labelledby="projects">
-		<div class="section-label">
-			<p class="eyebrow">Projects</p>
-			<h2 id="projects">Open tools</h2>
-			<p>Each one stands on its own. Together they explore the same question.</p>
-			<a class="arrow" href="/projects/">All projects</a>
+	<section class="speaking-band" aria-labelledby="speaking">
+		<div class="frame">
+			<div class="stage">
+				{
+					recording?.videoUrl && (
+						<a class="stage-photo" href={recording.videoUrl}>
+							<Image src={convex} alt={`Juan G. Carmona on stage at ${recording.event}`} widths={[480, 800, 1280]} sizes="(max-width: 56rem) 100vw, 700px" loading="lazy" />
+							<span class="play">Watch the recording</span>
+						</a>
+					)
+				}
+				<div class="stage-copy">
+					<p class="eyebrow">Speaking</p>
+					<h2 id="speaking">On stage</h2>
+					{
+						recording && (
+							<>
+								<p class="talk-event">
+									{recording.event} · {recording.venue ? `${recording.venue}, ` : ''}
+									{recording.city}
+								</p>
+								<p class="talk-title">{recording.title}</p>
+								{recording.summary && <p class="talk-summary">{recording.summary}</p>}
+							</>
+						)
+					}
+					<div class="actions">
+						<a class="lh-button" href={PROFILES.SESSIONIZE}>Sessionize profile</a>
+						<a class="arrow" href="/talks/">Talks and sessions</a>
+					</div>
+				</div>
+			</div>
+			<ol class="timeline">
+				{
+					record.map((talk) => (
+						<li>
+							<time datetime={talk.date}>{month(talk.date)}</time>
+							<strong>{talk.eventUrl ? <a href={talk.eventUrl}>{talk.event}</a> : talk.event}</strong>
+							<span>{talk.title ?? talk.city}</span>
+						</li>
+					))
+				}
+			</ol>
 		</div>
-		<ul class="projects">
+	</section>
+
+	<section class="frame tools" aria-labelledby="projects">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Projects</p>
+				<h2 id="projects">Open tools, each with its own job</h2>
+			</div>
+			<p><a class="arrow" href="/projects/">All projects</a></p>
+		</header>
+		<ol class="tool-index">
 			{
-				tools.map((project) => (
-					<li>
-						<h3>
-							<a href={project.links[0].url}>{project.name}</a>
-						</h3>
-						<p>{project.tagline}</p>
-						<ul class="inline-list mono">
+				tools.map((project, i) => (
+					<li id={`home-${slug(project.name)}`}>
+						<span class="index">{String(i + 1).padStart(2, '0')}</span>
+						<div class="tool-name">
+							<h3>
+								<a href={project.links[0].url}>{project.name}</a>
+							</h3>
+							<p>{project.tagline}</p>
+						</div>
+						<div class="tool-purpose">
+							{project.problem && <p class="problem">{project.problem}</p>}
+							<p>{project.description}</p>
+						</div>
+						<ul class="tool-links">
 							{project.links.map((link) => (
 								<li>
 									<a href={link.url}>{link.label}</a>
@@ -135,63 +208,33 @@ const books = [
 					</li>
 				))
 			}
-		</ul>
+		</ol>
 	</section>
 
-	<section class="frame section" aria-labelledby="speaking">
-		<div class="section-label">
-			<p class="eyebrow">Speaking</p>
-			<h2 id="speaking">On stage</h2>
-			<p>AI-assisted engineering, software architecture and the security of the people who build software.</p>
-			<a class="arrow" href="/talks/">Talks and sessions</a>
-		</div>
-		<div class="speaking">
-			{
-				recording && (
-					<a class="recording" href={recording.videoUrl}>
-						<Image src={convex} alt={`Recording: ${recording.title}`} width={640} loading="lazy" />
-						<span class="eyebrow">{recording.event} · recording</span>
-						<strong>{recording.title}</strong>
-					</a>
-				)
-			}
+	<section class="frame publications" aria-labelledby="publications">
+		<header class="section-head">
 			<div>
-				<ol class="record">
-					{
-						APPEARANCES.map((talk) => (
-							<li>
-								<time datetime={talk.date}>{month(talk.date)}</time>
-								<div>
-									<strong>{talk.event}</strong>
-									<span>{talk.title ?? talk.city}</span>
-								</div>
-							</li>
-						))
-					}
-				</ol>
-				<p class="more"><a class="lh-button" data-variant="secondary" href={PROFILES.SESSIONIZE}>Invite me via Sessionize</a></p>
+				<p class="eyebrow">Publications</p>
+				<h2 id="publications">Books, courses and decks</h2>
 			</div>
-		</div>
-	</section>
-
-	<section class="frame section" aria-labelledby="publications">
-		<div class="section-label">
-			<p class="eyebrow">Publications</p>
-			<h2 id="publications">Books, courses, decks</h2>
-			<a class="arrow" href="/books/">Books</a>
-		</div>
-		<div class="shelf">
-			{
-				books.map((book) => (
-					<a class="cover" href="/books/">
-						<Image src={book.cover} alt={`Cover of ${book.title}`} width={288} loading="lazy" />
-						<span>{book.title}</span>
-					</a>
-				))
-			}
-			<div class="courses-block">
-				<p class="eyebrow">YouTube courses</p>
-				<ul class="courses">
+			<p><a class="arrow" href="/books/">Books</a></p>
+		</header>
+		<div class="shelf-layout">
+			<ul class="shelf">
+				{
+					books.map((book) => (
+						<li>
+							<a href="/books/">
+								<Image src={book.cover} alt={`Cover of ${book.title}`} widths={[200, 320]} sizes="(max-width: 40rem) 30vw, 180px" loading="lazy" />
+								<span>{book.title}</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+			<div>
+				<h3 class="eyebrow">Video courses</h3>
+				<ol class="courses">
 					{
 						YOUTUBE_COURSES.map((course) => (
 							<li>
@@ -199,10 +242,10 @@ const books = [
 							</li>
 						))
 					}
-					<li>
-						<a href={SPEAKER_LINKS.TALKS_SITE}>Slide decks at talks.jgcarmona.com</a>
-					</li>
-				</ul>
+				</ol>
+				<p class="decks">
+					Slide decks: <a href={SPEAKER_LINKS.TALKS_SITE}>talks.jgcarmona.com</a>
+				</p>
 			</div>
 		</div>
 	</section>
