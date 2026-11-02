@@ -10,8 +10,8 @@ export type Project = {
 	name: string;
 	/** One line that says what it is. */
 	tagline: string;
-	/** The problem it exists to solve, on its own terms. */
-	problem?: string;
+	/** The project's own words, quoted from its site: the headline and the meta description. */
+	inOwnWords?: { headline: string; summary: string; source: string };
 	description: string;
 	/** Its place in the toolchain. */
 	role: string;
@@ -24,7 +24,11 @@ export type Project = {
 export const FLAGSHIP_PROJECTS: Project[] = [
 	{
 		name: 'Product Definition as Code',
-		problem: 'Product decisions end up scattered across meetings, tickets, documents and prompts, and every agent reads a different version of them.',
+		inOwnWords: {
+			headline: 'Define once. Build from it. Change without losing track.',
+			summary: 'Product Definition as Code keeps the agreed product definition in versioned Markdown that delivery work cites instead of restating.',
+			source: 'https://pdac.dev/',
+		},
 		tagline: 'An open specification for keeping the agreed product definition in versioned Markdown.',
 		description:
 			'PDaC treats the product definition as an architectural asset: rules, actors, journeys and requirements are defined once, changed explicitly through Product Changes, and cited by specifications, agent prompts and tests instead of being restated. The specification ships with a manifesto and conformance tests.',
@@ -42,7 +46,11 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 	},
 	{
 		name: 'ProductShape',
-		problem: 'A rule changes, and nobody can say which specs, prompts and tests still describe the old one.',
+		inOwnWords: {
+			headline: 'Keep product decisions close to the work that changes them.',
+			summary: 'ProductShape helps teams define product knowledge in versioned Markdown, connect delivery work to the accepted definition, and see when that definition changes.',
+			source: 'https://productshape.dev/',
+		},
 		tagline: 'The reference implementation of Product Definition as Code.',
 		description:
 			'A CLI and a set of packages that validate a product definition deterministically, compile it into a graph, evolve it through approved Product Changes, and verify that specs and agent prompts cite the current version of each rule. It integrates with OpenSpec, Spec Kit, GitHub Copilot, Claude Code, Codex and OpenCode.',
@@ -60,7 +68,11 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 	},
 	{
 		name: 'ArcShape',
-		problem: 'Architecture documentation drifts away from the code it describes, and nobody trusts it any more.',
+		inOwnWords: {
+			headline: 'AI driven engineering documentation.',
+			summary: 'ArcShape helps teams create, evolve, and explain software architecture documentation with AI-assisted workflows grounded in your repository.',
+			source: 'https://arcshape.dev/',
+		},
 		tagline: 'AI-assisted architecture documentation built on arc42.',
 		description:
 			'A CLI and agent capabilities that create and maintain arc42 architecture documentation from repository evidence, generate diagrams as SVG, PNG and Mermaid, and publish an architecture reader alongside the code it describes.',
@@ -77,7 +89,11 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 	},
 	{
 		name: 'Lighthouse',
-		problem: 'Every repository reinvents its engineering standards, and agents inherit the habits instead of the standards.',
+		inOwnWords: {
+			headline: 'A clear path to engineering excellence.',
+			summary: 'Lighthouse is an adoptable engineering baseline for practical, AI-driven software development.',
+			source: 'https://lighthouse.jgcarmona.com/',
+		},
 		tagline: 'A reusable engineering baseline for AI-driven software development.',
 		description:
 			'Package-owned guidance, profiles and deterministic checks that a repository adopts and verifies against, so every project starts from the same engineering baseline and agents inherit the team\'s standards instead of its habits.',

@@ -9,6 +9,8 @@ export const SPEAKER_LINKS = {
 	TALKS_SOURCE: 'https://github.com/juangcarmona/presentations',
 };
 
+export type Link = { label: string; url: string };
+
 export type Appearance = {
 	event: string;
 	eventUrl?: string;
@@ -21,16 +23,53 @@ export type Appearance = {
 	country?: string;
 	/** Session title exactly as the programme lists it. */
 	title?: string;
+	/** The session abstract, quoted from its source. */
 	summary?: string;
-	/** Internal post that tells the story behind the talk. */
-	relatedPost?: string;
+	/** True while the organisers have not published the session's day and time. */
+	timeToBeConfirmed?: boolean;
+	/** The session as the organisers or Sessionize publish it. */
+	sessionUrl?: string;
+	/** The talk's own page on talks.jgcarmona.com. */
+	talkUrl?: string;
 	slidesUrl?: string;
 	videoUrl?: string;
 	sourceUrl?: string;
+	/** Articles that tell the story behind the talk. */
+	relatedPosts?: Link[];
+	/** Repositories and demos shown in the talk. */
+	repos?: Link[];
 };
+
+// The investigation behind CONVEX, Copilot Dev Days and RootedCON.
+const BACKDOOR_POST: Link = { label: 'Backdoor en Next.js y ataque a desarrolladores', url: '/es/ataque-a-desarrolladores/' };
+const HUNTING_REPO: Link = { label: 'hunting-the-hunter-episode-one', url: 'https://github.com/juangcarmona/hunting-the-hunter-episode-one' };
 
 // Newest first.
 export const APPEARANCES: Appearance[] = [
+	{
+		// Source: acceptance confirmed by the organisers on 2026-11-02; abstract from the Sessionize session.
+		event: 'X-Ops Conference Madrid 2026',
+		date: '2026-11-20',
+		endDate: '2026-11-21',
+		venue: 'Universidad Rey Juan Carlos',
+		city: 'Móstoles',
+		title: 'AI-Assisted Development at Scale: Keeping Product Decisions, Specs, and Agents Aligned',
+		summary: 'AI-SDLC creates a traceability problem that becomes expensive as products evolve.',
+		timeToBeConfirmed: true,
+		sessionUrl: 'https://sessionize.com/s/juangcarmona/ai-assisted-development-at-scale-keeping-product-d/187449',
+	},
+	{
+		// Source: talks/ingenieria-del-software-2_0 in the presentations repository (README and web.ts).
+		event: 'Albacete Power BI & Fabric User Group',
+		date: '2026-10-14',
+		venue: 'Cervecería La Nena',
+		city: 'Albacete',
+		title: 'Ingeniería del Software 2.0',
+		summary: 'Diseñar, construir y validar productos con IA.',
+		talkUrl: 'https://talks.jgcarmona.com/software-engineering-2_0/',
+		slidesUrl: 'https://talks.jgcarmona.com/decks/software-engineering-2_0/',
+		sourceUrl: 'https://github.com/juangcarmona/presentations/tree/main/talks/ingenieria-del-software-2_0',
+	},
 	{
 		// Source: the recording published by Plain Concepts.
 		event: 'CONVEX 2026',
@@ -43,6 +82,8 @@ export const APPEARANCES: Appearance[] = [
 		summary:
 			'La inteligencia artificial lo está cambiando todo, también la ciberseguridad. Esta charla reconstruye una situación real en primera persona: una investigación nacida de una oportunidad profesional aparentemente legítima que escondía una trampa altamente sofisticada.',
 		videoUrl: 'https://www.youtube.com/watch?v=gVGUC9E6HxI',
+		relatedPosts: [BACKDOOR_POST],
+		repos: [HUNTING_REPO],
 	},
 	{
 		// Source: the event's programme (githubcopilotdevdaysmadrid.techriders.es).
@@ -54,6 +95,8 @@ export const APPEARANCES: Appearance[] = [
 		title: 'Pillado por una IA: detección y disección de un ataque dirigido a desarrolladores',
 		summary:
 			'Esta charla cuenta cómo GitHub Copilot ayudó a detectar una carga maliciosa oculta en un repositorio de un potencial cliente, y cómo esa alerta destapó un ataque dirigido.',
+		relatedPosts: [BACKDOOR_POST],
+		repos: [HUNTING_REPO],
 	},
 	{
 		// TODO: add the summary sent to the organisers.
@@ -63,6 +106,8 @@ export const APPEARANCES: Appearance[] = [
 		endDate: '2026-03-07',
 		city: 'Madrid',
 		title: 'Caught by an AI: Detecting and Hunting a Targeted Backdoor',
+		relatedPosts: [BACKDOOR_POST],
+		repos: [HUNTING_REPO],
 	},
 	{
 		// Source: CV. Event dates and venue: the UITP and Palais des congrès announcements.
@@ -80,7 +125,7 @@ export const APPEARANCES: Appearance[] = [
 		date: '2012-11-09',
 		city: 'Sevilla',
 		title: 'SOLID y GRASP',
-		relatedPost: '/es/iwt2-dojous-solid-y-grasp/',
+		relatedPosts: [{ label: 'IWT2 DojoUS: SOLID y GRASP', url: '/es/iwt2-dojous-solid-y-grasp/' }],
 	},
 ];
 
@@ -123,6 +168,7 @@ export const SESSIONS: Session[] = [
 	{
 		title: 'AI-Assisted Development at Scale: Keeping Product Decisions, Specs, and Agents Aligned',
 		summary: 'AI-SDLC creates a traceability problem that becomes expensive as products evolve.',
+		url: 'https://sessionize.com/s/juangcarmona/ai-assisted-development-at-scale-keeping-product-d/187449',
 	},
 	{
 		title: 'Hard and Soft Guardrails for Agentic Software Engineering',

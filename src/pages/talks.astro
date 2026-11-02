@@ -7,6 +7,17 @@ import { PERSON_ID } from '../utils/schema';
 const title = 'Talks — Juan G. Carmona';
 const description =
 	'Conference talks by Juan G. Carmona at CONVEX, GitHub Copilot Dev Days Madrid and RootedCON, and the sessions he offers to organisers.';
+const today = new Date().toISOString().slice(0, 10);
+const upcoming = (talk: (typeof APPEARANCES)[number]) => (talk.endDate ?? talk.date) >= today;
+const links = (talk: (typeof APPEARANCES)[number]) => [
+	talk.sessionUrl && { label: 'Session', url: talk.sessionUrl },
+	talk.videoUrl && { label: 'Recording', url: talk.videoUrl },
+	talk.slidesUrl && { label: 'Slides', url: talk.slidesUrl },
+	talk.talkUrl && { label: 'Talk page', url: talk.talkUrl },
+	talk.sourceUrl && { label: 'Source', url: talk.sourceUrl },
+	...(talk.relatedPosts ?? []),
+	...(talk.repos ?? []),
+].filter((link) => !!link);
 const month = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', timeZone: 'UTC' });
 
 const schema = APPEARANCES.map((talk) => ({
@@ -43,18 +54,21 @@ const schema = APPEARANCES.map((talk) => ({
 			APPEARANCES.map((talk) => (
 				<li class="lh-card">
 					<p class="eyebrow">
+						{upcoming(talk) && 'Upcoming · '}
 						{talk.eventUrl ? <a href={talk.eventUrl}>{talk.event}</a> : talk.event}
 					</p>
 					{talk.title && <h3>{talk.title}</h3>}
 					<p class="muted mono">
 						<time datetime={talk.date}>{month(talk.date)}</time> · {talk.venue ? `${talk.venue}, ${talk.city}` : talk.city}
+						{talk.timeToBeConfirmed && ' · session time to be confirmed'}
 					</p>
 					{talk.summary && <p>{talk.summary}</p>}
 					<ul class="inline-list">
-						{talk.videoUrl && <li><a href={talk.videoUrl}>Video</a></li>}
-						{talk.slidesUrl && <li><a href={talk.slidesUrl}>Slides</a></li>}
-						{talk.relatedPost && <li><a href={talk.relatedPost}>Related post</a></li>}
-						{talk.sourceUrl && <li><a href={talk.sourceUrl}>Source</a></li>}
+						{links(talk).map((link) => (
+							<li>
+								<a href={link.url}>{link.label}</a>
+							</li>
+						))}
 					</ul>
 				</li>
 			))

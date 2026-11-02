@@ -12,7 +12,7 @@ npm run dev      # http://localhost:4321
 npm run verify   # build the site and run lighthouse verify
 ```
 
-`npm run brand` regenerates the JGC favicon, touch icon and default social image from `scripts/brand.mjs`.
+`npm run brand` regenerates the favicon, touch icon and default social image from the portrait in `src/assets/portrait.jpg` (`scripts/brand.mjs`).
 
 ## Write
 
