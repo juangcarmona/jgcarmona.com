@@ -91,7 +91,7 @@ Existen tres artefactos, el Product Backlog, el Sprint Backlog y el Burndown Cha
 
   
 
-[![](images/d4cb9-tiempo_scrum.jpg)](https://jgcarmona.com/wp-content/uploads/2012/08/d4cb9-tiempo_scrum.jpg)
+![](images/d4cb9-tiempo_scrum.jpg)
 
   
 

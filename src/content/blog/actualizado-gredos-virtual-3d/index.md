@@ -31,9 +31,9 @@ Aquí las capturas de pantalla:
 
   
 
-[![](images/88590-screenshot_2012-11-19-10-37-43.png)](https://jgcarmona.com/wp-content/uploads/2012/11/88590-screenshot_2012-11-19-10-37-43.png)[![](images/9359b-screenshot_2012-11-19-10-37-59.png)](https://jgcarmona.com/wp-content/uploads/2012/11/9359b-screenshot_2012-11-19-10-37-59.png)[![](images/98209-screenshot_2012-11-19-10-41-06.png)](https://jgcarmona.com/wp-content/uploads/2012/11/98209-screenshot_2012-11-19-10-41-06.png)  
-[![](images/8fde4-screenshot_2012-11-19-10-42-36.png)](https://jgcarmona.com/wp-content/uploads/2012/11/8fde4-screenshot_2012-11-19-10-42-36.png)[![](images/f269b-screenshot_2012-11-19-10-47-41.png)](https://jgcarmona.com/wp-content/uploads/2012/11/f269b-screenshot_2012-11-19-10-47-41.png)[![](images/e4ffc-screenshot_2012-11-19-10-48-17.png)](https://jgcarmona.com/wp-content/uploads/2012/11/e4ffc-screenshot_2012-11-19-10-48-17.png)  
-[![](images/8b39e-screenshot_2012-11-19-10-48-51.png)](https://jgcarmona.com/wp-content/uploads/2012/11/8b39e-screenshot_2012-11-19-10-48-51.png)[![](images/6a4b8-screenshot_2012-11-19-10-49-23.png)](https://jgcarmona.com/wp-content/uploads/2012/11/6a4b8-screenshot_2012-11-19-10-49-23.png)[![](images/76e02-screenshot_2012-11-19-10-51-13.png)](https://jgcarmona.com/wp-content/uploads/2012/11/76e02-screenshot_2012-11-19-10-51-13.png)
+![](images/88590-screenshot_2012-11-19-10-37-43.png)![](images/9359b-screenshot_2012-11-19-10-37-59.png)![](images/98209-screenshot_2012-11-19-10-41-06.png)  
+![](images/8fde4-screenshot_2012-11-19-10-42-36.png)![](images/f269b-screenshot_2012-11-19-10-47-41.png)![](images/e4ffc-screenshot_2012-11-19-10-48-17.png)  
+![](images/8b39e-screenshot_2012-11-19-10-48-51.png)![](images/6a4b8-screenshot_2012-11-19-10-49-23.png)![](images/76e02-screenshot_2012-11-19-10-51-13.png)
 
   
 

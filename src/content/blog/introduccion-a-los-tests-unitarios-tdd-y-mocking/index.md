@@ -177,7 +177,7 @@ public class Calculadora : ICalculadora{    public int Suma(int num1, int num2) 
 Ahora si ejecutamos el test el test pasa.  
   
 
-[![](images/21a0a-test1.png)](https://jgcarmona.com/wp-content/uploads/2012/09/21a0a-test1.png)
+![](images/21a0a-test1.png)
 
   
 Bien, hemos avanzado pero nos quedan requisitos por cumplir, nos han pedido que sean dos números enteros positivos y a prueba de fallos y nos hemos quedado en "dos números enteros", nos queda el positivos y el a prueba de fallos, fallos que podrían venir de un desbordamiento pero vamos por pasos, nuestro siguiente requisito va a ser que sean positivos y vamos a seguir los requisitos a rajatabla, es decir, si nos llega un número negativo no nos vamos a inventar un mensaje ni un log, no, vamos a lanzar una excepción de argumentos. Empecemos con el primer número:
@@ -189,7 +189,7 @@ Bien, hemos avanzado pero nos quedan requisitos por cumplir, nos han pedido que 
 Si ejecutamos el test falla porque en nuestra clase no estamos controlando eso.  
   
 
-[![](images/dba6a-testprimernumerofalla.png)](https://jgcarmona.com/wp-content/uploads/2012/09/dba6a-testprimernumerofalla.png)
+![](images/dba6a-testprimernumerofalla.png)
 
   
 
@@ -202,7 +202,7 @@ public int Suma(int num1, int num2){    if (num1 < 0)        throw new ArgumentO
 Si ahora ejecutamos los tests pasan todos, estamos en verde.  
   
 
-[![](images/d9bfa-testprimernumeropasa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/d9bfa-testprimernumeropasa.png)
+![](images/d9bfa-testprimernumeropasa.png)
 
   
  ¡Genial! Pues hagamos lo mismo con el siguiente parámetro, con num2, primero el test y luego el código que pasa el test:
@@ -218,7 +218,7 @@ public int Suma(int num1, int num2){    if (num1 < 0)        throw new ArgumentO
 Y si ejecutamos los tres tests pasan todos.  
   
 
-[![](images/d9766-testsegundonumeropasa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/d9766-testsegundonumeropasa.png)
+![](images/d9766-testsegundonumeropasa.png)
 
   
 Como vemos éste proceso iterativo e incremental de testeo (TDD) es bueno pues, nos ceñimos a los requisitos sin inventarnos nada, cosa a la que tendemos todos los desarrolladores de forma innata cuando los requisitos no son claros. Voy a obviar todos los pasos pero voy a aabar los tests y la clase que se ciñe a los requisitos del ejemplo. Primero los tests:
@@ -235,7 +235,7 @@ public class Calculadora : ICalculadora{    public int Suma(int num1, int num2) 
 
   
 
-[![](images/a5154-los7testspasan.png)](https://jgcarmona.com/wp-content/uploads/2012/09/a5154-los7testspasan.png)
+![](images/a5154-los7testspasan.png)
 
   
 ¿Es mejorable éste código? Pues seguro que si pero no es el objetivo de éste artículo aprender C# sino hacer una introducción al TDD y a Mocking. Observad que en todos los tests hemos hecho más o menos lo mismo, hemos creado y preparado el test, en este caso creando una calculadora y dando valor a las variables. Después hemos ejecutado lo que queríamos probar, en nuestro caso el método sumar, y después hemos verificado que el resultado de la prueba era el esperado. En todos los tests más o menos lo mismo, ¿cierto? Pues ¡bienvenido a la metodología AAA!
@@ -271,7 +271,7 @@ Veamos como quedaría el ejemplo de la calculadora utilizando AAA como clase bas
 Ésta sería la primera aproximación en UML (no ha quedado exactamente así pero sólo quiero que se vea la intención):  
   
 
-[![](images/247fe-uml_aaa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/247fe-uml_aaa.png)
+![](images/247fe-uml_aaa.png)
 
 Éste sería el código de pruebas:
 

@@ -18,11 +18,11 @@ Ya mostré en los distintos artículos relacionados con los [principios](http://
 
 Voy a partir de una clase cuya [única responsabilidad](/es/srp-single-responsibility-principle-principio-de-unica-responsabilidad/) es ejecutar algo, a ésta clase la voy a llamar **Tarea**.
 
-[![](images/865c4-tarea.png)](https://jgcarmona.com/wp-content/uploads/2012/09/865c4-tarea.png)
+![](images/865c4-tarea.png)
 
 Imagina que ésta clase pertenece a un programa para el que se le quieren añadir mejoras como control de **tareas en hilos**, **tareas compuestas,** **bifurcaciones de tareas**, **tareas condicionales**, etcétera y seré yo quien desarrolle dichas mejoras. Lo primero que haré será rezar porque exista una interfaz ITarea para que todas las clases que desarrolle a partir de ahora para implementar los nuevos requisitos cumplan con su única responsabilidad, en nuestro ejemplo "Ejecutar()". Ha habido suerte y existe ITarea, y por tanto parto de lo siguiente:
 
-[![](images/41b48-itarea.png)](https://jgcarmona.com/wp-content/uploads/2012/09/41b48-itarea.png)
+![](images/41b48-itarea.png)
 
 ¿Recuerdas el [UML de batalla](http://juan-garcia-carmona.blogspot.com.es/2012/09/uml-de-batalla.html)? La línea discontinua con punta de flecha blanca significa que realiza, es decir, Tarea realiza ITarea, o lo que es lo mismo, Tarea implementa la Interfaz ITarea. En código tengo ésto, mi punto de partida:
 
@@ -45,7 +45,7 @@ public class Tarea : ITarea
 
 Bien, voy a atacar ahora uno de los primeros requisitos nuevos, las tareas compuestas. es decir, agrupar una serie de tareas para ser ejecutadas en serie. Para ésto voy a crear una clase que implemente ITarea pero que además contenga, internamente, un conjunto de ITareas, algo así:
 
-[![](images/4c51d-conjuntodetareas.png)](https://jgcarmona.com/wp-content/uploads/2012/09/4c51d-conjuntodetareas.png)
+![](images/4c51d-conjuntodetareas.png)
 
 Éste podría ser el código:
 
@@ -100,7 +100,7 @@ public class TareaNula:ITarea
 
 Voy a por otro de los nuevos requisitos, imaginemos que nos dicen que se quiere que la ejecución se realice sólo bajo cierta **condición**. En vez de llevar el control de la ejecución a un nivel superior creo una clase que implemente ITarea y que se encargue de comprobar si debe ejecutarse o no. Su estructura en un diagrama de clases podría ser ésta:
 
-[![](images/6f2ba-tareacondicionada.png)](https://jgcarmona.com/wp-content/uploads/2012/09/6f2ba-tareacondicionada.png)
+![](images/6f2ba-tareacondicionada.png)
 
 Y éste su código:
 
@@ -138,7 +138,7 @@ public class TareaCondicionada : ITarea
 
 Gracias a ésta nueva clase **TareaCondicionada**, al tratarse de una implementación de **ITarea**, podemos, junto con la clase **ConjuntoDeTareas**, tratar un conjunto de tareas y al ejecutar dicho conjunto algunas pueden no ejecutarse. ¿Suena útil? Puede serlo. ¿Y si ampliáramos éste comportamiento de la siguiente forma, que bajo cierta condición se ejecute una tarea pero que si no se cumple se ejecute otra tarea distinta? Por la bifurcación que implica llamaré a esta nueva clase **TareaBinaria**:
 
-[![](images/71a2c-tareabinaria.png)](https://jgcarmona.com/wp-content/uploads/2012/09/71a2c-tareabinaria.png)
+![](images/71a2c-tareabinaria.png)
 
 Me quedaría algo tan simple como ésto:
 

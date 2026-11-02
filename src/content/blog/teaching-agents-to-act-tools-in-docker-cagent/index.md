@@ -11,7 +11,7 @@ tags:
 heroImage: "images/i-want-you-to-generate-a-simple-docker-icon-the.png"
 ---
 
-In the previous article, [**we taught agents to remember**](https://jgcarmona.com/wp-content/uploads/2025/09/teaching_agents_to_remember.png). Cute. They stopped being goldfish and started to act like assistants. Now, it’s time to let them actually **do something**. Because an agent that just talks and remembers is still basically your chatty neighbor with a good memory. An agent that can run commands, access files, or search the web? That’s a different story.
+In the previous article, **we taught agents to remember**. Cute. They stopped being goldfish and started to act like assistants. Now, it’s time to let them actually **do something**. Because an agent that just talks and remembers is still basically your chatty neighbor with a good memory. An agent that can run commands, access files, or search the web? That’s a different story.
 
 Tools are what transform an AI agent from _commentator_ to _participant_. And in Docker cagent, adding them is tremendously easy: one line of YAML or two.
 

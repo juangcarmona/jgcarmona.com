@@ -9,7 +9,7 @@ tags:
 heroImage: "images/generate-a-highly-detailed-high-resolution-featured-image-for-a-blog.png"
 ---
 
-¿Sientes que **vas en piloto automático**? ¿Estás atascado? Recuperar el control de tu vida profesional no tiene por qué ser un drama ni requerir meses de **[coaching](/coaching)** o terapia psicológica. A veces basta con parar media hora, coger papel y lápiz, y tener una conversación profunda con uno mismo.
+¿Sientes que **vas en piloto automático**? ¿Estás atascado? Recuperar el control de tu vida profesional no tiene por qué ser un drama ni requerir meses de **[coaching](/about/)** o terapia psicológica. A veces basta con parar media hora, coger papel y lápiz, y tener una conversación profunda con uno mismo.
 
 Pero no vale cualquier conversación. Las personas tendemos a divagar, y más en estas situaciones en las que no hay un rumbo claro. Déjame que te cuente un secreto: un truco, un plan para guiar este ejercicio de introspección. Un enfoque práctico, simple pero súper potente. Lo he aplicado con muchos clientes para ayudarles a tomar decisiones importantes, a veces difíciles, a veces liberadoras, con confianza, perspectiva y criterio propio.
 
@@ -128,7 +128,7 @@ Empieza a tomar decisiones **con más intención y más criterio.**
 
 ## ¿Y ahora qué?
 
-[![Hombre joven con gafas mirando al horizonte mientras sostiene un mapa, simbolizando la búsqueda de dirección y propósito en su vida profesional.](images/e3c63090-eeb4-47e9-800d-b42d3856d4a5.png)](/coaching)
+[![Hombre joven con gafas mirando al horizonte mientras sostiene un mapa, simbolizando la búsqueda de dirección y propósito en su vida profesional.](images/e3c63090-eeb4-47e9-800d-b42d3856d4a5.png)](/about/)
 
 No tienes que dejar tu trabajo mañana.
 

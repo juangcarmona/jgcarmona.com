@@ -113,7 +113,7 @@ Te invito a hacer algo simple y potente:
 
 📥 **Descarga aquí la hoja de autoevaluación en Excel**
 
-[Autoevaluacion\_Soft\_Skills](https://jgcarmona.com/wp-content/uploads/2025/06/Autoevaluacion_Soft_Skills.xlsx)[Download](https://jgcarmona.com/wp-content/uploads/2025/06/Autoevaluacion_Soft_Skills.xlsx)
+_(El fichero descargable original se perdió al migrar el blog desde WordPress.)_
 
   
 📧 **Rellénala y envíamela a juan@jgcarmona.com**

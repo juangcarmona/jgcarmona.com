@@ -167,4 +167,3 @@ _La vida._
 - Diseñadores gráficos junior
 - Programadores junior y perfiles medios
 
-<script type="application/ld+json">{ "@context": "https://schema.org", "@type": "Article", "headline": "Cómo preparar a nuestros hijos para el mundo que viene", "author": { "@type": "Person", "name": "Juan G Carmona" }, "publisher": { "@type": "Organization", "name": "JGCarmona Consulting", "logo": { "@type": "ImageObject", "url": "https://jgcarmona.com/wp-content/uploads/logo.png" } }, "mainEntityOfPage": { "@type": "WebPage", "@id": "/es/preparar-hijos-futuro-ia/" }, "datePublished": "2025-06-13", "description": "¿Qué habilidades tendrán valor en un mundo dominado por la IA? Una reflexión personal sobre empleo, tecnología y el futuro de nuestros hijos." }</script>

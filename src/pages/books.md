@@ -19,7 +19,7 @@ Este libro ofrece una guía clara y práctica sobre los principios de diseño SO
 
 Con un enfoque en las buenas prácticas y la calidad del código, este libro es ideal para desarrolladores que buscan estructurar su software de manera eficiente y profesional, evitando errores comunes y creando aplicaciones más mantenibles.
 
-[DESCARGAR EL LIBRO COMPLETO](https://jgcarmona.com/wp-content/uploads/2024/10/solid-y-grasp-buenas-practicas-hacia-el-exito-en-el-desarrollo-de-software.pdf)
+_(Descarga no disponible temporalmente.)_
 
 ![SOLID y GRASP: Buenas Prácticas hacia el Éxito en el Desarrollo de Software - Juan G Carmona](../assets/image-11.png)
 
@@ -33,7 +33,7 @@ En este libro, aún en desarrollo, se exploran a fondo los conceptos de Domain-D
 
 El contenido está diseñado para ayudar a desarrolladores y arquitectos a modelar dominios de negocio complejos, permitiendo que el software refleje con precisión la lógica del negocio y evolucione de manera ágil y eficaz. Con ejemplos prácticos y referencias a proyectos de código abierto, este libro es una referencia esencial para quienes buscan llevar su conocimiento de DDD a un nivel más avanzado.
 
-[DESCARGAR UNA MUESTRA](https://jgcarmona.com/wp-content/uploads/2024/10/ddd-estrategias-y-tecnicas-para-desarrolladores-y-arquitectos-sample.pdf)
+_(Descarga no disponible temporalmente.)_
 
 * * *
 

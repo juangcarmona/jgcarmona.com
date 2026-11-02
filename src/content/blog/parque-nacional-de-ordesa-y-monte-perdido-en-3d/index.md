@@ -19,7 +19,7 @@ Esta mañana siguiendo algunos consejos he oscurecido las imágenes y he añadid
 Os dejo algunas capturas del resultado de hoy:  
   
 
-[![](images/35189-screenshot_2012-08-29-07-44-25.png)](https://jgcarmona.com/wp-content/uploads/2012/08/35189-screenshot_2012-08-29-07-44-25.png)[![](images/81111-screenshot_2012-08-29-07-45-42.png)](https://jgcarmona.com/wp-content/uploads/2012/08/81111-screenshot_2012-08-29-07-45-42.png)[![](images/e4dc3-screenshot_2012-08-29-07-45-51.png)](https://jgcarmona.com/wp-content/uploads/2012/08/e4dc3-screenshot_2012-08-29-07-45-51.png)[![](images/32509-screenshot_2012-08-29-07-46-16.png)](https://jgcarmona.com/wp-content/uploads/2012/08/32509-screenshot_2012-08-29-07-46-16.png)[![](images/6707f-screenshot_2012-08-29-07-46-34.png)](https://jgcarmona.com/wp-content/uploads/2012/08/6707f-screenshot_2012-08-29-07-46-34.png)
+![](images/35189-screenshot_2012-08-29-07-44-25.png)![](images/81111-screenshot_2012-08-29-07-45-42.png)![](images/e4dc3-screenshot_2012-08-29-07-45-51.png)![](images/32509-screenshot_2012-08-29-07-46-16.png)![](images/6707f-screenshot_2012-08-29-07-46-34.png)
 
   
 
@@ -41,7 +41,7 @@ Voy a dejar aquí un par de capturas de pantalla que acabo de hacer ahora mismo:
 
   
 
- [![](images/e5341-screenshot_2012-08-28-17-13-16.png)](https://jgcarmona.com/wp-content/uploads/2012/08/e5341-screenshot_2012-08-28-17-13-16.png)[![](images/ae588-icon_512.png)](https://jgcarmona.com/wp-content/uploads/2012/08/ae588-icon_512.png)[![](images/dfcd8-screenshot_2012-08-28-17-15-04.png)](https://jgcarmona.com/wp-content/uploads/2012/08/dfcd8-screenshot_2012-08-28-17-15-04.png)[![](images/bcbaa-screenshot_2012-08-28-17-17-28.png)](https://jgcarmona.com/wp-content/uploads/2012/08/bcbaa-screenshot_2012-08-28-17-17-28.png)[![](images/c7673-screenshot_2012-08-28-17-43-12.png)](https://jgcarmona.com/wp-content/uploads/2012/08/c7673-screenshot_2012-08-28-17-43-12.png)[![](images/9bff6-screenshot_2012-08-28-17-44-13.png)](https://jgcarmona.com/wp-content/uploads/2012/08/9bff6-screenshot_2012-08-28-17-44-13.png)
+ ![](images/e5341-screenshot_2012-08-28-17-13-16.png)![](images/ae588-icon_512.png)![](images/dfcd8-screenshot_2012-08-28-17-15-04.png)![](images/bcbaa-screenshot_2012-08-28-17-17-28.png)![](images/c7673-screenshot_2012-08-28-17-43-12.png)![](images/9bff6-screenshot_2012-08-28-17-44-13.png)
 
   
 

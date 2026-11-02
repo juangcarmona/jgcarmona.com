@@ -30,7 +30,7 @@ Muy simple, hay una cola de trabajo, que pasa a través de una serie de etapas d
 
   
 
-[![](images/22322-basic-kanban.png)](https://jgcarmona.com/wp-content/uploads/2012/08/22322-basic-kanban.png)
+![](images/22322-basic-kanban.png)
 
   
 
@@ -38,7 +38,7 @@ Esto se parece mucho a una Task Board (pizarra de tareas) ágil típica, con, ta
 
   
 
-[![](images/9265a-limits-kanban.png)](https://jgcarmona.com/wp-content/uploads/2012/08/9265a-limits-kanban.png)
+![](images/9265a-limits-kanban.png)
 
   
 

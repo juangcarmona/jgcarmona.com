@@ -19,7 +19,7 @@ He decidido hacer este curso puesto que llevo los dos últimos años volcado con
 
 También tengo la necesidad de compartir tanto los conocimientos y experiencias adquiridos como los innumerables retos tecnológicos que hemos tenido que resolver durante todos estos meses y me gustaría esto fuera atractivo para muy diversas audiencias por lo que trabajar en mi marca personal se ha vuelto un tema muy importante.
 
-[![](images/9f1b5-5c6bcc51095c3_thumb900.jpg)](https://jgcarmona.com/wp-content/uploads/2020/08/9f1b5-5c6bcc51095c3_thumb900.jpg)
+![](images/9f1b5-5c6bcc51095c3_thumb900.jpg)
 
 Voy a utilizar este artículo para compartir lo que estoy aprendiendo en este breve curso y para compartir con los lectores los cambios y pequeñas decisiones que gracias a él tome respecto a la gestión de mi marca personal. Comencemos. 
 
@@ -136,7 +136,7 @@ Y bueno, se suponía que era un curso de cinco semanas pero yo he revisado todo 
 
   
 
-[![](images/63838-certificate.png)](https://jgcarmona.com/wp-content/uploads/2020/08/63838-certificate.png)
+![](images/63838-certificate.png)
 
   
 

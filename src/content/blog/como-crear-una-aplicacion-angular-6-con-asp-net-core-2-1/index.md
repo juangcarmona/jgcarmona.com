@@ -10,7 +10,7 @@ tags:
 
 En éste artículo os voy a enseñar como se crea una aplicación de ASP NET Core 2.1 con Angular 6. En mi entorno de trabajo tengo instalado npm 6.1.0, NodeJS v8.11.2 y dotnet 2.1.300, la primera versión estable de .Net Core 2.1. 
 
-[![](images/038c3-001.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/038c3-001.jpg)
+![](images/038c3-001.jpg)
 
   
 1.- Necesitamos tener instalado Angular CLI, para lo que ejecutaremos  
@@ -20,7 +20,7 @@ En éste artículo os voy a enseñar como se crea una aplicación de ASP NET Cor
 npm install -g @angular/cli
 ```
 
-[![](images/14d42-002.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/14d42-002.jpg)
+![](images/14d42-002.jpg)
 
   
 2.- El siguiente paso es generar un projecto de Angular 6 con el comando ng new, podéis encontrar toda la documentación sobre ng new aquí: [https://github.com/angular/angular-cli/wiki/new](https://github.com/angular/angular-cli/wiki/new%C2%A0)  En este caso you usaré routing y scss así que mi comando será:  
@@ -33,7 +33,7 @@ ng new NetCore21 --routing --style=scss
 En alrededor de un minuto Angular CLI nos genera, dentro de esa carpeta, NetCore21, la estructura de un proyecto Angular 6. 
   
 
-[![](images/112b7-003.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/112b7-003.jpg)
+![](images/112b7-003.jpg)
 
   
 
@@ -41,11 +41,11 @@ Si en este momento ejecutamos ng serve podemos acceder a la página web que acab
 
   
 
-[![](images/bfebb-004.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/bfebb-004.jpg)
+![](images/bfebb-004.jpg)
 
   
 
-[![](images/8b0d7-005.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/8b0d7-005.jpg)
+![](images/8b0d7-005.jpg)
 
 El siguiente paso es generar un proyecto ASP.NET Core Web API con el comando desde la misma carpeta del proyecto donde estábamos:
 
@@ -59,7 +59,7 @@ Con lo que obtenemos ésta estructura:
 
   
 
-[![](images/fdfb4-006.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/fdfb4-006.jpg)
+![](images/fdfb4-006.jpg)
 
   
 
@@ -67,11 +67,11 @@ Y ahora podemos ir a nuiestro Visual Studio y abrir ese proyecto.
 
   
 
-[![](images/3cf33-007.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/3cf33-007.jpg)
+![](images/3cf33-007.jpg)
 
   
 
-[![](images/f925f-008.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/f925f-008.jpg)
+![](images/f925f-008.jpg)
 
 `   `
 
@@ -86,11 +86,11 @@ El otro cambio que tenemos que hacer está en **Startup.cs**, al configurar los 
 Tras seguir estos pasos si ejecutamos el proyecto veremos que funcionan tanto la web como el API, ambas con http y con https:  
   
 
-[![](images/b5ade-009.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/b5ade-009.jpg)
+![](images/b5ade-009.jpg)
 
   
 
-[![](images/9cde0-010.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/9cde0-010.jpg)
+![](images/9cde0-010.jpg)
 
   
 

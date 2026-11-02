@@ -45,9 +45,9 @@ Una vez tenemos nuestro fichero docker-compose.yml definido podemos irnos a una 
 
   
 
-[![](images/5c25b-sonarqubeisup.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/5c25b-sonarqubeisup.jpg)
+![](images/5c25b-sonarqubeisup.jpg)
 
-[![](images/5149b-sonarqubeisup_2.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/5149b-sonarqubeisup_2.jpg)
+![](images/5149b-sonarqubeisup_2.jpg)
 
 Genial, ha sido fácil y ya tenemos un SonarQube listo para trabajar contra él.
 
@@ -57,7 +57,7 @@ Genial, ha sido fácil y ya tenemos un SonarQube listo para trabajar contra él.
 
 Para utilizar SonarQube y poder analizar nuestro código en .Net hay que utilizar un componente de software que se llama SonarScanner y para el que hay diferentes "sabores", SonarScanner for MSBuild, SonnarScanner for .Net core etcétera. Las últimas veces que lo usé, en el trabajo principalmente, usé el de MSBuild y ewl de .NEt Core pero viendo su documentación ( [https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+MSBuild](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+MSBuild) )  veo que acaban de sacar un "sabor" nuevo y que se puede descargar como herramienta global ([Global Tool](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools)), sigamos las instrucciones que hay en NuGet [https://www.nuget.org/packages/dotnet-sonarscanner](https://www.nuget.org/packages/dotnet-sonarscanner) para dicho paquete. 
 
-[![](images/0604b-globaltoolinstall.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/0604b-globaltoolinstall.jpg)
+![](images/0604b-globaltoolinstall.jpg)
 
   
 
@@ -78,19 +78,19 @@ Para este ejemplo vamos a usar, como dije antes, el proyecto de ASP NET Core 2.1
 
 Como vemos siempre hay que "envolver" el scanner entre un begin y un end, en éste caso tan sólo estamos haciendo dotnet build sobre la solución pero dentro de este bloque podemos ejecutar tests unitarios y utilizar herramientas de cobertura de código para generar unos reportes y mandárselos también a SonarQube, de momento éste script tan básico funciona:
 
-[![](images/23e24-firstexecution.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/23e24-firstexecution.jpg)
+![](images/23e24-firstexecution.jpg)
 
 Pero nos da unos resultados realmente desalentadores debido a que en el análisis se han incluido librerías y código auto-generado, algo que será lo siguiente que quitemos:
 
   
 
-[![](images/5408d-firstexecution_sq.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/5408d-firstexecution_sq.jpg)
+![](images/5408d-firstexecution_sq.jpg)
 
   
 
 Vamos a quitar todo lo que haya dentro de wwwroot, todos los ficheros JavaScript y Program.cs y Startup.cs de nuestro análisis incluyendo '/**d:sonar.exclusions="\*\*wwwroot\*\*,\*\*\*.js, \*\*Program.cs, \*\*Startup.cs"'** en el begin de nuestro script inicial... Y tras volver a lanzar el script el resultado ya es bastante más acorde a lo que esperábamos:
 
-[![](images/93b1d-secondexecution_sq.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/93b1d-secondexecution_sq.jpg)
+![](images/93b1d-secondexecution_sq.jpg)
 
   
 
@@ -98,7 +98,7 @@ Una vulnerabilidad (potencial) y 10 code smells que suponen una deuda técnica e
 
   
 
-[![](images/25f68-thirdexecution_sq.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/25f68-thirdexecution_sq.jpg)
+![](images/25f68-thirdexecution_sq.jpg)
 
   
 
@@ -138,7 +138,7 @@ En este punto lo siguiente que veo necesario es reestructurar un poco la organiz
 
   
 
-[![](images/7460a-firstcodecoveragereport.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/7460a-firstcodecoveragereport.jpg)
+![](images/7460a-firstcodecoveragereport.jpg)
 
   
 

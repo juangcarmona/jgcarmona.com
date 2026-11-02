@@ -24,7 +24,7 @@ Bueno, voy a hacer el diagrama estático de clases de todo ésto, a ver qué sal
 
   
 
-[![](images/dc8d4-uml_ejemplo1.png)](https://jgcarmona.com/wp-content/uploads/2012/09/dc8d4-uml_ejemplo1.png)
+![](images/dc8d4-uml_ejemplo1.png)
 
 ¿Se ve claro? Seguro que si pero lo explico, hay dos paquetes, uno el cliente, en azul y otro el servidor, en rojo. El servidor contiene o contendrá los servicios de suma (ISumCalculatorService) y de resta (IRestCalculartorService). Está la clase Calculadora que tiene dependencias (linea punteada con flecha simple hacia la dependencia) con ambos servicios y que implementa (linea punteada con felcha triangular blanca) la interfaz ICalculator. En cuanto al servidor he dicho que contiene o contendrá los servicios y digo contiene o contendrá porque haciendo TDD con Mocking no nos hace falta tener el sistema completo ya que lo que voy a hacer va a ser simular el comportamiento de las dependencias de la clase o de la funcionalidad concreta de la clase que se quiere probar.  
 
@@ -55,7 +55,7 @@ public interface ICalculator{    int SumaDosNumeros(int num1, int num2);    int 
 Ahora  voy  al proyecto de tests y le agrego las siguientes referencias, una al proyecto "definitivo" y otra a la librería de Moq (se supone que cualquier desarrollador con un mínimo de experiencia es capaz de encontrar Moq, descargarlo, descomprimirlo y añadir la referencia a la librería correspondiente a su proyecto de tests), la tercera referencia es a la librería de .Net Microsoft.VisualStudio.QualityTools.UnitTestFramework y la última al proyecto con la clase UnitTestBase que contiene y obliga a utilizar el patrón AAA en nuestros tests.  
   
 
-[![](images/1902e-librerias.png)](https://jgcarmona.com/wp-content/uploads/2012/09/1902e-librerias.png)
+![](images/1902e-librerias.png)
 
   
 Bien, pues ya va siendo hora de empezar a pensar en tests. Como decía, lo primero que hay que probar es la construcción del objeto calculadora, la inyección de dependencias, y para ello voy a crear una clase WhenCreatingCalculadora que, para cumplir con la metodología AAA heredará de UnitTestBase. Como recordatorio voy a pegar el código de UnitTestBase pero ya estaba disponible en "[Introducción a los Tests Unitarios, TDD y Mocking](http://juan-garcia-carmona.blogspot.com.es/2012/09/introduccion-los-tests-unitarios-tdd-y.html)":  
@@ -89,7 +89,7 @@ WhenCreatingCalculadora. ItShouldThrowAnArgumentNullExceptionWhenSumCalculatorSe
 
 \-- Exception doesn't have a stack trace --
 
-[![](images/f2780-test1falla.png)](https://jgcarmona.com/wp-content/uploads/2012/09/f2780-test1falla.png)
+![](images/f2780-test1falla.png)
 
   
 
@@ -102,7 +102,7 @@ public Calculadora (ISumCalculatorService sumService, IRestCalculatorService res
 Vuelvo a ejecutar el test y ahora pasa:  
   
 
-[![](images/05264-test1pasa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/05264-test1pasa.png)
+![](images/05264-test1pasa.png)
 
   
 
@@ -115,7 +115,7 @@ Ahora voy a probar con el segundo parámetro, escribimos el test:
 Lo ejecuto y, de nuevo tal y como era de esperar, el test falla:  
   
 
-[![](images/65e5d-test2falla.png)](https://jgcarmona.com/wp-content/uploads/2012/09/65e5d-test2falla.png)
+![](images/65e5d-test2falla.png)
 
   
 De nuevo modifico el constructor para que pasen las pruebas y me queda de la siguiente forma:
@@ -127,7 +127,7 @@ public Calculadora (ISumCalculatorService sumService, IRestCalculatorService res
 Y en verdad, ejecuto las pruebas y, ahora si, tengo luz verde para continuar:  
   
 
-[![](images/ef5ed-test2pasa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/ef5ed-test2pasa.png)
+![](images/ef5ed-test2pasa.png)
 
   
 
@@ -147,7 +147,7 @@ No solamente pasan los tests...
 
   
 
-[![](images/94a35-test3pasa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/94a35-test3pasa.png)
+![](images/94a35-test3pasa.png)
 
   
 ...sino que además los tests sirven de documentación sobre el código bajo pruebas, ¿no es genial? Dejo todo el código de la clase de pruebas con estos tres tests sobre el constructor:
@@ -182,7 +182,7 @@ WhenAddingTwoPositiveNumbers : WhenAddingTwoNumbers
 Si ejecutamos éste tests deberíamos llegar al método Calculadora.SumaDosNumeros(x,y) y, tal y como lo dejamos antes éste lanzará una NotImplementedException y por tanto el tests fallará:  
   
 
-[![](images/782ce-test4falla.png)](https://jgcarmona.com/wp-content/uploads/2012/09/782ce-test4falla.png)
+![](images/782ce-test4falla.png)
 
   
 
@@ -196,7 +196,7 @@ public class Calculadora : ICalculator{    private readonly ISumCalculatorServic
 ¿Pasará el test?  
   
 
-[![](images/b4179-test4pasa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/b4179-test4pasa.png)
+![](images/b4179-test4pasa.png)
 
 Hagamos lo mismo pero para restar, crearé una clase base para la resta y una clase concreta con ciertos valores para restar en la que estableceré el comportamiento esperado de nuestro servicio falseado, en éste caso el de la resta:
 
@@ -218,7 +218,7 @@ De nuevo todos los tests pasan:
 
   
 
-[![](images/ec95a-test5pasa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/ec95a-test5pasa.png)
+![](images/ec95a-test5pasa.png)
 
   
 

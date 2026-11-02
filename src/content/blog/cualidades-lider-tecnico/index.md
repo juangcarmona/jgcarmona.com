@@ -143,6 +143,6 @@ Liderar no es llegar, es estar. Yo sigo aprendiendo cada día, como tú. Y si al
 
 ## ¿Quieres dar el siguiente paso en tu carrera y no sabes cómo?
 
-¿Te ves reflejado en estas cualidades? ¿Quieres cultivarlas? Si estás liderando un equipo técnico, o preparándote para hacerlo, y quieres crecer con guía, experiencia y visión, escríbeme. Estaré encantado de ayudarte con [**coaching**](/coaching) o [**mentorías**](/about/).
+¿Te ves reflejado en estas cualidades? ¿Quieres cultivarlas? Si estás liderando un equipo técnico, o preparándote para hacerlo, y quieres crecer con guía, experiencia y visión, escríbeme. Estaré encantado de ayudarte con [**coaching**](/about/) o [**mentorías**](/about/).
 
 [**Escríbeme**](/about/) y vemos qué es lo que más te conviene. La primera sesión es gratuita, sin compromiso.
