@@ -259,7 +259,9 @@ hr {
 
 	.internal-links {
 		display: flex;
-		gap: 0.75em;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0 0.5em;
 		margin-top: 8px;
 		font-size: 0.85em;
 	}

@@ -6,6 +6,8 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { SITE_SEO_TITLE, SITE_DESCRIPTION, YOUTUBE_COURSES } from '../consts';
+import { APPEARANCES, SPEAKER_LINKS } from '../data/speaking';
+import { FLAGSHIP_PROJECTS } from '../data/projects';
 
 const allPosts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -18,6 +20,8 @@ const featuredPosts = allPosts
 	.slice(0, 6);
 
 const displayPosts = featuredPosts.length > 0 ? featuredPosts : allPosts.slice(0, 6);
+
+const recentTalks = APPEARANCES.slice(0, 3);
 
 // Get latest 5 posts
 const latestPosts = allPosts.slice(0, 5);
@@ -113,6 +117,10 @@ const skipLink = {
 						I design secure and scalable software systems and apply AI, cloud,
 						and DevSecOps with engineering discipline.
 					</p>
+					<p class="hero-speaker">
+						Speaker at RootedCON, CONVEX and GitHub Copilot Dev Days Madrid.
+						<a href="/talks">See my talks →</a>
+					</p>
 					<div class="hero-social">
 						<a href="https://www.linkedin.com/in/juangcarmona" target="_blank" rel="noopener noreferrer" aria-label="Follow on LinkedIn">
 							<svg class="social-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -145,6 +153,51 @@ const skipLink = {
 						/>
 						<!-- Decorative ring -->
 						<div class="profile-ring"></div>
+				</div>
+			</section>
+
+			<!-- Projects -->
+			<section class="projects">
+				<h2>Projects</h2>
+				<p class="section-description">An open toolchain for AI-assisted delivery, from product definition to production</p>
+				<div class="courses-grid projects-grid">
+					{FLAGSHIP_PROJECTS.map((project) => (
+						<article class="course-card">
+							<a href={`/projects#${project.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+								<p class="talk-event">{project.role}</p>
+								<h3>{project.name}</h3>
+								<p class="course-description">{project.tagline}</p>
+							</a>
+						</article>
+					))}
+				</div>
+				<div class="section-cta">
+					<a href="/projects" class="cta-button">All projects →</a>
+				</div>
+			</section>
+
+			<!-- Talks -->
+			<section class="talks">
+				<h2>Talks</h2>
+				<p class="section-description">Conferences where I have spoken</p>
+				<div class="courses-grid">
+					{recentTalks.map((talk) => (
+						<article class="course-card">
+							<a href="/talks">
+								{talk.title && <p class="talk-event">{talk.event}</p>}
+								<h3>{talk.title ?? talk.event}</h3>
+								<div class="course-meta">
+									<span>{talk.city}, {new Date(talk.date).getUTCFullYear()}</span>
+								</div>
+							</a>
+						</article>
+					))}
+				</div>
+				<div class="section-cta">
+					<a href="/talks" class="cta-button">All talks →</a>
+					<a href={SPEAKER_LINKS.SESSIONIZE} target="_blank" rel="noopener noreferrer" class="cta-button cta-secondary">
+						Invite me to speak
+					</a>
 				</div>
 			</section>
 
@@ -494,6 +547,36 @@ const skipLink = {
 			opacity: 0.3;
 			transform: scale(1.05);
 		}
+	}
+
+	.hero-speaker {
+		color: rgb(var(--gray));
+		margin: -1rem 0 2rem;
+		animation: fade-up 0.6s ease-out 0.15s backwards;
+	}
+
+	.talk-event {
+		margin: 0 0 0.5em;
+		font-size: 0.85em;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--accent);
+	}
+
+	.cta-secondary {
+		margin-left: 1em;
+		background-color: transparent;
+		color: var(--accent);
+		border: 2px solid var(--accent);
+	}
+
+	.courses-grid.projects-grid {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+
+	.projects-grid .course-card {
+		padding: 1.5em;
 	}
 
 	/* Featured Articles */

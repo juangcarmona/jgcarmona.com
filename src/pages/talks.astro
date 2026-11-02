@@ -1,0 +1,296 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { APPEARANCES, SESSIONS, SPEAKER_LINKS } from '../data/speaking';
+
+const title = 'Talks — Juan G. Carmona, Software Architect & Speaker';
+const description =
+	'Conference talks by Juan G. Carmona at RootedCON, CONVEX and GitHub Copilot Dev Days Madrid on AI-assisted software engineering, agentic delivery, guardrails and security.';
+
+const formatMonth = (iso: string) =>
+	new Date(iso).toLocaleDateString('en-us', { year: 'numeric', month: 'long', timeZone: 'UTC' });
+
+const pageUrl = new URL('/talks/', Astro.site).href;
+const personId = new URL('/#person', Astro.site).href;
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'ProfilePage',
+			'@id': pageUrl,
+			url: pageUrl,
+			name: title,
+			description,
+			mainEntity: { '@id': personId },
+		},
+		{
+			'@type': 'Person',
+			'@id': personId,
+			name: 'Juan G. Carmona',
+			url: new URL('/', Astro.site).href,
+			jobTitle: 'Software Architect',
+			worksFor: { '@type': 'Organization', name: 'Plain Concepts', url: 'https://www.plainconcepts.com/' },
+			sameAs: [
+				'https://www.linkedin.com/in/juangcarmona',
+				'https://github.com/juangcarmona',
+				'https://youtube.com/@juangcarmona',
+				SPEAKER_LINKS.SESSIONIZE,
+			],
+		},
+		...APPEARANCES.map((talk) => ({
+			'@type': 'Event',
+			name: talk.title ? `${talk.title} — ${talk.event}` : talk.event,
+			startDate: talk.date,
+			...(talk.endDate && { endDate: talk.endDate }),
+			eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+			eventStatus: 'https://schema.org/EventScheduled',
+			...(talk.summary && { description: talk.summary }),
+			location: {
+				'@type': 'Place',
+				name: talk.venue ?? talk.city,
+				address: { '@type': 'PostalAddress', addressLocality: talk.city, addressCountry: 'ES' },
+			},
+			performer: { '@id': personId },
+			...(talk.eventUrl && { url: talk.eventUrl }),
+		})),
+	],
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="intro">
+				<h1>Talks</h1>
+				<p class="lead">
+					I speak about what AI is changing in software engineering, and what it is not: agentic delivery,
+					guardrails, product definition and the security of the people who build software.
+				</p>
+				<div class="intro-actions">
+					<a class="cta-button" href={SPEAKER_LINKS.SESSIONIZE} target="_blank" rel="noopener noreferrer">
+						Invite me to your event →
+					</a>
+					<a class="text-link" href={SPEAKER_LINKS.TALKS_SITE} target="_blank" rel="noopener noreferrer">
+						Decks and interactive talks ↗
+					</a>
+				</div>
+			</section>
+
+			<section aria-labelledby="past-talks">
+				<h2 id="past-talks">Where I have spoken</h2>
+				<ol class="appearances">
+					{APPEARANCES.map((talk) => (
+						<li class="appearance">
+							<div class="when">
+								<time datetime={talk.date}>{formatMonth(talk.date)}</time>
+								<span class="where">{talk.venue ? `${talk.venue}, ${talk.city}` : talk.city}</span>
+							</div>
+							<div class="what">
+								<p class="event">
+									{talk.eventUrl ? (
+										<a href={talk.eventUrl} target="_blank" rel="noopener noreferrer">{talk.event}</a>
+									) : (
+										talk.event
+									)}
+								</p>
+								{talk.title && <h3>{talk.title}</h3>}
+								{talk.summary && <p class="summary">{talk.summary}</p>}
+								<ul class="links">
+									{talk.slidesUrl && <li><a href={talk.slidesUrl} target="_blank" rel="noopener noreferrer">Slides ↗</a></li>}
+									{talk.videoUrl && <li><a href={talk.videoUrl} target="_blank" rel="noopener noreferrer">Video ↗</a></li>}
+									{talk.relatedPost && <li><a href={talk.relatedPost}>The story behind it</a></li>}
+									{talk.sourceUrl && <li><a href={talk.sourceUrl} target="_blank" rel="noopener noreferrer">Source ↗</a></li>}
+								</ul>
+							</div>
+						</li>
+					))}
+				</ol>
+			</section>
+
+			<section aria-labelledby="sessions">
+				<h2 id="sessions">Sessions I can give</h2>
+				<p class="section-description">
+					Full abstracts are on
+					<a href={SPEAKER_LINKS.SESSIONIZE} target="_blank" rel="noopener noreferrer">Sessionize</a>.
+				</p>
+				<div class="sessions-grid">
+					{SESSIONS.map((session) => (
+						<article class="session-card">
+							<h3>
+								{session.url ? <a href={session.url}>{session.title}</a> : session.title}
+							</h3>
+							<p>{session.summary}</p>
+							{session.lang && <span class="session-lang">{session.lang}</span>}
+						</article>
+					))}
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 960px;
+		max-width: calc(100% - 2em);
+		margin: 0 auto;
+		padding: 2em 1em;
+	}
+
+	section {
+		margin-bottom: 4em;
+	}
+
+	h1 {
+		color: var(--accent);
+		margin-bottom: 0.5em;
+	}
+
+	h2 {
+		font-size: 2em;
+		margin-bottom: 0.75em;
+	}
+
+	.lead {
+		font-size: 1.2em;
+		line-height: 1.7;
+		color: rgb(var(--gray-light));
+	}
+
+	.intro-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1.5em;
+		margin-top: 1.5em;
+	}
+
+	.cta-button {
+		display: inline-block;
+		padding: 0.75em 2em;
+		background-color: var(--accent);
+		color: white;
+		text-decoration: none;
+		border-radius: 6px;
+		font-weight: 600;
+	}
+
+	.cta-button:hover {
+		background-color: var(--accent-dark);
+	}
+
+	.text-link {
+		font-weight: 600;
+	}
+
+	.section-description {
+		color: rgb(var(--gray));
+		margin-bottom: 2em;
+	}
+
+	.appearances {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.appearance {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.5em;
+		padding: 1.5em 0;
+		border-top: 1px solid rgba(var(--gray), 0.3);
+	}
+
+	@media (min-width: 720px) {
+		.appearance {
+			grid-template-columns: 12em 1fr;
+			gap: 2em;
+		}
+	}
+
+	.when {
+		display: flex;
+		flex-direction: column;
+		color: rgb(var(--gray));
+		font-size: 0.95em;
+	}
+
+	.event {
+		margin: 0;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		font-size: 0.85em;
+		color: var(--accent);
+	}
+
+	.event a {
+		text-decoration: none;
+	}
+
+	.appearance h3 {
+		margin: 0.25em 0 0.5em;
+		font-size: 1.3em;
+		line-height: 1.3;
+	}
+
+	.summary {
+		margin: 0 0 0.75em;
+		color: rgb(var(--gray-light));
+	}
+
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.25em;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		font-size: 0.95em;
+	}
+
+	.sessions-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5em;
+	}
+
+	.session-card {
+		background-color: rgb(var(--gray-dark));
+		border-radius: 12px;
+		padding: 1.5em;
+	}
+
+	.session-card h3 {
+		margin: 0 0 0.75em;
+		font-size: 1.1em;
+		line-height: 1.35;
+	}
+
+	.session-card h3 a {
+		text-decoration: none;
+	}
+
+	.session-card p {
+		margin: 0 0 1em;
+		color: rgb(var(--gray));
+		font-size: 0.95em;
+		line-height: 1.6;
+	}
+
+	.session-lang {
+		font-size: 0.8em;
+		font-weight: 600;
+		color: var(--accent);
+	}
+</style>

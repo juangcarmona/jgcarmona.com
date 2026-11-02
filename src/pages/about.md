@@ -48,6 +48,10 @@ I help companies, from startups to enterprises, ship **reliable, secure, and cos
   <img src="/juangcarmona_to_the_world.webp" alt="Juan G Carmona" width="800" />
 </p>
 
+## 🎤 Speaking
+
+I speak at conferences about AI-assisted software engineering, agentic delivery and security, including **RootedCON**, **CONVEX** and **GitHub Copilot Dev Days Madrid**. See [my talks](/talks) or invite me through [Sessionize](https://sessionize.com/juangcarmona).
+
 ## 👥 How I Work
 
 - **Architecture & Delivery:** I design for scalability, security, and developer experience—always with business results in mind.
@@ -58,12 +62,13 @@ I help companies, from startups to enterprises, ship **reliable, secure, and cos
 
 ## Some of my recent Projects
 
+My main work right now is an open toolchain for AI-assisted delivery: [Product Definition as Code](https://pdac.dev/) and its reference implementation [ProductShape](https://github.com/juangcarmona/productshape), [ArcShape](https://arcshape.dev/) for architecture documentation, [Lighthouse](https://juangcarmona.github.io/lighthouse/) as the engineering baseline, and [DomusMind](https://github.com/juangcarmona/domusmind), a product built with all of them. See [all my projects](/projects).
+
 - **[Sentra Brain (org)](https://github.com/sentra-brain):** Private, **modular AI platform** (LLM orchestration, RAG pipelines, agentic runtime, FastAPI gateway, React frontends, Microsfot Agent Framework). Built for **privacy-first** deployments. [https://sentrabrain.com/](https://sentrabrain.com/)
 - **[Star Wars Death Star arc42 Documentation](https://github.com/juangcarmona/starwars-deathstar-arc42-documentation):** Inspired by the Star Wars universe, this project provides an **educational example of applying arc42**, a popular framework for structured software architecture documentation, to a complex system, exploring each section in detail.
 - **[Mermaid Playground](https://github.com/juangcarmona/mermaid-playground):** This repository contains various examples and guides on **how to create and represent** different types of **UML and C4 diagrams using Mermaid**.
 - **[FastAPI REST API Tutorial](https://github.com/juangcarmona/fastapi-rest-api-tutorial):** This repository is an example of a **RESTful API implemented with FastAPI**. It includes concepts such as** DDD, Vertical Slices, Dependency Injection, Security, Swagger**, and more. **NOTE: README.ms is in Spanish.**
 - **[Hunting The Hunter (episode one)](https://github.com/juangcarmona/hunting-the-hunter-episode-one):** Real-world **forensic analysis** of developer-targeted **malware** disguised as a job offer.
-- **[Lyra](https://github.com/juangcarmona/lyra):** Lightweight CLI tool to efficiently **download full videos or audio from YouTube** videos.
 
 
 ## 🏔️ Fun Fact
