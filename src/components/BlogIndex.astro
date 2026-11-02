@@ -1,0 +1,39 @@
+---
+import { YOUTUBE_COURSES } from '../consts';
+import Base from '../layouts/Base.astro';
+import type { Post } from '../utils/posts';
+import PostList from './PostList.astro';
+
+type Props = { page: number; total: number; posts: Post[] };
+
+const { page, total, posts } = Astro.props;
+const href = (n: number) => (n === 1 ? '/blog/' : `/blog/${n}/`);
+---
+
+<Base
+	title={page === 1 ? 'Blog — Juan G. Carmona' : `Blog, page ${page} — Juan G. Carmona`}
+	description="Articles on software architecture, AI-assisted engineering, DevOps, security and leadership, in English and Spanish."
+>
+	<h1>Blog</h1>
+	{
+		page === 1 && (
+			<p class="muted">
+				Writing since 2006, in English and Spanish. Browse by <a href="/tags/">topic</a>, <a href="/search/">search</a>,
+				or follow the <a href="/rss.xml">RSS feed</a>. Video courses:{' '}
+				{YOUTUBE_COURSES.map((course, i) => (
+					<>
+						<a href={course.url}>{course.title}</a>
+						{i < YOUTUBE_COURSES.length - 1 && ' · '}
+					</>
+				))}
+				.
+			</p>
+		)
+	}
+	<PostList posts={posts} showDescription />
+	<nav class="pagination" aria-label="Pages">
+		{page > 1 && <a href={href(page - 1)} rel="prev">← Newer</a>}
+		<span class="muted">Page {page} of {total}</span>
+		{page < total && <a href={href(page + 1)} rel="next">Older →</a>}
+	</nav>
+</Base>

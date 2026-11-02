@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import { CONTACT_EMAIL, PROFILES, SITE_HEADLINE } from '../consts';
+import Base from '../layouts/Base.astro';
+// Replace this file with the real portrait; keep the name and a 4:5 ratio.
+import portrait from '../assets/about/portrait.jpg';
+
+const experience = [
+	{ years: '2025–', org: 'Plain Concepts', role: 'Software Development Engineer, working as a Forward Deployed Engineer: AI-SDLC, training, audits, assessments and SRE for clients.' },
+	{ years: '2021–2025', org: 'JGCarmona Consulting', role: 'Founder and principal consultant: Azure solutions architecture for automotive, AgTech and mobility.' },
+	{ years: '2022–2024', org: 'Porsche AG', role: 'Azure solutions architect for the Porsche Motorsport Data Platform.' },
+	{ years: '2018–2021', org: 'Logtrip', role: 'Founder, CEO and CTO.' },
+	{ years: '2017–2018', org: 'Solera', role: 'Senior software development engineer and technical lead: legacy to microservices with SRE principles.' },
+	{ years: '2014–2017', org: 'Alstom', role: 'Senior software engineer, then solutions architect and lead of the Madrid Innovation Lab, where Mastria was born.' },
+	{ years: '2013–2014', org: 'Mandoyo', role: 'Senior software engineer on a cloud platform with .NET, AngularJS and Azure.' },
+	{ years: '2011–2013', org: 'Sogeti / Capgemini', role: 'Systems architect on an application for Cassidian, the Airbus military division.' },
+	{ years: '2005–2011', org: 'Early years', role: 'Tunstall, Actualize and CEUAH.' },
+];
+---
+
+<Base
+	title="About — Juan G. Carmona"
+	description="Juan G. Carmona: software architect and AI strategist with 20+ years building critical and secure systems for aerospace, defence, mobility and motorsport."
+>
+	<h1>About</h1>
+	<Image src={portrait} alt="Juan G. Carmona" width={320} class="portrait" />
+	<p class="muted">{SITE_HEADLINE}</p>
+	<p>
+		I'm Juan G. Carmona, a software architect with more than twenty years designing secure, scalable systems in
+		regulated and critical environments: aerospace and defence, rail and smart mobility, motorsport and enterprise
+		software. I've been an engineer, an architect, a technical lead and a founder, and I stay hands-on.
+	</p>
+	<p>
+		Today I'm a Software Development Engineer at <a href="https://www.plainconcepts.com/">Plain Concepts</a>, working as a
+		Forward Deployed Engineer with clients on AI-SDLC, training, audits, assessments and SRE. Outside client work I'm
+		building Software Engineering 2.0: <a href="/projects/">open tools</a> and <a href="/talks/">talks</a> about how our
+		profession works when agents write much of the code.
+	</p>
+	<p>Write to me at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+
+	<h2>Experience</h2>
+	<table class="lh-table">
+		<caption>Roles, most recent first</caption>
+		<thead><tr><th scope="col">Years</th><th scope="col">Where</th><th scope="col">What</th></tr></thead>
+		<tbody>
+			{experience.map((item) => <tr><td class="mono">{item.years}</td><th scope="row">{item.org}</th><td>{item.role}</td></tr>)}
+		</tbody>
+	</table>
+
+	<h2>Sharing</h2>
+	<p>
+		I've been writing since 2006, when I started <em>Sharing experience and Computer Science Knowledge</em>. Since then:
+		this <a href="/blog/">blog</a>, <a href="/talks/">talks</a>, <a href="/books/">books</a>, video courses on
+		<a href={PROFILES.YOUTUBE}>YouTube</a>, internal training on TDD, SOLID and GRASP, and a contribution to
+		<a href="https://medium.com/@kshilovskiy/scalable-ml-with-azure-kubernetes-and-keda-generating-inputs-with-500-pods-cde66cabf950">Scalable ML with Azure Kubernetes and KEDA</a>.
+	</p>
+
+	<h2>Education</h2>
+	<p>Ingeniería Técnica en Informática de Gestión (2007), Universidad Pontificia de Salamanca and Universidad Politécnica de Madrid.</p>
+
+	<h2>Outside work</h2>
+	<p>Alpinist, climber, ski mountaineer and skydiver.</p>
+	<img src="/juangcarmona_to_the_world.webp" alt="Juan G. Carmona ski mountaineering on a snowy ridge" width="800" loading="lazy" class="hero" />
+</Base>

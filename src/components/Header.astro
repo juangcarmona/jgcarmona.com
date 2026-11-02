@@ -1,71 +1,27 @@
 ---
-import { SITE_TITLE } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
-import ThemeToggle from "./ThemeToggle.astro";
+import Monogram from './Monogram.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
+const links = [
+	{ href: '/blog/', label: 'Blog' },
+	{ href: '/talks/', label: 'Talks' },
+	{ href: '/projects/', label: 'Projects' },
+	{ href: '/about/', label: 'About' },
+];
+const section = '/' + (Astro.url.pathname.split('/')[1] ?? '') + '/';
+const isBlogPost = /^\/(en|es)\//.test(Astro.url.pathname);
 ---
 
-<header>
-  <nav aria-label="Main navigation">
-    <h2><a href="/" aria-current="page">{SITE_TITLE}</a></h2>
-    <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/projects">Projects</HeaderLink>
-      <HeaderLink href="/talks">Talks</HeaderLink>
-      <HeaderLink href="/tags">Tags</HeaderLink>
-      <HeaderLink href="/search">Search</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-    </div>
-    <div class="social-links">
-      <ThemeToggle />
-    </div>
-  </nav>
+<header class="site-header">
+	<nav aria-label="Main">
+		<a class="brand" href="/" aria-label="Juan G. Carmona, home"><Monogram /></a>
+		{
+			links.map(({ href, label }) => (
+				<a href={href} aria-current={href === section || (isBlogPost && href === '/blog/') ? 'page' : undefined}>
+					{label}
+				</a>
+			))
+		}
+		<ThemeToggle />
+	</nav>
 </header>
-<style>
-  header {
-    margin: 0;
-    padding: 0 1em;
-    background-color: var(--header-bg);
-    color: rgb(var(--gray-light));
-    box-shadow: var(--header-shadow);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    border-bottom: 1px solid var(--header-border);
-  }
-
-  h2 {
-    margin: 0;
-    font-size: 1em;
-  }
-
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  nav a {
-    padding: 0.5em 0.5em;
-    color: rgb(var(--gray-light));
-    border-bottom: 4px solid transparent;
-    text-decoration: none;
-  }
-  nav a.active {
-    text-decoration: none;
-    border-bottom-color: var(--accent);
-  }
-  .social-links,
-  .social-links a {
-    display: flex;
-    gap: 0.5em;
-  }
-  @media (max-width: 720px) {
-    .social-links {
-      display: none;
-    }
-  }
-</style>

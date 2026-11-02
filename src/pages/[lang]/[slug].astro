@@ -1,59 +1,33 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Comments from '../../components/Comments.astro';
+import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
-const posts = await getCollection('blog');
-const paths = [];
-const seen = new Set<string>();
-
-for (const post of posts) {
-// Original language route
-const langKey = `${post.data.lang || 'en'}/${post.id}`;
-if (!seen.has(langKey)) {
-seen.add(langKey);
-paths.push({
-params: { lang: post.data.lang || 'en', slug: post.id },
-props: post,
-});
+	const posts = await getCollection('blog');
+	const paths = [];
+	const seen = new Set<string>();
+	for (const post of posts) {
+		for (const lang of [post.data.lang, post.data.lang === 'es' ? 'en' : 'es'] as const) {
+			const key = `${lang}/${post.id}`;
+			if (seen.has(key)) continue;
+			seen.add(key);
+			paths.push({
+				params: { lang, slug: post.id },
+				props: { post, isTranslation: lang !== post.data.lang },
+			});
+		}
+	}
+	return paths;
 }
 
-// Translation route (cross-language)
-const transLang = post.data.lang === 'es' ? 'en' : 'es';
-const transKey = `${transLang}/${post.id}`;
-if (!seen.has(transKey)) {
-seen.add(transKey);
-paths.push({
-params: { lang: transLang, slug: post.id },
-props: { ...post, data: { ...post.data, isTranslation: true } },
-});
-}
-}
-return paths;
-}
+type Props = { post: CollectionEntry<'blog'>; isTranslation: boolean };
 
-type Props = CollectionEntry<'blog'>;
-const post = Astro.props;
+const { post, isTranslation } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BlogPost {...post.data}>
-{post.data.isTranslation && (
-<div class="translation-disclaimer">
-{post.data.lang === 'es' ? 'This is an English translation of the original Spanish post.' : 'Esta es una traducción al espa\u00F1ol del post original en ingl\u00E9s.'}
-</div>
-)}
-<Content />
-<Comments />
+<BlogPost {...post.data} isTranslation={isTranslation}>
+	<Content />
+	<Comments slot="after" />
 </BlogPost>
-
-<style>
-.translation-disclaimer {
-color: var(--accent);
-font-size: 1.2em;
-margin: 0.5em 0 1em 0;
-font-style: italic;
-background-color: black;
-}
-</style>

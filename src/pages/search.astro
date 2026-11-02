@@ -1,262 +1,53 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import PostResultItem from '../components/PostResultItem.astro';
-import { SITE_TITLE } from '../consts';
+import FormattedDate from '../components/FormattedDate.astro';
+import Base from '../layouts/Base.astro';
+import { getPosts, postUrl } from '../utils/posts';
 
-// Load all posts for client-side search filtering
-const allPosts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = await getPosts();
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead
-      title={`Search — ${SITE_TITLE}`}
-      description={`Search blog posts on ${SITE_TITLE}`}
-    />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <div id="search-container" class="search-container initial">
-        <h1>Search</h1>
+<Base title="Search — Juan G. Carmona" description="Search articles by title, summary or topic." noindex>
+	<h1>Search</h1>
+	<form id="search-form" class="lh-field" role="search">
+		<label for="search-input">Title, summary or topic</label>
+		<input id="search-input" class="lh-input" type="search" name="q" autocomplete="off" />
+	</form>
+	<p id="search-status" class="muted" aria-live="polite"></p>
+	<ol class="post-list" id="search-results">
+		{
+			posts.map((post) => (
+				<li hidden data-text={[post.data.title, post.data.description, ...post.data.tags].join(' ').toLowerCase()}>
+					<FormattedDate date={post.data.pubDate} class="mono" />
+					<a href={postUrl(post)}>{post.data.title}</a>
+					<p>{post.data.description}</p>
+				</li>
+			))
+		}
+	</ol>
+</Base>
 
-        <form id="search-form" class="search-form">
-          <input
-            id="search-input"
-            type="search"
-            placeholder="Search blog posts..."
-            value=""
-            class="search-input"
-            aria-label="Search blog posts"
-          />
-          <button type="submit" class="search-button" aria-label="Search">🔍</button>
-        </form>
+<script>
+	const input = document.getElementById('search-input') as HTMLInputElement;
+	const status = document.getElementById('search-status')!;
+	const items = [...document.querySelectorAll<HTMLLIElement>('#search-results li')];
 
-        <div class="search-hints">
-          Try: architecture, ai, devex, copilot, spec-kit
-        </div>
+	function search(query: string) {
+		const q = query.trim().toLowerCase();
+		let found = 0;
+		for (const item of items) {
+			const match = q !== '' && item.dataset.text!.includes(q);
+			item.hidden = !match;
+			if (match) found++;
+		}
+		status.textContent = q ? `${found} ${found === 1 ? 'result' : 'results'} for “${query.trim()}”` : '';
+		const url = new URL(location.href);
+		if (q) url.searchParams.set('q', query.trim());
+		else url.searchParams.delete('q');
+		history.replaceState(null, '', url);
+	}
 
-        <p id="search-count" class="results-count" hidden></p>
-        <p id="search-empty" class="search-empty" hidden>No posts found.</p>
-
-        <section id="search-results" hidden>
-          {allPosts.map((post) => (
-            <PostResultItem post={post} />
-          ))}
-        </section>
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
-
-<script is:inline>
-(function() {
-  const container = document.getElementById('search-container');
-  const form = document.getElementById('search-form');
-  const input = document.getElementById('search-input');
-  const results = document.getElementById('search-results');
-  const count = document.getElementById('search-count');
-  const empty = document.getElementById('search-empty');
-  const items = [...document.querySelectorAll('.post-result-item')];
-
-  function setInitialState() {
-    container.classList.add('initial');
-    container.classList.remove('searched');
-    results.hidden = true;
-    count.hidden = true;
-    empty.hidden = true;
-    items.forEach(item => item.setAttribute('hidden', ''));
-  }
-
-  function runSearch(rawQuery) {
-    const query = rawQuery.trim().toLowerCase();
-
-    if (!query) {
-      setInitialState();
-      return;
-    }
-
-    container.classList.remove('initial');
-    container.classList.add('searched');
-    results.hidden = false;
-
-    let visible = 0;
-
-    for (const item of items) {
-      const haystack = [
-        item.dataset.title || '',
-        item.dataset.description || '',
-        item.dataset.tags || ''
-      ].join(' ').toLowerCase();
-
-      const match = haystack.includes(query);
-
-      if (match) {
-        item.removeAttribute('hidden');
-        visible++;
-      } else {
-        item.setAttribute('hidden', '');
-      }
-    }
-
-    count.hidden = false;
-    count.textContent = `Found ${visible} result${visible === 1 ? '' : 's'} for "${rawQuery.trim()}"`;
-    empty.hidden = visible !== 0;
-  }
-
-  const initialQuery = new URLSearchParams(window.location.search).get('q') || '';
-  input.value = initialQuery;
-
-  if (initialQuery.trim()) {
-    runSearch(initialQuery);
-  } else {
-    setInitialState();
-  }
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const query = input.value.trim();
-    const url = new URL(window.location.href);
-
-    if (query) {
-      url.searchParams.set('q', query);
-    } else {
-      url.searchParams.delete('q');
-    }
-
-    window.history.replaceState({}, '', url);
-    runSearch(query);
-  });
-})();
+	input.value = new URLSearchParams(location.search).get('q') ?? '';
+	input.addEventListener('input', () => search(input.value));
+	document.getElementById('search-form')!.addEventListener('submit', (event) => event.preventDefault());
+	search(input.value);
 </script>
-
-<style>
-.search-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2em 1em;
-}
-
-h1 {
-  font-size: 2em;
-  margin-bottom: 1.5em;
-  text-align: center;
-  color: var(--accent);
-}
-
-/* Initial (hero) state */
-.search-container.initial .search-form {
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-  max-width: 600px;
-  margin: 0 auto 1.5em;
-}
-
-.search-container.initial .search-input {
-  padding: 1em 1.25em;
-  font-size: 1.15rem;
-}
-
-.search-container.initial .search-button {
-  padding: 1em 2em;
-  font-size: 1.05rem;
-}
-
-.search-hints {
-  text-align: center;
-  color: rgb(var(--gray));
-  font-size: 0.85rem;
-  margin-bottom: 0.5em;
-}
-
-.search-container.searched .search-hints {
-  display: none;
-}
-
-/* Searched (compact) state */
-.search-container.searched .search-form {
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-  max-width: 500px;
-  margin: 0 auto 1.5em;
-}
-
-.search-input {
-  flex: 1;
-  padding: 0.75em 1em;
-  border: 1px solid rgba(var(--gray), 0.3);
-  border-radius: 4px;
-  background-color: rgb(var(--gray-dark));
-  color: rgb(var(--gray-light));
-  font-family: inherit;
-  font-size: 1rem;
-}
-
-.search-input:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.search-button {
-  padding: 0.75em 1.5em;
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-
-.search-button:hover {
-  background-color: var(--accent-dark);
-}
-
-.results-count {
-  text-align: center;
-  color: rgb(var(--gray));
-  margin-bottom: 1.5em;
-}
-
-.results-count[hidden] {
-  display: none;
-}
-
-.search-empty {
-  text-align: center;
-  color: rgb(var(--gray));
-  padding: 2em 1em;
-}
-
-.search-empty[hidden] {
-  display: none;
-}
-
-#search-results {
-  display: flex;
-  flex-direction: column;
-}
-
-#search-results[hidden] {
-  display: none;
-}
-
-:global(.post-result-item[hidden]) {
-  display: none !important;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.5em;
-  }
-}
-</style>
