@@ -1,8 +1,8 @@
 ---
 lang: es
-title: "MIS LIBROS"
-description: ''
-layout: ../layouts/BlogPost.astro
+title: "Mis libros"
+description: 'Libros de Juan G. Carmona sobre principios SOLID y GRASP, Domain-Driven Design y desarrollo profesional en software.'
+layout: ../layouts/Page.astro
 
 pubDate: 2024-01-01T00:00:00.000Z
 ---

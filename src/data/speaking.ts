@@ -17,6 +17,8 @@ export type Appearance = {
 	endDate?: string;
 	venue?: string;
 	city: string;
+	/** ISO 3166-1 alpha-2 code; defaults to ES. */
+	country?: string;
 	/** Session title exactly as the programme lists it. */
 	title?: string;
 	summary?: string;
@@ -61,6 +63,24 @@ export const APPEARANCES: Appearance[] = [
 		endDate: '2026-03-07',
 		city: 'Madrid',
 		title: 'Caught by an AI: Detecting and Hunting a Targeted Backdoor',
+	},
+	{
+		// Source: CV. Event dates and venue: the UITP and Palais des congrès announcements.
+		event: 'UITP Global Public Transport Summit 2017',
+		date: '2017-05-15',
+		endDate: '2017-05-17',
+		venue: 'Palais des congrès de Montréal',
+		city: 'Montréal',
+		country: 'CA',
+		summary: 'Presentation of Mastria, the smart multimodal transport system developed at the Alstom Madrid Innovation Lab.',
+	},
+	{
+		// Source: the blog post announcing the session.
+		event: 'IWT2 DojoUS, Universidad de Sevilla',
+		date: '2012-11-09',
+		city: 'Sevilla',
+		title: 'SOLID y GRASP',
+		relatedPost: '/es/iwt2-dojous-solid-y-grasp/',
 	},
 ];
 

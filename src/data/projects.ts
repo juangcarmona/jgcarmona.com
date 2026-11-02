@@ -45,7 +45,7 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 		role: 'Product intent',
 		stack: ['TypeScript', 'Node.js', 'npm', 'OpenSpec', 'Spec Kit'],
 		links: [
-			{ label: 'Site', url: 'https://juangcarmona.github.io/productshape/en/' },
+			{ label: 'productshape.dev', url: 'https://productshape.dev/' },
 			{ label: 'GitHub', url: 'https://github.com/juangcarmona/productshape' },
 			{ label: 'npm', url: 'https://www.npmjs.com/package/@prodshape/cli' },
 		],
@@ -78,7 +78,7 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 		role: 'Delivery baseline',
 		stack: ['TypeScript', 'Node.js', '.NET', 'GitHub Actions'],
 		links: [
-			{ label: 'Site', url: 'https://juangcarmona.github.io/lighthouse/' },
+			{ label: 'lighthouse.jgcarmona.com', url: 'https://lighthouse.jgcarmona.com/' },
 			{ label: 'GitHub', url: 'https://github.com/juangcarmona/lighthouse' },
 		],
 		relatedPosts: [
@@ -106,6 +106,11 @@ export type SmallProject = {
 };
 
 export const OTHER_PROJECTS: SmallProject[] = [
+	{
+		name: 'Raccord',
+		description: 'Open-source, self-hostable operations and invoicing platform for audiovisual production and equipment-rental companies (AGPLv3).',
+		url: 'https://github.com/juangcarmona/raccord',
+	},
 	{
 		name: 'Star Wars Death Star arc42',
 		description: 'A bilingual example of arc42 applied to a complex system, section by section.',
