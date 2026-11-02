@@ -17,7 +17,7 @@ The price? Easily **35 000 €–40 000 €** in Europe _for the GPUs alone_, wi
 
 ![](images/sentra_brain-1-150x150.webp)
 
-With **[Sentra Brain](https://sentrabrain.com/)**, I design and deliver **[private AI systems](https://jgcarmona.com/ia-privada-pymes-rag-fine-tuning/)** for clients who need serious local AI power – for fine-tuning, inference, or running private agent frameworks – but at a realistic budget. That’s why I explored: _how can we build a “cheap” (or at least cheaper) AI workstation in Spain/Europe that still delivers 4-GPU performance?_
+With **[Sentra Brain](https://sentrabrain.com/)**, I design and deliver **[private AI systems](/es/ia-privada-pymes-rag-fine-tuning/)** for clients who need serious local AI power – for fine-tuning, inference, or running private agent frameworks – but at a realistic budget. That’s why I explored: _how can we build a “cheap” (or at least cheaper) AI workstation in Spain/Europe that still delivers 4-GPU performance?_
 
 ## The Target: A “Cheap” 4-GPU AI Workstation
 

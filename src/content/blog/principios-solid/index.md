@@ -28,7 +28,7 @@ Los cinco principios son:
   
 
 - [SRP: Single Responsibility Principle](http://juan-garcia-carmona.blogspot.com/2012/09/srp-single-responsibility-principle.html)
-- [OCP: Open/Closed Principle](https://jgcarmona.com/ocp-open-closed-principle-principio-abierto-cerrado)
+- [OCP: Open/Closed Principle](/es/ocp-open-closed-principle-principio-abierto-cerrado/)
 - [LSP: Liskov Substitution Principle](http://juan-garcia-carmona.blogspot.com/2012/09/lsp-liskov-substitution-principle.html)
 - [ISP: Interfaze Segregation Principle](http://juan-garcia-carmona.blogspot.com/2012/09/isp-interface-segregation-principle.html)
 - [DIP: Dependency Inversion Principle](http://juan-garcia-carmona.blogspot.com/2012/09/dip-dependency-inversion-principle.html)

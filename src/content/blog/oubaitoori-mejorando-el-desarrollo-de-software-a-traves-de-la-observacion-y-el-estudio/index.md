@@ -47,4 +47,4 @@ Es importante destacar que el Oubaitoori no está limitado al desarrollo de soft
 
 ¿Quieres mejorar tus habilidades de desarrollo de software? ¿Quieres potenciar el rendimiento de tu equipo? Entonces dale una oportunidad al Oubaitoori. Observa, estudia, aprende y mejora.
 
-Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](https://jgcarmona.com/mejorar-en-programacion-con-filosofias-japonesas/).
+Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](/es/mejorar-en-programacion-con-filosofias-japonesas/).

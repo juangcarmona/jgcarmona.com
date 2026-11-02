@@ -270,7 +270,7 @@ En última instancia, el verdadero valor de UML no radica en seguir su sintaxis 
 
 Así que, ¿por qué no explorar UML en tu próximo proyecto? Prueba distintas herramientas, experimenta con diferentes diagramas y descubre cómo puede mejorar tu manera de trabajar. ¡Seguro que encontrarás en UML a un gran aliado para hacer que tus ideas cobren vida!
 
-Con esto, hemos concluido este artículo. Pero esto es solo el comienzo: en los próximos capítulos de la serie **[DADS](https://jgcarmona.com/category/dads/)**, vamos a explorar patrones de diseño y metodologías de documentación como C4. Así que, si quieres seguir desarrollando tus habilidades y aprender más sobre diseño y arquitectura de software, ¡no te lo pierdas!
+Con esto, hemos concluido este artículo. Pero esto es solo el comienzo: en los próximos capítulos de la serie **[DADS](/search/?q=DADS)**, vamos a explorar patrones de diseño y metodologías de documentación como C4. Así que, si quieres seguir desarrollando tus habilidades y aprender más sobre diseño y arquitectura de software, ¡no te lo pierdas!
 
 **Recursos Adicionales:**
 

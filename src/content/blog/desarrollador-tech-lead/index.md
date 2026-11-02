@@ -18,7 +18,7 @@ Aunque durante muchos años la evolución fue de desarrollador a project manager
 
 ## ¿Cómo quieres crecer?
 
-Ten esto claro y te irá bien: crecer profesionalmente no sólo es ascender. No te conviertas en un "trepa", por favor. Se les ve venir de lejos y no suelen caer muy bien al resto de compañeros. ¿Cómo quieres que te vean tus compañeros? Responde sinceramente a esa pregunta y trabajalo. ¿Qué cualidades crees que le hacen falta a alguien para destacar en tu equipo actual? Convierte eso en tu próximo objetivo de aprendizaje. Porque, si estás leyendo esto ya sabrás que nuestro campo requiere una mentalidad [**Kaizen**](http://Kaizen para Desarrolladores de Software), esto es, un [**aprendizaje contínuo**](https://jgcarmona.com/kaizen-para-desarrolladores-de-software/). ¿Estás esperando permisos para evolucionar? ¿Crees que alguien en tu empresa se va a fijar en ti por hacer, cada día, lo mismo que los demás?
+Ten esto claro y te irá bien: crecer profesionalmente no sólo es ascender. No te conviertas en un "trepa", por favor. Se les ve venir de lejos y no suelen caer muy bien al resto de compañeros. ¿Cómo quieres que te vean tus compañeros? Responde sinceramente a esa pregunta y trabajalo. ¿Qué cualidades crees que le hacen falta a alguien para destacar en tu equipo actual? Convierte eso en tu próximo objetivo de aprendizaje. Porque, si estás leyendo esto ya sabrás que nuestro campo requiere una mentalidad [**Kaizen**](http://Kaizen para Desarrolladores de Software), esto es, un [**aprendizaje contínuo**](/es/kaizen-para-desarrolladores-de-software/). ¿Estás esperando permisos para evolucionar? ¿Crees que alguien en tu empresa se va a fijar en ti por hacer, cada día, lo mismo que los demás?
 
 No, si no aportas valor, si no te diferencias, si no destacas, siempre serás un peón reemplazable en ésta partida de ajedrez que es el mundo laboral.
 
@@ -30,7 +30,7 @@ NOTA: Debería escribir un resumen, porque son grandes lecciones, igual os dejo 
 
 ### ¿Aprendizaje dirigido?
 
-¡Claro! ¿Sigues intentando demostrar que eres el mejor programador? Eso a los que toman decisiones les importa más bien poco, hay miles de programadores mejores que tu y que yo. Salen de debajo de las piedras, y puede seguro que hasta más baratos. Ese no es el camino a seguir. No. **Te hablo de** **lo que no se ve el curriculum**. Si quieres que te consideren para convertirte en el siguiente líder técnico, tendrás que desarrollar **[cualidades de líder](https://jgcarmona.com/cualidades-lider-tecnico/)**.
+¡Claro! ¿Sigues intentando demostrar que eres el mejor programador? Eso a los que toman decisiones les importa más bien poco, hay miles de programadores mejores que tu y que yo. Salen de debajo de las piedras, y puede seguro que hasta más baratos. Ese no es el camino a seguir. No. **Te hablo de** **lo que no se ve el curriculum**. Si quieres que te consideren para convertirte en el siguiente líder técnico, tendrás que desarrollar **[cualidades de líder](/es/cualidades-lider-tecnico/)**.
 
 Yo tuve suerte, siempre he sido una persona transparente y abierta y he podido contar, a lo largo de mi carrera, con la ayuda de diferentes mentores y coaches.. Por eso, ahora, ofrezco mi ayuda a quien esté en ese mismo punto. No para decirles que rumbo tomar, sino para acompañarles, para que vean el mundo y su futuro con mas coherencia y puedan definir unos objetivos profesionales de forma inteligente.
 
@@ -40,9 +40,9 @@ Specific, Measurable, Achievable, Relevant, and Time-bound --> Este fue uno de m
 
 https://www.youtube.com/watch?v=bo-u6X7u7F0
 
-A veces lo que se necesita es un [**mentor**](https://jgcarmona.com/mentorias/): alguien que ya ha pasado por ahí y puede compartir su experiencia con perspectiva.
+A veces lo que se necesita es un [**mentor**](/about/): alguien que ya ha pasado por ahí y puede compartir su experiencia con perspectiva.
 
-Otras veces, basta con **[un espacio seguro para pensar en voz alta](https://jgcarmona.com/coaching/)**, con alguien que escuche de verdad y sepa hacer las preguntas adecuadas.
+Otras veces, basta con **[un espacio seguro para pensar en voz alta](/about/)**, con alguien que escuche de verdad y sepa hacer las preguntas adecuadas.
 
 En ambos casos, dejar de dar vueltas como una peonza y comenzar a avanzar en la dirección adecuada es más fácil cuando no se hace solo. ¿Te gustaría que te eche una mano?
 
@@ -54,7 +54,7 @@ A mi me encantaría conocerte y ver si puedo ayudarte. Quizá todavía no es el 
 
 Cuando empiezas como programador, como desarrollador de software, lo que importa es entender como funciona el código. Saber leerlo, escribirlo, depurarlo... Pero con los años, cuando has resuelto multitud de problemas, aprendes que no sólo tienes que entenderlo tu sino también los demás.
 
-¿Has pasado por ese punto? ¿Aprecias la belleza de un buen diseño? ¿Sabes **[crear buenos Pull Requests y hacer buenas revisiones de código](https://jgcarmona.com/crear-pull-requests-revisiones-codigo/)**?
+¿Has pasado por ese punto? ¿Aprecias la belleza de un buen diseño? ¿Sabes **[crear buenos Pull Requests y hacer buenas revisiones de código](/es/crear-pull-requests-revisiones-codigo/)**?
 
 ¿Sabes contarle a los que toman decisiones de negocio o al equipo de márketing por qué esa decisión es crítica?  
 ¿Puedes explicar una arquitectura o un diseño en tres frases sin aburrir a tu audiencia?  

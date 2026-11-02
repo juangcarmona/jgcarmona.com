@@ -10,7 +10,7 @@ heroImage: "images/DISENO-Y-ARQUITECTURA-DE-SOFTWARE-_p4.png"
 
 ### Propósitos generales para este nuevo ciclo
 
-Hace unos años, en agosto de 2020, escribí sobre la importancia de trabajar nuestra **[marca personal](https://jgcarmona.com/personal-branding/)**. En aquel entonces, acababa de finalizar un curso sobre el tema y estaba inmerso en mi startup. Dos años y una pandemia global después, retomé la divulgación y lancé [**mi canal de YouTube**](https://www.youtube.com/@juangcarmona).
+Hace unos años, en agosto de 2020, escribí sobre la importancia de trabajar nuestra **[marca personal](/es/personal-branding/)**. En aquel entonces, acababa de finalizar un curso sobre el tema y estaba inmerso en mi startup. Dos años y una pandemia global después, retomé la divulgación y lancé [**mi canal de YouTube**](https://www.youtube.com/@juangcarmona).
 
 Aquel primer vídeo fue el comienzo de una nueva etapa. En el vídeo me presentaba con mi hija recién nacida en brazos, un momento muy especial que marcaba el inicio de este proyecto de compartir mi conocimiento técnico con el mundo. Hoy, casi tres años después y justo después de dejar a mi hija en su primer día de colegio, reflexiono sobre ese primer paso y todo lo que ha sucedido desde entonces.
 
@@ -57,4 +57,4 @@ También he decidido actualizar mi **marca personal**, homogeneizando mi presenc
 
 ![](images/image-300x246.png)
 
-Al final del día, me mantengo fiel a lo que mencioné en aquel primer artículo tras la creación del canal: **[el primer paso siempre es el más difícil](https://jgcarmona.com/el-primer-paso-siempre-es-el-mas-dificil/)**, pero una vez que lo das, todo comienza a fluir. Estoy emocionado por lo que viene y por todo lo que compartiré en los próximos meses. ¡Nos vemos en el próximo post!
+Al final del día, me mantengo fiel a lo que mencioné en aquel primer artículo tras la creación del canal: **[el primer paso siempre es el más difícil](/es/el-primer-paso-siempre-es-el-mas-dificil/)**, pero una vez que lo das, todo comienza a fluir. Estoy emocionado por lo que viene y por todo lo que compartiré en los próximos meses. ¡Nos vemos en el próximo post!

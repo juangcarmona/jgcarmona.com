@@ -1,5 +1,6 @@
 ﻿---
 lang: es
+translationKey: rest-api
 title: "Guía Rápida de REST API: Buenas Prácticas, Métodos y Principios"
 description: 'Resumen práctico de buenas prácticas REST: rutas, verbos, seguridad, caché y versionado para APIs robustas.'
 pubDate: 2024-08-21

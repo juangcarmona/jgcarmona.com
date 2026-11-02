@@ -1,33 +1,39 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Comments from '../../components/Comments.astro';
+import Redirect from '../../components/Redirect.astro';
 import BlogPost from '../../layouts/BlogPost.astro';
+import { postUrl } from '../../utils/posts';
 
+// Each post lives at its original language. The other language prefix used to serve an untranslated
+// copy, so it now redirects to the original.
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	const paths = [];
-	const seen = new Set<string>();
-	for (const post of posts) {
-		for (const lang of [post.data.lang, post.data.lang === 'es' ? 'en' : 'es'] as const) {
-			const key = `${lang}/${post.id}`;
-			if (seen.has(key)) continue;
-			seen.add(key);
-			paths.push({
-				params: { lang, slug: post.id },
-				props: { post, isTranslation: lang !== post.data.lang },
-			});
-		}
-	}
-	return paths;
+	return posts.flatMap((post) => {
+		const other = post.data.lang === 'es' ? 'en' : 'es';
+		return [
+			{ params: { lang: post.data.lang, slug: post.id }, props: { post, redirect: false } },
+			{ params: { lang: other, slug: post.id }, props: { post, redirect: true } },
+		];
+	});
 }
 
-type Props = { post: CollectionEntry<'blog'>; isTranslation: boolean };
+type Props = { post: CollectionEntry<'blog'>; redirect: boolean };
 
-const { post, isTranslation } = Astro.props;
+const { post, redirect } = Astro.props;
 const { Content } = await render(post);
+const translations = post.data.translationKey
+	? (await getCollection('blog', (entry) => entry.data.translationKey === post.data.translationKey)).filter((entry) => entry.id !== post.id)
+	: [];
 ---
 
-<BlogPost {...post.data} isTranslation={isTranslation}>
-	<Content />
-	<Comments slot="after" />
-</BlogPost>
+{
+	redirect ? (
+		<Redirect to={postUrl(post)} />
+	) : (
+		<BlogPost post={post} translations={translations}>
+			<Content />
+			<Comments slot="after" term={post.data.title} />
+		</BlogPost>
+	)
+}

@@ -118,7 +118,7 @@ Te invito a hacer algo simple y potente:
   
 📧 **Rellénala y envíamela a juan@jgcarmona.com**
 
-> Las revisaré y, si quieres, te propondré un plan de mejora personalizado, con sesiones de [**coaching**](https://jgcarmona.com/coaching) o [**mentorías**](https://jgcarmona.com/mentorias/), para trabajar esas áreas que podrían marcar la diferencia en tu carrera profesional.
+> Las revisaré y, si quieres, te propondré un plan de mejora personalizado, con sesiones de [**coaching**](/about/) o [**mentorías**](/about/), para trabajar esas áreas que podrían marcar la diferencia en tu carrera profesional.
 
 La mejora empieza por el autoconocimiento.  
 Y esta tabla es tu punto de partida.

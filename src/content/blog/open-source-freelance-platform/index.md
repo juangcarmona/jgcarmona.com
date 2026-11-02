@@ -1,5 +1,6 @@
 ﻿---
 lang: en
+translationKey: tfst
 title: "TFST: A new open-source freelance platform"
 description: 'Presentación de TFST, una plataforma freelance open-source que busca transparencia, reputación verificada y tarifas justas para talento IT.'
 pubDate: 2025-03-05
@@ -64,4 +65,4 @@ TFST is more than just a platform—it’s **a vision for the future**, where ta
 🔗 **Learn more about how our open-source freelance platform works in our documentation:** [TFST Docs](https://tfst.xyz/docs)  
 🔥 **Share this vision and join the change!**
 
-TFST is both **[a personal commitment and a business bet on Open Source](http://jgcarmona.com)**. This is a project **rising from the ashes**, stronger and more meaningful than ever. More information coming soon.
+TFST is both **[a personal commitment and a business bet on Open Source](/)**. This is a project **rising from the ashes**, stronger and more meaningful than ever. More information coming soon.

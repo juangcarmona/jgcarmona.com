@@ -2,6 +2,7 @@
 import '@juangcarmona/lighthouse-ui';
 import '../styles/site.css';
 import { SITE_TITLE } from '../consts';
+import { graph } from '../utils/schema';
 
 interface Props {
 	title: string;
@@ -15,6 +16,8 @@ interface Props {
 	tags?: string[];
 	lang?: 'en' | 'es';
 	noindex?: boolean;
+	/** Extra schema.org nodes; the Person and WebSite nodes are always included. */
+	schema?: object[];
 }
 
 const {
@@ -28,9 +31,9 @@ const {
 	tags = [],
 	lang = 'en',
 	noindex = false,
+	schema = [],
 } = Astro.props;
 
-const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
 ---
@@ -65,22 +68,9 @@ const imageURL = new URL(image, Astro.site);
 {type === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
 {type === 'article' && tags.map((tag) => <meta property="article:tag" content={tag} />)}
 <meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json" set:html={graph(...schema)} />
 
 <slot />
 
-{
-	GA_MEASUREMENT_ID && (
-		<>
-			<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
-			<script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
-				window.dataLayer = window.dataLayer || [];
-				function gtag() {
-					window.dataLayer.push(arguments);
-				}
-				gtag('js', new Date());
-				gtag('config', GA_MEASUREMENT_ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
-			</script>
-		</>
-	)
-}
+<!-- Cookieless analytics: GoatCounter stores nothing on the device. -->
 <script is:inline data-goatcounter="https://jgcarmona-com.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

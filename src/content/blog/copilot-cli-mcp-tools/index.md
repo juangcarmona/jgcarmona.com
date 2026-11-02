@@ -18,7 +18,7 @@ heroImage: "images/copilot-cli-mcp-tools.png"
 
 > This is article 3 of a series. Start with [Mayday! We're Running Out of Fuel!](/en/may-day/) for the manifesto, or [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) for the setup story.
 
-In the [setup guide](https://jgcarmona.com/en/github-copilot-local-setup/) I showed how to get Copilot CLI talking to a local LLM. Great. You have a terminal agent running on your hardware. Now what?
+In the [setup guide](/en/github-copilot-local-setup/) I showed how to get Copilot CLI talking to a local LLM. Great. You have a terminal agent running on your hardware. Now what?
 
 A local model, by itself, is just a token generator. It predicts the next word. That's all it does. What turns it into a development tool is giving it *actions*. The ability to read files, run commands, execute tests, lint code, search context. That's what MCP does.
 
@@ -213,7 +213,7 @@ The good news is that tool-calling quality has improved dramatically in the last
 
 ## MCP and custom instructions: better together
 
-MCP tools work best when combined with [custom instructions](https://jgcarmona.com/en/copilot-instructions-agents-skills/) that tell the agent *when* and *how* to use them.
+MCP tools work best when combined with [custom instructions](/en/copilot-instructions-agents-skills/) that tell the agent *when* and *how* to use them.
 
 For example, your `copilot-instructions.md` might say:
 
@@ -245,10 +245,10 @@ Give it tools. Give it rules. Give it constraints. You're not limiting the model
 
 ## References
 
-- [How I Set Up GitHub Copilot CLI on Local Hardware](https://jgcarmona.com/en/github-copilot-local-setup/) -> the setup and wiring guide
+- [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) -> the setup and wiring guide
 - [Model Context Protocol specification](https://modelcontextprotocol.io/) -> the protocol itself
-- [Mayday! We're Running Out of Fuel](https://jgcarmona.com/en/may-day/) -> why cost control matters
-- [Local LLMs Under the Hood](https://jgcarmona.com/en/local-llms-under-the-hood/) -> the inference pipeline
+- [Mayday! We're Running Out of Fuel](/en/may-day/) -> why cost control matters
+- [Local LLMs Under the Hood](/en/local-llms-under-the-hood/) -> the inference pipeline
 
 ---
 

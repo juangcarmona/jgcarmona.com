@@ -172,7 +172,7 @@ The first version does not need to solve the entire product lifecycle. It needs 
 
 # Part II — ProductShape: The Reference Implementation
 
-![ProductShape — the reference implementation of Product Definition as Code.](https://raw.githubusercontent.com/juangcarmona/productshape/main/assets/branding.png)
+![ProductShape — the reference implementation of Product Definition as Code.](images/productshape-branding.png)
 
 I couldn't stop at the idea, so, I built something on top of it I want to share with the world.
 

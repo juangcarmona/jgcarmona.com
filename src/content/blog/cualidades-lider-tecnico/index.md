@@ -16,7 +16,7 @@ He conocido profesionales brillantes que nunca lograron inspirar, y también he 
 
 ## Más allá de las habilidades: lo que no se ve en el CV
 
-Si llegaste hasta aquí, quizá ya leíste [**mi artículo anterior sobre soft skills**](https://jgcarmona.com/autoevaluacion-soft-skills/). Allí te hablé de habilidades que puedes entrenar y te dejé una herramienta de autoevaluación. Hoy damos un paso más allá: hablamos de cualidades. Rasgos más profundos, que forman parte de tu forma de estar y de liderar.
+Si llegaste hasta aquí, quizá ya leíste [**mi artículo anterior sobre soft skills**](/es/autoevaluacion-soft-skills/). Allí te hablé de habilidades que puedes entrenar y te dejé una herramienta de autoevaluación. Hoy damos un paso más allá: hablamos de cualidades. Rasgos más profundos, que forman parte de tu forma de estar y de liderar.
 
 #### **Diferencia entre habilidad y cualidad:**
 
@@ -58,7 +58,7 @@ Un líder no puede ser mediocre, debe estar por encima de la media. Los líderes
 
 ### Capacidad de simplificar la complejidad
 
-El buen líder técnico hace fácil lo difícil. No enmascara su falta de claridad con jerga técnica. Al contrario: estructura, explica, conecta. Y hace que otros entiendan lo que parecía imposible. Y no se pierde en los detalles a no ser que sea necesario, es decir, sabe adaptar su discurso a cada audiencia. Por eso me encanta el Modelo C4, te recomiendo leer y ver [**este artículo**](https://jgcarmona.com/comunica-arquitectura-software-c4/) para comunicar mejor nuestras arquitecturas de software. También lo encontrarás en formato vídeo:
+El buen líder técnico hace fácil lo difícil. No enmascara su falta de claridad con jerga técnica. Al contrario: estructura, explica, conecta. Y hace que otros entiendan lo que parecía imposible. Y no se pierde en los detalles a no ser que sea necesario, es decir, sabe adaptar su discurso a cada audiencia. Por eso me encanta el Modelo C4, te recomiendo leer y ver [**este artículo**](/es/comunica-arquitectura-software-c4/) para comunicar mejor nuestras arquitecturas de software. También lo encontrarás en formato vídeo:
 
 https://www.youtube.com/watch?v=Y\_kk7aZ5x28
 
@@ -143,6 +143,6 @@ Liderar no es llegar, es estar. Yo sigo aprendiendo cada día, como tú. Y si al
 
 ## ¿Quieres dar el siguiente paso en tu carrera y no sabes cómo?
 
-¿Te ves reflejado en estas cualidades? ¿Quieres cultivarlas? Si estás liderando un equipo técnico, o preparándote para hacerlo, y quieres crecer con guía, experiencia y visión, escríbeme. Estaré encantado de ayudarte con [**coaching**](/coaching) o [**mentorías**](https://jgcarmona.com/mentorias).
+¿Te ves reflejado en estas cualidades? ¿Quieres cultivarlas? Si estás liderando un equipo técnico, o preparándote para hacerlo, y quieres crecer con guía, experiencia y visión, escríbeme. Estaré encantado de ayudarte con [**coaching**](/coaching) o [**mentorías**](/about/).
 
-[**Escríbeme**](https://jgcarmona.com/contact/) y vemos qué es lo que más te conviene. La primera sesión es gratuita, sin compromiso.
+[**Escríbeme**](/about/) y vemos qué es lo que más te conviene. La primera sesión es gratuita, sin compromiso.

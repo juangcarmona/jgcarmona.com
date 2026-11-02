@@ -1,0 +1,33 @@
+---
+import { CONTACT_EMAIL } from '../consts';
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Privacy — Juan G. Carmona" description="This site uses no cookies. What it measures, what it stores on your device and what loads only when you ask.">
+	<h1>This site uses no cookies</h1>
+	<p class="muted" lang="es">Este sitio no usa cookies.</p>
+	<p>There is no cookie banner because there is nothing to consent to. This page explains what does happen when you read it.</p>
+
+	<h2>Analytics</h2>
+	<p>
+		Page views are counted with <a href="https://www.goatcounter.com/">GoatCounter</a>, which sets no cookies and keeps
+		aggregate figures (pages, referrers, browsers, countries) rather than data about individual visitors. See
+		<a href="https://www.goatcounter.com/help/gdpr">GoatCounter and the GDPR</a>.
+	</p>
+
+	<h2>What is stored on your device</h2>
+	<p>
+		If you choose an appearance (system, light or dark), the choice is kept in your browser's <code>localStorage</code>
+		under <code>lh-theme</code>. It never leaves your device. Clearing site data removes it.
+	</p>
+
+	<h2>What loads only when you ask</h2>
+	<p>
+		Comments live in GitHub Discussions and are shown through <a href="https://giscus.app/">giscus</a>. Nothing from
+		giscus or GitHub loads until you press <em>Show comments</em>; from then on, their own terms and cookies apply.
+	</p>
+	<p>Links to other sites, such as YouTube, LinkedIn or GitHub, take you to services with their own privacy policies.</p>
+
+	<h2>Contact</h2>
+	<p>Questions about this page: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+</Base>

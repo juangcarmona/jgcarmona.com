@@ -135,12 +135,12 @@ You can reproduce these examples yourself, as well as the research and PoCs that
 
 - **[Docker Model Runner (DMR)](https://docs.docker.com/ai/model-runner)**: local LLM runtime supporting OpenAI-compatible APIs and GPU acceleration.
 
-- _[**What is Docker cagent? A First Look at Declarative AI Agents:**](https://jgcarmona.com/what-is-docker-cagent-a-first-look-at-declarative-ai-agents/)_ introduction to YAML-defined agents.
+- _[**What is Docker cagent? A First Look at Declarative AI Agents:**](/en/what-is-docker-cagent-a-first-look-at-declarative-ai-agents/)_ introduction to YAML-defined agents.
 
-- **_[AI Agents in a Nutshell](https://jgcarmona.com/ai-agents-nutshell/)_:** conceptual overview of reasoning, memory, and goal-driven loops.
+- **_[AI Agents in a Nutshell](/en/ai-agents-nutshell/)_:** conceptual overview of reasoning, memory, and goal-driven loops.
 
-- _[**Teaching Agents to Remember: Memory in Docker cagent:**](https://jgcarmona.com/memory-in-docker-cagent/)_ enabling persistence and context recall.
+- _[**Teaching Agents to Remember: Memory in Docker cagent:**](/en/memory-in-docker-cagent/)_ enabling persistence and context recall.
 
-- **_[Teaching Agents to Act: Tools in Docker cagent](https://jgcarmona.com/teaching-agents-to-act-tools-in-docker-cagent/)_:** extending agents with external tool execution.
+- **_[Teaching Agents to Act: Tools in Docker cagent](/en/teaching-agents-to-act-tools-in-docker-cagent/)_:** extending agents with external tool execution.
 
-- **_[Running Models Locally with Docker Model Runner](https://jgcarmona.com/enable-gpu-docker-model-runner-windows/)_:** fully local GPU-backed model execution walk-through.
+- **_[Running Models Locally with Docker Model Runner](/en/enable-gpu-docker-model-runner-windows/)_:** fully local GPU-backed model execution walk-through.

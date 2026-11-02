@@ -2,36 +2,33 @@
 import { PROFILES } from '../consts';
 import { APPEARANCES, SESSIONS, SPEAKER_LINKS } from '../data/speaking';
 import Base from '../layouts/Base.astro';
+import { PERSON_ID } from '../utils/schema';
 
 const title = 'Talks — Juan G. Carmona';
 const description =
 	'Conference talks by Juan G. Carmona at CONVEX, GitHub Copilot Dev Days Madrid and RootedCON, and the sessions he offers to organisers.';
 const month = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', timeZone: 'UTC' });
 
-const structuredData = {
-	'@context': 'https://schema.org',
-	'@graph': APPEARANCES.map((talk) => ({
-		'@type': 'Event',
-		name: talk.title ? `${talk.title} — ${talk.event}` : talk.event,
-		startDate: talk.date,
-		...(talk.endDate && { endDate: talk.endDate }),
-		eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-		eventStatus: 'https://schema.org/EventScheduled',
-		...(talk.summary && { description: talk.summary }),
-		location: {
-			'@type': 'Place',
-			name: talk.venue ?? talk.city,
-			address: { '@type': 'PostalAddress', addressLocality: talk.city, addressCountry: talk.country ?? 'ES' },
-		},
-		performer: { '@id': new URL('/#person', Astro.site).href },
-		...(talk.eventUrl && { url: talk.eventUrl }),
-		...(talk.videoUrl && { recordedIn: { '@type': 'VideoObject', name: talk.title, embedUrl: talk.videoUrl } }),
-	})),
-};
+const schema = APPEARANCES.map((talk) => ({
+	'@type': 'Event',
+	name: talk.title ? `${talk.title} — ${talk.event}` : talk.event,
+	startDate: talk.date,
+	...(talk.endDate && { endDate: talk.endDate }),
+	eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+	eventStatus: 'https://schema.org/EventScheduled',
+	...(talk.summary && { description: talk.summary }),
+	location: {
+		'@type': 'Place',
+		name: talk.venue ?? talk.city,
+		address: { '@type': 'PostalAddress', addressLocality: talk.city, addressCountry: talk.country ?? 'ES' },
+	},
+	performer: { '@id': PERSON_ID },
+	...(talk.eventUrl && { url: talk.eventUrl }),
+	...(talk.videoUrl && { subjectOf: { '@type': 'VideoObject', name: talk.title, url: talk.videoUrl } }),
+}));
 ---
 
-<Base title={title} description={description}>
-	<script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+<Base title={title} description={description} schema={schema}>
 	<h1>Talks</h1>
 	<p>
 		I speak about what AI is changing in software engineering and about the security of the people who build software.

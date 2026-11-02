@@ -25,7 +25,7 @@ Karpathy published [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e
 - Treating the original sources as canonical truth; the wiki is a derived synthesis, maintained primarily by the LLM.
 
 
-[Product Definition as Code](https://jgcarmona.com/en/product-definition-as-code) (concept born on July 25, 2026) and its first implementation in [ProductShape](https://github.com/juangcarmona/productshape) consists of:
+[Product Definition as Code](/en/product-definition-as-code/) (concept born on July 25, 2026) and its first implementation in [ProductShape](https://github.com/juangcarmona/productshape) consists of:
 
 - Explicitly defining what a product is.
 - Modeling it through typed artifacts: actors, journeys, use cases, rules, requirements, constraints, changes, and slices.
@@ -60,4 +60,4 @@ Saying they are "the same" is like saying an architecture-as-code repository is 
 
 And to be clear, this is not a criticism of LLM Wiki. A derived, LLM-maintained synthesis of sources is genuinely useful, and the two can coexist in one organization: the wiki compiles what you have learned; the product model states what you mean. Only one of them can be promoted, validated in CI, and handed to a delivery workflow as a contract.
 
-If you want the longer version of that contract: [Product Definition as Code](https://jgcarmona.com/en/product-definition-as-code), the [PDaC specification](https://github.com/product-definition-as-code/spec) (v0.1, request for comments), and the [manifesto you can sign](https://github.com/product-definition-as-code/spec/blob/main/MANIFESTO.md).
+If you want the longer version of that contract: [Product Definition as Code](/en/product-definition-as-code/), the [PDaC specification](https://github.com/product-definition-as-code/spec) (v0.1, request for comments), and the [manifesto you can sign](https://github.com/product-definition-as-code/spec/blob/main/MANIFESTO.md).

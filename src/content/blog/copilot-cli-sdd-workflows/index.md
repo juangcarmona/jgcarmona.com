@@ -20,8 +20,8 @@ heroImage: "images/copilot-cli-sdd-workflows.png"
 
 I already wrote about Spec-Driven Development extensively:
 
-- [Spec-Driven Development: Controlling AI-Generated Drift](https://jgcarmona.com/en/spec-driven-done-right/) covers the conceptual starting point: what SDD is, why drift is dangerous, and how specifications act as semantic anchors.
-- [Moving Toward Spec-Driven Development with OpenSpec or Spec Kit](https://jgcarmona.com/en/moving-toward-spec-driven-development/) covers the practical landing: the two frameworks, how they compare, and how I actually use them.
+- [Spec-Driven Development: Controlling AI-Generated Drift](/en/spec-driven-done-right/) covers the conceptual starting point: what SDD is, why drift is dangerous, and how specifications act as semantic anchors.
+- [Moving Toward Spec-Driven Development with OpenSpec or Spec Kit](/en/moving-toward-spec-driven-development/) covers the practical landing: the two frameworks, how they compare, and how I actually use them.
 
 I am not going to repeat any of that here. Go read those articles if you need the foundations.
 
@@ -60,7 +60,7 @@ The key difference from just asking a chatbot to "write a plan" is that the outp
 
 Once I'm happy with the proposal, I tell the agent to apply it. The agent reads `tasks.md`, picks up each task in order, and implements it: creating files, modifying code, running validations.
 
-Between each task, it can check its work using [MCP tools](https://jgcarmona.com/en/copilot-cli-mcp-tools/) (run tests, lint, search) and consult [custom instructions](https://jgcarmona.com/en/copilot-instructions-agents-skills/) to ensure it respects project conventions.
+Between each task, it can check its work using [MCP tools](/en/copilot-cli-mcp-tools/) (run tests, lint, search) and consult [custom instructions](/en/copilot-instructions-agents-skills/) to ensure it respects project conventions.
 
 The agent does not need to be brilliant. It needs to follow the plan and use the tools. That is a much easier problem.
 
@@ -148,7 +148,7 @@ That's the real benefit of local inference for SDD. Not ideology. Not privacy (t
 
 ## Spec Kit as an alternative
 
-I covered Spec Kit in [Moving Toward SDD](https://jgcarmona.com/en/moving-toward-spec-driven-development/). It's a different approach to the same goal: convention-based, lighter weight, using `.spec.md` files co-located with code instead of a centralized `openspec/` directory.
+I covered Spec Kit in [Moving Toward SDD](/en/moving-toward-spec-driven-development/). It's a different approach to the same goal: convention-based, lighter weight, using `.spec.md` files co-located with code instead of a centralized `openspec/` directory.
 
 Both work with Copilot CLI. The choice depends on your project:
 
@@ -178,13 +178,13 @@ No revolution here. Just a practical workflow that becomes affordable when you o
 
 ## References
 
-- [How I Set Up GitHub Copilot CLI on Local Hardware](https://jgcarmona.com/en/github-copilot-local-setup/) — the setup and wiring guide
-- [Spec-Driven Development: Controlling AI-Generated Drift](https://jgcarmona.com/en/spec-driven-done-right/) — SDD foundations
-- [Moving Toward SDD with OpenSpec or Spec Kit](https://jgcarmona.com/en/moving-toward-spec-driven-development/) — frameworks and practical usage
-- [MCP Is How Local Copilot Becomes Useful](https://jgcarmona.com/en/copilot-cli-mcp-tools/) — the tool layer
-- [Copilot Instructions, Agents, and Skills](https://jgcarmona.com/en/copilot-instructions-agents-skills/) — the control surface
+- [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) — the setup and wiring guide
+- [Spec-Driven Development: Controlling AI-Generated Drift](/en/spec-driven-done-right/) — SDD foundations
+- [Moving Toward SDD with OpenSpec or Spec Kit](/en/moving-toward-spec-driven-development/) — frameworks and practical usage
+- [MCP Is How Local Copilot Becomes Useful](/en/copilot-cli-mcp-tools/) — the tool layer
+- [Copilot Instructions, Agents, and Skills](/en/copilot-instructions-agents-skills/) — the control surface
 - [OpenSpec](https://github.com/Fission-AI/OpenSpec) — lightweight SDD framework
-- [Local LLMs Under the Hood](https://jgcarmona.com/en/local-llms-under-the-hood/) — why iteration is bounded by hardware
+- [Local LLMs Under the Hood](/en/local-llms-under-the-hood/) — why iteration is bounded by hardware
 
 ---
 

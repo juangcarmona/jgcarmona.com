@@ -1,10 +1,18 @@
 ---
 import BlogIndex from '../../components/BlogIndex.astro';
+import Redirect from '../../components/Redirect.astro';
 import { getBlogPages } from '../../utils/posts';
 
 export async function getStaticPaths() {
-	return (await getBlogPages()).slice(1).map((page) => ({ params: { page: String(page.page) }, props: page }));
+	const pages = await getBlogPages();
+	// /blog/1/ was the first page before /blog/ took its place.
+	return [
+		{ params: { page: '1' }, props: { redirect: true } },
+		...pages.slice(1).map((page) => ({ params: { page: String(page.page) }, props: page })),
+	];
 }
+
+const props = Astro.props;
 ---
 
-<BlogIndex {...Astro.props} />
+{'redirect' in props ? <Redirect to="/blog/" /> : <BlogIndex {...props} />}

@@ -82,6 +82,6 @@ Ahí es donde entra mi propuesta, combinando coaching y mentoring para guiarte e
 
 Si sientes que tu mayor desafío está relacionado con un problema específico que debes solucionar pronto, es hora de que hablemos de coaching. Pero si tu ambición es mucho mayor y estás pensando en tu desarrollo a largo plazo como líder tecnológico, el mentoring es el camino.
 
-En cualquier caso, **estoy aquí para apoyarte, como [coach](https://jgcarmona.com/coaching/) o [mentor](https://jgcarmona.com/mentorias/)**, para que juntos podamos desbloquear tu potencial. Contáctame y vemos cómo encaja cada enfoque en tu situación actual.
+En cualquier caso, **estoy aquí para apoyarte, como [coach](/about/) o [mentor](/about/)**, para que juntos podamos desbloquear tu potencial. Contáctame y vemos cómo encaja cada enfoque en tu situación actual.
 
 ¡Demos ese salto juntos!

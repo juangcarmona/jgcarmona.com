@@ -15,7 +15,7 @@ El lunes 28 de abril de 2025, a las 12:34 del mediodía, la península ibérica 
 
 No fue un meteorito. No fue una sobrecarga por calor. Tampoco creo que, como se dijo desde Moncloa, haya sido un “desajuste operativo”. Mi hipótesis es que fue otra cosa, algo mucho más inquietante. Un acto quirúrgico. Un sabotaje. Un ataque ejecutado no con bombas, sino con datos, datos falsos. Inyectados. Simulados. Invisibles.
 
-Espero que alguien tome mi hipótesis en serio y analice esta posibilidad. Ya visteis **[en mi anterior artículo](https://jgcarmona.com/cazando-al-cazador-episodio-1-backdoor-en-next-js-y-ataque-a-desarrolladores/)** lo fácil que es [**hackear a personal con acceso autorizado**](https://www.youtube.com/watch?v=AmgCJ2IuEDc) a sistemas críticos​.
+Espero que alguien tome mi hipótesis en serio y analice esta posibilidad. Ya visteis **[en mi anterior artículo](/es/ataque-a-desarrolladores/)** lo fácil que es [**hackear a personal con acceso autorizado**](https://www.youtube.com/watch?v=AmgCJ2IuEDc) a sistemas críticos​.
 
 ## La caída
 
@@ -30,7 +30,7 @@ En el corazón de cada infraestructura crítica del mundo moderno, eléctrica, h
 
 Los SCADA no entienden de verdad o mentira, solo de señales. Son como un centinela que dispara la alarma si alguien le enseña una fotografía de un incendio. Si inyectas en su canal de telemetría un valor falso, por ejemplo de voltaje, frecuencia, temperatura, el sistema reaccionará como si fuera verdad.​ El problema no es que el SCADA sea tonto. Es que es obediente.
 
-Y eso fue lo que yo creo que ocurrió en abril de 2025. Esa es mi hipótesis. Y ya visteis en mi [**artículo anterior**](https://jgcarmona.com/cazando-al-cazador-episodio-1-backdoor-en-next-js-y-ataque-a-desarrolladores/) lo fácil que es **[hackear a personal con acceso autorizado a sistemas críticos](https://www.youtube.com/watch?v=AmgCJ2IuEDc)**​.
+Y eso fue lo que yo creo que ocurrió en abril de 2025. Esa es mi hipótesis. Y ya visteis en mi [**artículo anterior**](/es/ataque-a-desarrolladores/) lo fácil que es **[hackear a personal con acceso autorizado a sistemas críticos](https://www.youtube.com/watch?v=AmgCJ2IuEDc)**​.
 
 Los sistemas SCADA, diseñados para supervisar y controlar infraestructuras críticas, presentan vulnerabilidades significativas. Estas incluyen conectividad expuesta, falta de autenticación robusta y tecnologías heredadas sin actualizaciones de seguridad. ​  
 Fuente: [IMMUNE Technology Institute](https://immune.institute/blog/sistema-scada/?utm_source=chatgpt.com)

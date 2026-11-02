@@ -14,7 +14,7 @@ heroImage: "images/MAF_DOCKER_DUCK.png"
 
 ## How to wire Microsoft Agent Framework DevUI to Docker MCP and Docker Model Runner.
 
-You already know my motto: Your AI. Your rules. In my last article, [Using MCP with Microsoft Agent Framework](https://jgcarmona.com/using-mcp-with-microsoft-agent-framework/), I showed MCP tools working in console apps (and backend services). This time I wanted the same inside **[MAF’s brand-new DevUI](https://github.com/microsoft/agent-framework/tree/main/python/packages/devui)**. Spoiler: it broke in weird ways, and here’s how I made it work anyway.
+You already know my motto: Your AI. Your rules. In my last article, [Using MCP with Microsoft Agent Framework](/en/using-mcp-with-microsoft-agent-framework/), I showed MCP tools working in console apps (and backend services). This time I wanted the same inside **[MAF’s brand-new DevUI](https://github.com/microsoft/agent-framework/tree/main/python/packages/devui)**. Spoiler: it broke in weird ways, and here’s how I made it work anyway.
 
 ## **TL;DR**:
 

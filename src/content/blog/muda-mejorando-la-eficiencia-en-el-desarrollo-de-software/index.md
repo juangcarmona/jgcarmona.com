@@ -27,4 +27,4 @@ La aplicación de Muda no es un proceso único. Debe ser parte de una mejora con
 
 Toma el control de tus procesos de desarrollo de software hoy y comienza a aplicar la filosofía Muda. A medida que elimines el desperdicio y mejores la eficiencia, te sorprenderás de lo transformador que puede ser este concepto japonés.  
   
-Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](https://jgcarmona.com/mejorar-en-programacion-con-filosofias-japonesas/).
+Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](/es/mejorar-en-programacion-con-filosofias-japonesas/).

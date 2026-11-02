@@ -17,7 +17,7 @@ heroImage: "images/copilot-instructions-agents-skills.png"
 
 > This is article 4 of a series. Start with [Mayday! We're Running Out of Fuel!](/en/may-day/) for the manifesto, or [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) for the setup story.
 
-In the [setup guide](https://jgcarmona.com/en/github-copilot-local-setup/) I showed how to connect Copilot CLI to a local model. In the [MCP article](https://jgcarmona.com/en/copilot-cli-mcp-tools/) I showed how tools give the agent actions. Today I want to talk about the third layer: the one that tells the agent *who it is*, *what your project is*, and *how it should behave*.
+In the [setup guide](/en/github-copilot-local-setup/) I showed how to connect Copilot CLI to a local model. In the [MCP article](/en/copilot-cli-mcp-tools/) I showed how tools give the agent actions. Today I want to talk about the third layer: the one that tells the agent *who it is*, *what your project is*, and *how it should behave*.
 
 This is the control surface. And most people skip it entirely.
 
@@ -198,10 +198,10 @@ A few practical tips from my experience:
 
 ## References
 
-- [How I Set Up GitHub Copilot CLI on Local Hardware](https://jgcarmona.com/en/github-copilot-local-setup/) -> the setup and wiring guide
-- [MCP Is How Local Copilot Becomes Useful](https://jgcarmona.com/en/copilot-cli-mcp-tools/) -> the tool layer
-- [Spec-Driven Development: Controlling AI-Generated Drift](https://jgcarmona.com/en/spec-driven-done-right/) -> why structure matters
-- [Moving Toward SDD with OpenSpec or Spec Kit](https://jgcarmona.com/en/moving-toward-spec-driven-development/) -> frameworks for structured development
+- [How I Set Up GitHub Copilot CLI on Local Hardware](/en/github-copilot-local-setup/) -> the setup and wiring guide
+- [MCP Is How Local Copilot Becomes Useful](/en/copilot-cli-mcp-tools/) -> the tool layer
+- [Spec-Driven Development: Controlling AI-Generated Drift](/en/spec-driven-done-right/) -> why structure matters
+- [Moving Toward SDD with OpenSpec or Spec Kit](/en/moving-toward-spec-driven-development/) -> frameworks for structured development
 - [GitHub Copilot custom instructions docs](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot) -> official reference
 
 ---

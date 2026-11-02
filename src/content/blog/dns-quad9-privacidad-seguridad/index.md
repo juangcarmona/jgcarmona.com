@@ -183,7 +183,7 @@ Cambiar el DNS es un gran primer paso, pero hay formas de reforzar aún más tu 
 
 ### Es sentido común.
 
-En los últimos meses he empezado a tomarme mucho más en serio mi seguridad digital. Configuré mi propia **[IA local con TabbyML](https://jgcarmona.com/run-ai-locally-with-tabby-ml/)** para [**dejar de depender de servicios en la nube**](https://jgcarmona.com/ia-sin-ceder-codigo/), y reforcé todo mi entorno **[tras frustrar un intento real de ataque encubierto que denuncié públicamente](https://jgcarmona.com/cazando-al-cazador-episodio-1-backdoor-en-next-js-y-ataque-a-desarrolladores/)**. No es teoría ni marketing, es experiencia directa.
+En los últimos meses he empezado a tomarme mucho más en serio mi seguridad digital. Configuré mi propia **[IA local con TabbyML](/en/run-ai-locally-with-tabby-ml/)** para [**dejar de depender de servicios en la nube**](/es/ia-sin-ceder-codigo/), y reforcé todo mi entorno **[tras frustrar un intento real de ataque encubierto que denuncié públicamente](/es/ataque-a-desarrolladores/)**. No es teoría ni marketing, es experiencia directa.
 
 Cambiar tu DNS no va a salvarte de nada pero es una forma rápida, sencilla y efectiva de recuperar parte del control que cediste sin darte cuenta. Y si usas **[Quad9](https://www.quad9.net/)** o una alternativa fiable, ganas algo más que privacidad: blindas tu navegación y reduces tu exposición tantas y tantas a amenazas invisibles que abundan en la red. No se trata de desconfiar de todo, se trata de no delegarlo todo a ciegas.
 

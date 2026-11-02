@@ -112,7 +112,7 @@ La primera sección de **arc42** establece las bases del sistema y define los ob
 
 ![1. Introducción y Objetivos - Documenta Arquitectura de Software con arc42](images/image-23.png)
 
-Aquí, tanto el modelo [**C4**](https://jgcarmona.com/comunica-arquitectura-software-c4/) como los diagramas **[UML](https://jgcarmona.com/uml-ddd-cqrs/)**, de los cuales ya te her hablado anteriormente, pueden ser útiles para visualizar y comunicar el alcance del sistema, y nos ayudan a involucrar a todos los stakeholders desde el principio del proyecto, algo necesario para el éxito.
+Aquí, tanto el modelo [**C4**](/es/comunica-arquitectura-software-c4/) como los diagramas **[UML](/es/uml-ddd-cqrs/)**, de los cuales ya te her hablado anteriormente, pueden ser útiles para visualizar y comunicar el alcance del sistema, y nos ayudan a involucrar a todos los stakeholders desde el principio del proyecto, algo necesario para el éxito.
 
 #### **Elementos clave:**
 
@@ -179,7 +179,7 @@ Para ver un ejemplo completo de esta sección en el contexto de la Estrella de l
 
 ![5. Vista de Bloques de Construcción - Documenta Arquitectura de Software con arc42](images/image-27.png)
 
-Esta sección proporciona una representación detallada y jerárquica del sistema, dividiéndolo en módulos y componentes clave. Esta estructura permite entender cómo se organizan y relacionan los distintos elementos del sistema. Aquí, el uso de **[UML](https://jgcarmona.com/uml-ddd-cqrs/)** resulta útil para representar visualmente la estructura y facilitar la comprensión de los componentes principales y sus interacciones. Si necesitas un repaso sobre **[UML](https://jgcarmona.com/uml-ddd-cqrs/)**, consulta el artículo de **[DADS #04](https://jgcarmona.com/uml-ddd-cqrs/)** , donde profundizamos en su aplicación para comunicar sistemas complejos
+Esta sección proporciona una representación detallada y jerárquica del sistema, dividiéndolo en módulos y componentes clave. Esta estructura permite entender cómo se organizan y relacionan los distintos elementos del sistema. Aquí, el uso de **[UML](/es/uml-ddd-cqrs/)** resulta útil para representar visualmente la estructura y facilitar la comprensión de los componentes principales y sus interacciones. Si necesitas un repaso sobre **[UML](/es/uml-ddd-cqrs/)**, consulta el artículo de **[DADS #04](/es/uml-ddd-cqrs/)** , donde profundizamos en su aplicación para comunicar sistemas complejos
 
 #### Elementos clave
 
@@ -195,7 +195,7 @@ Para ver un ejemplo completo de esta sección en el contexto de la Estrella de l
 
 ![6. Vista de Ejecución - Documenta Arquitectura de Software con arc42](images/image-28.png)
 
-La Vista de Ejecución documenta cómo interactúan los distintos componentes del sistema en escenarios clave, garantizando que el sistema cumpla con sus requisitos de funcionalidad y robustez. Aquí, el uso de diagramas de secuencia de **[UML](https://jgcarmona.com/uml-ddd-cqrs/)** es altamente útil, ya que permite representar la cronología y el flujo de interacciones entre componentes. El modelo [**C4**](https://jgcarmona.com/comunica-arquitectura-software-c4/) también puede complementar esta vista, proporcionando un marco visual para entender cómo se relacionan los diferentes niveles de componentes en distintos casos de uso. Esta sección es fundamental para documentar la manera en que el sistema gestiona operaciones, administración y manejo de errores, asegurando su fiabilidad en situaciones reales.
+La Vista de Ejecución documenta cómo interactúan los distintos componentes del sistema en escenarios clave, garantizando que el sistema cumpla con sus requisitos de funcionalidad y robustez. Aquí, el uso de diagramas de secuencia de **[UML](/es/uml-ddd-cqrs/)** es altamente útil, ya que permite representar la cronología y el flujo de interacciones entre componentes. El modelo [**C4**](/es/comunica-arquitectura-software-c4/) también puede complementar esta vista, proporcionando un marco visual para entender cómo se relacionan los diferentes niveles de componentes en distintos casos de uso. Esta sección es fundamental para documentar la manera en que el sistema gestiona operaciones, administración y manejo de errores, asegurando su fiabilidad en situaciones reales.
 
 #### Elementos clave
 
@@ -309,7 +309,7 @@ Para ver un ejemplo completo de esta sección en el contexto de la Estrella de l
 
 ## **Documenta Arquitectura de Software con arc42**
 
-Durante los últimos capítulos de [**la serie DADS (Diseño, Arquitectura y Desarrollo de Software)**](https://jgcarmona.com/category/dads/), hemos profundizado en herramientas esenciales que dan estructura y claridad a nuestras arquitecturas de software. Desde el uso de UML en [**DADS #04: UML al Rescate**](https://jgcarmona.com/uml-ddd-cqrs/), donde analizamos su capacidad para comunicar sistemas complejos, hasta el poder del modelo C4 en [**DADS #05: C4 - Nuestra Mejor Arma Como Arquitectos de Software**](https://jgcarmona.com/comunica-arquitectura-software-c4/), cada entrega de la serie refuerza la importancia de una documentación sólida para construir sistemas robustos y sostenibles.
+Durante los últimos capítulos de [**la serie DADS (Diseño, Arquitectura y Desarrollo de Software)**](/search/?q=DADS), hemos profundizado en herramientas esenciales que dan estructura y claridad a nuestras arquitecturas de software. Desde el uso de UML en [**DADS #04: UML al Rescate**](/es/uml-ddd-cqrs/), donde analizamos su capacidad para comunicar sistemas complejos, hasta el poder del modelo C4 en [**DADS #05: C4 - Nuestra Mejor Arma Como Arquitectos de Software**](/es/comunica-arquitectura-software-c4/), cada entrega de la serie refuerza la importancia de una documentación sólida para construir sistemas robustos y sostenibles.
 
 Ahora, con **arc42**, damos un paso adelante en la documentación de arquitecturas complejas. **arc42** no solo organiza la información, sino que establece un lenguaje común entre arquitectos, desarrolladores y stakeholders, permitiendo que todos comprendan el sistema sin caer en detalles abrumadores. Y en este artículo hemos explorado cada sección de **arc42** a través de un proyecto ficticio inspirador: la Estrella de la Muerte. Este proyecto, aunque ficticio, nos ha permitido ilustrar cómo **arc42** puede aplicarse a un sistema de escala galáctica. Puedes explorar el ejemplo completo en mi [**repositorio en GitHub**](https://github.com/jgcarmona-com/starwars-deathstar-arc42-documentation).
 

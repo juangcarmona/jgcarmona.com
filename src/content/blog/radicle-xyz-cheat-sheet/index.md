@@ -9,7 +9,7 @@ tags:
 heroImage: "images/default-seed-header1.png"
 ---
 
-Here's a concise cheat sheet for Radicle, a peer-to-peer code collaboration protocol built on Git. I also wrote a [Quick Start guide](https://jgcarmona.com/radicle-decentralized-git-collaboration/).
+Here's a concise cheat sheet for Radicle, a peer-to-peer code collaboration protocol built on Git. I also wrote a [Quick Start guide](/en/radicle-decentralized-git-collaboration/).
 
 ## SETUP & INIT
 

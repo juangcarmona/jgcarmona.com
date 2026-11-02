@@ -28,7 +28,7 @@ Por motivos evidentes será una charla en inglés, y la doy con mucha humildad p
 
 👉 [Aquí puedes ver el repo](https://github.com/juangcarmona/starwars-deathstar-arc42-documentation)  
 👉 [Aquí el capítulo de DADS](https://www.youtube.com/watch?v=-jQLE2rilH4)  
-👉 [Y el artículo original explicando cada sección de arc42](https://jgcarmona.com/dads-06-documenta-arquitectura-de-software-con-arc42/)
+👉 [Y el artículo original explicando cada sección de arc42](/es/dads-06-documenta-arquitectura-de-software-con-arc42/)
 
 ## Steam en vivo
 

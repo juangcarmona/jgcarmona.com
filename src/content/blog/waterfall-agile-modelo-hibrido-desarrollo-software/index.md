@@ -72,4 +72,4 @@ Mi equipo y yo te acompañamos durante todo el proceso, desde la definición has
 
 ¿Quieres que tu proyecto no se pierda en reuniones ni se bloquee por contratos rígidos? Te podemos ayudar.
 
-[**Descubre cómo trabajamos**](https://jgcarmona.com/consultoria-desarrollo-software/) y [**contacta conmigo**](https://jgcarmona.com/contact/) cuando quieras.
+[**Descubre cómo trabajamos**](/about/) y [**contacta conmigo**](/about/) cuando quieras.

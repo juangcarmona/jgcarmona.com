@@ -158,7 +158,7 @@ Hasta ahora he hablado mucho y he programado poco, vamos a ver con unos ejemplos
 [TestClass]public class CalculadoraTest{    [TestMethod]    public void SumarTest1()    {        var calculadora = new Calculadora();        var resultado = calculadora.Suma(2, 2);        Assert.AreEqual(2 + 2, resultado);    }}
 ```
 
-Lo primero que vemos es que éste código de test falla porque ni siquiera existe la clase Calculadora así que, como somos unos profesionales y practicamos los principios SOLID cada vez que programamos, vamos a empezar creando una [interfaz](http://juan-garcia-carmona.blogspot.com.es/2012/09/la-potencia-de-una-interfaz-simple.html) ICalculadora ([ISP](https://jgcarmona.com/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/)) y una clase Calculadora que la implemente, ambas vacías. Ésto es a lo que en varias ocasiones hemos llamado refactorizar, ahora hemos hecho una refactorización partiendo desde la nada. Pero el código de pruebas sigue fallando, nos falta el método Suma así que lo vamos a crear en la interfaz y en la clase, vacío con, por ejemplo un "return -1;"
+Lo primero que vemos es que éste código de test falla porque ni siquiera existe la clase Calculadora así que, como somos unos profesionales y practicamos los principios SOLID cada vez que programamos, vamos a empezar creando una [interfaz](http://juan-garcia-carmona.blogspot.com.es/2012/09/la-potencia-de-una-interfaz-simple.html) ICalculadora ([ISP](/es/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/)) y una clase Calculadora que la implemente, ambas vacías. Ésto es a lo que en varias ocasiones hemos llamado refactorizar, ahora hemos hecho una refactorización partiendo desde la nada. Pero el código de pruebas sigue fallando, nos falta el método Suma así que lo vamos a crear en la interfaz y en la clase, vacío con, por ejemplo un "return -1;"
 
 ```
 public interface ICalculadora{    int Suma(int num1, int num2);}
@@ -338,7 +338,7 @@ Ahora pasemos, por fin, a Mocking...
   
 Es Una técnica para testar software en la que se simulan partes del sistema con las que el objeto a testar tiene alguna dependencia. Un mock es un objeto "dummy", son "fakes" de partes del sistema a las que se puede definir su comportamiento "On the fly". ¿Cómo es posible ésto? Fácil, un mock usa la interfaz de un objeto real y la implementa y si hemos seguido mínimamente los principios SOLID podemos sustituir una instancia de nuestro objeto falseado, nuestro mock, por el objeto que en realidad se esperaba.  
   
-Repito, el objeto que queremos probar utiliza un objeto "mockeable", y lo es porque implementa cierta interfaz que define su comportamiento. Al objeto testeable no le importa en realidad cual de los dos objetos usa, no sabe si es una implementación real o es un fake. En el fondo no deja de ser polimorfismo aplicado mediante [inyección o inversión de dependencias](https://jgcarmona.com/dip-dependency-inversion-principle-principio-de-inversion-de-dependencias/).  
+Repito, el objeto que queremos probar utiliza un objeto "mockeable", y lo es porque implementa cierta interfaz que define su comportamiento. Al objeto testeable no le importa en realidad cual de los dos objetos usa, no sabe si es una implementación real o es un fake. En el fondo no deja de ser polimorfismo aplicado mediante [inyección o inversión de dependencias](/es/dip-dependency-inversion-principle-principio-de-inversion-de-dependencias/).  
   
 
 1. DI obliga a separar componentes

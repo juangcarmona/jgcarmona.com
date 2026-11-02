@@ -1,0 +1,41 @@
+{
+  "trailingSlash": "auto",
+  "routes": [
+    {
+      "route": "/_astro/*",
+      "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+    },
+    {
+      "route": "/tags-data.json",
+      "redirect": "/tags/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/using-mdx",
+      "redirect": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "route": "/es/using-mdx",
+      "redirect": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "route": "/using-mdx",
+      "redirect": "/blog/",
+      "statusCode": 301
+    }
+  ],
+  "responseOverrides": {
+    "404": { "rewrite": "/404.html" }
+  },
+  "mimeTypes": {
+    ".txt": "text/plain; charset=utf-8",
+    ".md": "text/markdown; charset=utf-8"
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "browsing-topics=(), interest-cohort=()"
+  }
+}

@@ -71,4 +71,4 @@ Para crear un diagrama Ishikawa, primero hay que **identificar el problema** en 
 
 Los diagramas de Ishikawa son una herramienta valiosa en el proceso [Kaizen](https://es.wikipedia.org/wiki/Kaizen), ya que **permiten a los equipos reconocer los aspectos externos e internos que influyen en un problema.** Esto les ayuda a adquirir un conocimiento interpretativo de lo que está causando ese problema, dotándoles así de la capacidad de desarrollar planes eficaces de mejora.  
   
-Puedes volver a la serie de artículos **[haciendo clic aquí](https://jgcarmona.com/mejorar-en-programacion-con-filosofias-japonesas/)**.
+Puedes volver a la serie de artículos **[haciendo clic aquí](/es/mejorar-en-programacion-con-filosofias-japonesas/)**.

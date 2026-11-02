@@ -9,7 +9,7 @@ tags:
 heroImage: "images/image-9.png"
 ---
 
-Hoy continuamos con un tema clave en los sistemas distribuidos: la **tolerancia a fallos** y cómo los teoremas CAP y PACELC juegan un rol fundamental en la toma de decisiones de diseño. En el [**artículo anterior**](https://jgcarmona.com/dads-01-introduccion-sistemas-distribuidos/), discutimos sobre [la **consistencia** y la **disponibilidad**](https://jgcarmona.com/dads-01-introduccion-sistemas-distribuidos/) y cómo debemos elegir entre ambos en nuestros sistemas distribuidos. Sin embargo, hoy te voy a hablar de un aspecto aún más crítico todavía: ¿cómo gestionamos fallos en nuestra red interna (**particiones**) y cómo estos fallos impactan en nuestro diseño?
+Hoy continuamos con un tema clave en los sistemas distribuidos: la **tolerancia a fallos** y cómo los teoremas CAP y PACELC juegan un rol fundamental en la toma de decisiones de diseño. En el [**artículo anterior**](/es/dads-01-introduccion-sistemas-distribuidos/), discutimos sobre [la **consistencia** y la **disponibilidad**](/es/dads-01-introduccion-sistemas-distribuidos/) y cómo debemos elegir entre ambos en nuestros sistemas distribuidos. Sin embargo, hoy te voy a hablar de un aspecto aún más crítico todavía: ¿cómo gestionamos fallos en nuestra red interna (**particiones**) y cómo estos fallos impactan en nuestro diseño?
 
 Aquí es donde entran en juego dos teoremas que todo arquitecto de sistemas debe conocer: el famoso **Teorema CAP** y su extensión, **PACELC**. A lo largo de este artículo, exploraremos estos conceptos para entender mejor cómo tomar decisiones clave en el diseño cuando las redes fallan.
 
@@ -199,7 +199,7 @@ Quién usa PC/EL (Prioridad en Consistencia y Latencia)
 
 El diseño de sistemas distribuidos es un arte que requiere encontrar el equilibrio adecuado entre consistencia, disponibilidad y tolerancia a fallos. El teorema CAP nos ayuda a tomar decisiones cuando hay fallos de red, pero PACELC nos permite optimizar nuestros sistemas incluso cuando la red está estable, equilibrando la latencia y la consistencia.
 
-Durante la elaboración de este segundo capítulo de **DADS, Diseño, Arquitectura y Desarrollo de Software**, y también **[del anterior](https://jgcarmona.com/dads-01-introduccion-sistemas-distribuidos/)**, he creado dos infografías y dos presentaciones de PowerPoint para que este tema quede claro, uno es una comparativa entre consistencia y disponibilidad y el otro es un diagrama que resume los teoremas CAP y PACELC en sistemas distribuidos. Hacer este resumen y elaborar este material me ha llevado mucho, muchísimo tiempo, pero espero que mi esfuerzo haya merecido la pena y que el material te sea útil, ya seas estudiante, desarrollador, arquitecto o ingeniero de software.
+Durante la elaboración de este segundo capítulo de **DADS, Diseño, Arquitectura y Desarrollo de Software**, y también **[del anterior](/es/dads-01-introduccion-sistemas-distribuidos/)**, he creado dos infografías y dos presentaciones de PowerPoint para que este tema quede claro, uno es una comparativa entre consistencia y disponibilidad y el otro es un diagrama que resume los teoremas CAP y PACELC en sistemas distribuidos. Hacer este resumen y elaborar este material me ha llevado mucho, muchísimo tiempo, pero espero que mi esfuerzo haya merecido la pena y que el material te sea útil, ya seas estudiante, desarrollador, arquitecto o ingeniero de software.
 
 ![](images/DADS-01-410x1024.jpg)
 

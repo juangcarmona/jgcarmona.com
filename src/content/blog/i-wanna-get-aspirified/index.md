@@ -21,7 +21,7 @@ Today I'll show you my first steps towards a migration to Aspire. I'll take all 
 
 > ### **DISCLAIMER: No LLMs were used nor abused in the making of this post**
 
-The idea has been on my mind for many months, from the very beginning, I would say, but I thought that my stack was not mature enough, I was also using python so, when I started with Sentra, it was not for me, or for this project. But since it now can be used with python and my stack, due to [my experiments and research](https://jgcarmona.com/tag/maf/), has moved to Microsoft Agent Framework, and, also considering that during the migration to MAF I detected few bottlenecks and the main service got too polluted, I decided that the moment is now.
+The idea has been on my mind for many months, from the very beginning, I would say, but I thought that my stack was not mature enough, I was also using python so, when I started with Sentra, it was not for me, or for this project. But since it now can be used with python and my stack, due to [my experiments and research](/tags/maf/), has moved to Microsoft Agent Framework, and, also considering that during the migration to MAF I detected few bottlenecks and the main service got too polluted, I decided that the moment is now.
 
 I will move everything. Organize the infra. Clean up the code. Remove unused parts. I'll also migrate the API to .NET, building a modular monolith that will integrate Agent Framework and AG-UI. Let's see how it goes. Let's see if I can get "my stack streamlined". Here is the video that finally convinced me.
 
@@ -55,7 +55,7 @@ Those are "my" services, code that I created and I maintain. And all these servi
 
 - **RabbitMQ (rabbitmq):** it is our multi-protocol messaging broker
 
-In addition to this, Sentra relies on, and happily and fortunately uses, [Docker Model Runner](https://jgcarmona.com/tag/dmr/) and several MCP Servers hosted on Docker.
+In addition to this, Sentra relies on, and happily and fortunately uses, [Docker Model Runner](/tags/dmr/) and several MCP Servers hosted on Docker.
 
 As you can see the number of pieces moving is quite big, 5 custom containers, 5 infra containers (that require persistent storage) and "the intelligence", The Models, and the "skills", the MCP Servers, running on Docker.  
   

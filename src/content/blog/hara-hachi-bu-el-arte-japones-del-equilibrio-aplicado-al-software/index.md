@@ -21,4 +21,4 @@ Las técnicas de gestión del tiempo, como la [Técnica Pomodoro](https://es.wik
 
 En conclusión, aplicar el principio de "Hara Hachi Bu" en el desarrollo de software es una excelente forma de prevenir el agotamiento, mejorar la eficiencia y fomentar un entorno de trabajo saludable. No olvides que cuidarte a ti mismo es fundamental para poder rendir al máximo en tu trabajo.
 
-Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](https://jgcarmona.com/mejorar-en-programacion-con-filosofias-japonesas/).
+Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](/es/mejorar-en-programacion-con-filosofias-japonesas/).

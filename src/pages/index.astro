@@ -3,11 +3,12 @@ import PostList from '../components/PostList.astro';
 import { SITE_DESCRIPTION, SITE_HEADLINE, SITE_SEO_TITLE, YOUTUBE_COURSES } from '../consts';
 import Base from '../layouts/Base.astro';
 import { getPosts } from '../utils/posts';
+import { ecosystem } from '../utils/schema';
 
 const posts = (await getPosts()).slice(0, 12);
 ---
 
-<Base title={SITE_SEO_TITLE} description={SITE_DESCRIPTION}>
+<Base title={SITE_SEO_TITLE} description={SITE_DESCRIPTION} schema={ecosystem}>
 	<section class="intro">
 		<h1>Juan G. Carmona</h1>
 		<p class="headline">{SITE_HEADLINE}</p>

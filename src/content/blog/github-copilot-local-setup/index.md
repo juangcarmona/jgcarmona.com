@@ -18,7 +18,7 @@ heroImage: "images/copilot-cli-local-llm.png"
 
 > Human words again. No polished corporate hallucination. Just my workstation, my setup, and what I learned wiring it together.
 
-I already showed you [how to run Claude Code against a local GPU](https://jgcarmona.com/en/claude-code-local-glm-4-7-flash/) with Docker Model Runner and a translation proxy. I also demoed Copilot's offline mode live at GitHub Copilot Dev Days Madrid. But in both cases I showed *that* it works, not *how I made it mine*. Today I want to close that gap — the full story from hardware to daily workflow.
+I already showed you [how to run Claude Code against a local GPU](/en/claude-code-local-glm-4-7-flash/) with Docker Model Runner and a translation proxy. I also demoed Copilot's offline mode live at GitHub Copilot Dev Days Madrid. But in both cases I showed *that* it works, not *how I made it mine*. Today I want to close that gap — the full story from hardware to daily workflow.
 
 ## My actual setup
 
@@ -277,7 +277,7 @@ Some servers want `http://localhost:8002/v1`, others want `http://localhost:8002
 
 ### Performance is miserable
 
-That's usually memory pressure, not a lack of theoretical intelligence. If you read [Local LLMs Under the Hood](https://jgcarmona.com/en/local-llms-under-the-hood/) you already know why: the KV cache grows with every token, and memory pressure adds latency. Try a smaller model, lower quantization, or shorter context.
+That's usually memory pressure, not a lack of theoretical intelligence. If you read [Local LLMs Under the Hood](/en/local-llms-under-the-hood/) you already know why: the KV cache grows with every token, and memory pressure adds latency. Try a smaller model, lower quantization, or shorter context.
 
 ## Offline mode: what it actually means
 
@@ -332,9 +332,9 @@ You get a controllable engineering workflow. On your hardware. Under your rules.
 
 ## References
 
-- [Running Claude Code Against Your Local GPU with Docker Model Runner](https://jgcarmona.com/en/claude-code-local-glm-4-7-flash/) — my previous local AI experiment
-- [Mayday! We're Running Out of Fuel](https://jgcarmona.com/en/may-day/) — why owning the runtime matters now
-- [Local LLMs Under the Hood](https://jgcarmona.com/en/local-llms-under-the-hood/) — the inference pipeline explained
+- [Running Claude Code Against Your Local GPU with Docker Model Runner](/en/claude-code-local-glm-4-7-flash/) — my previous local AI experiment
+- [Mayday! We're Running Out of Fuel](/en/may-day/) — why owning the runtime matters now
+- [Local LLMs Under the Hood](/en/local-llms-under-the-hood/) — the inference pipeline explained
 - [GitHub Copilot CLI documentation](https://docs.github.com/en/copilot/copilot-cli) — official reference
 - [vLLM documentation](https://docs.vllm.ai/) — the inference platform
 - [llama.cpp](https://github.com/ggml-org/llama.cpp) — the portable inference engine

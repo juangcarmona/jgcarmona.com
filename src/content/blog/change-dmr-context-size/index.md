@@ -12,7 +12,7 @@ tags:
 heroImage: "images/set-model-context-size.png"
 ---
 
-> When I started experimenting with **[Microsoft Agent Framework](https://jgcarmona.com/building-local-chat-agent-microsoft-agent-framework-dotnet/)** using **[Docker Model Runner (DMR)](https://jgcarmona.com/run-agent-framework-locally/)** as the "inteligence engine", I noticed a strange bottleneck: my agents kept freezing mid-conversation. The reason? A context window capped at **4096 tokens**, far too narrow for multi-tool and/or reasoning-intensive agents. **So I did what any engineer would do: searched everywhere for a way to change it.**
+> When I started experimenting with **[Microsoft Agent Framework](/en/building-local-chat-agent-microsoft-agent-framework-dotnet/)** using **[Docker Model Runner (DMR)](/en/run-agent-framework-locally/)** as the "inteligence engine", I noticed a strange bottleneck: my agents kept freezing mid-conversation. The reason? A context window capped at **4096 tokens**, far too narrow for multi-tool and/or reasoning-intensive agents. **So I did what any engineer would do: searched everywhere for a way to change it.**
 
 **\[20-OCT-2025\] UPDATE:** I started a [GitHub issue](https://github.com/docker/model-runner/issues/223) explaining this 'feature gap' or desired requisite. This was related with some other issues requesting for similar features, and, DMR team [started to work on this almost immediately](https://github.com/docker/model-runner/pull/243). They finally added a package flag so we can package and run a model configuration, so, we gain perfect reproducibility. Big thanks to [Ignasi](https://github.com/ilopezluna) and [Eric Curtin](https://github.com/ericcurtin).
 
@@ -184,7 +184,7 @@ I hope it helps you
 
 ### **NOTE:**
 
-If you’re using cagent locally, you can read more about its declarative model setup in [**What is Docker cagent? A First Look at Declarative AI Agents**](https://jgcarmona.com/what-is-docker-cagent-a-first-look-at-declarative-ai-agents/) or its memory integration in [**Memory in Docker cagent**](https://jgcarmona.com/memory-in-docker-cagent/).
+If you’re using cagent locally, you can read more about its declarative model setup in [**What is Docker cagent? A First Look at Declarative AI Agents**](/en/what-is-docker-cagent-a-first-look-at-declarative-ai-agents/) or its memory integration in [**Memory in Docker cagent**](/en/memory-in-docker-cagent/).
 
 UPdescription: ''
 pubDate:  

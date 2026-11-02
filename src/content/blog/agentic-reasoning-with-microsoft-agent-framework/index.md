@@ -13,8 +13,8 @@ tags:
 heroImage: "images/spar_maf_dmr.png"
 ---
 
-In the [**first article**](https://jgcarmona.com/run-agent-framework-locally/) I showed you how to run MAF fully offline, using **[Docker Model Runner (DMR)](https://jgcarmona.com/enable-gpu-docker-model-runner-windows/)** as the intelligence engine.  
-In the [**second article**](https://jgcarmona.com/building-local-chat-agent-microsoft-agent-framework-dotnet/), we added **memory, persistence**, so the agent could recall previous turns.
+In the [**first article**](/en/run-agent-framework-locally/) I showed you how to run MAF fully offline, using **[Docker Model Runner (DMR)](/en/enable-gpu-docker-model-runner-windows/)** as the intelligence engine.  
+In the [**second article**](/en/building-local-chat-agent-microsoft-agent-framework-dotnet/), we added **memory, persistence**, so the agent could recall previous turns.
 
 In this **third step** of the series, the agent finally **reasons**.  
 This is where MAF starts feeling alive.
@@ -23,7 +23,7 @@ This is where MAF starts feeling alive.
 
 [![](images/71IPxb7PyTL-201x300.jpg)](https://www.linkedin.com/in/pascalbornet/)
 
-The goal of this lab is simple: implement the **Sense → Plan → Act → Reflect** (SPAR) cycle, the fundamental reasoning loop behind every agentic system, as I explained in recent article **[AI Agents in a Nutshell](https://jgcarmona.com/ai-agents-nutshell/)**.
+The goal of this lab is simple: implement the **Sense → Plan → Act → Reflect** (SPAR) cycle, the fundamental reasoning loop behind every agentic system, as I explained in recent article **[AI Agents in a Nutshell](/en/ai-agents-nutshell/)**.
 
 (Side note: I recently finished reading "[Agentic Artificial Intelligence: Harnessing AI Agents to Reinvent Business, Work and Life](https://www.amazon.com/Agentic-Artificial-Intelligence-Harnessing-Reinvent/dp/B0F1KFKNBB)", and I strongly recommend it to anyone exploring agentic AI engineering.)
 
@@ -134,7 +134,7 @@ The agent analyzes the query, selects the right tools, gathers information, and 
 
 If you followed the previous articles, you might have noticed that long reasoning runs tend to stall or truncate early. That’s because Docker Model Runner enforces a **default context window of 4096 tokens**, which is often too small for multi-tool workflows. There’s no configuration flag or CLI parameter to change it, which caused many failed runs during testing.
 
-To solve this, I wrote a small PowerShell utility that expands the DMR context size by re-initializing the model with a larger `max_tokens` setting. It’s explained step-by-step in this [**other article**](https://jgcarmona.com/change-dmr-context-size/)[_._](https://jgcarmona.com/change-docker-model-runner-context-size/)
+To solve this, I wrote a small PowerShell utility that expands the DMR context size by re-initializing the model with a larger `max_tokens` setting. It’s explained step-by-step in this [**other article**](/en/change-dmr-context-size/)[_._](/en/change-dmr-context-size/)
 
 <figure>
 
@@ -160,10 +160,10 @@ This confirms that **MAF + DMR** can serve as a fully local, reproducible agenti
 
 - [Microsoft Agent Framework Playground (GitHub)](https://github.com/juangcarmona/ms-agent-framework-playground)
 
-- [How to Change Docker Model Runner Context Size](https://jgcarmona.com/change-docker-model-runner-context-size/)
+- [How to Change Docker Model Runner Context Size](/en/change-dmr-context-size/)
 
-- [What is Docker cagent? A First Look at Declarative AI Agents](https://jgcarmona.com/what-is-docker-cagent-a-first-look-at-declarative-ai-agents/)
+- [What is Docker cagent? A First Look at Declarative AI Agents](/en/what-is-docker-cagent-a-first-look-at-declarative-ai-agents/)
 
-- [Memory in Docker cagent](https://jgcarmona.com/memory-in-docker-cagent/)
+- [Memory in Docker cagent](/en/memory-in-docker-cagent/)
 
 - [Sentra Brain](https://wentrabrain.com)

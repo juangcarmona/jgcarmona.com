@@ -1,31 +1,26 @@
 ---
 import { FLAGSHIP_PROJECTS, OTHER_PROJECTS } from '../data/projects';
 import Base from '../layouts/Base.astro';
+import { PERSON_ID } from '../utils/schema';
 
 const title = 'Projects — Juan G. Carmona';
 const description =
 	'Open-source projects by Juan G. Carmona: Product Definition as Code, ProductShape, ArcShape and Lighthouse, a toolchain for AI-assisted delivery, DomusMind, Raccord and more.';
 const slug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-const personId = new URL('/#person', Astro.site).href;
-
-const structuredData = {
-	'@context': 'https://schema.org',
-	'@graph': [...FLAGSHIP_PROJECTS, ...OTHER_PROJECTS].map((project) => {
-		const links = 'links' in project ? project.links : [{ label: 'GitHub', url: project.url }];
-		return {
-			'@type': 'SoftwareSourceCode',
-			name: project.name,
-			description: 'tagline' in project ? project.tagline : project.description,
-			url: links[0].url,
-			codeRepository: links.find((link) => link.url.startsWith('https://github.com/'))?.url,
-			author: { '@id': personId },
-		};
-	}),
-};
+const schema = [...FLAGSHIP_PROJECTS, ...OTHER_PROJECTS].map((project) => {
+	const links = 'links' in project ? project.links : [{ label: 'GitHub', url: project.url }];
+	return {
+		'@type': 'SoftwareSourceCode',
+		name: project.name,
+		description: 'tagline' in project ? project.tagline : project.description,
+		url: links[0].url,
+		codeRepository: links.find((link) => link.url.startsWith('https://github.com/'))?.url,
+		author: { '@id': PERSON_ID },
+	};
+});
 ---
 
-<Base title={title} description={description}>
-	<script slot="head" type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+<Base title={title} description={description} schema={schema}>
 	<h1>Projects</h1>
 	<p>
 		AI makes code cheap. What stays expensive is knowing what to build, keeping the architecture honest and proving that
