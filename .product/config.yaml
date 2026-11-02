@@ -10,7 +10,3 @@ extensions:
     integrations:
       ai: []
       shorthand-commands: false
-    citations:
-      # Directories `prodshape citations verify` scans when no target is given.
-      consumer-roots:
-        - openspec

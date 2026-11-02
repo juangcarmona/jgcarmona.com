@@ -1,42 +1,30 @@
-# JGCARMONA.COM
+# jgcarmona.com
 
-**WordPress → Astro migration. 142+ blog posts. Zero hosting cost. Instant load times.**
+Personal site and blog of Juan G. Carmona: articles since 2012 in English and Spanish, talks, projects and books. Built with [Astro](https://astro.build), styled with [Lighthouse UI](https://lighthouse.jgcarmona.com/) and deployed to Azure Static Web Apps when `main` changes.
 
-## What is this?
+## Develop
 
-A complete blog migration from WordPress to [Astro 5.x](https://astro.build) - trading database queries for static HTML, sluggish PHP for instant page loads, and monthly hosting fees for Azure Static Web Apps' free tier.
+Requires Node.js 22.
 
-## Stack
-
-- **Framework**: Astro 5.x with MDX support
-- **Content**: Markdown/MDX files in `src/content/blog/` (goodbye MySQL dumps!)
-- **Hosting**: Azure Static Web Apps (free tier)
-- **Build**: GitHub Actions CI/CD → push to `main` = instant deploy
-- **SEO**: Auto-generated sitemap + RSS feed via `@astrojs/sitemap` + `@astrojs/rss`
-- **Performance**: 100% static pre-rendered pages, Sharp image optimization, zero JS bloat
-
-## Why Astro?
-
-- **Content-first**: Write in Markdown, version control with Git
-- **Fast AF**: Pre-rendered static pages = instant loads
-- **Zero lock-in**: Your content is just `.md` files
-- **Type-safe**: Content collections with Zod schema validation
-
-## Development
-
-```bash
+```sh
+npm ci --ignore-scripts
 npm run dev      # http://localhost:4321
-npm run build    # Generate static site
-npm run preview  # Test production build
+npm run verify   # build the site and run lighthouse verify
 ```
 
-## Migration Notes
+`npm run brand` regenerates the JGC favicon, touch icon and default social image from `scripts/brand.mjs`.
 
-Content lives in `src/content/blog/` with schema validation in `content.config.ts`. Each post is either a standalone `.md` file or a directory with `index.md` + images. Frontmatter fields: `title`, `description`, `pubDate` (required), `heroImage` (optional).
+## Write
 
-Original WordPress archive: 120+ posts spanning software architecture, AI/ML, DevOps, and engineering leadership topics. Currently ~140 posts migrated and growing.
+Add an article as `src/content/blog/<id>/index.md` with `title`, `description`, `pubDate` and `lang` (`en` or `es`). Its URL is `/<lang>/<id>/`. Give an article and its real translation the same `translationKey`. Talks and projects live in `src/data/`; record the source of every entry.
 
----
-### **IMPORTANT:**
-> *No WordPress instances were harmed in the making of this site.*
----
+To publish on a date, push a branch named `publish/YYYY-MM-DD-<slug>`; the scheduled workflow merges it on that day.
+
+## Documentation
+
+- Product definition (ProductShape): [`docs/product`](docs/product/README.md)
+- Architecture (arc42 with ArcShape): [`docs/architecture`](docs/architecture/README.md)
+- Design system: [`docs/design/DESIGN.md`](docs/design/DESIGN.md)
+- Engineering baseline: [`LIGHTHOUSE.md`](LIGHTHOUSE.md)
+
+Content is licensed under CC BY 4.0; code under the [MIT license](LICENSE).
