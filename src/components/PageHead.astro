@@ -1,0 +1,12 @@
+---
+// The opening of every inner page: a mono eyebrow, a large title on a blue rule, and an optional lede in the slot.
+type Props = { eyebrow?: string; eyebrowHref?: string; title: string; lang?: string };
+
+const { eyebrow, eyebrowHref, title, lang } = Astro.props;
+---
+
+<header class="frame page-head">
+	{eyebrow && <p class="eyebrow">{eyebrowHref ? <a href={eyebrowHref}>{eyebrow}</a> : eyebrow}</p>}
+	<h1 lang={lang}>{title}</h1>
+	{Astro.slots.has('default') && <div class="lede"><slot /></div>}
+</header>

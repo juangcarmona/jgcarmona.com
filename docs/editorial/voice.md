@@ -1,6 +1,6 @@
 # Editorial voice
 
-Juan has written this site himself since 2012, after a first blog that started in 2006. The site shows that work in his own voice. Copy written for the site describes and links; it does not replace his writing with slogans.
+Juan has written this site himself since 2012. His first blog started earlier, "a comienzos de siglo", and is not part of this archive. The site shows that work in his own voice. Copy written for the site describes and links; it does not replace his writing with slogans.
 
 ## How Juan writes
 
@@ -48,7 +48,7 @@ Text in this repository has five origins. Name the origin before reusing any tex
 | "More than twenty years designing and building software for aerospace and defence, rail and smart mobility, motorsport and data platforms, and a company of my own…" | New | CV and /about; sectors confirmed by Juan on 2026-11-02 |
 | "I've been coding, daily, even on weekends, for more than half of my life." | Literal | Body of Spec-Driven Development: Controlling AI-Generated Drift, 2026 |
 | Career strip (2005–2025) | New | CV and /about |
-| "Writing since 2006 · On stage since 2012" | New | Juan (first blog, 2006; not in this archive); IWT2 DojoUS, 9 November 2012 |
+| "Blog archive from 2012 · On stage since 2012" | New | The oldest article in this archive (August 2012); IWT2 DojoUS, 9 November 2012 |
 | Article titles | Literal | Each article's frontmatter title, as published |
 | Article excerpts | Literal, cut with "…" | The first paragraph of each article's body |
 | Project headlines and summaries | Literal | Each project's own site, checked on 2026-11-02 |
@@ -57,3 +57,19 @@ Text in this repository has five origins. Name the origin before reusing any tex
 | Publication titles and status labels | Literal titles; new labels | /books; status as audited in `audit-2026-11-02.md` |
 | Course titles and video counts | Literal | The YouTube playlists, checked on 2026-11-02 |
 | Section titles | New | Plain labels |
+
+## Inner pages and their sources
+
+| Page | Text | Kind | Source |
+| --- | --- | --- | --- |
+| /blog, /tags, /search | Article excerpts | Literal, cut with "…" | The first paragraph of each article's body |
+| /blog | Counts and the first year | New | Computed from the archive at build time |
+| /talks | Talk titles, abstracts, links | Literal | `src/data/speaking.ts`, as on the homepage |
+| /talks | Session openings under "Sessions I offer" | Literal | Sessionize profile, checked word for word on 2026-11-02 |
+| /projects | Headline and summary of each project | Literal | Each project's own site |
+| /projects | Descriptions and stacks | New | Each project's README and site; no claims beyond them |
+| /books | Introduction and book descriptions | Literal | The original /books page (WordPress import) |
+| /books | Status of each book | New | `audit-2026-11-02.md` |
+| /about | First-person paragraphs, "How I work", "Outside of tech", the closing line | Literal | The About page Juan published before the redesign (`src/pages/about.md`, commit cea36da) |
+| /about | First blog sentence | Literal | *El primer paso siempre es el más difícil*, 2022 |
+| /about | "Now" paragraph and experience list | New | CV |

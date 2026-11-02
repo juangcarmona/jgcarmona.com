@@ -5,6 +5,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import { postUrl } from '../utils/posts';
 import { PERSON_ID, WEBSITE_ID } from '../utils/schema';
 import Base from './Base.astro';
+import portrait from '../assets/portrait.jpg';
 
 type Props = {
 	post: CollectionEntry<'blog'>;
@@ -58,32 +59,39 @@ const article = {
 	</Fragment>
 	<article>
 		<header class="article-header">
-			{heroImage && <Image class="hero" src={heroImage} alt="" width={1360} loading="eager" fetchpriority="high" />}
+			<p class="eyebrow"><a href="/blog/">Blog</a>{lang === 'es' && <span lang="es"> · En español</span>}</p>
 			<h1>{title}</h1>
-			<p class="muted mono">
-				<FormattedDate date={pubDate} />
-				{updatedDate && <> · updated <FormattedDate date={updatedDate} /></>}
-				{
-					translations.map((entry) => (
-						<>
-							{' · '}
-							<a href={postUrl(entry)} hreflang={entry.data.lang} lang={entry.data.lang}>
-								{entry.data.lang === 'es' ? 'Leer en español' : 'Read in English'}
-							</a>
-						</>
-					))
-				}
+			<p class="byline">
+				<Image class="avatar" src={portrait} alt="" width={64} />
+				<span>
+					<strong>Juan G. Carmona</strong>
+					<span class="meta">
+						<FormattedDate date={pubDate} />
+						{updatedDate && <> · updated <FormattedDate date={updatedDate} /></>}
+						{
+							translations.map((entry) => (
+								<>
+									{' · '}
+									<a href={postUrl(entry)} hreflang={entry.data.lang} lang={entry.data.lang}>
+										{entry.data.lang === 'es' ? 'Leer en español' : 'Read in English'}
+									</a>
+								</>
+							))
+						}
+					</span>
+				</span>
 			</p>
+			{heroImage && <Image class="hero" src={heroImage} alt="" width={1360} loading="eager" fetchpriority="high" />}
 		</header>
 		<div class="prose">
 			<slot />
 		</div>
 		{
 			tags.length > 0 && (
-				<ul class="inline-list tag-list" aria-label="Tags">
+				<ul class="tag-list" aria-label="Tags">
 					{tags.map((tag) => (
 						<li>
-							<a class="lh-badge" href={`/tags/${tag}/`}>{tag}</a>
+							<a href={`/tags/${tag}/`}>{tag}</a>
 						</li>
 					))}
 				</ul>

@@ -19,7 +19,7 @@ export const GET: APIRoute = async () => {
 
 > ${SITE_HEADLINE}. ${SITE_DESCRIPTION}
 
-Personal site and blog of Juan G. Carmona (Juan García Carmona), writing since 2006 in English and Spanish. Current focus: Software Engineering 2.0, AI-assisted delivery, Product Definition as Code, software architecture and secure systems. Each article link below points to its Markdown source; the HTML version lives at the same path ending in a slash.
+Personal site and blog of Juan G. Carmona (Juan García Carmona), with articles in English and Spanish since 2012. Current focus: Software Engineering 2.0, AI-assisted delivery, Product Definition as Code, software architecture and secure systems. Each article link below points to its Markdown source; the HTML version lives at the same path ending in a slash.
 
 ## About
 

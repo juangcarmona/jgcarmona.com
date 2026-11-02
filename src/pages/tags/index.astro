@@ -1,4 +1,5 @@
 ---
+import PageHead from '../../components/PageHead.astro';
 import Base from '../../layouts/Base.astro';
 import { getPosts } from '../../utils/posts';
 
@@ -9,15 +10,21 @@ for (const post of await getPosts()) {
 const tags = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 ---
 
-<Base title="Topics — Juan G. Carmona" description="Browse articles by topic.">
-	<h1>Topics</h1>
-	<ul class="inline-list">
-		{
-			tags.map(([tag, count]) => (
-				<li>
-					<a href={`/tags/${tag}/`}>{tag}</a> <span class="muted mono">{count}</span>
-				</li>
-			))
-		}
-	</ul>
+<Base title="Topics — Juan G. Carmona" description="Browse articles by topic." wide>
+	<PageHead eyebrow="Writing" eyebrowHref="/blog/" title="Topics">
+		<p>{tags.length} topics, by number of articles.</p>
+	</PageHead>
+	<nav class="frame topics" aria-label="Topics">
+		<ul>
+			{
+				tags.map(([tag, count]) => (
+					<li>
+						<a href={`/tags/${tag}/`}>
+							{tag} <span>{count}</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
 </Base>

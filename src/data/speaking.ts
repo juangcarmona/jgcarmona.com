@@ -163,8 +163,8 @@ export const APPEARANCES: Appearance[] = [
 
 export type Session = {
 	title: string;
+	/** The opening of the Sessionize abstract, verbatim (checked on 2026-11-02). */
 	summary: string;
-	lang?: string;
 	url?: string;
 };
 
@@ -174,7 +174,6 @@ export const SESSIONS: Session[] = [
 		title: 'Software Engineering 2.0: Designing, Building, and Validating Products with AI',
 		summary:
 			'For years, we have been cutting back on good engineering practices to deliver on time. Now that we can delegate much of the implementation to AI, we have an opportunity to review, and an obligation to improve, our processes from end to end.',
-		lang: 'ES / EN',
 		url: 'https://talks.jgcarmona.com/software-engineering-2_0/',
 	},
 	{
@@ -205,7 +204,6 @@ export const SESSIONS: Session[] = [
 	{
 		title: 'Hard and Soft Guardrails for Agentic Software Engineering',
 		summary: 'An agent can only be as safe as the engineering discipline it is given.',
-		lang: 'EN',
 		url: 'https://talks.jgcarmona.com/soft-and-hard-guardrails/',
 	},
 ];

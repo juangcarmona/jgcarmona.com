@@ -1,26 +1,38 @@
 ---
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import FormattedDate from './FormattedDate.astro';
+import { openingExcerpt } from '../utils/excerpt';
 import { postUrl } from '../utils/posts';
 
 interface Props {
 	posts: CollectionEntry<'blog'>[];
-	showDescription?: boolean;
+	/** Show each article's hero image beside it. */
+	thumbs?: boolean;
+	/** Render every row hidden, with its searchable text, for /search. */
+	searchable?: boolean;
 }
 
-const { posts, showDescription = false } = Astro.props;
+const { posts, thumbs = true, searchable = false } = Astro.props;
 ---
 
-<ol class="post-list">
+<ol class="post-rows" id={searchable ? 'search-results' : undefined}>
 	{
 		posts.map((post) => (
-			<li>
-				<FormattedDate date={post.data.pubDate} class="mono" />
-				<div>
-					<a href={postUrl(post)} hreflang={post.data.lang}>{post.data.title}</a>
-					{post.data.lang === 'es' && <span class="lh-badge" title="Written in Spanish">ES</span>}
-				</div>
-				{showDescription && <p>{post.data.description}</p>}
+			<li
+				hidden={searchable}
+				data-text={searchable ? [post.data.title, post.data.description, ...post.data.tags].join(' ').toLowerCase() : undefined}
+			>
+				<a href={postUrl(post)} hreflang={post.data.lang} class:list={{ 'has-thumb': thumbs && post.data.heroImage }}>
+					<span class="meta">
+						<FormattedDate date={post.data.pubDate} />
+						{post.data.lang === 'es' && <span title="Written in Spanish"> · ES</span>}
+					</span>
+					<h2 lang={post.data.lang}>{post.data.title}</h2>
+					{/* The opening of the article, quoted from its body; see docs/editorial/voice.md. */}
+					<p lang={post.data.lang}>{openingExcerpt(post.body, 220)}</p>
+					{thumbs && post.data.heroImage && <Image src={post.data.heroImage} alt="" width={360} loading="lazy" />}
+				</a>
 			</li>
 		))
 	}

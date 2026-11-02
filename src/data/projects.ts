@@ -1,5 +1,5 @@
 // Projects: the open-source work shown on /projects and on the home page.
-// FLAGSHIP_PROJECTS are shown in this order; keep the chain from definition to delivery.
+// FLAGSHIP_PROJECTS are shown in this order. Each project stands on its own.
 
 export type ProjectLink = {
 	label: string;
@@ -13,8 +13,6 @@ export type Project = {
 	/** The project's own words, quoted from its site: the headline and the meta description. */
 	inOwnWords?: { headline: string; summary: string; source: string };
 	description: string;
-	/** Its place in the toolchain. */
-	role: string;
 	stack: string[];
 	links: ProjectLink[];
 	/** Internal posts that explain the ideas behind it. */
@@ -32,7 +30,6 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 		tagline: 'An open specification for keeping the agreed product definition in versioned Markdown.',
 		description:
 			'PDaC treats the product definition as an architectural asset: rules, actors, journeys and requirements are defined once, changed explicitly through Product Changes, and cited by specifications, agent prompts and tests instead of being restated. The specification ships with a manifesto and conformance tests.',
-		role: 'The method',
 		stack: ['Specification', 'Conformance tests', 'AI-SDLC'],
 		links: [
 			{ label: 'pdac.dev', url: 'https://pdac.dev/' },
@@ -54,7 +51,6 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 		tagline: 'The reference implementation of Product Definition as Code.',
 		description:
 			'A CLI and a set of packages that validate a product definition deterministically, compile it into a graph, evolve it through approved Product Changes, and verify that specs and agent prompts cite the current version of each rule. It integrates with OpenSpec, Spec Kit, GitHub Copilot, Claude Code, Codex and OpenCode.',
-		role: 'Product intent',
 		stack: ['TypeScript', 'Node.js', 'npm', 'OpenSpec', 'Spec Kit'],
 		links: [
 			{ label: 'productshape.dev', url: 'https://productshape.dev/' },
@@ -76,7 +72,6 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 		tagline: 'AI-assisted architecture documentation built on arc42.',
 		description:
 			'A CLI and agent capabilities that create and maintain arc42 architecture documentation from repository evidence, generate diagrams as SVG, PNG and Mermaid, and publish an architecture reader alongside the code it describes.',
-		role: 'Architecture evidence',
 		stack: ['TypeScript', 'arc42', 'C4', 'Mermaid', 'Playwright'],
 		links: [
 			{ label: 'arcshape.dev', url: 'https://arcshape.dev/' },
@@ -97,7 +92,6 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 		tagline: 'A reusable engineering baseline for AI-driven software development.',
 		description:
 			'Package-owned guidance, profiles and deterministic checks that a repository adopts and verifies against, so every project starts from the same engineering baseline and agents inherit the team\'s standards instead of its habits.',
-		role: 'Delivery baseline',
 		stack: ['TypeScript', 'Node.js', '.NET', 'GitHub Actions'],
 		links: [
 			{ label: 'lighthouse.jgcarmona.com', url: 'https://lighthouse.jgcarmona.com/' },
@@ -112,7 +106,6 @@ export const FLAGSHIP_PROJECTS: Project[] = [
 		tagline: 'The structured cognitive layer of family life.',
 		description:
 			'An open product to reduce the invisible mental load of running a household: family members, responsibilities, a shared calendar and tasks. Its product is defined with ProductShape, its architecture is documented with ArcShape and its delivery follows Lighthouse, and the engineering evidence is published from the repository.',
-		role: 'A real product built with all of the above',
 		stack: ['.NET', 'EF Core', 'Modular monolith', 'Vertical slices', 'DDD'],
 		links: [
 			{ label: 'Engineering site', url: 'https://juangcarmona.github.io/domusmind/' },

@@ -1,29 +1,22 @@
 ---
-import FormattedDate from '../components/FormattedDate.astro';
+import PageHead from '../components/PageHead.astro';
+import PostList from '../components/PostList.astro';
 import Base from '../layouts/Base.astro';
-import { getPosts, postUrl } from '../utils/posts';
+import { getPosts } from '../utils/posts';
 
 const posts = await getPosts();
 ---
 
-<Base title="Search — Juan G. Carmona" description="Search articles by title, summary or topic." noindex>
-	<h1>Search</h1>
-	<form id="search-form" class="lh-field" role="search">
-		<label for="search-input">Title, summary or topic</label>
-		<input id="search-input" class="lh-input" type="search" name="q" autocomplete="off" />
-	</form>
-	<p id="search-status" class="muted" aria-live="polite"></p>
-	<ol class="post-list" id="search-results">
-		{
-			posts.map((post) => (
-				<li hidden data-text={[post.data.title, post.data.description, ...post.data.tags].join(' ').toLowerCase()}>
-					<FormattedDate date={post.data.pubDate} class="mono" />
-					<a href={postUrl(post)}>{post.data.title}</a>
-					<p>{post.data.description}</p>
-				</li>
-			))
-		}
-	</ol>
+<Base title="Search — Juan G. Carmona" description="Search articles by title, summary or topic." noindex wide>
+	<PageHead eyebrow="Writing" eyebrowHref="/blog/" title="Search" />
+	<div class="frame">
+		<form id="search-form" class="lh-field search-field" role="search">
+			<label for="search-input">Title, summary or topic</label>
+			<input id="search-input" class="lh-input" type="search" name="q" autocomplete="off" />
+		</form>
+		<p id="search-status" class="meta" aria-live="polite"></p>
+		<PostList posts={posts} thumbs={false} searchable />
+	</div>
 </Base>
 
 <script>

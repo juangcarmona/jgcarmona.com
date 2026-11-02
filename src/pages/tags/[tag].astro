@@ -1,4 +1,5 @@
 ---
+import PageHead from '../../components/PageHead.astro';
 import PostList from '../../components/PostList.astro';
 import Base from '../../layouts/Base.astro';
 import { getPosts, type Post } from '../../utils/posts';
@@ -17,9 +18,11 @@ type Props = { tag: string; posts: Post[] };
 const { tag, posts } = Astro.props;
 ---
 
-<Base title={`${tag} — Juan G. Carmona`} description={`Articles about ${tag} by Juan G. Carmona.`}>
-	<p class="eyebrow"><a href="/tags/">Topics</a></p>
-	<h1>{tag}</h1>
-	<p class="muted">{posts.length} {posts.length === 1 ? 'article' : 'articles'}</p>
-	<PostList posts={posts} showDescription />
+<Base title={`${tag} — Juan G. Carmona`} description={`Articles about ${tag} by Juan G. Carmona.`} wide>
+	<PageHead eyebrow="Topics" eyebrowHref="/tags/" title={tag}>
+		<p>{posts.length} {posts.length === 1 ? 'article' : 'articles'}, most recent first.</p>
+	</PageHead>
+	<div class="frame">
+		<PostList posts={posts} />
+	</div>
 </Base>
