@@ -3,15 +3,15 @@ import { Image } from 'astro:assets';
 import FormattedDate from '../components/FormattedDate.astro';
 import { PROFILES, SITE_DESCRIPTION, SITE_HEADLINE, SITE_SEO_TITLE, YOUTUBE_COURSES } from '../consts';
 import { FLAGSHIP_PROJECTS } from '../data/projects';
-import { APPEARANCES, SPEAKER_LINKS, type Appearance } from '../data/speaking';
+import { APPEARANCES, SPEAKER_LINKS, talkLinks } from '../data/speaking';
 import Base from '../layouts/Base.astro';
 import { getPosts, postUrl } from '../utils/posts';
+import { openingExcerpt } from '../utils/excerpt';
 import { ecosystem } from '../utils/schema';
 import portrait from '../assets/portrait.jpg';
 import convex from '../assets/talks/convex-2026.jpg';
 import solidGrasp from '../assets/image-11.png';
 import ddd from '../assets/image-12-724x1024.png';
-import mastering from '../assets/book_cover_1-11.jpg';
 
 // Copy rules and the source of every sentence on this page: docs/editorial/voice.md.
 
@@ -29,8 +29,8 @@ const CAREER = [
 	{ year: '2005', field: 'First jobs', detail: 'Tunstall, Actualize and CEUAH' },
 	{ year: '2011', field: 'Aerospace and defence', detail: 'Systems architect on an application for Cassidian, the Airbus military division' },
 	{ year: '2014', field: 'Rail and smart mobility', detail: 'Alstom, and the Madrid Innovation Lab where Mastria was born' },
-	{ year: '2018', field: 'Founder', detail: 'Logtrip, as CEO and CTO' },
-	{ year: '2022', field: 'Motorsport data', detail: 'Azure architect for the Porsche Motorsport Data Platform' },
+	{ year: '2018', field: 'My own company', detail: 'Logtrip, as founder, CEO and CTO' },
+	{ year: '2022', field: 'Motorsport and data platforms', detail: 'Azure solutions architect for the Porsche Motorsport Data Platform' },
 	{ year: '2025', field: 'Plain Concepts', detail: 'Forward Deployed Engineer: AI-SDLC, training, audits, assessments and SRE' },
 ];
 
@@ -39,25 +39,31 @@ const [lead, ...stories] = SELECTED.map((id) => posts.find((post) => post.id ===
 
 const tools = FLAGSHIP_PROJECTS.slice(0, 4);
 
-const today = new Date().toISOString().slice(0, 10);
-const next = APPEARANCES.filter((talk) => (talk.endDate ?? talk.date) >= today).at(-1);
-const recording = APPEARANCES.find((talk) => talk.videoUrl);
-const past = APPEARANCES.filter((talk) => talk !== next && talk !== recording);
+const next = APPEARANCES.filter((talk) => talk.status === 'upcoming').at(-1);
+const recording = APPEARANCES.find((talk) => talk.status === 'presented' && talk.videoUrl);
+const past = APPEARANCES.filter((talk) => talk.status === 'presented' && talk !== recording);
 const month = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', timeZone: 'UTC' });
 const day = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
-const talkLinks = (talk: Appearance) =>
-	[
-		talk.sessionUrl && { label: 'Session', url: talk.sessionUrl },
-		talk.videoUrl && { label: 'Recording', url: talk.videoUrl },
-		talk.slidesUrl && { label: 'Slides', url: talk.slidesUrl },
-		...(talk.relatedPosts ?? []).map((post) => ({ label: 'Article', url: post.url })),
-		...(talk.repos ?? []).map((repo) => ({ label: 'Repository', url: repo.url })),
-	].filter((link) => !!link);
 
+// Status and format verified on 2026-11-02; see docs/editorial/audit-2026-11-02.md. No item is a printed book.
 const books = [
-	{ title: 'SOLID y GRASP', cover: solidGrasp },
-	{ title: 'Domain-Driven Design', cover: ddd },
-	{ title: 'Mastering Software Development', cover: mastering },
+	{
+		title: 'SOLID y GRASP: Buenas Prácticas hacia el Éxito en el Desarrollo de Software',
+		status: 'Ebook (PDF), distributed free through OpenLibra',
+		cover: solidGrasp,
+		url: '/books/',
+	},
+	{
+		title: 'Domain-Driven Design: Estrategias y Técnicas para Desarrolladores y Arquitectos',
+		status: 'Work in progress',
+		cover: ddd,
+		url: '/books/',
+	},
+	{
+		title: 'Mastering Software Development: Herramientas y Habilidades para Impulsar tu Carrera Profesional',
+		status: 'Unpublished manuscript; parts published as a blog series in 2023',
+		url: '/es/mastering-software-development/',
+	},
 ];
 ---
 
@@ -67,9 +73,10 @@ const books = [
 			<h1 id="name" class="name">Juan G. Carmona</h1>
 			<p class="headline">{SITE_HEADLINE}</p>
 			<p class="intro">
-				More than twenty years designing and building software: for aerospace and defence, rail and smart mobility,
-				motorsport, and a startup of my own. I write about what I learn, in English and Spanish, I give talks, and I build
-				open-source tools. Lately, most of it is about how AI is changing the way we build software.
+				More than twenty years designing and building software for aerospace and defence, rail and smart mobility,
+				motorsport and data platforms, and a company of my own. My work is software architecture, cloud and engineering
+				practice, and lately AI-assisted development. I write about what I learn, in English and Spanish, give talks and
+				build open-source tools.
 			</p>
 			<blockquote class="own-words">
 				<p>I've been coding, daily, even on weekends, for more than half of my life.</p>
@@ -122,7 +129,7 @@ const books = [
 					<div>
 						<span class="meta"><FormattedDate date={lead.data.pubDate} /></span>
 						<h3>{lead.data.title}</h3>
-						<p>{lead.data.description}</p>
+						<p lang={lead.data.lang}>{openingExcerpt(lead.body, 300)}</p>
 						<span class="arrow">Read the article</span>
 					</div>
 				</a>
@@ -139,7 +146,7 @@ const books = [
 								{post.data.lang === 'es' && ' · ES'}
 							</span>
 							<h3 lang={post.data.lang}>{post.data.title}</h3>
-							<p lang={post.data.lang}>{post.data.description}</p>
+							<p lang={post.data.lang}>{openingExcerpt(post.body)}</p>
 						</a>
 					</li>
 				))
@@ -183,9 +190,9 @@ const books = [
 								{next.venue}, {next.city}
 							</p>
 							<p class="talk-title">{next.title}</p>
-							{next.summary && (
-								<blockquote class="talk-summary">
-									<p>{next.summary}</p>
+							{next.abstract && (
+								<blockquote class="talk-summary" lang={next.lang}>
+									<p>{next.abstract}</p>
 								</blockquote>
 							)}
 							{next.timeToBeConfirmed && <p class="muted">Session day and time to be confirmed.</p>}
@@ -203,7 +210,7 @@ const books = [
 						<li>
 							<time datetime={talk.date}>{month(talk.date)}</time>
 							<strong>{talk.event}</strong>
-							<span>{talk.title ?? talk.city}</span>
+							<span lang={talk.title ? talk.lang : undefined}>{talk.title ?? talk.city}</span>
 							{talkLinks(talk).length > 0 && (
 								<ul class="talk-links">
 									{talkLinks(talk).map((link) => (
@@ -263,7 +270,7 @@ const books = [
 		<header class="section-head">
 			<div>
 				<p class="eyebrow">Publications</p>
-				<h2 id="publications">Books and courses</h2>
+				<h2 id="publications">Publications and learning resources</h2>
 			</div>
 			<p><a class="arrow" href="/books/">Books</a></p>
 		</header>
@@ -272,21 +279,27 @@ const books = [
 				{
 					books.map((book) => (
 						<li>
-							<a href="/books/">
-								<Image src={book.cover} alt={`Cover of ${book.title}`} widths={[200, 320]} sizes="(max-width: 40rem) 30vw, 180px" loading="lazy" />
-								<span>{book.title}</span>
+							<a href={book.url} lang="es">
+								{book.cover ? (
+									<Image src={book.cover} alt={`Cover of ${book.title}`} widths={[200, 320]} sizes="(max-width: 40rem) 30vw, 180px" loading="lazy" />
+								) : (
+									<span class="no-cover" aria-hidden="true">{book.title.split(':')[0]}</span>
+								)}
+								<span class="book-title">{book.title.split(':')[0]}</span>
 							</a>
+							<span class="status">{book.status}</span>
 						</li>
 					))
 				}
 			</ul>
 			<div>
-				<h3 class="eyebrow">Video courses</h3>
+				<h3 class="eyebrow">Courses</h3>
 				<ol class="courses" lang="es">
 					{
 						YOUTUBE_COURSES.map((course) => (
 							<li>
 								<a href={course.url}>{course.title}</a>
+								<span class="status">Online course · YouTube · {course.videos} videos</span>
 							</li>
 						))
 					}

@@ -922,10 +922,33 @@ img {
 	transform: translateY(-4px);
 }
 
-.shelf span {
+.shelf .book-title {
 	display: block;
 	margin-top: var(--lh-space-3);
 	line-height: 1.3;
+}
+
+.no-cover {
+	display: flex;
+	align-items: end;
+	aspect-ratio: 2 / 3;
+	padding: var(--lh-space-3);
+	border: 1px dashed var(--lh-border-strong);
+	background-color: var(--lh-surface);
+	background-image:
+		linear-gradient(90deg, var(--lh-border) 1px, transparent 1px),
+		linear-gradient(var(--lh-border) 1px, transparent 1px);
+	background-size: 16px 16px;
+	color: var(--lh-text-muted);
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+.status {
+	display: block;
+	margin-top: var(--lh-space-1);
+	color: var(--lh-text-muted);
+	font: 0.75rem/1.45 var(--lh-font-mono);
 }
 
 .courses {
@@ -939,7 +962,13 @@ img {
 	counter-increment: course;
 	display: grid;
 	grid-template-columns: 2.25rem minmax(0, 1fr);
+	padding-bottom: var(--lh-space-3);
 	border-bottom: 1px solid var(--lh-border);
+}
+
+.courses .status {
+	grid-column: 2;
+	margin-top: 0;
 }
 
 .courses li::before {
@@ -951,7 +980,7 @@ img {
 
 .lh-root .courses a {
 	display: block;
-	padding-block: var(--lh-space-3);
+	padding-block: var(--lh-space-3) var(--lh-space-1);
 	color: var(--lh-text);
 	font-weight: 600;
 	text-decoration: none;
@@ -1253,5 +1282,12 @@ img {
 @media (prefers-reduced-motion: reduce) {
 	.lh-root * {
 		transition: none !important;
+	}
+}
+
+@media (max-width: 40rem) {
+	.play {
+		padding: var(--lh-space-1) var(--lh-space-3);
+		font-size: 0.875rem;
 	}
 }

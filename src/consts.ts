@@ -22,10 +22,10 @@ export const ECOSYSTEM = [
 	{ name: 'ProductShape', url: 'https://productshape.dev/' },
 ];
 
-// YouTube course playlists
+// YouTube course playlists on Juan's channel. Titles and video counts as YouTube shows them, checked on 2026-11-02.
 export const YOUTUBE_COURSES = [
-	{ title: 'DADS: Diseño, Arquitectura y Desarrollo de Software', url: 'https://www.youtube.com/playlist?list=PLquujPA7EWzNBPpN8vcN4XkvuGxIxYyu2' },
-	{ title: 'Micro guías de patrones de diseño', url: 'https://www.youtube.com/playlist?list=PLquujPA7EWzPhJeBWFUu9Pbj1MMc8u03y' },
-	{ title: 'IA con Azure: de la teoría a la práctica (AI-102)', url: 'https://www.youtube.com/playlist?list=PLquujPA7EWzMce1_428O61sPCx6GJsUm1' },
-	{ title: 'Angular y .NET: arquitectura y buenas prácticas', url: 'https://www.youtube.com/playlist?list=PLquujPA7EWzO8xz3Qew5nuoo7XFVxoqCG' },
+	{ title: 'DADS | Diseño, Arquitectura y Desarrollo de Software', videos: 16, url: 'https://www.youtube.com/playlist?list=PLquujPA7EWzNBPpN8vcN4XkvuGxIxYyu2' },
+	{ title: 'Micro Guías de Patrones de Diseño', videos: 26, url: 'https://www.youtube.com/playlist?list=PLquujPA7EWzPhJeBWFUu9Pbj1MMc8u03y' },
+	{ title: 'IA con Azure - De la Teoría a la Práctica | AI102', videos: 22, url: 'https://www.youtube.com/playlist?list=PLquujPA7EWzMce1_428O61sPCx6GJsUm1' },
+	{ title: 'Angular y .NET, arquitectura y buenas prácticas', videos: 38, url: 'https://www.youtube.com/playlist?list=PLquujPA7EWzO8xz3Qew5nuoo7XFVxoqCG' },
 ];

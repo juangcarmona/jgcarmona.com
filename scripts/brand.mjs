@@ -12,8 +12,9 @@ const BLUE = '#4da3ff';
 const ICE = '#f8faff';
 const MUTED = '#aab6c9';
 
-// Head and shoulders on the dark studio background: at 16px the silhouette still reads,
-// a tighter crop of the face does not. Coordinates are for the 1200x1200 portrait.
+// Head and shoulders on the dark studio background. The face is recognisable at 48px and up and
+// the glasses and beard still show at 32px; at 16px no crop is recognisable, so this one is kept for
+// consistency across sizes, not for legibility. Coordinates are for the 1200x1200 portrait.
 const HEAD = { left: 330, top: 150, width: 620, height: 620 };
 
 const head = (size) => sharp(PORTRAIT).extract(HEAD).resize(size, size).png().toBuffer();
