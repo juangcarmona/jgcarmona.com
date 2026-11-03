@@ -30,7 +30,7 @@ const { posts, thumbs = true, searchable = false } = Astro.props;
 					</span>
 					<h2 lang={post.data.lang}>{post.data.title}</h2>
 					{/* The opening of the article, quoted from its body; see docs/editorial/voice.md. */}
-					<p lang={post.data.lang}>{openingExcerpt(post.body, 220)}</p>
+					<p lang={post.data.lang}>{openingExcerpt(post.body)}</p>
 					{thumbs && post.data.heroImage && <Image src={post.data.heroImage} alt="" widths={[208, 416]} sizes="(max-width: 40rem) 104px, 208px" loading="lazy" />}
 				</a>
 			</li>

@@ -74,7 +74,8 @@ export const APPEARANCES: Appearance[] = [
 		sessionUrl: 'https://sessionize.com/s/juangcarmona/ai-assisted-development-at-scale-keeping-product-d/187449',
 	},
 	{
-		// Source: Juan, 2026-11-02 (title, venue, date, abstract), the Eventbrite listing and the deck in the presentations repository.
+		// Source: Juan, 2026-11-02 (title, venue, date, abstract) and the Eventbrite listing.
+		// No deck link: the published Software Engineering 2.0 deck has evolved since this session (Juan, 2026-11-03).
 		// The session was adapted to the group on the day; the abstract is the one announced, not a transcript.
 		status: 'presented',
 		event: 'Albacete Power BI & Fabric User Group',
@@ -92,9 +93,6 @@ export const APPEARANCES: Appearance[] = [
 		].join('\n\n'),
 		summary:
 			'An adapted session on Software Engineering 2.0, exploring agentic development, Spec-Driven Development, engineering guardrails, and how AI is changing software delivery.',
-		talkUrl: 'https://talks.jgcarmona.com/software-engineering-2_0/',
-		slidesUrl: 'https://talks.jgcarmona.com/decks/software-engineering-2_0/',
-		sourceUrl: 'https://github.com/juangcarmona/presentations/tree/main/talks/ingenieria-del-software-2_0',
 		references: [
 			{ label: 'Announcement on LinkedIn', url: 'https://es.linkedin.com/posts/juangcarmona_el-software-es-uno-de-los-campos-donde-m%C3%A1s-activity-7512908921179643904-Wv8m' },
 			{ label: 'Post by Raúl Vinuesa', url: 'https://es.linkedin.com/posts/raulvinuesaarjona_ia-software-powerbi-activity-7513470794174320640-vRjg' },

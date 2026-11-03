@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import FormattedDate from '../components/FormattedDate.astro';
 import { PROFILES, SITE_DESCRIPTION, SITE_HEADLINE, SITE_SEO_TITLE, YOUTUBE_COURSES } from '../consts';
 import { FLAGSHIP_PROJECTS } from '../data/projects';
-import { APPEARANCES, SPEAKER_LINKS, talkLinks } from '../data/speaking';
+import { APPEARANCES, talkLinks } from '../data/speaking';
 import Base from '../layouts/Base.astro';
 import { getPosts, postUrl } from '../utils/posts';
 import { openingExcerpt } from '../utils/excerpt';
@@ -129,7 +129,7 @@ const books = [
 					<div>
 						<span class="meta"><FormattedDate date={lead.data.pubDate} /></span>
 						<h3>{lead.data.title}</h3>
-						<p lang={lead.data.lang}>{openingExcerpt(lead.body, 300)}</p>
+						<p lang={lead.data.lang}>{openingExcerpt(lead.body)}</p>
 						<span class="arrow">Read the article</span>
 					</div>
 				</a>
@@ -304,9 +304,6 @@ const books = [
 						))
 					}
 				</ol>
-				<p class="decks">
-					Slide decks: <a href={SPEAKER_LINKS.TALKS_SITE}>talks.jgcarmona.com</a>
-				</p>
 			</div>
 		</div>
 	</section>

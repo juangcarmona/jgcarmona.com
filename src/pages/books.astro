@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import PageHead from '../components/PageHead.astro';
 import { YOUTUBE_COURSES } from '../consts';
-import { SPEAKER_LINKS } from '../data/speaking';
 import Base from '../layouts/Base.astro';
 import solidGrasp from '../assets/image-11.png';
 import ddd from '../assets/image-12-724x1024.png';
@@ -83,9 +82,6 @@ const books = [
 				<p class="eyebrow">YouTube</p>
 				<h2 id="courses">Cursos en vídeo</h2>
 			</div>
-			<p>
-				Diapositivas de las charlas: <a href={SPEAKER_LINKS.TALKS_SITE}>talks.jgcarmona.com</a>
-			</p>
 		</header>
 		<ol class="courses">
 			{

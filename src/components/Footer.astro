@@ -1,5 +1,5 @@
 ---
-import { ECOSYSTEM, PROFILES, SITE_TITLE } from '../consts';
+import { PROFILES, SITE_TITLE } from '../consts';
 
 const profiles = [
 	{ name: 'LinkedIn', url: PROFILES.LINKEDIN },
@@ -11,9 +11,6 @@ const profiles = [
 
 <footer class="site-footer">
 	<div>
-		<ul class="inline-list" aria-label="My other sites">
-			{ECOSYSTEM.map((site) => <li><a href={site.url}>{site.name}</a></li>)}
-		</ul>
 		<ul class="inline-list" aria-label="Profiles">
 			{profiles.map((profile) => <li><a href={profile.url} rel="me">{profile.name}</a></li>)}
 			<li><a href="/rss.xml">RSS</a></li>
