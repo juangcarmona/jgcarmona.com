@@ -41,9 +41,10 @@ const schema = APPEARANCES.map((talk) => ({
 <Base title={title} description={description} schema={schema} wide>
 	<PageHead eyebrow="Speaking" title="Talks">
 		<p>
-			{presented.length} talks presented since {first}, in Spanish and English, and {upcoming.length} confirmed. The
-			sessions offered to organisers are on <a href={SPEAKER_LINKS.SESSIONIZE}>Sessionize</a>; the slides are published
-			at <a href={SPEAKER_LINKS.TALKS_SITE}>talks.jgcarmona.com</a>.
+			Public talks at conferences and community events since {first}, in Spanish and English. Most of my speaking
+			happens inside teams and with clients, as internal talks and training, and is not listed here. The sessions
+			offered to organisers are on <a href={SPEAKER_LINKS.SESSIONIZE}>Sessionize</a>; the slides are published at
+			<a href={SPEAKER_LINKS.TALKS_SITE}>talks.jgcarmona.com</a>.
 		</p>
 	</PageHead>
 
@@ -94,9 +95,9 @@ const schema = APPEARANCES.map((talk) => ({
 		<header class="section-head">
 			<div>
 				<p class="eyebrow">Record</p>
-				<h2 id="record">Where I have spoken</h2>
+				<h2 id="record">Public talks</h2>
 			</div>
-			<p>Most recent first. Each talk links only the material a source ties to it.</p>
+			<p>The ones with a public record, most recent first. Each links only the material a source ties to it.</p>
 		</header>
 		<ol class="talk-record">
 			{

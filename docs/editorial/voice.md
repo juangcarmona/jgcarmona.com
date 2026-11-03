@@ -65,6 +65,7 @@ Text in this repository has five origins. Name the origin before reusing any tex
 | /blog, /tags, /search | Article excerpts | Literal, cut with "…" | The first paragraph of each article's body |
 | /blog | Counts and the first year | New | Computed from the archive at build time |
 | /talks | Talk titles, abstracts, links | Literal | `src/data/speaking.ts`, as on the homepage |
+| /talks | "Most of my speaking happens inside teams and with clients, as internal talks and training" | New | Juan, 2026-11-03. No clients named, no count |
 | /talks | Session openings under "Sessions I offer" | Literal | Sessionize profile, checked word for word on 2026-11-02 |
 | /projects | Headline and summary of each project | Literal | Each project's own site |
 | /projects | Descriptions and stacks | New | Each project's README and site; no claims beyond them |
