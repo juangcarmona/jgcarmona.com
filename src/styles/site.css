@@ -816,8 +816,13 @@ img {
 	transition: background-color var(--lh-motion-fast);
 }
 
+/* Inline padding keeps the number clear of the hover bar. */
+.tool-index > li {
+	padding-inline: var(--lh-space-6) var(--lh-space-4);
+}
+
 .tool-index > li:hover {
-	background: linear-gradient(90deg, var(--lh-action) 0 3px, transparent 3px);
+	background: linear-gradient(90deg, var(--lh-action) 0 3px, var(--lh-surface) 3px);
 }
 
 .index {
