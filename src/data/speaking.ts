@@ -20,7 +20,10 @@ export type Appearance = {
 	date: string;
 	endDate?: string;
 	venue?: string;
+	/** City, or "Online" for a live stream. */
 	city: string;
+	/** Streamed live rather than given on site. */
+	online?: boolean;
 	/** ISO 3166-1 alpha-2 code; defaults to ES. */
 	country?: string;
 	/** Session title exactly as the programme lists it. */
@@ -139,6 +142,25 @@ export const APPEARANCES: Appearance[] = [
 		relatedReading: BACKDOOR_READING,
 	},
 	{
+		// Source: the recording on Eberhard Wolff's channel (title, date, description) and Juan's announcement post.
+		// Abstract: the second paragraph of the recording's description, verbatim (organiser text).
+		status: 'presented',
+		event: 'Software Architektur im Stream',
+		eventUrl: 'https://software-architektur.tv/',
+		date: '2025-07-11',
+		city: 'Online',
+		online: true,
+		title: 'The Architecture of the Death Star - 20 Years of arc42 and What We Can Learn',
+		lang: 'en',
+		abstract:
+			'In this session, we’ll examine the most iconic space fortress in film history through Juan’s complete arc42 documentation. This creative Star Wars project becomes an educational journey through the arc42 template - exploring how fictional architectures can teach us real lessons about software documentation.',
+		videoUrl: 'https://www.youtube.com/watch?v=w0fj9kLVjEc',
+		materials: [
+			{ label: 'Repository', url: 'https://github.com/juangcarmona/starwars-deathstar-arc42-documentation' },
+			{ label: 'Announcement', url: '/es/documentar-arquitectura-software-arc42/' },
+		],
+	},
+	{
 		// Source: CV (the presentation). Event dates and venue: the UITP and Palais des congrès announcements.
 		status: 'presented',
 		event: 'UITP Global Public Transport Summit 2017',
@@ -219,3 +241,56 @@ export function talkLinks(talk: Appearance): Link[] {
 		...(talk.materials ?? []),
 	].filter((link): link is Link => !!link);
 }
+
+export type Course = {
+	title: string;
+	/** Quoted from the course's own README. */
+	summary: string;
+	/** What it covers, as named in the material. */
+	modules?: string[];
+	/** Where and how it has been given, without naming clients. */
+	delivery?: string;
+	links: Link[];
+};
+
+// Courses and workshops whose material is public. Internal sessions for teams and clients are not listed by name.
+export const COURSES: Course[] = [
+	{
+		// Source: the README of github_copilot_000_hub (title, summary, modules). Delivery: Juan, 2026-11-03.
+		title: 'GitHub Copilot Zero-to-Hero Crash Course',
+		summary: 'Practical workshop to go from zero to hero with GitHub Copilot. Focus: real engineering workflows, not just features.',
+		modules: [
+			'Orientation',
+			'Foundations',
+			'Prompting',
+			'AI workflow quality',
+			'Instructions',
+			'Agents',
+			'AI-ready repos',
+			'MCP and orchestration',
+			'Spec-driven development',
+			'AI-SDLC',
+		],
+		delivery: 'Given several times to engineering teams.',
+		links: [
+			{ label: 'Course and decks', url: 'https://github.com/juangcarmona/github_copilot_000_hub' },
+			{ label: 'Lab 101: Basics', url: 'https://github.com/juangcarmona/github_copilot_101_copilot_basics' },
+			{ label: 'Lab 102: Prompting', url: 'https://github.com/juangcarmona/github_copilot_102_prompting' },
+			{ label: 'Lab 103: Validation, testing and PRs', url: 'https://github.com/juangcarmona/github_copilot_103_validation_testing_prs' },
+			{ label: 'Festival platform workshop', url: 'https://github.com/juangcarmona/festival-platform-workshop' },
+		],
+	},
+	{
+		// Source: the repository README (summary), the DADS #06 video and article, and the Software Architektur im Stream recording.
+		title: 'arc42: documenting software architecture',
+		summary:
+			'This project aims to document the fictional architecture of the Death Star by applying the arc42 model, a popular framework for structured software architecture documentation.',
+		modules: ['All twelve arc42 sections', 'English and Spanish'],
+		links: [
+			{ label: 'Death Star arc42 repository', url: 'https://github.com/juangcarmona/starwars-deathstar-arc42-documentation' },
+			{ label: 'DADS #06 video', url: 'https://www.youtube.com/watch?v=-jQLE2rilH4' },
+			{ label: 'DADS #06 article', url: '/es/dads-06-documenta-arquitectura-de-software-con-arc42/' },
+			{ label: 'Software Architektur im Stream', url: 'https://www.youtube.com/watch?v=w0fj9kLVjEc' },
+		],
+	},
+];

@@ -1,6 +1,5 @@
 import type { APIRoute } from 'astro';
 import { ECOSYSTEM, SITE_DESCRIPTION, SITE_HEADLINE, SITE_TITLE, SITE_URL } from '../consts';
-import { APPEARANCES } from '../data/speaking';
 import { FLAGSHIP_PROJECTS } from '../data/projects';
 import { getPosts, postUrl, type Post } from '../utils/posts';
 
@@ -24,7 +23,7 @@ Personal site and blog of Juan G. Carmona (Juan García Carmona), with articles 
 ## About
 
 - [About](${SITE_URL}/about/): biography, experience and contact
-- [Talks](${SITE_URL}/talks/): ${APPEARANCES.length} conference appearances and the sessions offered to organisers
+- [Talks](${SITE_URL}/talks/): public talks and their material, courses on GitHub Copilot and arc42, and the sessions offered to organisers
 - [Projects](${SITE_URL}/projects/): ${FLAGSHIP_PROJECTS.map((project) => project.name).join(', ')} and other open source
 
 ## Related sites
