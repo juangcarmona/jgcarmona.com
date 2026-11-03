@@ -1,27 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
+import Redirect from '../components/Redirect.astro';
+import { postUrl } from '../utils/posts';
 
+// The WordPress-era URLs (/slug/) keep working as redirects to the canonical post URL.
 export async function getStaticPaths() {
-    const posts = await getCollection('blog');
-    return posts.map((post) => ({
-        params: { slug: post.id },
-        props: { lang: post.data.lang || 'en' },
-    }));
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({ params: { slug: post.id }, props: { to: postUrl(post) } }));
 }
-
-const { lang } = Astro.props;
-const slug = Astro.params.slug || '';
 ---
 
-<!doctype html>
-<html lang={lang}>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="refresh" content="0; url={lang}/${slug}/" />
-        <link rel="canonical" href={`/${lang}/${slug}/`} />
-        <title>Redirecting...</title>
-    </head>
-    <body>
-        <p>Redirecting to <a href={`/${lang}/${slug}/`}>/${lang}/{slug}/</a>...</p>
-    </body>
-</html>
+<Redirect to={Astro.props.to} />

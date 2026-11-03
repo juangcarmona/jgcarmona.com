@@ -1,0 +1,239 @@
+---
+import { Image } from 'astro:assets';
+import PageHead from '../components/PageHead.astro';
+import { APPEARANCES, COURSES, SESSIONS, SPEAKER_LINKS, talkLinks } from '../data/speaking';
+import Base from '../layouts/Base.astro';
+import { PERSON_ID } from '../utils/schema';
+import convex from '../assets/talks/convex-2026.jpg';
+
+const title = 'Talks — Juan G. Carmona';
+const description =
+	'Public talks by Juan G. Carmona, from CONVEX and RootedCON to Software Architektur im Stream, his courses on GitHub Copilot and arc42, and the sessions he offers.';
+const day = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const when = (talk: (typeof APPEARANCES)[number]) =>
+	talk.endDate ? `${day(talk.date).replace(/ \w+ \d+$/, '')}–${day(talk.endDate)}` : day(talk.date);
+
+const upcoming = APPEARANCES.filter((talk) => talk.status === 'upcoming');
+const presented = APPEARANCES.filter((talk) => talk.status === 'presented');
+const recording = presented.find((talk) => talk.videoUrl);
+const first = presented.at(-1)!.date.slice(0, 4);
+
+const schema = APPEARANCES.map((talk) => ({
+	'@type': 'Event',
+	name: talk.title ? `${talk.title} — ${talk.event}` : talk.event,
+	startDate: talk.date,
+	...(talk.endDate && { endDate: talk.endDate }),
+	eventAttendanceMode: `https://schema.org/${talk.online ? 'Online' : 'Offline'}EventAttendanceMode`,
+	eventStatus: 'https://schema.org/EventScheduled',
+	...((talk.abstract ?? talk.summary) && { description: talk.abstract ?? talk.summary }),
+	...(talk.lang && { inLanguage: talk.lang }),
+	location: talk.online
+		? { '@type': 'VirtualLocation', url: talk.videoUrl ?? talk.eventUrl }
+		: {
+				'@type': 'Place',
+				name: talk.venue ?? talk.city,
+				address: { '@type': 'PostalAddress', addressLocality: talk.city, addressCountry: talk.country ?? 'ES' },
+			},
+	performer: { '@id': PERSON_ID },
+	...(talk.eventUrl && { url: talk.eventUrl }),
+	...(talk.videoUrl && { subjectOf: { '@type': 'VideoObject', name: talk.title, url: talk.videoUrl } }),
+}));
+---
+
+<Base title={title} description={description} schema={schema} wide>
+	<PageHead eyebrow="Speaking" title="Talks">
+		<p>
+			Public talks at conferences and community events since {first}, in Spanish and English. Most of my speaking
+			happens inside teams and with clients, as internal talks and training; the courses whose material is public are
+			<a href="#courses">below</a>. The sessions
+			offered to organisers are on <a href={SPEAKER_LINKS.SESSIONIZE}>Sessionize</a>.
+		</p>
+	</PageHead>
+
+	<section class="speaking-band" aria-label="Next talk and latest recording">
+		<div class="frame stage">
+			{
+				recording?.videoUrl && (
+					<figure class="stage-recording">
+						<a class="stage-photo" href={recording.videoUrl}>
+							<Image src={convex} alt={`Juan G. Carmona on stage at ${recording.event}`} widths={[480, 800, 1280]} sizes="(max-width: 56rem) 100vw, 700px" loading="eager" fetchpriority="high" />
+							<span class="play">Watch the recording</span>
+						</a>
+						<figcaption>
+							<span class="talk-event">
+								{recording.event} · {recording.venue}, {recording.city}
+							</span>
+							<span class="talk-title" lang={recording.lang}>{recording.title}</span>
+						</figcaption>
+					</figure>
+				)
+			}
+			{
+				upcoming.map((talk) => (
+					<div class="next-talk">
+						<p class="eyebrow">Next talk · confirmed</p>
+						<p class="next-event">{talk.eventUrl ? <a href={talk.eventUrl}>{talk.event}</a> : talk.event}</p>
+						<p class="talk-event">
+							{when(talk)} · {talk.venue}, {talk.city}
+						</p>
+						<p class="talk-title" lang={talk.lang}>{talk.title}</p>
+						{talk.abstract && (
+							<blockquote class="talk-summary" lang={talk.lang}>
+								<p>{talk.abstract}</p>
+							</blockquote>
+						)}
+						{talk.timeToBeConfirmed && <p class="muted">Session day and time to be confirmed.</p>}
+						<div class="actions">
+							{talk.sessionUrl && <a class="lh-button" href={talk.sessionUrl}>The session</a>}
+							<a class="arrow" href={SPEAKER_LINKS.SESSIONIZE}>Sessionize profile</a>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="frame record" aria-labelledby="record">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Record</p>
+				<h2 id="record">Public talks</h2>
+			</div>
+			<p>The ones with a public record, most recent first. Each links only the material a source ties to it.</p>
+		</header>
+		<ol class="talk-record">
+			{
+				presented.map((talk) => (
+					<li>
+						<time datetime={talk.date}>
+							<span class="year">{talk.date.slice(0, 4)}</span>
+							{when(talk).replace(/ \d{4}$/, '')}
+						</time>
+						<div>
+							<p class="record-event">{talk.eventUrl ? <a href={talk.eventUrl}>{talk.event}</a> : talk.event}</p>
+							{talk.title && <h3 lang={talk.lang}>{talk.title}</h3>}
+							<p class="meta">{talk.venue ? `${talk.venue}, ${talk.city}` : talk.city}</p>
+							{talk.summary && (
+								<p class="record-summary">
+									<span class="label">Summary</span> {talk.summary}
+								</p>
+							)}
+							{talk.abstract && (
+								<details open={!talk.summary}>
+									<summary>Original abstract</summary>
+									<blockquote lang={talk.lang}>
+										{talk.abstract.split('\n\n').map((paragraph) => <p>{paragraph}</p>)}
+									</blockquote>
+								</details>
+							)}
+							{talkLinks(talk).length > 0 && (
+								<ul class="record-links">
+									{talkLinks(talk).map((link) => (
+										<li>
+											<a href={link.url}>{link.label}</a>
+										</li>
+									))}
+								</ul>
+							)}
+							{talk.references && (
+								<p class="record-note">
+									Also:{' '}
+									{talk.references.map((link, i) => (
+										<>
+											{i > 0 && ' · '}
+											<a href={link.url}>{link.label}</a>
+										</>
+									))}
+								</p>
+							)}
+							{talk.relatedReading && (
+								<p class="record-note">
+									Related reading, on the same subject:{' '}
+									{talk.relatedReading.map((link, i) => (
+										<>
+											{i > 0 && ' · '}
+											<a href={link.url}>{link.label}</a>
+										</>
+									))}
+								</p>
+							)}
+						</div>
+					</li>
+				))
+			}
+		</ol>
+	</section>
+
+	<section class="frame tools" aria-labelledby="courses">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Teaching</p>
+				<h2 id="courses">Courses and workshops</h2>
+			</div>
+			<p>Courses and talks given to teams, with their material in public repositories and articles.</p>
+		</header>
+		<ol class="tool-index">
+			{
+				COURSES.map((course, i) => (
+					<li>
+						<span class="index">{String(i + 1).padStart(2, '0')}</span>
+						<div class="tool-name">
+							<h3>
+								<a href={course.links[0].url}>{course.title}</a>
+							</h3>
+							{course.delivery && <p class="muted">{course.delivery}</p>}
+						</div>
+						<div class="tool-purpose">
+							<blockquote>
+								<p>{course.summary}</p>
+							</blockquote>
+							{course.modules && (
+								<ul class="chips" aria-label="Contents">
+									{course.modules.map((module) => <li>{module}</li>)}
+								</ul>
+							)}
+							<ul class="record-links">
+								{course.links.map((link) => (
+									<li>
+										<a href={link.url}>{link.label}</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					</li>
+				))
+			}
+		</ol>
+		<p class="decks">
+			Video courses in Spanish on YouTube: <a href="/books/#courses">DADS, design patterns, Azure AI and Angular with .NET</a>.
+		</p>
+	</section>
+
+	<section class="frame tools" aria-labelledby="sessions">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">For organisers</p>
+				<h2 id="sessions">Sessions I offer</h2>
+			</div>
+			<p>Each one opens with the first lines of its abstract on Sessionize.</p>
+		</header>
+		<ol class="tool-index">
+			{
+				SESSIONS.map((session, i) => (
+					<li>
+						<span class="index">{String(i + 1).padStart(2, '0')}</span>
+						<div class="tool-name">
+							<h3>{session.url ? <a href={session.url}>{session.title}</a> : session.title}</h3>
+						</div>
+						<div class="tool-purpose">
+							<blockquote>
+								<p>{session.summary}</p>
+							</blockquote>
+						</div>
+					</li>
+				))
+			}
+		</ol>
+		<p class="decks"><a class="lh-button" href={SPEAKER_LINKS.SESSIONIZE}>Invite me through Sessionize</a></p>
+	</section>
+</Base>

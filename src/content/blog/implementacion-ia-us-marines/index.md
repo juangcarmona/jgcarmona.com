@@ -47,7 +47,7 @@ Y por último...
 
 **Nada de contar modelos por vanidad.** Lo que les interesa es quién los usa, qué bloqueos han eliminado, cuánto tiempo se ahorra y qué decisiones se toman mejor. Lo demás, es decoración.
 
-[NAVMC%203000.1%20(SECURED)\[1\]](https://jgcarmona.com/wp-content/uploads/2025/05/NAVMC203000.120SECURED1.pdf)[Download](https://jgcarmona.com/wp-content/uploads/2025/05/NAVMC203000.120SECURED1.pdf)
+NAVMC 3000.1 (SECURED)
 
 Este documento no es una visión. Es una hoja de ruta ejecutable. Y merece ser estudiado por cualquier empresa que quiera pasar de los PowerPoints a los resultados.
 

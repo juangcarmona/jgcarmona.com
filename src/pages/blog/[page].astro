@@ -1,62 +1,18 @@
 ---
-import BlogPage from "../../components/BlogPage.astro";
-import { getCollection } from "astro:content";
+import BlogIndex from '../../components/BlogIndex.astro';
+import Redirect from '../../components/Redirect.astro';
+import { getBlogPages } from '../../utils/posts';
 
 export async function getStaticPaths() {
-    const posts = await getCollection("blog");
-    const PAGE_SIZE = 10;
-    const FEATURED_BONUS = 1;
-    const PAGE1_SIZE = PAGE_SIZE + FEATURED_BONUS;
-    const remainingAfterFirst = posts.length - PAGE1_SIZE;
-    const extraPages = Math.max(0, Math.ceil(remainingAfterFirst / PAGE_SIZE));
-    const totalPages = 1 + extraPages;
-
-    return Array.from({ length: totalPages }, (_, i) => ({
-        params: { page: (i + 1).toString() },
-    }));
+	const pages = await getBlogPages();
+	// /blog/1/ was the first page before /blog/ took its place.
+	return [
+		{ params: { page: '1' }, props: { redirect: true } },
+		...pages.slice(1).map((page) => ({ params: { page: String(page.page) }, props: page })),
+	];
 }
 
-const PAGE_SIZE = 10;
-const FEATURED_BONUS = 1;
-const PAGE1_SIZE = PAGE_SIZE + FEATURED_BONUS;
-
-const allPosts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const page = Number(Astro.params.page) || 1;
-const currentPageSize = page === 1 ? PAGE1_SIZE : PAGE_SIZE;
-const start = page === 1 ? 0 : PAGE1_SIZE + (page - 2) * PAGE_SIZE;
-const end = start + currentPageSize;
-
-const posts = allPosts.slice(start, end);
-
-const remainingAfterFirst = allPosts.length - PAGE1_SIZE;
-const extraPages = Math.max(0, Math.ceil(remainingAfterFirst / PAGE_SIZE));
-const totalPages = 1 + extraPages;
-
-const paginationItems = [];
-for (let p = 1; p <= totalPages; p++) {
-    const near = Math.abs(p - page) <= 1;
-    const edge = p === 1 || p === totalPages;
-
-    if (near || edge) {
-        paginationItems.push(p);
-    } else {
-        paginationItems.push(null);
-    }
-}
-
-const compact = [];
-for (let i = 0; i < paginationItems.length; i++) {
-    if (paginationItems[i] === null) {
-        if (compact[compact.length - 1] !== "ellipsis") {
-            compact.push("ellipsis");
-        }
-    } else {
-        compact.push(paginationItems[i]);
-    }
-}
+const props = Astro.props;
 ---
 
-<BlogPage posts={posts} page={page} totalPages={totalPages} compact={compact} />
+{'redirect' in props ? <Redirect to="/blog/" /> : <BlogIndex {...props} />}

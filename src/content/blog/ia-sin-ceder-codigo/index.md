@@ -52,7 +52,7 @@ Por suerte, empiezan a consolidarse alternativas autocustodiadas, que no se comu
 ![](images/e86d54b9-c7e9-4dc5-8cb9-07c46d94f0b61-edited.png)
 
 **TabbyML**  
-Es mi opción actual. Totalmente open source, autocustodiado y ejecutado en local (o en tu infraestructura). Compatible con múltiples modelos (como StarCoder, DeepSeek o Qwen), y sin llamadas a servidores externos. [Aquí cuento cómo lo uso en local](https://jgcarmona.com/run-ai-locally-with-tabby-ml/).
+Es mi opción actual. Totalmente open source, autocustodiado y ejecutado en local (o en tu infraestructura). Compatible con múltiples modelos (como StarCoder, DeepSeek o Qwen), y sin llamadas a servidores externos. [Aquí cuento cómo lo uso en local](/en/run-ai-locally-with-tabby-ml/).
 
 ![](images/image-6.png)
 
@@ -83,7 +83,7 @@ Cuando trabajas con código open source, todo esto es menos problemático. El c�
 
 ## Caso real: cómo TabbyML me ayudó a detectar un backdoor
 
-Hace poco, al revisar un repositorio de un potencial cliente, uno de mis modelos locales (usando TabbyML y Qwen2.5-Coder) me sugirió un patrón de código extraño. No lo habría notado a simple vista. Era una cadena codificada que escondía una llamada a un servidor remoto. ([Lo explico todo aquí...](https://jgcarmona.com/cazando-al-cazador-episodio-1-backdoor-en-next-js-y-ataque-a-desarrolladores/))
+Hace poco, al revisar un repositorio de un potencial cliente, uno de mis modelos locales (usando TabbyML y Qwen2.5-Coder) me sugirió un patrón de código extraño. No lo habría notado a simple vista. Era una cadena codificada que escondía una llamada a un servidor remoto. ([Lo explico todo aquí...](/es/ataque-a-desarrolladores/))
 
 Ese día entendí algo importante: la IA puede ser una aliada brutal para la revisión de código, **siempre y cuando esté bajo tu control**. Que no envíe nada fuera. Que puedas confiar en que no hay nadie más mirando.
 
@@ -134,5 +134,5 @@ Espero que este artículo te ayudar a hacerte **las preguntas correctas**. Como 
 
 Ofrezco sesiones personalizadas para equipos que quieren entender y aprovechar la IA sin perder el control. **[Escríbeme](mailto:juan@jgcarmona.com)**. No vendo humo. Sólo criterio técnico.
 
-👉 [jgcarmona.com/formacion-capacitacion](https://jgcarmona.com/formacion-capacitacion)  
-👉 [jgcarmona.com/consultoria-desarrollo-software](https://jgcarmona.com/consultoria-desarrollo-software)
+👉 [jgcarmona.com/formacion-capacitacion](/about/)  
+👉 [jgcarmona.com/consultoria-desarrollo-software](/about/)

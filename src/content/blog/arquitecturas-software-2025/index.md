@@ -56,7 +56,7 @@ En este estilo, la base del sistema es un repositorio de datos central: puede se
 **Año**: 2000s (popularización con replicación en bases de datos)  
 **Creador / Primera mención**: patrón clásico de sistemas distribuidos, aplicado por MySQL, PostgreSQL, en los 2000s  
 **Descripción**  
-El patrón tiene un nodo primario que gestiona las escrituras y varios nodos réplicas que manejan lecturas. Las réplicas se sincronizan mediante logs de transacciones, típicamente con [**consistencia eventual**](https://jgcarmona.com/dads-02-sistemas-distribuidos-de-cap-a-pacelc/).  
+El patrón tiene un nodo primario que gestiona las escrituras y varios nodos réplicas que manejan lecturas. Las réplicas se sincronizan mediante logs de transacciones, típicamente con [**consistencia eventual**](/es/dads-02-sistemas-distribuidos-de-cap-a-pacelc/).  
 Estamos ante a**rquitectura fundamental para escalar la lectura en entornos con alta demanda**, redistribuyendo carga sin cambiar la lógica de escritura.
 
 ![](images/image-36.png)
@@ -223,7 +223,7 @@ Separación de modelos de lectura (query) y escritura (command). A menudo combin
 **Pros**:  
 – Optimización por modelo, además, facilita la auditoría y el registro histórico de operaciones.  
 **Contras**:  
-– Añade complejidad, requiere asumir [consistencia eventual](https://jgcarmona.com/dads-02-sistemas-distribuidos-de-cap-a-pacelc/) y una infraestructura más compleja.
+– Añade complejidad, requiere asumir [consistencia eventual](/es/dads-02-sistemas-distribuidos-de-cap-a-pacelc/) y una infraestructura más compleja.
 
 Funciona bien en combinación con **EDA**, **microservicios**, **event streaming**.
 
@@ -509,7 +509,7 @@ Ideal con **monolito modular**, **microservicios**, **CQRS**.
 \[D/3\] **Entity–Control–Boundary (ECB)**
 
 **Año**: 1992 (introducido en OOSE por Ivar Jacobson)  
-**Creador**: Ivar Jacobson, como parte del método [_Object-Oriented Software Engineering_](https://www.amazon.com/Object-Oriented-Software-Engineering-Approach/dp/0201544350?crid=2A97C2F64686N&dib=eyJ2IjoiMSJ9.6BX78w_vFDSuYCDnlKENwKBrbYkCfQ90RRtYXoLj3X0-SEEzfsXejdv2lrWZCLr0f3KKZgrPHXS80rBarX9efCW6SSO3nTa68BrhRf61So16gImQ5rOe21Fl990MSojiYBskdERfadYqFlqazzm3fqjBMuKmpLLGC6fYTmM9zArlxZ3tc5s9gPn79I8GptG6oQweLrG6LFI-oIYrncmBFdFZ0509RufGPJ9dhgWsVcw.ACaFaMMJ2asJ2nn6BYbBbARrIGPg1bJjkadm4V4WN_Y) _(OOSE)_, base fundacional de **[UML](https://jgcarmona.com/uml-de-batalla/)** y del Unified Process.  
+**Creador**: Ivar Jacobson, como parte del método [_Object-Oriented Software Engineering_](https://www.amazon.com/Object-Oriented-Software-Engineering-Approach/dp/0201544350?crid=2A97C2F64686N&dib=eyJ2IjoiMSJ9.6BX78w_vFDSuYCDnlKENwKBrbYkCfQ90RRtYXoLj3X0-SEEzfsXejdv2lrWZCLr0f3KKZgrPHXS80rBarX9efCW6SSO3nTa68BrhRf61So16gImQ5rOe21Fl990MSojiYBskdERfadYqFlqazzm3fqjBMuKmpLLGC6fYTmM9zArlxZ3tc5s9gPn79I8GptG6oQweLrG6LFI-oIYrncmBFdFZ0509RufGPJ9dhgWsVcw.ACaFaMMJ2asJ2nn6BYbBbARrIGPg1bJjkadm4V4WN_Y) _(OOSE)_, base fundacional de **[UML](/es/uml-de-batalla/)** y del Unified Process.  
 **Descripción**:  
 Divide el sistema en tres componentes:  
 – **Entity**: representa reglas y datos del dominio persistente.  

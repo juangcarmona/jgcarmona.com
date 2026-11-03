@@ -8,21 +8,21 @@ tags:
   - "sw-craftsmanship"
 ---
 
-> El propósito de este artículo es completar con diagramas de clase y con código lo poco que hablé de las Interfaces en otros artículos anteriores, "[UML de batalla](https://jgcarmona.com/uml-de-batalla/)" e "[ISP: Interface Segregation Principle // Principio de Segregación de Interfaces](https://jgcarmona.com/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/)", y demostrar de forma práctica algunas de sus bondades y/o las virguerías que podemos hacer nosotros con ellas.
+> El propósito de este artículo es completar con diagramas de clase y con código lo poco que hablé de las Interfaces en otros artículos anteriores, "[UML de batalla](/es/uml-de-batalla/)" e "[ISP: Interface Segregation Principle // Principio de Segregación de Interfaces](/es/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/)", y demostrar de forma práctica algunas de sus bondades y/o las virguerías que podemos hacer nosotros con ellas.
 
 Lo primero de todo, ¿qué es una interfaz? Cualquier desarrollador que me esté leyendo debería saberlo y si no lo sabe bien se puede leer [éste breve artículo de la Guía de programación en C#](http://msdn.microsoft.com/es-es/library/ms173156\(v=vs.80\).aspx), el cuál es bastante recomendable si queda alguna duda al respecto. Mi definición de Interfaz es que es un contrato.
 
 > Una interfaz es un contrato de software el cuál, las clases que realizan dicha interfaz, deben cumplir implementándola debidamente.
 
-Ya mostré en los distintos artículos relacionados con los [principios](http://juan-garcia-carmona.blogspot.com.es/2012/08/principios-solid.html) [S](https://jgcarmona.com/srp-single-responsibility-principle-principio-de-unica-responsabilidad/).[O](https://jgcarmona.com/ocp-open-closed-principle-principio-abierto-cerrado/).[L](https://jgcarmona.com/lsp-liskov-substitution-principle-principio-de-sustitucion-de-liskov/).[I](https://jgcarmona.com/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/).[D](https://jgcarmona.com/dip-dependency-inversion-principle-principio-de-inversion-de-dependencias/). ejemplos de malos  y buenos usos de interfaces y seguro que volveré a hablar de ellas cuando acabe la serie de artículos sobre GRASP. Hoy mi propósito, como decía, es jugar un poco con ellas tanto con código como con [diagramas de clases UML](http://juan-garcia-carmona.blogspot.com.es/2012/09/uml-de-batalla.html).
+Ya mostré en los distintos artículos relacionados con los [principios](http://juan-garcia-carmona.blogspot.com.es/2012/08/principios-solid.html) [S](/es/srp-single-responsibility-principle-principio-de-unica-responsabilidad/).[O](/es/ocp-open-closed-principle-principio-abierto-cerrado/).[L](/es/lsp-liskov-substitution-principle-principio-de-sustitucion-de-liskov/).[I](/es/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/).[D](/es/dip-dependency-inversion-principle-principio-de-inversion-de-dependencias/). ejemplos de malos  y buenos usos de interfaces y seguro que volveré a hablar de ellas cuando acabe la serie de artículos sobre GRASP. Hoy mi propósito, como decía, es jugar un poco con ellas tanto con código como con [diagramas de clases UML](http://juan-garcia-carmona.blogspot.com.es/2012/09/uml-de-batalla.html).
 
-Voy a partir de una clase cuya [única responsabilidad](https://jgcarmona.com/srp-single-responsibility-principle-principio-de-unica-responsabilidad/) es ejecutar algo, a ésta clase la voy a llamar **Tarea**.
+Voy a partir de una clase cuya [única responsabilidad](/es/srp-single-responsibility-principle-principio-de-unica-responsabilidad/) es ejecutar algo, a ésta clase la voy a llamar **Tarea**.
 
-[![](images/865c4-tarea.png)](https://jgcarmona.com/wp-content/uploads/2012/09/865c4-tarea.png)
+![](images/865c4-tarea.png)
 
 Imagina que ésta clase pertenece a un programa para el que se le quieren añadir mejoras como control de **tareas en hilos**, **tareas compuestas,** **bifurcaciones de tareas**, **tareas condicionales**, etcétera y seré yo quien desarrolle dichas mejoras. Lo primero que haré será rezar porque exista una interfaz ITarea para que todas las clases que desarrolle a partir de ahora para implementar los nuevos requisitos cumplan con su única responsabilidad, en nuestro ejemplo "Ejecutar()". Ha habido suerte y existe ITarea, y por tanto parto de lo siguiente:
 
-[![](images/41b48-itarea.png)](https://jgcarmona.com/wp-content/uploads/2012/09/41b48-itarea.png)
+![](images/41b48-itarea.png)
 
 ¿Recuerdas el [UML de batalla](http://juan-garcia-carmona.blogspot.com.es/2012/09/uml-de-batalla.html)? La línea discontinua con punta de flecha blanca significa que realiza, es decir, Tarea realiza ITarea, o lo que es lo mismo, Tarea implementa la Interfaz ITarea. En código tengo ésto, mi punto de partida:
 
@@ -45,7 +45,7 @@ public class Tarea : ITarea
 
 Bien, voy a atacar ahora uno de los primeros requisitos nuevos, las tareas compuestas. es decir, agrupar una serie de tareas para ser ejecutadas en serie. Para ésto voy a crear una clase que implemente ITarea pero que además contenga, internamente, un conjunto de ITareas, algo así:
 
-[![](images/4c51d-conjuntodetareas.png)](https://jgcarmona.com/wp-content/uploads/2012/09/4c51d-conjuntodetareas.png)
+![](images/4c51d-conjuntodetareas.png)
 
 Éste podría ser el código:
 
@@ -100,7 +100,7 @@ public class TareaNula:ITarea
 
 Voy a por otro de los nuevos requisitos, imaginemos que nos dicen que se quiere que la ejecución se realice sólo bajo cierta **condición**. En vez de llevar el control de la ejecución a un nivel superior creo una clase que implemente ITarea y que se encargue de comprobar si debe ejecutarse o no. Su estructura en un diagrama de clases podría ser ésta:
 
-[![](images/6f2ba-tareacondicionada.png)](https://jgcarmona.com/wp-content/uploads/2012/09/6f2ba-tareacondicionada.png)
+![](images/6f2ba-tareacondicionada.png)
 
 Y éste su código:
 
@@ -138,7 +138,7 @@ public class TareaCondicionada : ITarea
 
 Gracias a ésta nueva clase **TareaCondicionada**, al tratarse de una implementación de **ITarea**, podemos, junto con la clase **ConjuntoDeTareas**, tratar un conjunto de tareas y al ejecutar dicho conjunto algunas pueden no ejecutarse. ¿Suena útil? Puede serlo. ¿Y si ampliáramos éste comportamiento de la siguiente forma, que bajo cierta condición se ejecute una tarea pero que si no se cumple se ejecute otra tarea distinta? Por la bifurcación que implica llamaré a esta nueva clase **TareaBinaria**:
 
-[![](images/71a2c-tareabinaria.png)](https://jgcarmona.com/wp-content/uploads/2012/09/71a2c-tareabinaria.png)
+![](images/71a2c-tareabinaria.png)
 
 Me quedaría algo tan simple como ésto:
 
@@ -316,11 +316,11 @@ public class TareaAsincrona : ITarea, ICancelable
 
 ¡Genial! ¡Bravo! Pero: ¿Y para qué tantas vueltas?
 
-Volvamos al inicio de éste artículo, tu y yo **somos los nuevos arquitectos** de un proyecto y nos van a encargar que **añadamos una serie de funcionalidades** sobre algo que ya hay desplegado, funcionalidades a priori **aparentemente complejas pero nunca se sabe...** Lo realmente llamativo de éste artículo debería ser que con este tipo de técnicas, es decir, utilizando "decoradores" y [Segregación de Interfaces](https://jgcarmona.com/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/),  **podríamos implementar cualquier requisito nuevo sin tener que modificar ninguno de los componentes del sistema que actualmente utilicen esta interfaz** sobre la que hemos estado jugando "alrededor".
+Volvamos al inicio de éste artículo, tu y yo **somos los nuevos arquitectos** de un proyecto y nos van a encargar que **añadamos una serie de funcionalidades** sobre algo que ya hay desplegado, funcionalidades a priori **aparentemente complejas pero nunca se sabe...** Lo realmente llamativo de éste artículo debería ser que con este tipo de técnicas, es decir, utilizando "decoradores" y [Segregación de Interfaces](/es/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/),  **podríamos implementar cualquier requisito nuevo sin tener que modificar ninguno de los componentes del sistema que actualmente utilicen esta interfaz** sobre la que hemos estado jugando "alrededor".
 
-Hemos visto como se puede lograr una separación de cometidos y mantener el [principio de única responsabilidad](https://jgcarmona.com/srp-single-responsibility-principle-principio-de-unica-responsabilidad/) al mismo tiempo: separamos cometidos al ir creando multitud de clases alrededor de una interfaz en lugar de modificar o falsear el comportamiento de los componentes del sistema que la utilizan y mantenemos el principio de única responsabilidad ya que cada clase, cada implementación distinta de ITarea en éste ejemplo, se centra en su cometido y no en otros.
+Hemos visto como se puede lograr una separación de cometidos y mantener el [principio de única responsabilidad](/es/srp-single-responsibility-principle-principio-de-unica-responsabilidad/) al mismo tiempo: separamos cometidos al ir creando multitud de clases alrededor de una interfaz en lugar de modificar o falsear el comportamiento de los componentes del sistema que la utilizan y mantenemos el principio de única responsabilidad ya que cada clase, cada implementación distinta de ITarea en éste ejemplo, se centra en su cometido y no en otros.
 
-Al ejercer el principio de [segregación de interfaces](https://jgcarmona.com/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/) el número de interfaces puede crecer muchísimo, exponencialmente. Esto no quiere decir que por cada interfaz que surja debamos tener en cuenta todas estas "implementaciones decoradas" que hoy hemos visto, nada más lejos, sólo es que hay muchas ocasiones en las que una o más de estas soluciones, en colaboración, pueden quitar complejidad a componentes de nuestro sistema que no tendrían porque tenerla y simplificarnos mucho nuestro trabajo....
+Al ejercer el principio de [segregación de interfaces](/es/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/) el número de interfaces puede crecer muchísimo, exponencialmente. Esto no quiere decir que por cada interfaz que surja debamos tener en cuenta todas estas "implementaciones decoradas" que hoy hemos visto, nada más lejos, sólo es que hay muchas ocasiones en las que una o más de estas soluciones, en colaboración, pueden quitar complejidad a componentes de nuestro sistema que no tendrían porque tenerla y simplificarnos mucho nuestro trabajo....
 
 Y estaremos aplicando los principios SOLID.
 

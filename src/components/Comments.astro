@@ -1,80 +1,54 @@
-<section class="mx-auto mt-12">
-  <div id="giscus"></div>
+---
+// Comments live in GitHub Discussions through giscus. The third-party frame loads only when the reader asks for it,
+// so the page itself sets no cookies.
+interface Props {
+	/** Discussion term; the post title, matching what giscus mapped before. */
+	term: string;
+}
 
-  <script>
-    type Theme = "light" | "dark";
+const { term } = Astro.props;
+---
 
-    const GISCUS_THEME: Record<Theme, string> = {
-      light: "light",
-      dark: "dark_protanopia",
-    };
-
-    function getTheme(): Theme {
-      const stored = localStorage.getItem("theme");
-      if (stored === "light" || stored === "dark") return stored;
-      return window.matchMedia("(prefers-color-scheme: light)").matches
-        ? "light"
-        : "dark";
-    }
-
-    function postGiscusTheme(theme: Theme) {
-      const iframe = document.querySelector(
-        "iframe.giscus-frame"
-      ) as HTMLIFrameElement | null;
-
-      if (!iframe || !iframe.contentWindow) return;
-
-      iframe.contentWindow.postMessage(
-        { giscus: { setConfig: { theme: GISCUS_THEME[theme] } } },
-        "https://giscus.app"
-      );
-    }
-
-    function mountGiscus() {
-      if (document.querySelector("iframe.giscus-frame")) {
-        postGiscusTheme(getTheme());
-        return;
-      }
-
-      const host = document.getElementById("giscus");
-      if (!host) return;
-
-      host.innerHTML = "";
-
-      const theme = getTheme();
-
-      const script = document.createElement("script");
-      script.src = "https://giscus.app/client.js";
-      script.async = true;
-      script.crossOrigin = "anonymous";
-
-      script.setAttribute("data-repo", "juangcarmona/jgcarmona.com");
-      script.setAttribute("data-repo-id", "R_kgDOQfZC7w");
-      script.setAttribute("data-category", "General");
-      script.setAttribute("data-category-id", "DIC_kwDOQfZC784CzNMT");
-      script.setAttribute("data-mapping", "og:title");
-      script.setAttribute("data-strict", "0");
-      script.setAttribute("data-reactions-enabled", "1");
-      script.setAttribute("data-emit-metadata", "0");
-      script.setAttribute("data-input-position", "bottom");
-      script.setAttribute("data-lang", "en");
-
-      script.setAttribute("data-theme", GISCUS_THEME[theme]);
-
-      host.appendChild(script);
-    }
-
-    // First load
-    mountGiscus();
-
-    // Theme changes (after mount)
-    window.addEventListener("theme:changed", () => {
-      const theme = getTheme();
-      // If iframe exists, postMessage updates it; if not, next mount uses correct theme
-      postGiscusTheme(theme);
-    });
-
-    // Astro navigation
-    document.addEventListener("astro:page-load", mountGiscus);
-  </script>
+<section class="comments" aria-labelledby="comments-title">
+	<h2 id="comments-title">Comments</h2>
+	<p class="muted">
+		Comments are stored in GitHub Discussions and shown through giscus. Loading them contacts giscus.app and GitHub,
+		which may set their own cookies.
+	</p>
+	<button type="button" class="lh-button" data-variant="secondary" id="load-comments" data-term={term}>Show comments</button>
+	<div id="giscus"></div>
 </section>
+
+<script>
+	const button = document.getElementById('load-comments') as HTMLButtonElement | null;
+	const theme = () => (document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark_protanopia');
+
+	button?.addEventListener('click', () => {
+		const script = document.createElement('script');
+		const attributes: Record<string, string> = {
+			src: 'https://giscus.app/client.js',
+			crossorigin: 'anonymous',
+			'data-repo': 'juangcarmona/jgcarmona.com',
+			'data-repo-id': 'R_kgDOQfZC7w',
+			'data-category': 'General',
+			'data-category-id': 'DIC_kwDOQfZC784CzNMT',
+			'data-mapping': 'specific',
+			'data-term': button.dataset.term ?? document.title,
+			'data-strict': '0',
+			'data-reactions-enabled': '1',
+			'data-emit-metadata': '0',
+			'data-input-position': 'bottom',
+			'data-lang': 'en',
+			'data-theme': theme(),
+		};
+		for (const [name, value] of Object.entries(attributes)) script.setAttribute(name, value);
+		script.async = true;
+		document.getElementById('giscus')?.appendChild(script);
+		button.remove();
+	});
+
+	window.addEventListener('theme:changed', () => {
+		const frame = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+		frame?.contentWindow?.postMessage({ giscus: { setConfig: { theme: theme() } } }, 'https://giscus.app');
+	});
+</script>

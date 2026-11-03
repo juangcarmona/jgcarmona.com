@@ -41,7 +41,7 @@ Hemos extraído cuatro proyectos para la autenticación y ahora tenemos dos proy
 - NetCore21.Authentication.Tests
 - NetCore21.Site.Tests
 
-[![](images/d6b14-estructura_1.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/d6b14-estructura_1.jpg)
+![](images/d6b14-estructura_1.jpg)
 
 Y tras adaptar ligeramente nuestro scritp de SonarScanner (ver el "[Docker práctico: SonarQube](https://juan-garcia-carmona.blogspot.com/2018/06/docker-practico-sonarqube.html)") y escribir varios tests para JwtFactory y TokenGenerator, hemos obetnido una cobertura cercana al 100% en ambas clases:
 
@@ -51,7 +51,7 @@ Y tras adaptar ligeramente nuestro scritp de SonarScanner (ver el "[Docker prác
 
   
 
-[![](images/eece1-coverage_1.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/eece1-coverage_1.jpg)
+![](images/eece1-coverage_1.jpg)
 
   
 
@@ -59,15 +59,15 @@ Y un par de horas después, con calma, Hemos cubierto con tests unitarios Tanto 
 
   
 
-[![](images/24e1a-coverage_2.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/24e1a-coverage_2.jpg)
+![](images/24e1a-coverage_2.jpg)
 
   
 
-[![](images/92287-coverage_3.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/92287-coverage_3.jpg)
+![](images/92287-coverage_3.jpg)
 
   
 
-[![](images/25e5f-coverage_4.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/25e5f-coverage_4.jpg)
+![](images/25e5f-coverage_4.jpg)
 
 Respecto al aspecto que tiene el código de tests voy a dejar algún ejemplo pero no todo, ,por ejemplo, AccountsControllerTests utiliza tres mocks, uno por cada dependencia que el controlador tiene, el UserManager, el mapper de AutoMapper, y el DbContext, y en él se prueban:
 

@@ -19,7 +19,7 @@ tags:
   - "github-copilot"
 ---
 
-Last week I shared my thoughts about the difficulty on maintaining software quality these days that AI is producing most of our source code. I called that article [*Spec-Driven Development: Controlling AI-Generated Drift*](https://jgcarmona.com/en/spec-driven-done-right/). I aimed to share the idea on that we need to adapt to this paradigm shit and find better mechanisms togain control and avoid shift at many layers during our massive AI usage... The problem is no longer building systems, it's keeping them coherent while they evolve at a speed no human can match alone. In last article I just scratched the surface because this shift forces a different center of gravity.
+Last week I shared my thoughts about the difficulty on maintaining software quality these days that AI is producing most of our source code. I called that article [*Spec-Driven Development: Controlling AI-Generated Drift*](/en/spec-driven-done-right/). I aimed to share the idea on that we need to adapt to this paradigm shit and find better mechanisms togain control and avoid shift at many layers during our massive AI usage... The problem is no longer building systems, it's keeping them coherent while they evolve at a speed no human can match alone. In last article I just scratched the surface because this shift forces a different center of gravity.
 
 **Orchestration.**
 
@@ -58,7 +58,7 @@ I know that form now on I will declare myyself a SDD evangelist, becuase whateve
 I've always leaned into what most teams avoided:
 
 - **UML**, when it was still the default language for structure 
-- **[SOLID and GRASP](https://jgcarmona.com/es/solid-y-grasp-buenas-practicas-hacia-el-exito-en-el-desarrollo-de-software/)**, I already wrote and spoke about these terms, deeply, on 2012
+- **[SOLID and GRASP](/es/solid-y-grasp-buenas-practicas-hacia-el-exito-en-el-desarrollo-de-software/)**, I already wrote and spoke about these terms, deeply, on 2012
 - **[C4 Model](https://c4model.com/)** for clarity and hierarchy
 - **[Mermaid](https://mermaid.js.org/)** to keep diagrams close to code, lightweight, and versioned
 - **[arc42](https://arc42.org/)** to structure architecture documentation properly
@@ -170,7 +170,7 @@ And in this new landscape, there's only one word that matters:
 
 ## Some Useful? Annotated Links
 
-- [My previous article: *Spec-Driven Development: Controlling AI-Generated Drift*](https://jgcarmona.com/en/spec-driven-done-right/) — conceptual starting point for this piece: control, drift, and semantic anchors.
+- [My previous article: *Spec-Driven Development: Controlling AI-Generated Drift*](/en/spec-driven-done-right/) — conceptual starting point for this piece: control, drift, and semantic anchors.
 - [GitHub Copilot Dev Days 2026 — official repository](https://github.com/github/GitHub-Copilot-Dev-Days) — global context of the initiative, formats, and base materials.
 - [Microsoft for Developers — GitHub Copilot Dev Days](https://developer.microsoft.com/blog/github-copilot-dev-days) — official description of the series and typical agenda.
 - [TechRiders_es — GitHub Copilot Dev Days Madrid 2026 announcement](https://www.linkedin.com/posts/techriders-es_github-copilot-dev-days-madrid-2026-talleres-activity-7444773747707822082-0Job) — date, venue, and local focus for the Madrid event.

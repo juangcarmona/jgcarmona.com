@@ -17,7 +17,8 @@ tags: z.array(z.string()).optional().default([]),
 featured: z.boolean().optional().default(false),
 featuredOrder: z.number().optional(),
 lang: z.enum(['en', 'es']).default('en'),
-isTranslation: z.boolean().optional().default(false),
+// Posts that share a key are translations of each other.
+translationKey: z.string().optional(),
 }),
 });
 

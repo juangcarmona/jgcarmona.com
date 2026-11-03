@@ -35,7 +35,7 @@ Aquí podéis ver la primera imagen con la que estoy trabajando:
 
   
 
-[![](images/0e649-ordesa_10km_x2.png)](https://jgcarmona.com/wp-content/uploads/2012/08/0e649-ordesa_10km_x2.png)
+![](images/0e649-ordesa_10km_x2.png)
 
   
 
@@ -43,7 +43,7 @@ Así quedaría en escala de grises:
 
   
 
-[![](images/c85d2-ordesa_10km_x2_h.png)](https://jgcarmona.com/wp-content/uploads/2012/08/c85d2-ordesa_10km_x2_h.png)
+![](images/c85d2-ordesa_10km_x2_h.png)
 
   
 
@@ -51,7 +51,7 @@ Ambas imágenes las he reducido y tienen mucho menos detalle que las que yo voy 
 
   
 
-[![](images/32681-ordesa_10km_x4_lc.png)](https://jgcarmona.com/wp-content/uploads/2012/08/32681-ordesa_10km_x4_lc.png)
+![](images/32681-ordesa_10km_x4_lc.png)
 
   
 
@@ -63,7 +63,7 @@ Bueno, ha tardado algo más de media hora en generarse y creo que las fuentes so
 
   
 
-[![](images/e50b4-ordesa_10km_x8_lcl.jpg)](https://jgcarmona.com/wp-content/uploads/2012/08/e50b4-ordesa_10km_x8_lcl.jpg)
+![](images/e50b4-ordesa_10km_x8_lcl.jpg)
 
   
 
@@ -71,11 +71,11 @@ Os dejo unas capturas de pantalla de lo que he conseguido... Voy a seguir trabaj
 
   
 
-[![](images/5329e-screenshot_2012-08-28-09-09-34.png)](https://jgcarmona.com/wp-content/uploads/2012/08/5329e-screenshot_2012-08-28-09-09-34.png)[![](images/7f562-screenshot_2012-08-28-09-10-04.png)](https://jgcarmona.com/wp-content/uploads/2012/08/7f562-screenshot_2012-08-28-09-10-04.png)[![](images/d7ac9-screenshot_2012-08-28-09-10-29.png)](https://jgcarmona.com/wp-content/uploads/2012/08/d7ac9-screenshot_2012-08-28-09-10-29.png)[![](images/1fff9-screenshot_2012-08-28-09-11-32.png)](https://jgcarmona.com/wp-content/uploads/2012/08/1fff9-screenshot_2012-08-28-09-11-32.png)
+![](images/5329e-screenshot_2012-08-28-09-09-34.png)![](images/7f562-screenshot_2012-08-28-09-10-04.png)![](images/d7ac9-screenshot_2012-08-28-09-10-29.png)![](images/1fff9-screenshot_2012-08-28-09-11-32.png)
 
   
 
-[![](images/a86b3-screenshot_2012-08-28-09-11-58.png)](https://jgcarmona.com/wp-content/uploads/2012/08/a86b3-screenshot_2012-08-28-09-11-58.png)
+![](images/a86b3-screenshot_2012-08-28-09-11-58.png)
 
   
 

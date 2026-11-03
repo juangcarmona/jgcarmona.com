@@ -127,7 +127,7 @@ Ya puedes descargar el calendario completo de obligaciones fiscales para los añ
 ✅ Con todas las fechas clave  
 ✅ Con **tres recordatorios por evento** (15 días, 7 días y 2 días antes)
 
-[Calendario\_Fiscal\_Espana\_2025\_2027](https://jgcarmona.com/wp-content/uploads/2025/06/Calendario_Fiscal_Espana_2025_2027.ics)[**Download**](https://jgcarmona.com/wp-content/uploads/2025/06/Calendario_Fiscal_Espana_2025_2027.ics)
+_(El fichero descargable original se perdió al migrar el blog desde WordPress.)_
 
 ## 📥 Cómo importar el calendario fiscal en tu agenda digital
 

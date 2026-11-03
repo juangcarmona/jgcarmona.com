@@ -13,7 +13,7 @@ tags:
 heroImage: "images/OfflineChatWithMicrosoftAgentFrameworkAndDockerModelRunner_2.png"
 ---
 
-In the previous article [**— _The Awakening_ —**](https://jgcarmona.com/run-agent-framework-locally/) we got a single-turn agent running entirely offline with **Microsoft Agent Framework (MAF)** and **[Docker Model Runner](https://jgcarmona.com/enable-gpu-docker-model-runner-windows/)**. It could reason and respond or stream results but it didn’t remember anything. Each message lived and died in memory.
+In the previous article [**— _The Awakening_ —**](/en/run-agent-framework-locally/) we got a single-turn agent running entirely offline with **Microsoft Agent Framework (MAF)** and **[Docker Model Runner](/en/enable-gpu-docker-model-runner-windows/)**. It could reason and respond or stream results but it didn’t remember anything. Each message lived and died in memory.
 
 In this second step, we’ll change that.
 
@@ -119,7 +119,7 @@ As you can see, it's fully local. Everything runs offline, no API keys, no Azure
 
 ## Why It Matters?
 
-Persistence changes everything. It enables summarization, reflection, and multi-turn reasoning, all building blocks of the agentic loop we’ll explore next. In **Lab 03**, I will move from memory to reasoning, introducing the full **[Sense → Plan → Act → Reflect](https://jgcarmona.com/ai-agents-nutshell/)** cycle the real “brain loop” behind autonomous agents.
+Persistence changes everything. It enables summarization, reflection, and multi-turn reasoning, all building blocks of the agentic loop we’ll explore next. In **Lab 03**, I will move from memory to reasoning, introducing the full **[Sense → Plan → Act → Reflect](/en/ai-agents-nutshell/)** cycle the real “brain loop” behind autonomous agents.
 
 ## **References**
 

@@ -136,7 +136,7 @@ Las empresas deberían empezar a plantearse el **coaching ágil a todos los nive
 
 Yo ya me considero "evangelista" de estas metodologías. Me encanta hablar de eficiencia, y he conseguido que varias personas de distintos departamentos —amigos míos, incluso de otras empresas— se quedaran encantados con este enfoque organizativo.
 
-**Si crees que sería interesante [impartir un curso de formación](https://jgcarmona.com/formacion-capacitacion/) enfocado a la eficiencia en tu empresa, no sólo en departamentos de desarrollo, tan sólo tienes que ponerte en contacto conmigo y lo adapto a tus necesidades y las de tu empresa.**
+**Si crees que sería interesante [impartir un curso de formación](/about/) enfocado a la eficiencia en tu empresa, no sólo en departamentos de desarrollo, tan sólo tienes que ponerte en contacto conmigo y lo adapto a tus necesidades y las de tu empresa.**
 
 * * *
 

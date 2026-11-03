@@ -8,7 +8,7 @@ tags:
 heroImage: "images/computer_vision.webp"
 ---
 
-Este es el segundo módulo del curso "[Inteligencia Artificial con Azure: De la Teoría a la Práctica](https://jgcarmona.com/2024/07/26/curso-de-inteligencia-artificial-con-azure-de-la-teoria-a-la-practica/)". En este módulo, aprenderás a crear soluciones de visión por computadora utilizando Azure AI Vision. Exploraremos técnicas de procesamiento y análisis de imágenes para desarrollar aplicaciones que pueden interpretar y entender contenido visual. Puedes encontrar el índice completo del curso [aquí](https://www.youtube.com/playlist?list=PLquujPA7EWzMce1_428O61sPCx6GJsUm1).
+Este es el segundo módulo del curso "[Inteligencia Artificial con Azure: De la Teoría a la Práctica](/es/curso-de-inteligencia-artificial-con-azure-de-la-teoria-a-la-practica/)". En este módulo, aprenderás a crear soluciones de visión por computadora utilizando Azure AI Vision. Exploraremos técnicas de procesamiento y análisis de imágenes para desarrollar aplicaciones que pueden interpretar y entender contenido visual. Puedes encontrar el índice completo del curso [aquí](https://www.youtube.com/playlist?list=PLquujPA7EWzMce1_428O61sPCx6GJsUm1).
 
 ## **¡Integra Computer Vision con Azure AI!**
 

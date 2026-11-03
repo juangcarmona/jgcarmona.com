@@ -32,7 +32,7 @@ De nuevo quiero dejar aquí alguna captura de pantalla. 
 
   
 
-[![](images/bf3ee-screenshot_2012-08-30-09-38-04.png)](https://jgcarmona.com/wp-content/uploads/2012/08/bf3ee-screenshot_2012-08-30-09-38-04.png)[![](images/6a174-screenshot_2012-08-30-09-38-22.png)](https://jgcarmona.com/wp-content/uploads/2012/08/6a174-screenshot_2012-08-30-09-38-22.png)[![](images/889c2-screenshot_2012-08-30-09-39-35.png)](https://jgcarmona.com/wp-content/uploads/2012/08/889c2-screenshot_2012-08-30-09-39-35.png)[![](images/75e30-screenshot_2012-08-30-09-48-17.png)](https://jgcarmona.com/wp-content/uploads/2012/08/75e30-screenshot_2012-08-30-09-48-17.png)
+![](images/bf3ee-screenshot_2012-08-30-09-38-04.png)![](images/6a174-screenshot_2012-08-30-09-38-22.png)![](images/889c2-screenshot_2012-08-30-09-39-35.png)![](images/75e30-screenshot_2012-08-30-09-48-17.png)
 
   
 
@@ -40,7 +40,7 @@ Las dos primeras imágenes muestran las lagunas pequeñas y en las dos siguiente
 
   
 
-[![](images/675e7-gredos_10km_x4_t_lc_green_3.png)](https://jgcarmona.com/wp-content/uploads/2012/08/675e7-gredos_10km_x4_t_lc_green_3.png)
+![](images/675e7-gredos_10km_x4_t_lc_green_3.png)
 
   
 

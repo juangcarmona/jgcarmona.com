@@ -179,7 +179,7 @@ You see? This architecture proposes a **secure hybrid retrieval stack**:
 
 - **Reasoning rules** provide proactive, trackable and explainable insights.
 
-![](images/AVcM7kh62j10AAAAAElFTkSuQmCC)
+![](images/AVcM7kh62j10AAAAAElFTkSuQmCC.png)
 
 ## What was this article about?
 

@@ -12,7 +12,7 @@ Last three months have been intense.
 
 1. I announced on LinkedIn that [I was closing my company](https://www.linkedin.com/posts/juangcarmona_i-quit-at-the-end-of-summer-2017-i-built-activity-7366495383784501249-y7CD).
 
-3. Then I wrote that I was done [chasing the administrative circus that comes with entrepreneurship in Spain](https://jgcarmona.com/cierre-jgcarmona-consulting/).
+3. Then I wrote that I was done [chasing the administrative circus that comes with entrepreneurship in Spain](/es/cierre-jgcarmona-consulting/).
 
 5. Last week, [I said I was joining a company I admire](https://www.linkedin.com/posts/juangcarmona_%F0%9D%90%8D%F0%9D%90%9E%F0%9D%90%B1%F0%9D%90%AD-%F0%9D%90%8C%F0%9D%90%A8%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9A%F0%9D%90%B2-%F0%9D%90%88-%F0%9D%90%AC%F0%9D%90%AD%F0%9D%90%9A%F0%9D%90%AB%F0%9D%90%AD-%F0%9D%90%9A-%F0%9D%90%A7-activity-7396222413547540480-mTS5), but I couldn't yet name
 

@@ -1,69 +1,41 @@
 ---
-import { SITE_TITLE } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
-import ThemeToggle from "./ThemeToggle.astro";
+import { SITE_TITLE } from '../consts';
+import ThemeToggle from './ThemeToggle.astro';
+
+const links = [
+	{ href: '/blog/', label: 'Writing', match: ['blog', 'tags', 'search', 'en', 'es'] },
+	{ href: '/talks/', label: 'Speaking', match: ['talks'] },
+	{ href: '/projects/', label: 'Projects', match: ['projects'] },
+	{ href: '/books/', label: 'Publications', match: ['books'] },
+	{ href: '/about/', label: 'About', match: ['about'] },
+];
+const section = Astro.url.pathname.split('/')[1] ?? '';
 ---
 
-<header>
-  <nav aria-label="Main navigation">
-    <h2><a href="/" aria-current="page">{SITE_TITLE}</a></h2>
-    <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/tags">Tags</HeaderLink>
-      <HeaderLink href="/search">Search</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-    </div>
-    <div class="social-links">
-      <ThemeToggle />
-    </div>
-  </nav>
+<header class="site-header">
+	<div class="frame">
+		<a class="brand" href="/">{SITE_TITLE}</a>
+		<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+			<span>Menu</span>
+		</button>
+		<nav class="site-nav" id="site-nav" aria-label="Main">
+			{
+				links.map(({ href, label, match }) => (
+					<a href={href} aria-current={match.includes(section) ? 'page' : undefined}>
+						{label}
+					</a>
+				))
+			}
+		</nav>
+		<ThemeToggle />
+	</div>
 </header>
-<style>
-  header {
-    margin: 0;
-    padding: 0 1em;
-    background-color: var(--header-bg);
-    color: rgb(var(--gray-light));
-    box-shadow: var(--header-shadow);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    border-bottom: 1px solid var(--header-border);
-  }
 
-  h2 {
-    margin: 0;
-    font-size: 1em;
-  }
-
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  nav a {
-    padding: 0.5em 0.5em;
-    color: rgb(var(--gray-light));
-    border-bottom: 4px solid transparent;
-    text-decoration: none;
-  }
-  nav a.active {
-    text-decoration: none;
-    border-bottom-color: var(--accent);
-  }
-  .social-links,
-  .social-links a {
-    display: flex;
-    gap: 0.5em;
-  }
-  @media (max-width: 720px) {
-    .social-links {
-      display: none;
-    }
-  }
-</style>
+<script>
+	const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+	toggle?.addEventListener('click', () => {
+		const open = toggle.getAttribute('aria-expanded') !== 'true';
+		toggle.setAttribute('aria-expanded', String(open));
+		toggle.closest('.site-header')?.toggleAttribute('data-open', open);
+	});
+</script>

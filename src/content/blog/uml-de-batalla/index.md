@@ -27,7 +27,7 @@ Las clases tienen métodos, es decir, acciones, por ejemplo un coche se podrá a
 
 Tanto las propiedades como los métodos pueden ser públicos, si cualquiera puede acceder a ellas o ejecutarlos, privados, si sólo sin accesibles desde la propia clase o protegidos, si sólo son accesibles desde clases "por debajo" de ella.
 
-[![UML de batalla](images/de69f-clases.png)](https://jgcarmona.com/wp-content/uploads/2012/09/de69f-clases.png)
+![UML de batalla](images/de69f-clases.png)
 
 **Relaciones entre clases**
 
@@ -35,15 +35,15 @@ Asociación
 
 Dos clases pueden estar asociadas, es decir, relacionadas de alguna manera. A la hora de hacer nuestros diseños este tipo de relación se puede representar de distintas maneras:
 
-[![UML de batalla](images/681dc-asociacion1.png)](https://jgcarmona.com/wp-content/uploads/2012/09/681dc-asociacion1.png)
+![UML de batalla](images/681dc-asociacion1.png)
 
 Ésta es una relación unidireccional, la Clase A se asocia con la Clase B.
 
-[![UML de batalla](images/ea584-asociacion2.png)](https://jgcarmona.com/wp-content/uploads/2012/09/ea584-asociacion2.png)
+![UML de batalla](images/ea584-asociacion2.png)
 
 Ésta relación no define direccionalidad pero si multiplicidad, un Hombre puede tener una relación de matrimonio con ninguna o una mujer y viceversa.
 
-[![UML de batalla](images/41946-asociacion3.png)](https://jgcarmona.com/wp-content/uploads/2012/09/41946-asociacion3.png)
+![UML de batalla](images/41946-asociacion3.png)
 
 Se puede especificar en la relación cuál es el rol de los intervinientes, en este caso el jugador juega para el equipo.
 
@@ -55,13 +55,13 @@ La **composición** es una forma más fuerte de agregación que se utiliza par
 
 Una forma fácil de determinar si debemos dibujar una agregación o una composición es ver si tiene sentido la existencia de una parte si se destruye el todo. 
 
-[![UML de batalla](images/d37ad-agregacioncomposicion.png)](https://jgcarmona.com/wp-content/uploads/2012/09/d37ad-agregacioncomposicion.png)
+![UML de batalla](images/d37ad-agregacioncomposicion.png)
 
 En este ejemplo se ve claramente como una libreta de direcciones se compone de contactos y de grupos de contactos. La libreta de direcciones puede estar vacía y no tener ni grupos de contactos ni contactos (multiplicidad = 0..\*) pero si hubiera un contacto o un grupo de contactos y destruyéramos la libreta de direcciones entonces tendríamos que destruir (o se destruirían) tanto el contacto como el grupo de contactos. Este razonamiento nos indica que la relación es de composición. Sin embargo la relación entre un grupo de contactos y un concato es de agregación ya que un contacto perteneciente a un grupo de contactos debería seguir existiendo aunque elimináramos el grupo de contactos. ¿Fácil? Visto así puede ser sencillo pero es un error habitual "liarse" entre agregación y composición.
 
 **Generalización o Herencia**
 
-[![UML de batalla](images/1ddbc-generalizacion1.png)](https://jgcarmona.com/wp-content/uploads/2012/09/1ddbc-generalizacion1.png)
+![UML de batalla](images/1ddbc-generalizacion1.png)
 
 Cada instancia de las clases hijas es a su vez una instancia de la clase padre, es decir, en el ejemplo, todo coche o moto de nuestro programa es un automóvil.
 
@@ -69,7 +69,7 @@ Realización e **Interfaces**
 
 Una interfaz es un "contrato", significa que cualquier clase que realice dicha interfaz está obligada a implementar los métodos de la interfaz.
 
-[![UML de batalla](images/4cf18-realizacion.png)](https://jgcarmona.com/wp-content/uploads/2012/09/4cf18-realizacion.png)
+![UML de batalla](images/4cf18-realizacion.png)
 
 En éste ejemplo tenemos "Algo" "ordenable" y para ser ordenable debe implementar "el contrato", es decir, los métodos EsIgual y EsMayor.
 
@@ -77,13 +77,13 @@ En éste ejemplo tenemos "Algo" "ordenable" y para ser ordenable debe implementa
 
 Los diagramas de estados muestran el conjunto de **estados** por los cuales pasa un objeto durante su vida en una aplicación y muestran los **eventos** o las **condiciones** que disparan las **transiciones** entre un estado y otro.
 
-[![UML de batalla](images/122ef-diagrammadeestados.png)](https://jgcarmona.com/wp-content/uploads/2012/09/122ef-diagrammadeestados.png)
+![UML de batalla](images/122ef-diagrammadeestados.png)
 
 **Diagramas de Secuencia**
 
 Un diagrama de secuencia representa el flujo de trabajo y el paso de mensajes entre distintos elementos de un sistema de manera secuencial y cómo se comunican dichos elementos para conseguir un fin. 
 
-[![UML de batalla](images/3cde6-diagrammadesecuencia.png)](https://jgcarmona.com/wp-content/uploads/2012/09/3cde6-diagrammadesecuencia.png)
+![UML de batalla](images/3cde6-diagrammadesecuencia.png)
 
 Los diagramas de secuencia pueden tener distinto nivel de detalle, en éste ejemplo se muestra el proceso de compra con muy poco nivel de detalle, secuencialmente vemos que el usuario accede a la zona de compras y que selecciona distintos objetos (se muestra dentro de un bucle). En un momento dado el usuario calcula el total y una entidad de nuestro sistema, la entidad pedido, le dice al usuario el total a pagar. Acto seguido el usuario realiza el pedido y, una vez nuestro gestor de pedidos procede al pago automático, le confirma al usuario que se ha realizado el pedido.
 
@@ -91,7 +91,7 @@ Los diagramas de secuencia pueden tener distinto nivel de detalle, en éste ejem
 
 Representa los flujos de trabajo de los componentes en un sistema, de negocio y operacionales, es decir, muestran el flujo de control general. En éstos diagramas aparecen decisiones, flujos en paralelo y convergencias entre procesos. Un ejemplo autoexplicativo puede ser el siguiente:
 
-[![UML de batalla](images/5ce24-diagrammadeactividad.png)](https://jgcarmona.com/wp-content/uploads/2012/09/5ce24-diagrammadeactividad.png)
+![UML de batalla](images/5ce24-diagrammadeactividad.png)
 
 Aquí vemos como, primero se ejecuta un proceso, después se ejecuta otro, después se toma una decisión y o se ejecuta una cosa y otra, tras lo cual se realiza otra acción y por último se ejecutan en paralelo dos procesos que desembocan en un proceso que termina la ejecución. Quizá es un poco tosco pero se ve claramente la nomenclatura gráfica, ¿no?
 

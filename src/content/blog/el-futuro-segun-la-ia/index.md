@@ -30,18 +30,18 @@ Pero este libro no es solo ciencia ficción. Es una oportunidad para reflexionar
 
 - Y la gran pregunta: ¿Podemos controlar lo que hemos creado?
 
-📥 **Disponible ahora en [PDF](https://jgcarmona.com/wp-content/uploads/2024/10/El-Futruo-Segun-la-IA-2024_10_17.pdf). Muy pronto también en formato EPUB.**
+📥 **Disponible ahora en [PDF](/files/el-futuro-segun-la-ia-2024-10-17.pdf). Muy pronto también en formato EPUB.**
 
 ✍️ **Autor:** Juan G. Carmona  
 📅 **Fecha de Lanzamiento:** 17 de Octubre 2024
 
-👉 **\[[Descargar el libro aquí](https://jgcarmona.com/wp-content/uploads/2024/10/El-Futruo-Segun-la-IA-2024_10_17.pdf)\]**
+👉 **\[[Descargar el libro aquí](/files/el-futuro-segun-la-ia-2024-10-17.pdf)\]**
 
 <figure>
 
 [![EL FUTURO SEGÚN LA IA: Cuatro Profecías de la Inteligencia Artificial - Juan G. Carmona
 <div></div>
-](images/Portada_a4-724x1024.png)](https://jgcarmona.com/wp-content/uploads/2024/10/El-Futruo-Segun-la-IA-2024_10_17.pdf)
+](images/Portada_a4-724x1024.png)](/files/el-futuro-segun-la-ia-2024-10-17.pdf)
 
 <figcaption>
 

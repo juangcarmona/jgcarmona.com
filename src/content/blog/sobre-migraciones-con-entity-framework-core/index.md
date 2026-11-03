@@ -19,7 +19,7 @@ Durante los últimos Sprints de [Logtrip](https://logtrip.com/) hemos estado tr
 
 ### Migraciones seguras en producción
 
-[![](images/54513-migrationsfolder.png)](https://jgcarmona.com/wp-content/uploads/2020/08/54513-migrationsfolder.png)
+![](images/54513-migrationsfolder.png)
 
 A partir de este punto ha sido todo un reto **refactorizar** el dominio paso a paso hacia un diseño basado en **herencia sin que** las sucesivas migraciones hicieran que **perdiéramos los datos de producción** aunque por suerte para nosotros no teníamos datos sobre viajes todavía en producción y hemos podido utilizar este comodín. Poco a poco, **relación a relación y propiedad a propiedad** hemos ido creando migraciones mas o menos simples y hemos tenido que "jugar" bastante con el código que EF Core nos ha ido generando, por ejemplo, en vez de **eliminar columnas** (ActivityId) para luego crear otras (ProductId), algo que nos hubiera hecho perder esas relaciones en producción, hemos tenido que **reescribir a mano** esa parte de la migración para que el proceso **renombrara** esa columna **y recreara** claves a índices.
 

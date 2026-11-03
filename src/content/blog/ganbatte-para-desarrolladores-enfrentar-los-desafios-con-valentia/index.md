@@ -11,7 +11,7 @@ heroImage: "images/pexels-photo-2403502.jpeg"
 
 ## Introducción al Ganbatte
 
-El espíritu de "Ganbatte", una expresión japonesa que se traduce como "**hazlo lo mejor que puedas**", se encuentra profundamente arraigado en la cultura japonesa. Este término, que emerge de los verbos "ganbaru" y "masu", nos anima a **superar los desafíos** y a **esforzarnos por alcanzar nuestras metas**. Este concepto está inextricablemente vinculado a los principios del [**Kaizen**](https://jgcarmona.com/kaizen-para-desarrolladores-de-software/), el proceso de mejora continua que está en el corazón de muchas prácticas industriales y de negocios japonesas.
+El espíritu de "Ganbatte", una expresión japonesa que se traduce como "**hazlo lo mejor que puedas**", se encuentra profundamente arraigado en la cultura japonesa. Este término, que emerge de los verbos "ganbaru" y "masu", nos anima a **superar los desafíos** y a **esforzarnos por alcanzar nuestras metas**. Este concepto está inextricablemente vinculado a los principios del [**Kaizen**](/es/kaizen-para-desarrolladores-de-software/), el proceso de mejora continua que está en el corazón de muchas prácticas industriales y de negocios japonesas.
 
 ![](images/41Iwjzfta3L._AC_UF8941000_QL80_.jpg)
 
@@ -43,4 +43,4 @@ El espíritu de Ganbatte no está limitado al desarrollo de software. También p
 
 Te invito a adoptar el espíritu Ganbatte en tu trabajo como desarrollador de software y en todos los aspectos de tu vida. A través de la determinación, el coraje y la mejora continua, puedes superar cualquier desafío y alcanzar tus metas. ¡Embárcate en este viaje del Ganbatte y descubre cómo puede transformar tu carrera en el desarrollo de software!
 
-Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](https://jgcarmona.com/mejorar-en-programacion-con-filosofias-japonesas/).
+Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](/es/mejorar-en-programacion-con-filosofias-japonesas/).

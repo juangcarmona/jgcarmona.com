@@ -1,0 +1,80 @@
+{
+  "$schema": "./node_modules/@juangcarmona/lighthouse/assets/schemas/lighthouse-upgrade.schema.json",
+  "schemaVersion": 1,
+  "package": {
+    "name": "@juangcarmona/lighthouse",
+    "version": "0.12.32"
+  },
+  "baseline": "0.1.0",
+  "capabilities": {
+    "harness": "1",
+    "sdlc": "1"
+  },
+  "adoption": {
+    "labels": {
+      "id": "labels",
+      "status": "pending-adoption",
+      "selection": "selected-by-default",
+      "provider": "github",
+      "version": "3",
+      "catalogVersion": "0.5.0",
+      "nextAction": "lighthouse capabilities plan --id labels --provider github --repo <owner/repo> --plan-file .lighthouse/reconciliation/labels.plan.json"
+    },
+    "github-profile": {
+      "id": "github-profile",
+      "status": "available",
+      "selection": "opt-in",
+      "provider": "github",
+      "version": "1",
+      "catalogVersion": "0.5.0",
+      "nextAction": "lighthouse capabilities select --id github-profile --provider github"
+    }
+  },
+  "projections": {
+    "harness": "1",
+    "sdlc": "1"
+  },
+  "lastAppliedMigration": "foundation-init-1",
+  "files": {
+    "LIGHTHOUSE.md": {
+      "hash": "23aea207a7bb5b4dfe46e692fc9f23d5f152606bbf6ebb994a5cf19b343546c1",
+      "scope": "harness"
+    },
+    "scripts/lighthouse-guard.mjs": {
+      "hash": "08b66ddaaecab2fd5704b41f30a0bf4a5767dcb92cde30e74820b6e302cbc445",
+      "scope": "harness"
+    },
+    ".husky/commit-msg": {
+      "hash": "19543eb246c4fbfd7ca3f175ded3b0e536a74456eaac5ad4c2e7a2d1c3be0c90",
+      "scope": "harness"
+    },
+    ".husky/pre-push": {
+      "hash": "05ed0725b011c8f0f093c2525dd203b95ae37ccce8c87f3003643e3b74840e29",
+      "scope": "harness"
+    },
+    ".github/workflows/lighthouse.yml": {
+      "hash": "fa29fc3cff29b3d23ac39b3a6e76587d66717384e54858ddc1143c6f696983f2",
+      "scope": "harness"
+    },
+    ".agents/skills/lighthouse-init/SKILL.md": {
+      "hash": "48e1692c905934d9ddceb180ee8cfafda193683d3f21debb54d8287ada068ddc",
+      "scope": "harness"
+    },
+    "docs/design/DESIGN.md": {
+      "hash": "7aad6f6f307ee14ce32f86d676f70e32960a96362e23515f7363da09cd3752c2",
+      "scope": "harness"
+    },
+    ".agents/skills/lighthouse-ui/SKILL.md": {
+      "hash": "c43f923dcea56a311b5e508b957150bd72731a11babc76c613be92927f19a1b2",
+      "scope": "harness"
+    },
+    ".lighthouse/sdlc.json": {
+      "hash": "0e49731e3a262cd561eb7f718eafb3f93303f79b67bdfc9b43907a36efc6f8e1",
+      "scope": "sdlc"
+    },
+    ".lighthouse/commands.json": {
+      "hash": "a3b55f969c6dd403885197275ebc305c618d66ad8b329dd7c4a50b037d94f822",
+      "scope": "sdlc"
+    }
+  }
+}

@@ -9,7 +9,7 @@ tags:
 heroImage: "images/ChatGPT-Image-Jul-9-2025-07_14_08-AM.png"
 ---
 
-Si eres administrador de redes o sistemas, saber Linux ya no es opcional. Aquí tienes lo mínimo que necesitas para empezar a descubrir redes, analizar tráfico y automatizar tareas desde Ubuntu. Este artículo es la **continuación natural de [“Tu primer Linux en 3 pasos”](https://jgcarmona.com/ubuntu-linux-en-windows-con-wsl/)**, una guía que escribí para ayudar a un amigo a instalar Ubuntu desde Windows y empezar con WSL.
+Si eres administrador de redes o sistemas, saber Linux ya no es opcional. Aquí tienes lo mínimo que necesitas para empezar a descubrir redes, analizar tráfico y automatizar tareas desde Ubuntu. Este artículo es la **continuación natural de [“Tu primer Linux en 3 pasos”](/es/ubuntu-linux-en-windows-con-wsl/)**, una guía que escribí para ayudar a un amigo a instalar Ubuntu desde Windows y empezar con WSL.
 
 Ahora damos un paso más allá.
 

@@ -42,7 +42,7 @@ Yo no voy a seguir el ejemplo de Fernando, yo ya tengo una aplicación con una f
 
   
 
-[![](images/e8375-project_basic.png)](https://jgcarmona.com/wp-content/uploads/2015/08/e8375-project_basic.png)
+![](images/e8375-project_basic.png)
 
   
 
@@ -58,7 +58,7 @@ De igual forma me ha gustado mucho el uso de RxJava, ya me lo habían recomendad
 
   
 
-[![](images/d0f94-arch.png)](https://jgcarmona.com/wp-content/uploads/2015/08/d0f94-arch.png)
+![](images/d0f94-arch.png)
 
 Al final el resultado es, a grandes rasgos, el módulo de presentación que contiene lo relativo a presentación pura, con un patrón MVP además de varios paquetes de utilidades (constantes, excepciones, la inyección de dependencias, etcétera); un modulo de Datos cuya responsabilidad es la gestión de los datos de la aplicación, esto es, cachés, ficheros locales, llamadas al API Rest, etcétera; y un módulo de Dominio donde se definen las clases del dominio y los casos de uso, los interactors, que son inyectados en la capa de presentación mediante ActivityComponentes y Módulos (ésto está en presentation/internal.di/).  
 

@@ -20,7 +20,7 @@ Pero otras muchas veces **lo que falta no es motivación, sino propósito.**
 No traigo una receta mágica. Solo una guía sencilla para ayudarte a ordenar ideas y reconectar contigo.  
 Está inspirada en el enfoque _ikigai_, concepto que ya exploré en profundidad, en este otro artículo:
 
-[**Ikigai para desarrolladores de software**](https://jgcarmona.com/ikigai-para-desarrolladores-de-software/)
+[**Ikigai para desarrolladores de software**](/es/ikigai-para-desarrolladores-de-software/)
 
 Si no conoces el concepto, te recomiendo leerlo. Pero tranquilo, no necesitas memorizar ningún diagrama para aplicar esta guía. El equilibrio no se encuentra fuera. Se construye dentro. Paso a paso.
 
@@ -222,9 +222,9 @@ No se trata de encajar piezas perfectas.
 Se trata de ver cómo, al cruzarse, te muestran algo mucho más valioso:  
 una visión de ti mismo con sentido, con dirección y con coherencia.
 
-Ese punto de encuentro es lo que en Japón llaman _**[ikigai](https://jgcarmona.com/ikigai-para-desarrolladores-de-software/)**_. Ya escribí sobre este concepto japonés en 2023, como parte de mi serie sobre **[filosofías japonesas para desarrolladores de software](https://jgcarmona.com/mejorar-en-programacion-con-filosofias-japonesas/).**
+Ese punto de encuentro es lo que en Japón llaman _**[ikigai](/es/ikigai-para-desarrolladores-de-software/)**_. Ya escribí sobre este concepto japonés en 2023, como parte de mi serie sobre **[filosofías japonesas para desarrolladores de software](/es/mejorar-en-programacion-con-filosofias-japonesas/).**
 
-[![cómo encontrar tu propósito](images/Captura-de-pantalla-2021-03-08-a-las-13.58.291.png)](https://jgcarmona.com/ikigai-para-desarrolladores-de-software/)
+[![cómo encontrar tu propósito](images/Captura-de-pantalla-2021-03-08-a-las-13.58.291.png)](/es/ikigai-para-desarrolladores-de-software/)
 
 Pero no necesitas llamarlo así.
 
@@ -253,4 +253,4 @@ Trabajo con líderes técnicos, arquitectos y profesionales del software que qui
 
 Si estás en un momento de cambio o simplemente quieres parar y replantear tu rumbo, aquí tienes un punto de partida.
 
-[Así trabajo con profesionales como tú](https://jgcarmona.com/coaching-lideres-tecnicos/)
+[Así trabajo con profesionales como tú](/about/)

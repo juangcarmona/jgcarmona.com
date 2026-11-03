@@ -11,7 +11,7 @@ tags:
 heroImage: "images/teaching_agents_to_remember.png"
 ---
 
-If you read my previous article on AI agents ([**AI Agents in a Nutshell**](https://jgcarmona.com/ai-agents-nutshell/)), you already know how they differ from chatbots: instead of just generating text, they **loop between reasoning, tools, and reflection until they reach a goal**.
+If you read my previous article on AI agents ([**AI Agents in a Nutshell**](/en/ai-agents-nutshell/)), you already know how they differ from chatbots: instead of just generating text, they **loop between reasoning, tools, and reflection until they reach a goal**.
 
 ![](images/image-150x150.png)
 

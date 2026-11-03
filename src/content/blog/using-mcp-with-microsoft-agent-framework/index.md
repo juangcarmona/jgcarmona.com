@@ -13,7 +13,7 @@ tags:
 heroImage: "images/MicrosoftAgentFramework_DockerModelRunner_ModelContextProtocol.png"
 ---
 
-> If you’ve already followed my previous articles, from [**AI Agents in a Nutshell**](https://jgcarmona.com/ai-agents-nutshell/) to [**Agentic Reasoning with Microsoft Agent Framework**](https://jgcarmona.com/agentic-reasoning-with-microsoft-agent-framework/), you know that Microsoft Agent Framework (MAF) is not just about generating text. It’s about reasoning, planning, acting, and reflecting, the full **SPAR loop**.
+> If you’ve already followed my previous articles, from [**AI Agents in a Nutshell**](/en/ai-agents-nutshell/) to [**Agentic Reasoning with Microsoft Agent Framework**](/en/agentic-reasoning-with-microsoft-agent-framework/), you know that Microsoft Agent Framework (MAF) is not just about generating text. It’s about reasoning, planning, acting, and reflecting, the full **SPAR loop**.
 
 This time I will focus only on MCP. I'll show the way you can connect your agents with to the outside world using the **Model Context Protocol**, and we will use locally running Docker MCP servers for this... Using both flavors, C# and Python. I hope you enjoy it.
 
@@ -136,8 +136,8 @@ To be honest, I am not 100% sure, I planed to explore **multi-agent collaboratio
 
 ## **Read next:**
 
-- [Build Your First Local AI Agent with Microsoft’s Agent Framework](https://jgcarmona.com/building-local-chat-agent-microsoft-agent-framework-dotnet/)
+- [Build Your First Local AI Agent with Microsoft’s Agent Framework](/en/building-local-chat-agent-microsoft-agent-framework-dotnet/)
 
-- [Change the Context Size in Docker Model Runner](https://jgcarmona.com/change-dmr-context-size/)
+- [Change the Context Size in Docker Model Runner](/en/change-dmr-context-size/)
 
-- [Agentic Reasoning with Microsoft Agent Framework](https://jgcarmona.com/agentic-reasoning-with-microsoft-agent-framework/)
+- [Agentic Reasoning with Microsoft Agent Framework](/en/agentic-reasoning-with-microsoft-agent-framework/)

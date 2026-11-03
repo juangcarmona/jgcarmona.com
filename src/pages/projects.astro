@@ -1,0 +1,107 @@
+---
+import PageHead from '../components/PageHead.astro';
+import { FLAGSHIP_PROJECTS, OTHER_PROJECTS } from '../data/projects';
+import Base from '../layouts/Base.astro';
+import { PERSON_ID } from '../utils/schema';
+
+const title = 'Projects — Juan G. Carmona';
+const description =
+	'Open-source projects by Juan G. Carmona: Product Definition as Code, ProductShape, ArcShape, Lighthouse, DomusMind, Raccord and more.';
+const slug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const schema = [...FLAGSHIP_PROJECTS, ...OTHER_PROJECTS].map((project) => {
+	const links = 'links' in project ? project.links : [{ label: 'GitHub', url: project.url }];
+	return {
+		'@type': 'SoftwareSourceCode',
+		name: project.name,
+		description: 'tagline' in project ? project.tagline : project.description,
+		url: links[0].url,
+		codeRepository: links.find((link) => link.url.startsWith('https://github.com/'))?.url,
+		author: { '@id': PERSON_ID },
+	};
+});
+---
+
+<Base title={title} description={description} schema={schema} wide>
+	<PageHead eyebrow="Open source" title="Projects">
+		<p>
+			Open-source projects, each with its own site or repository. Where a project has a site, its headline and summary
+			are quoted from it.
+		</p>
+		<ul class="jump">
+			{FLAGSHIP_PROJECTS.map((project) => <li><a href={`#${slug(project.name)}`}>{project.name}</a></li>)}
+		</ul>
+	</PageHead>
+
+	<div class="frame">
+		<ol class="project-list">
+			{
+				FLAGSHIP_PROJECTS.map((project, i) => (
+					<li id={slug(project.name)}>
+						<span class="index">{String(i + 1).padStart(2, '0')}</span>
+						<div class="project-head">
+							<h2>
+								<a href={project.links[0].url}>{project.name}</a>
+							</h2>
+							<ul class="record-links">
+								{project.links.map((link) => (
+									<li>
+										<a href={link.url}>{link.label}</a>
+									</li>
+								))}
+							</ul>
+						</div>
+						<div class="project-body">
+							{project.inOwnWords && (
+								<blockquote cite={project.inOwnWords.source}>
+									<p class="problem">{project.inOwnWords.headline}</p>
+									<p>{project.inOwnWords.summary}</p>
+									<footer>
+										From <a href={project.inOwnWords.source}>{new URL(project.inOwnWords.source).host}</a>
+									</footer>
+								</blockquote>
+							)}
+							<p>{project.description}</p>
+							<ul class="chips" aria-label="Stack">
+								{project.stack.map((item) => <li>{item}</li>)}
+							</ul>
+							{project.relatedPosts && (
+								<div class="related">
+									<p class="eyebrow">On the blog</p>
+									<ul>
+										{project.relatedPosts.map((post) => (
+											<li>
+												<a class="arrow" href={post.url}>{post.label}</a>
+											</li>
+										))}
+									</ul>
+								</div>
+							)}
+						</div>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+
+	<section class="frame more-projects" aria-labelledby="more">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Repositories</p>
+				<h2 id="more">More open source</h2>
+			</div>
+			<p><a class="arrow" href="https://github.com/juangcarmona">Everything on GitHub</a></p>
+		</header>
+		<ul class="repo-grid">
+			{
+				OTHER_PROJECTS.map((project) => (
+					<li>
+						<a href={project.url}>
+							<strong>{project.name}</strong>
+							<span>{project.description}</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Base>

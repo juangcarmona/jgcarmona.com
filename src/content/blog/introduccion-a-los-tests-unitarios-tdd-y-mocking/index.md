@@ -158,7 +158,7 @@ Hasta ahora he hablado mucho y he programado poco, vamos a ver con unos ejemplos
 [TestClass]public class CalculadoraTest{    [TestMethod]    public void SumarTest1()    {        var calculadora = new Calculadora();        var resultado = calculadora.Suma(2, 2);        Assert.AreEqual(2 + 2, resultado);    }}
 ```
 
-Lo primero que vemos es que éste código de test falla porque ni siquiera existe la clase Calculadora así que, como somos unos profesionales y practicamos los principios SOLID cada vez que programamos, vamos a empezar creando una [interfaz](http://juan-garcia-carmona.blogspot.com.es/2012/09/la-potencia-de-una-interfaz-simple.html) ICalculadora ([ISP](https://jgcarmona.com/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/)) y una clase Calculadora que la implemente, ambas vacías. Ésto es a lo que en varias ocasiones hemos llamado refactorizar, ahora hemos hecho una refactorización partiendo desde la nada. Pero el código de pruebas sigue fallando, nos falta el método Suma así que lo vamos a crear en la interfaz y en la clase, vacío con, por ejemplo un "return -1;"
+Lo primero que vemos es que éste código de test falla porque ni siquiera existe la clase Calculadora así que, como somos unos profesionales y practicamos los principios SOLID cada vez que programamos, vamos a empezar creando una [interfaz](http://juan-garcia-carmona.blogspot.com.es/2012/09/la-potencia-de-una-interfaz-simple.html) ICalculadora ([ISP](/es/isp-interface-segregation-principle-principio-de-segregacion-de-interfaces/)) y una clase Calculadora que la implemente, ambas vacías. Ésto es a lo que en varias ocasiones hemos llamado refactorizar, ahora hemos hecho una refactorización partiendo desde la nada. Pero el código de pruebas sigue fallando, nos falta el método Suma así que lo vamos a crear en la interfaz y en la clase, vacío con, por ejemplo un "return -1;"
 
 ```
 public interface ICalculadora{    int Suma(int num1, int num2);}
@@ -177,7 +177,7 @@ public class Calculadora : ICalculadora{    public int Suma(int num1, int num2) 
 Ahora si ejecutamos el test el test pasa.  
   
 
-[![](images/21a0a-test1.png)](https://jgcarmona.com/wp-content/uploads/2012/09/21a0a-test1.png)
+![](images/21a0a-test1.png)
 
   
 Bien, hemos avanzado pero nos quedan requisitos por cumplir, nos han pedido que sean dos números enteros positivos y a prueba de fallos y nos hemos quedado en "dos números enteros", nos queda el positivos y el a prueba de fallos, fallos que podrían venir de un desbordamiento pero vamos por pasos, nuestro siguiente requisito va a ser que sean positivos y vamos a seguir los requisitos a rajatabla, es decir, si nos llega un número negativo no nos vamos a inventar un mensaje ni un log, no, vamos a lanzar una excepción de argumentos. Empecemos con el primer número:
@@ -189,7 +189,7 @@ Bien, hemos avanzado pero nos quedan requisitos por cumplir, nos han pedido que 
 Si ejecutamos el test falla porque en nuestra clase no estamos controlando eso.  
   
 
-[![](images/dba6a-testprimernumerofalla.png)](https://jgcarmona.com/wp-content/uploads/2012/09/dba6a-testprimernumerofalla.png)
+![](images/dba6a-testprimernumerofalla.png)
 
   
 
@@ -202,7 +202,7 @@ public int Suma(int num1, int num2){    if (num1 < 0)        throw new ArgumentO
 Si ahora ejecutamos los tests pasan todos, estamos en verde.  
   
 
-[![](images/d9bfa-testprimernumeropasa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/d9bfa-testprimernumeropasa.png)
+![](images/d9bfa-testprimernumeropasa.png)
 
   
  ¡Genial! Pues hagamos lo mismo con el siguiente parámetro, con num2, primero el test y luego el código que pasa el test:
@@ -218,7 +218,7 @@ public int Suma(int num1, int num2){    if (num1 < 0)        throw new ArgumentO
 Y si ejecutamos los tres tests pasan todos.  
   
 
-[![](images/d9766-testsegundonumeropasa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/d9766-testsegundonumeropasa.png)
+![](images/d9766-testsegundonumeropasa.png)
 
   
 Como vemos éste proceso iterativo e incremental de testeo (TDD) es bueno pues, nos ceñimos a los requisitos sin inventarnos nada, cosa a la que tendemos todos los desarrolladores de forma innata cuando los requisitos no son claros. Voy a obviar todos los pasos pero voy a aabar los tests y la clase que se ciñe a los requisitos del ejemplo. Primero los tests:
@@ -235,7 +235,7 @@ public class Calculadora : ICalculadora{    public int Suma(int num1, int num2) 
 
   
 
-[![](images/a5154-los7testspasan.png)](https://jgcarmona.com/wp-content/uploads/2012/09/a5154-los7testspasan.png)
+![](images/a5154-los7testspasan.png)
 
   
 ¿Es mejorable éste código? Pues seguro que si pero no es el objetivo de éste artículo aprender C# sino hacer una introducción al TDD y a Mocking. Observad que en todos los tests hemos hecho más o menos lo mismo, hemos creado y preparado el test, en este caso creando una calculadora y dando valor a las variables. Después hemos ejecutado lo que queríamos probar, en nuestro caso el método sumar, y después hemos verificado que el resultado de la prueba era el esperado. En todos los tests más o menos lo mismo, ¿cierto? Pues ¡bienvenido a la metodología AAA!
@@ -271,7 +271,7 @@ Veamos como quedaría el ejemplo de la calculadora utilizando AAA como clase bas
 Ésta sería la primera aproximación en UML (no ha quedado exactamente así pero sólo quiero que se vea la intención):  
   
 
-[![](images/247fe-uml_aaa.png)](https://jgcarmona.com/wp-content/uploads/2012/09/247fe-uml_aaa.png)
+![](images/247fe-uml_aaa.png)
 
 Éste sería el código de pruebas:
 
@@ -338,7 +338,7 @@ Ahora pasemos, por fin, a Mocking...
   
 Es Una técnica para testar software en la que se simulan partes del sistema con las que el objeto a testar tiene alguna dependencia. Un mock es un objeto "dummy", son "fakes" de partes del sistema a las que se puede definir su comportamiento "On the fly". ¿Cómo es posible ésto? Fácil, un mock usa la interfaz de un objeto real y la implementa y si hemos seguido mínimamente los principios SOLID podemos sustituir una instancia de nuestro objeto falseado, nuestro mock, por el objeto que en realidad se esperaba.  
   
-Repito, el objeto que queremos probar utiliza un objeto "mockeable", y lo es porque implementa cierta interfaz que define su comportamiento. Al objeto testeable no le importa en realidad cual de los dos objetos usa, no sabe si es una implementación real o es un fake. En el fondo no deja de ser polimorfismo aplicado mediante [inyección o inversión de dependencias](https://jgcarmona.com/dip-dependency-inversion-principle-principio-de-inversion-de-dependencias/).  
+Repito, el objeto que queremos probar utiliza un objeto "mockeable", y lo es porque implementa cierta interfaz que define su comportamiento. Al objeto testeable no le importa en realidad cual de los dos objetos usa, no sabe si es una implementación real o es un fake. En el fondo no deja de ser polimorfismo aplicado mediante [inyección o inversión de dependencias](/es/dip-dependency-inversion-principle-principio-de-inversion-de-dependencias/).  
   
 
 1. DI obliga a separar componentes

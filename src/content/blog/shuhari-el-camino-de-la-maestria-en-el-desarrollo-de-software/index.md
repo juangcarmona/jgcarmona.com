@@ -44,4 +44,4 @@ Es importante recordar que **Shuhari no es un camino lineal**. Los desarrollador
 Shuhari ofrece una estructura clara para el camino del aprendizaje y la maestría, que puede ser tan aplicable en el desarrollo de software como en las artes marciales. Aplicando este concepto, tanto desarrolladores como equipos enteros de desarrollo de software, pueden continuar evolucionando, innovando y alcanzar nuevos estándares de excelencia en su trabajo.
 
   
-Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](https://jgcarmona.com/mejorar-en-programacion-con-filosofias-japonesas/).
+Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](/es/mejorar-en-programacion-con-filosofias-japonesas/).

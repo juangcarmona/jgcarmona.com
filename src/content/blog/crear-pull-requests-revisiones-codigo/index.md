@@ -168,6 +168,6 @@ Si quieres mejorar la cultura técnica de tu equipo, formar a tus developers o p
 
 A tí o a todo tu equipo.
 
-[Coaching y mentoría para líderes técnicos y equipos dev](https://jgcarmona.com/coaching)
+[Coaching y mentoría para líderes técnicos y equipos dev](/about/)
 
 **Sesiones prácticas, para mejorar desde el primer sprint.**

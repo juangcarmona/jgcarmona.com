@@ -23,4 +23,4 @@ Por último, Yugen nos anima a **apreciar la "grandeza" del universo tecnológic
 
 En resumen, Y**ugen ofrece una perspectiva reflexiva y contemplativa** respecto al desarrollo de software. Nos invita a ir más allá de la superficie, a apreciar la complejidad y la interconexión, y a reconocer la belleza en el acto de creación que es el desarrollo de software. Así que, ¿por qué no llevar un poco de Yugen a tu próximo proyecto de software?
 
-Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](https://jgcarmona.com/mejorar-en-programacion-con-filosofias-japonesas/).
+Te invito a continuar tu viaje de aprendizaje. Vuelve a la serie de artículos sobre filosofías japonesas aplicadas al desarrollo de software haciendo [**clic aquí**](/es/mejorar-en-programacion-con-filosofias-japonesas/).

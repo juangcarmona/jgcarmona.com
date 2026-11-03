@@ -112,7 +112,7 @@ Como decía mi abuela:
 
 ## ¿Hablar o callar?
 
-Entender estas paradojas puede [ayudarnos a decidir mejor](https://jgcarmona.com/coaching-lideres-tecnicos/). Hablar o callar no es solo una elección comunicativa, es un reflejo de cómo nos vemos por dentro. **La ignorancia grita. La sabiduría duda.** Pero ambas pueden aprender si las sabemos escuchar.
+Entender estas paradojas puede [ayudarnos a decidir mejor](/about/). Hablar o callar no es solo una elección comunicativa, es un reflejo de cómo nos vemos por dentro. **La ignorancia grita. La sabiduría duda.** Pero ambas pueden aprender si las sabemos escuchar.
 
 ## ¿Te has sentido alguna vez así?
 

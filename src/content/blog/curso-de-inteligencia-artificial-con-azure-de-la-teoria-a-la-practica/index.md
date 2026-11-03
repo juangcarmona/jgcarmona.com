@@ -13,7 +13,7 @@ Bienvenido al curso "[Inteligencia Artificial con Azure: De la Teoría a la Prá
 
 #### Índice de Módulos
 
-1. **[Introducción a los Servicios de Azure AI](https://jgcarmona.com/2024/07/26/introduccion-a-los-servicios-de-azure-ai/)**
+1. **[Introducción a los Servicios de Azure AI](/es/introduccion-a-los-servicios-de-azure-ai/)**
 
 3. **Soluciones de Visión por Computadora**
 

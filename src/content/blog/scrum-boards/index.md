@@ -70,7 +70,7 @@ Volvamos al principio de éste artículo:
 Os dejo una imagen de una propia que acabo de hacer con la **herramienta de dibujo de Google Docs**, es un documento público para el que encontraréis un enlace dentro de un rato para que la adaptéis a vuestra situación si os resulta interesante o útil, además tengo que explicar de donde me ha surgido la idea de ésta Scrum Board:  
   
 
-[![](images/61485-myvirtualscrumboard.png)](https://jgcarmona.com/wp-content/uploads/2012/08/61485-myvirtualscrumboard.png)
+![](images/61485-myvirtualscrumboard.png)
 
   
 

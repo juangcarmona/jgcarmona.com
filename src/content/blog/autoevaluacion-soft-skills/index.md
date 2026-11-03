@@ -113,12 +113,12 @@ Te invito a hacer algo simple y potente:
 
 📥 **Descarga aquí la hoja de autoevaluación en Excel**
 
-[Autoevaluacion\_Soft\_Skills](https://jgcarmona.com/wp-content/uploads/2025/06/Autoevaluacion_Soft_Skills.xlsx)[Download](https://jgcarmona.com/wp-content/uploads/2025/06/Autoevaluacion_Soft_Skills.xlsx)
+_(El fichero descargable original se perdió al migrar el blog desde WordPress.)_
 
   
 📧 **Rellénala y envíamela a juan@jgcarmona.com**
 
-> Las revisaré y, si quieres, te propondré un plan de mejora personalizado, con sesiones de [**coaching**](https://jgcarmona.com/coaching) o [**mentorías**](https://jgcarmona.com/mentorias/), para trabajar esas áreas que podrían marcar la diferencia en tu carrera profesional.
+> Las revisaré y, si quieres, te propondré un plan de mejora personalizado, con sesiones de [**coaching**](/about/) o [**mentorías**](/about/), para trabajar esas áreas que podrían marcar la diferencia en tu carrera profesional.
 
 La mejora empieza por el autoconocimiento.  
 Y esta tabla es tu punto de partida.

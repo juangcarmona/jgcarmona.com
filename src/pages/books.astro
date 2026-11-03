@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import PageHead from '../components/PageHead.astro';
+import { YOUTUBE_COURSES } from '../consts';
+import Base from '../layouts/Base.astro';
+import solidGrasp from '../assets/image-11.png';
+import ddd from '../assets/image-12-724x1024.png';
+
+// The introduction and the book descriptions are Juan's text from the original /books page, quoted literally.
+// The status of each item is new copy, verified on 2026-11-02 (docs/editorial/audit-2026-11-02.md). No item is a printed book.
+const intro =
+	'Durante más de 20 años, he trabajado como desarrollador, arquitecto y mentor, ayudando a equipos y empresas a superar desafíos tecnológicos. Mi pasión por compartir conocimientos me ha llevado a escribir libros que buscan no solo enseñar principios de software, sino también inspirar a profesionales a mejorar continuamente. Cada libro está pensado para aportar valor, con un enfoque práctico y cercano, abordando tanto conceptos técnicos como habilidades personales que considero esenciales para el éxito en la industria.';
+
+const books = [
+	{
+		title: 'SOLID y GRASP: Buenas Prácticas hacia el Éxito en el Desarrollo de Software',
+		status: 'Ebook en PDF, distribuido gratis a través de OpenLibra. Descarga no disponible temporalmente.',
+		cover: solidGrasp,
+		text: [
+			'Este libro ofrece una guía clara y práctica sobre los principios de diseño SOLID y los patrones de diseño GRASP. A lo largo del libro, se explican conceptos fundamentales como el Principio de Responsabilidad Única, la Inversión de Dependencias y el Control de Creación de Objetos, utilizando ejemplos detallados que muestran cómo aplicar estas prácticas en proyectos reales. Además, se incluyen ejercicios prácticos y estudios de caso que permiten al lector comprender mejor la teoría y aplicarla a su trabajo cotidiano.',
+			'Con un enfoque en las buenas prácticas y la calidad del código, este libro es ideal para desarrolladores que buscan estructurar su software de manera eficiente y profesional, evitando errores comunes y creando aplicaciones más mantenibles.',
+		],
+	},
+	{
+		title: 'Domain-Driven Design: Estrategias y Técnicas para Desarrolladores y Arquitectos',
+		status: 'En desarrollo. Sin edición pública.',
+		cover: ddd,
+		text: [
+			'En este libro, aún en desarrollo, se exploran a fondo los conceptos de Domain-Driven Design (DDD) y su aplicabilidad en entornos complejos de desarrollo de software. Cada capítulo se centra en un aspecto fundamental de DDD, desde la creación de un lenguaje ubicuo y la identificación de contextos delimitados, hasta la implementación de patrones tácticos y estratégicos. Se abordan temas como la gestión de consistencia y transacciones, el diseño basado en eventos y la evolución del modelo a lo largo del ciclo de vida del proyecto.',
+			'El contenido está diseñado para ayudar a desarrolladores y arquitectos a modelar dominios de negocio complejos, permitiendo que el software refleje con precisión la lógica del negocio y evolucione de manera ágil y eficaz. Con ejemplos prácticos y referencias a proyectos de código abierto, este libro es una referencia esencial para quienes buscan llevar su conocimiento de DDD a un nivel más avanzado.',
+		],
+	},
+	{
+		title: 'Mastering Software Development: Herramientas y Habilidades para Impulsar tu Carrera Profesional',
+		status: 'Manuscrito sin publicar. Partes publicadas en el blog como serie desde julio de 2023.',
+		url: '/es/mastering-software-development/',
+		text: [
+			'Este libro está orientado a desarrolladores que desean llevar su carrera al siguiente nivel, enfocándose tanto en habilidades técnicas como en habilidades blandas necesarias para destacarse en el desarrollo de software. Aborda principios y filosofías de mejora continua como Kaizen, Ikigai y Ganbatte, que se combinan con técnicas avanzadas de diseño de software, arquitectura y gestión de proyectos.',
+			'El contenido abarca desde la elección de metodologías ágiles hasta la implementación de DevOps y la integración continua. Además, incluye un apartado dedicado a las habilidades de comunicación, liderazgo y resolución de conflictos, esenciales para cualquier desarrollador que aspire a roles más senior o de liderazgo en su carrera. Es un libro integral que guía al lector desde el dominio técnico hasta el desarrollo personal y profesional.',
+		],
+	},
+];
+---
+
+<Base
+	title="Mis libros — Juan G. Carmona"
+	description="Libros de Juan G. Carmona sobre principios SOLID y GRASP, Domain-Driven Design y desarrollo profesional en software."
+	lang="es"
+	wide
+>
+	<PageHead eyebrow="Publicaciones" title="Mis libros">
+		<blockquote class="own-words">
+			<p>{intro}</p>
+		</blockquote>
+	</PageHead>
+
+	<div class="frame">
+		<ol class="book-list">
+			{
+				books.map((book) => (
+					<li>
+						{book.cover ? (
+							<Image src={book.cover} alt={`Portada de ${book.title}`} widths={[240, 400]} sizes="(max-width: 40rem) 40vw, 220px" loading="lazy" />
+						) : (
+							<span class="no-cover" aria-hidden="true">{book.title.split(':')[0]}</span>
+						)}
+						<div>
+							<h2>{book.title}</h2>
+							<p class="status">{book.status}</p>
+							{book.text.map((paragraph) => <p>{paragraph}</p>)}
+							{book.url && <a class="arrow" href={book.url}>Leer la serie en el blog</a>}
+						</div>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+
+	<section class="frame publications" aria-labelledby="courses">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">YouTube</p>
+				<h2 id="courses">Cursos en vídeo</h2>
+			</div>
+		</header>
+		<ol class="courses">
+			{
+				YOUTUBE_COURSES.map((course) => (
+					<li>
+						<a href={course.url}>{course.title}</a>
+						<span class="status">Curso online · YouTube · {course.videos} vídeos</span>
+					</li>
+				))
+			}
+		</ol>
+	</section>
+</Base>

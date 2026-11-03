@@ -39,7 +39,7 @@ And here’s where my bias kicks in: **I’ve always loved Docker containers for
 
 - **Multi-agent ready** → Teams of agents can collaborate, each with its own role.
 
-For me, _the killer feature is **local execution**_. Everything I’ll show here runs on my machine with DMR. That’s why I wrote [a separate article on how to set up DMR](https://jgcarmona.com/enable-gpu-docker-model-runner-windows/). If you’re not familiar with it yet, [I recommend starting there](https://jgcarmona.com/enable-gpu-docker-model-runner-windows/).
+For me, _the killer feature is **local execution**_. Everything I’ll show here runs on my machine with DMR. That’s why I wrote [a separate article on how to set up DMR](/en/enable-gpu-docker-model-runner-windows/). If you’re not familiar with it yet, [I recommend starting there](/en/enable-gpu-docker-model-runner-windows/).
 
 ## Getting Started with cagent
 

@@ -1,59 +1,39 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Comments from '../../components/Comments.astro';
+import Redirect from '../../components/Redirect.astro';
+import BlogPost from '../../layouts/BlogPost.astro';
+import { postUrl } from '../../utils/posts';
 
+// Each post lives at its original language. The other language prefix used to serve an untranslated
+// copy, so it now redirects to the original.
 export async function getStaticPaths() {
-const posts = await getCollection('blog');
-const paths = [];
-const seen = new Set<string>();
-
-for (const post of posts) {
-// Original language route
-const langKey = `${post.data.lang || 'en'}/${post.id}`;
-if (!seen.has(langKey)) {
-seen.add(langKey);
-paths.push({
-params: { lang: post.data.lang || 'en', slug: post.id },
-props: post,
-});
+	const posts = await getCollection('blog');
+	return posts.flatMap((post) => {
+		const other = post.data.lang === 'es' ? 'en' : 'es';
+		return [
+			{ params: { lang: post.data.lang, slug: post.id }, props: { post, redirect: false } },
+			{ params: { lang: other, slug: post.id }, props: { post, redirect: true } },
+		];
+	});
 }
 
-// Translation route (cross-language)
-const transLang = post.data.lang === 'es' ? 'en' : 'es';
-const transKey = `${transLang}/${post.id}`;
-if (!seen.has(transKey)) {
-seen.add(transKey);
-paths.push({
-params: { lang: transLang, slug: post.id },
-props: { ...post, data: { ...post.data, isTranslation: true } },
-});
-}
-}
-return paths;
-}
+type Props = { post: CollectionEntry<'blog'>; redirect: boolean };
 
-type Props = CollectionEntry<'blog'>;
-const post = Astro.props;
+const { post, redirect } = Astro.props;
 const { Content } = await render(post);
+const translations = post.data.translationKey
+	? (await getCollection('blog', (entry) => entry.data.translationKey === post.data.translationKey)).filter((entry) => entry.id !== post.id)
+	: [];
 ---
 
-<BlogPost {...post.data}>
-{post.data.isTranslation && (
-<div class="translation-disclaimer">
-{post.data.lang === 'es' ? 'This is an English translation of the original Spanish post.' : 'Esta es una traducción al espa\u00F1ol del post original en ingl\u00E9s.'}
-</div>
-)}
-<Content />
-<Comments />
-</BlogPost>
-
-<style>
-.translation-disclaimer {
-color: var(--accent);
-font-size: 1.2em;
-margin: 0.5em 0 1em 0;
-font-style: italic;
-background-color: black;
+{
+	redirect ? (
+		<Redirect to={postUrl(post)} />
+	) : (
+		<BlogPost post={post} translations={translations}>
+			<Content />
+			<Comments slot="after" term={post.data.title} />
+		</BlogPost>
+	)
 }
-</style>

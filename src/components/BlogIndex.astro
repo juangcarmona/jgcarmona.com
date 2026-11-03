@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import { getPosts, type Post } from '../utils/posts';
+import PageHead from './PageHead.astro';
+import PostList from './PostList.astro';
+
+type Props = { page: number; total: number; posts: Post[] };
+
+const { page, total, posts } = Astro.props;
+const href = (n: number) => (n === 1 ? '/blog/' : `/blog/${n}/`);
+
+const all = await getPosts();
+const counts = new Map<string, number>();
+for (const post of all) for (const tag of post.data.tags) counts.set(tag, (counts.get(tag) ?? 0) + 1);
+const topics = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 12);
+const first = all.at(-1)!.data.pubDate.getUTCFullYear();
+---
+
+<Base
+	title={page === 1 ? 'Blog — Juan G. Carmona' : `Blog, page ${page} — Juan G. Carmona`}
+	description={
+		page === 1
+			? 'Articles on software architecture, AI-assisted engineering, DevOps, security and leadership, in English and Spanish.'
+			: `Page ${page} of ${total} of the blog archive: articles on software architecture, AI-assisted engineering, DevOps, security and leadership.`
+	}
+	wide
+>
+	<PageHead eyebrow="Writing" title="Blog">
+		<p>
+			{all.length} articles in English and Spanish, from {first} to today. Browse by <a href="/tags/">topic</a>,
+			<a href="/search/">search</a>, or follow the <a href="/rss.xml">RSS feed</a>.
+		</p>
+	</PageHead>
+	{
+		page === 1 && (
+			<nav class="frame topics" aria-label="Main topics">
+				<ul>
+					{topics.map(([tag, count]) => (
+						<li>
+							<a href={`/tags/${tag}/`}>
+								{tag} <span>{count}</span>
+							</a>
+						</li>
+					))}
+					<li>
+						<a class="all" href="/tags/">All topics</a>
+					</li>
+				</ul>
+			</nav>
+		)
+	}
+	<div class="frame">
+		<PostList posts={posts} />
+		<nav class="pagination" aria-label="Pages">
+			{page > 1 ? <a class="lh-button" data-variant="secondary" href={href(page - 1)} rel="prev">← Newer</a> : <span />}
+			<span class="meta">Page {page} of {total}</span>
+			{page < total ? <a class="lh-button" data-variant="secondary" href={href(page + 1)} rel="next">Older →</a> : <span />}
+		</nav>
+	</div>
+</Base>

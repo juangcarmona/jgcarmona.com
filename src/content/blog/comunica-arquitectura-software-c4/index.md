@@ -130,7 +130,7 @@ Imagina que estás en una reunión con el equipo de desarrollo, el equipo de ven
 
 ### Herramientas para Crear Diagramas C4
 
-Una de las grandes ventajas del modelo C4 es su flexibilidad a la hora de elegir herramientas para crear los diagramas. Ya sea que prefieras herramientas de código o interfaces gráficas, hay opciones para cada estilo de trabajo. Vamos a comparar dos de las herramientas más populares para crear diagramas C4: **Mermaid** y **Draw.io**. ([Ya te hablé sobre estas herramientas la semana pasada](https://jgcarmona.com/uml-ddd-cqrs/))
+Una de las grandes ventajas del modelo C4 es su flexibilidad a la hora de elegir herramientas para crear los diagramas. Ya sea que prefieras herramientas de código o interfaces gráficas, hay opciones para cada estilo de trabajo. Vamos a comparar dos de las herramientas más populares para crear diagramas C4: **Mermaid** y **Draw.io**. ([Ya te hablé sobre estas herramientas la semana pasada](/es/uml-ddd-cqrs/))
 
 ### Mermaid y Draw.io
 

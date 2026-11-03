@@ -83,7 +83,7 @@ Quantization is not only about inference. [**QLoRA**](https://arxiv.org/abs/2305
 - **Double quantization**: quantizes the quantization constants themselves, saving additional memory.
 - **Paged optimizers**: uses CPU memory as overflow when GPU memory runs out.
 
-In practice, QLoRA made it possible to fine-tune a 65B parameter model on a single 48GB GPU, a task that previously required a cluster. This democratized fine-tuning: more people could adapt large models without owning expensive hardware. If you have been thinking about [building a cost-efficient AI workstation](/blog/build-cheap-ai-workstation-europe-4gpu/), QLoRA is the reason a 4-GPU consumer rig can be genuinely useful for fine-tuning.
+In practice, QLoRA made it possible to fine-tune a 65B parameter model on a single 48GB GPU, a task that previously required a cluster. This democratized fine-tuning: more people could adapt large models without owning expensive hardware. If you have been thinking about [building a cost-efficient AI workstation](/en/build-cheap-ai-workstation-europe-4gpu/), QLoRA is the reason a 4-GPU consumer rig can be genuinely useful for fine-tuning.
 
 ## KV Cache Quantization: The Long-Context Memory Problem
 

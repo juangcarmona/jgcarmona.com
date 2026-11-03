@@ -47,4 +47,4 @@ El ikigai es mucho más que descubrir un trabajo que te guste, se trata más bie
 
 Sinceramente, espero que este artículo te haya inspirado a explorar tu propio Ikigai como desarrollador de software. Descubrir tu Ikigai, tu razón de ser en la programación, puede conducirte a una **vida llena de propósito, satisfacción personal y éxito profesional**. Así que, no dudes en reflexionar sobre tus pasiones, habilidades y cómo puedes aplicarlos en tu trabajo en el mundo del desarrollo de software. ¡Encuentra tu Ikigai para ser un desarrollador de software pleno y realizado!
 
-Puedes volver a la serie de artículos **[haciendo clic aquí](https://jgcarmona.com/mejorar-en-programacion-con-filosofias-japonesas/)**.
+Puedes volver a la serie de artículos **[haciendo clic aquí](/es/mejorar-en-programacion-con-filosofias-japonesas/)**.

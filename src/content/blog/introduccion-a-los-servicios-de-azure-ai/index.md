@@ -9,7 +9,7 @@ tags:
 heroImage: "images/introduccion-a-azure-ai-services-2.png"
 ---
 
-Este es el primer módulo del curso "**[Inteligencia Artificial con Azure: De la Teoría a la Práctica](https://jgcarmona.com/2024/07/26/curso-de-inteligencia-artificial-con-azure-de-la-teoria-a-la-practica/)**". En este módulo, aprenderás sobre los servicios y capacidades de Azure AI, cómo configurar tu entorno y los primeros pasos necesarios para comenzar a trabajar con estas herramientas poderosas. Puedes encontrar el índice completo del curso [aquí](https://www.youtube.com/playlist?list=PLquujPA7EWzMce1_428O61sPCx6GJsUm1).
+Este es el primer módulo del curso "**[Inteligencia Artificial con Azure: De la Teoría a la Práctica](/es/curso-de-inteligencia-artificial-con-azure-de-la-teoria-a-la-practica/)**". En este módulo, aprenderás sobre los servicios y capacidades de Azure AI, cómo configurar tu entorno y los primeros pasos necesarios para comenzar a trabajar con estas herramientas poderosas. Puedes encontrar el índice completo del curso [aquí](https://www.youtube.com/playlist?list=PLquujPA7EWzMce1_428O61sPCx6GJsUm1).
 
 ## Introducción al Curso Inteligencia Artificial con Azure: De la Teoría a la Práctica
 

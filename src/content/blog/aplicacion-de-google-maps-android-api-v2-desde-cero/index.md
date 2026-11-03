@@ -113,7 +113,7 @@ package com.jgc.lameca;import android.os.Bundle;public class MapActivity extends
 Tan simple como eso, dos actividades, una que será el punto de entrada y otra que será el mapa. Si has seguido estos pasos hasta aquí tu proyecto tendrá errores igual que los tiene el mío ya que en BaseActivity estamos referenciando a botones que todavía no existen y en MapActivity a un layout que ni siquiera hemos creado:  
   
 
-[![](images/7e93b-1.png)](https://jgcarmona.com/wp-content/uploads/2012/12/7e93b-1.png)
+![](images/7e93b-1.png)
 
   
 Pues vamos a crear esos botones y ese layout para quitarnos esos errores. Sin preocuparnos de momento por el aspecto visual a main.xml (en res/layout/) le añadimos dos botones los cuales se llamarán ep\_map\_button y \_ep\_gps\_button respectivamente. Voy a dejar el texto que había por defecto, hello y mi main.xml quedaría así.  
@@ -128,7 +128,7 @@ Pues vamos a crear esos botones y ese layout para quitarnos esos errores. Sin pr
 Bien, ya han desaparecido los errores de BaseActivity, vamos a crear map\_layout.xml para que no haya errores en MapActivity y que compile el proyecto, una vez creado ese fichero en res/layout la estructura del proyecto queda así:  
   
 
-[![](images/fccc7-2.png)](https://jgcarmona.com/wp-content/uploads/2012/12/fccc7-2.png)
+![](images/fccc7-2.png)
 
   
 Aún no podemos probarlo porque hay que modificar AndroidManifest.xml para que incluya las actividades y los permisos necesarios. Muchas veces me ha sucedido que he creado una actividad, un activity, y que luego no la he incluído en en fichero Manifest y, durante un largo rato, me he vuelto loco porque no sabía por qué la aplicación "petaba" al abrir dicha actividad... Recuerda que AndroidManifest.xml es una parte fundamental de tu aplicación. Voy a dejarlo "decente" antes de empezar con los mapas propiamente hablando... (mientras escribo y leo alguna noticia estoy ojeando [éste tutorial](https://developers.google.com/maps/documentation/android/v1/hello-mapview)). Una primera versión de AndroidManifest.xml puede ser como ésta:  
@@ -166,7 +166,7 @@ Y bueno, **después de muchas vueltas mi error (tengo que leer con más deteni
 Se me ha hecho un poco tarde, para terminar por hoy voy a dejar una última captura de pantalla de cómo ha quedado el proyecto y seguiré con él la próxima vez que tenga algo de tiempo libre.  
   
 
-[![](images/9a3e8-3.png)](https://jgcarmona.com/wp-content/uploads/2012/12/9a3e8-3.png)
+![](images/9a3e8-3.png)
 
   
 

@@ -104,7 +104,7 @@ Además debemos añadir AutoMapper e IdentityCore a nuestros servicios en Startu
   
 Para probar todo esto tenemos dos opciones, usar Swagger, con lo que tendríamos que instalarlo y configurarlo en nuestra aplicación, creo que lo vamos a dejar para el final, o usar Postman... Como somos Full Stack developers entonces usaremos Postman, Postman es nuestro amigo, ¿verdad? Pues si está todo en orde y creamos un POST a localhost:5000/api/account con los datos que hayamos puesto en nuestro RegistrationViewModel entonces deberíamos tener una respuesta similar a esta:  
 
-[![](images/15a5c-accountcreationpostman.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/15a5c-accountcreationpostman.jpg)
+![](images/15a5c-accountcreationpostman.jpg)
 
   
 
@@ -141,9 +141,9 @@ Bueno, parece que ésto se mueve, hemos registrado un usuario con nuestro accoun
 ¿Lo probamos? Vamos a probarlo con Postman:  
   
 
-[![](images/8757d-loginpostman.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/8757d-loginpostman.jpg)
+![](images/8757d-loginpostman.jpg)
 
-[![](images/35df6-loginpostmanrespdetails.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/35df6-loginpostmanrespdetails.jpg)
+![](images/35df6-loginpostmanrespdetails.jpg)
 
 Pues ahí tenemos nuestro token, token con el que teóricamente podremos autorizar llamadas a nuestra API, vamos con ello.  
 
@@ -153,13 +153,13 @@ Pues ahí tenemos nuestro token, token con el que teóricamente podremos autoriz
 
 Como hemos visto antes en nuestro Startup hemos establecido una política de autorización pero para que ésta se aplique hay que indicarlo explícitamente en nuestros controladores mediante el uso del atributo \[Autorize(Policy=...)\]. Vamos a modificar el tan famoso ValuesController para que sólo puedan acceder a él usuarios autorizados, para lo cuál añadiremos   \[Authorize(Policy = "ApiUser")\]. ¿Qué pasa si lo llamamos ahora?  
 
-[![](images/87634-401.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/87634-401.jpg)
+![](images/87634-401.jpg)
 
   
 Pues que como esperábamos hemos obtenido un error 401, que no es otra cosa que un "Unauthorised". Perfecto. ¿Y si nos autenticamos primero y usamos un token? (Es decir, llamamos a login y metemos el token en el header de la siguiente llamada en Postman)  
   
 
-[![](images/92011-200.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/92011-200.jpg)
+![](images/92011-200.jpg)
 
   
 
@@ -180,7 +180,7 @@ Vamos a empezar generando dos componentes, uno para el registro, sigup, otro par
 
   
 
-[![](images/e5ceb-newcomponents.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/e5ceb-newcomponents.jpg)
+![](images/e5ceb-newcomponents.jpg)
 
   
 
@@ -202,11 +202,11 @@ Veamos como se comporta:
 
   
 
-[![](images/4afb5-signup_1.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/4afb5-signup_1.jpg)
+![](images/4afb5-signup_1.jpg)
 
   
 
-[![](images/c8dcc-signup_2.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/c8dcc-signup_2.jpg)
+![](images/c8dcc-signup_2.jpg)
 
   
 
@@ -221,7 +221,7 @@ Bueno, necesita mejorar pero como primer paso nos vale, ahora vamos a por el for
 
 Y al probarlo el resultado es el siguiente:  
 
-[![](images/eb07e-login_1.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/eb07e-login_1.jpg)
+![](images/eb07e-login_1.jpg)
 
 Como vemos ya podríamos gestionar nuestro token del lado del cliente para autenticar sus llamadas a nuestro API...  
   
@@ -245,7 +245,7 @@ Así ha quedado nuestro código:
   
 Y esto es lo que obtenemos tras hacer login:  
 
-[![](images/93c35-profile.jpg)](https://jgcarmona.com/wp-content/uploads/2018/06/93c35-profile.jpg)
+![](images/93c35-profile.jpg)
 
 Llegados hasta aquí, guardaremos todos estos cambios y seguiremos...  
 
@@ -296,7 +296,7 @@ El proceso de autentoicación con Facebook (y es similar con otras redes sociale
 
 Puede parecer enrevesado, la verdad es que creo que en este punto merece la pena tener un pequeño diagrama de secuencia que explique un poco los pasos, a veces una imagen vale más que mil palabras.
 
-[![](images/56ab4-facebookauthsequence.png)](https://jgcarmona.com/wp-content/uploads/2018/06/56ab4-facebookauthsequence.png)
+![](images/56ab4-facebookauthsequence.png)
 
   
 

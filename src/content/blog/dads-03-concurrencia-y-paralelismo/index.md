@@ -11,7 +11,7 @@ heroImage: "images/image-16.png"
 
 ## Aplicaciones prácticas, desde el hardware hasta sistemas distribuidos
 
-En este capítulo de [**DADS**](https://jgcarmona.com/category/dads/), **Diseño, Arquitectura y Desarrollo de Software**, te voy a hablar de la **concurrencia y el paralelismo**. De nuevo he recurrido a dos conceptos fundamentales, básicos y a menudo utilizados erróneamente, para diseñar un viaje trepidante, desde los más recónditos rincones de una CPU cualquiera hasta su aplicación en los sistemas que dan soporte computacional a nuestras aplicaciones y servicios favoritos.
+En este capítulo de [**DADS**](/search/?q=DADS), **Diseño, Arquitectura y Desarrollo de Software**, te voy a hablar de la **concurrencia y el paralelismo**. De nuevo he recurrido a dos conceptos fundamentales, básicos y a menudo utilizados erróneamente, para diseñar un viaje trepidante, desde los más recónditos rincones de una CPU cualquiera hasta su aplicación en los sistemas que dan soporte computacional a nuestras aplicaciones y servicios favoritos.
 
 La **concurrencia y el paralelismo** son dos conceptos clave en el desarrollo de software moderno. Entender sus diferencias y aplicaciones es fundamental para diseñar sistemas eficientes y escalables. En este artículo, exploraremos juntos, qué son, cuándo utilizarlos y cómo se implementan a través de ejemplos prácticos en hardware, software y sistemas distribuidos.
 
@@ -148,9 +148,9 @@ Ahora que entendemos qué son la **concurrencia** y el **paralelismo**, podmeos 
 - **Paralelismo**: En programación paralela, diferentes partes de un programa pueden ejecutarse simultáneamente en diferentes núcleos o máquinas. Esto es útil para tareas que requieren un procesamiento intensivo, como cálculos matemáticos o simulaciones.  
       
     **Técnicas y tecnologías clave**:
-    - **Multithreading**: Crear y gestionar múltiples hilos en un programa, ejecutándolos en paralelo en diferentes núcleos. por ejemplo:![](images/mYpKomUrixQAAAABJRU5ErkJggg==)
+    - **Multithreading**: Crear y gestionar múltiples hilos en un programa, ejecutándolos en paralelo en diferentes núcleos. por ejemplo:![](images/mYpKomUrixQAAAABJRU5ErkJggg==.png)
     
-    - **Parallel LINQ (PLINQ)** (C#): Un conjunto de funciones que permite la ejecución de consultas y operaciones en paralelo de manera sencilla.![](images/cqZI4pg7j8AAAAAABJRU5ErkJggg==)
+    - **Parallel LINQ (PLINQ)** (C#): Un conjunto de funciones que permite la ejecución de consultas y operaciones en paralelo de manera sencilla.![](images/cqZI4pg7j8AAAAAABJRU5ErkJggg==.png)
     
     - **MPI** (Message Passing Interface): Un estándar para realizar computación paralela en clústeres de máquinas, ideal para procesar tareas en múltiples nodos.
 
@@ -256,9 +256,9 @@ Ahora que conoces estos conceptos a fondo, ¿estás listo para aplicarlos y hace
 
 ## **Si quieres llevar tus proyectos o tu carrera al siguiente nivel...**
 
-Si este análisis te ha inspirado y te gustaría aplicar estas técnicas en tus proyectos, mejorar la arquitectura de tus sistemas o desarrollar tus habilidades como líder técnico, **[estoy aquí para ayudarte](https://jgcarmona.com/contact/)**. Ya sea a través de **[coaching personalizado](https://jgcarmona.com/coaching/)** para potenciar tu carrera como arquitecto o líder técnico, o mediante **[consultoría especializada](https://jgcarmona.com/consultoria-especializada-en-desarrollo-de-software/)** para optimizar y escalar tus soluciones tecnológicas, juntos podemos transformar tus ideas en realidades de alto impacto.
+Si este análisis te ha inspirado y te gustaría aplicar estas técnicas en tus proyectos, mejorar la arquitectura de tus sistemas o desarrollar tus habilidades como líder técnico, **[estoy aquí para ayudarte](/about/)**. Ya sea a través de **[coaching personalizado](/about/)** para potenciar tu carrera como arquitecto o líder técnico, o mediante **[consultoría especializada](/about/)** para optimizar y escalar tus soluciones tecnológicas, juntos podemos transformar tus ideas en realidades de alto impacto.
 
-**[Contacta conmigo](https://jgcarmona.com/contact/) y [trabajemos juntos para llevar](https://jgcarmona.com/coaching/)** [tu carrera](https://jgcarmona.com/coaching/) y [**tus proyectos**](https://jgcarmona.com/consultoria-especializada-en-desarrollo-de-software/) al siguiente nivel.
+**[Contacta conmigo](/about/) y [trabajemos juntos para llevar](/about/)** [tu carrera](/about/) y [**tus proyectos**](/about/) al siguiente nivel.
 
 ## **Próximamente también en YouTube**
 
