@@ -293,4 +293,18 @@ export const COURSES: Course[] = [
 			{ label: 'Software Architektur im Stream', url: 'https://www.youtube.com/watch?v=w0fj9kLVjEc' },
 		],
 	},
+	{
+		// Source: the README of docker-model-runner-talk (summary). Delivery and topics: Juan, 2026-11-03.
+		title: 'Running language models locally',
+		summary: 'VS Code–driven, terminal-first walkthrough of Docker Model Runner (DMR). One local runtime. Multiple clients. CPU or GPU. No cloud APIs.',
+		modules: ['Docker Model Runner', 'llama.cpp', 'vLLM'],
+		delivery: 'Talks for teams, walking through the repositories.',
+		links: [
+			{ label: 'Docker Model Runner talk', url: 'https://github.com/juangcarmona/docker-model-runner-talk' },
+			{ label: 'Claude Code with DMR', url: 'https://github.com/juangcarmona/claude-code-local-dmr' },
+			{ label: 'Running Models Locally with DMR', url: '/en/enable-gpu-docker-model-runner-windows/' },
+			{ label: 'Local LLMs Under the Hood', url: '/en/local-llms-under-the-hood/' },
+			{ label: 'Quantization', url: '/en/quantization-making-llms-smaller/' },
+		],
+	},
 ];
