@@ -18,7 +18,7 @@ type Props = { tag: string; posts: Post[] };
 const { tag, posts } = Astro.props;
 ---
 
-<Base title={`${tag} — Juan G. Carmona`} description={`Articles about ${tag} by Juan G. Carmona.`} wide>
+<Base title={`${tag} — Juan G. Carmona`} description={`${posts.length} ${posts.length === 1 ? 'article' : 'articles'} about ${tag} by Juan G. Carmona, in English and Spanish. Latest: ${posts[0].data.title}.`} wide>
 	<PageHead eyebrow="Topics" eyebrowHref="/tags/" title={tag}>
 		<p>{posts.length} {posts.length === 1 ? 'article' : 'articles'}, most recent first.</p>
 	</PageHead>

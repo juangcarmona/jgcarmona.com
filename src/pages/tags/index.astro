@@ -10,7 +10,7 @@ for (const post of await getPosts()) {
 const tags = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 ---
 
-<Base title="Topics — Juan G. Carmona" description="Browse articles by topic." wide>
+<Base title="Topics — Juan G. Carmona" description="Every topic on the blog of Juan G. Carmona, from software architecture and AI to DevOps, security and leadership, with the number of articles in each." wide>
 	<PageHead eyebrow="Writing" eyebrowHref="/blog/" title="Topics">
 		<p>{tags.length} topics, by number of articles.</p>
 	</PageHead>

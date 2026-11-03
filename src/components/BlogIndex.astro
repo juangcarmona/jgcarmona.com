@@ -18,7 +18,11 @@ const first = all.at(-1)!.data.pubDate.getUTCFullYear();
 
 <Base
 	title={page === 1 ? 'Blog — Juan G. Carmona' : `Blog, page ${page} — Juan G. Carmona`}
-	description="Articles on software architecture, AI-assisted engineering, DevOps, security and leadership, in English and Spanish."
+	description={
+		page === 1
+			? 'Articles on software architecture, AI-assisted engineering, DevOps, security and leadership, in English and Spanish.'
+			: `Page ${page} of ${total} of the blog archive: articles on software architecture, AI-assisted engineering, DevOps, security and leadership.`
+	}
 	wide
 >
 	<PageHead eyebrow="Writing" title="Blog">

@@ -1,9 +1,10 @@
 export const SITE_URL = 'https://jgcarmona.com';
 export const SITE_TITLE = 'Juan G. Carmona';
 export const SITE_HEADLINE = 'Software Architect · AI Strategist · Critical & Secure Systems';
-export const SITE_SEO_TITLE = `${SITE_TITLE} — ${SITE_HEADLINE}`;
+// Under 60 characters for search results; the full headline is on the page.
+export const SITE_SEO_TITLE = `${SITE_TITLE} — Software Architect · AI Strategist`;
 export const SITE_DESCRIPTION =
-	'Juan G. Carmona is a software architect and AI strategist with 20+ years building critical and secure systems. He writes, speaks and builds open source on AI-assisted software engineering.';
+	'Software architect with more than twenty years building critical and secure systems. Articles, talks and open source on architecture and AI-assisted engineering.';
 export const CONTACT_EMAIL = 'juan@jgcarmona.com';
 
 export const PROFILES = {

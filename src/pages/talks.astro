@@ -53,7 +53,7 @@ const schema = APPEARANCES.map((talk) => ({
 				recording?.videoUrl && (
 					<figure class="stage-recording">
 						<a class="stage-photo" href={recording.videoUrl}>
-							<Image src={convex} alt={`Juan G. Carmona on stage at ${recording.event}`} widths={[480, 800, 1280]} sizes="(max-width: 56rem) 100vw, 700px" loading="eager" />
+							<Image src={convex} alt={`Juan G. Carmona on stage at ${recording.event}`} widths={[480, 800, 1280]} sizes="(max-width: 56rem) 100vw, 700px" loading="eager" fetchpriority="high" />
 							<span class="play">Watch the recording</span>
 						</a>
 						<figcaption>

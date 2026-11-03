@@ -148,9 +148,9 @@ Ahora que entendemos qué son la **concurrencia** y el **paralelismo**, podmeos 
 - **Paralelismo**: En programación paralela, diferentes partes de un programa pueden ejecutarse simultáneamente en diferentes núcleos o máquinas. Esto es útil para tareas que requieren un procesamiento intensivo, como cálculos matemáticos o simulaciones.  
       
     **Técnicas y tecnologías clave**:
-    - **Multithreading**: Crear y gestionar múltiples hilos en un programa, ejecutándolos en paralelo en diferentes núcleos. por ejemplo:![](images/mYpKomUrixQAAAABJRU5ErkJggg==)
+    - **Multithreading**: Crear y gestionar múltiples hilos en un programa, ejecutándolos en paralelo en diferentes núcleos. por ejemplo:![](images/mYpKomUrixQAAAABJRU5ErkJggg==.png)
     
-    - **Parallel LINQ (PLINQ)** (C#): Un conjunto de funciones que permite la ejecución de consultas y operaciones en paralelo de manera sencilla.![](images/cqZI4pg7j8AAAAAABJRU5ErkJggg==)
+    - **Parallel LINQ (PLINQ)** (C#): Un conjunto de funciones que permite la ejecución de consultas y operaciones en paralelo de manera sencilla.![](images/cqZI4pg7j8AAAAAABJRU5ErkJggg==.png)
     
     - **MPI** (Message Passing Interface): Un estándar para realizar computación paralela en clústeres de máquinas, ideal para procesar tareas en múltiples nodos.
 

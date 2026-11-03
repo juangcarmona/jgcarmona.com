@@ -62,7 +62,7 @@ const article = {
 			<p class="eyebrow"><a href="/blog/">Blog</a>{lang === 'es' && <span lang="es"> · En español</span>}</p>
 			<h1>{title}</h1>
 			<p class="byline">
-				<Image class="avatar" src={portrait} alt="" width={64} />
+				<Image class="avatar" src={portrait} alt="" widths={[44, 88]} sizes="44px" />
 				<span>
 					<strong>Juan G. Carmona</strong>
 					<span class="meta">
@@ -81,7 +81,7 @@ const article = {
 					</span>
 				</span>
 			</p>
-			{heroImage && <Image class="hero" src={heroImage} alt="" width={1360} loading="eager" fetchpriority="high" />}
+			{heroImage && <Image class="hero" src={heroImage} alt="" widths={[480, 800, 1200, 1600]} sizes="(max-width: 52rem) 100vw, 780px" loading="eager" fetchpriority="high" />}
 		</header>
 		<div class="prose">
 			<slot />

@@ -3,6 +3,7 @@ import '@juangcarmona/lighthouse-ui';
 import '../styles/site.css';
 import { SITE_TITLE } from '../consts';
 import { graph } from '../utils/schema';
+import themeInit from '../scripts/theme-init.js?raw';
 
 interface Props {
 	title: string;
@@ -35,19 +36,23 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Search results cut titles around 60 characters: long article titles drop the site name rather than lose their own words.
+const suffix = ` — ${SITE_TITLE}`;
+const pageTitle = title.length > 65 && title.endsWith(suffix) ? title.slice(0, -suffix.length) : title;
 const imageURL = new URL(image, Astro.site);
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>{title}</title>
+<title>{pageTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />
 {noindex && <meta name="robots" content="noindex, follow" />}
 <meta name="author" content={SITE_TITLE} />
 <meta name="generator" content={Astro.generator} />
 
-<script is:inline src="/theme-init.js"></script>
+{/* Inlined so the stored appearance applies before first paint without a render-blocking request. */}
+<script is:inline set:html={themeInit} />
 <meta name="color-scheme" content="light dark" />
 
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
@@ -59,7 +64,7 @@ const imageURL = new URL(image, Astro.site);
 <meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:title" content={title} />
+<meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageURL} />
 <meta property="og:image:alt" content={imageAlt} />

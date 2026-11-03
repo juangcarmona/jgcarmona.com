@@ -140,7 +140,7 @@ const books = [
 				stories.map((post) => (
 					<li>
 						<a href={postUrl(post)} hreflang={post.data.lang}>
-							{post.data.heroImage && <Image src={post.data.heroImage} alt="" width={480} loading="lazy" />}
+							{post.data.heroImage && <Image src={post.data.heroImage} alt="" widths={[160, 320, 480]} sizes="(max-width: 40rem) 100vw, 144px" loading="lazy" />}
 							<span class="meta">
 								<FormattedDate date={post.data.pubDate} />
 								{post.data.lang === 'es' && ' · ES'}
