@@ -1,6 +1,6 @@
 # Editorial voice
 
-Juan has written this site himself since 2012. His first blog started earlier, "a comienzos de siglo", and is not part of this archive. The site shows that work in his own voice. Copy written for the site describes and links; it does not replace his writing with slogans.
+Juan has written this site himself since 2012. His first blog, *Sharing Experience and Computer Science Knowledge* on Blogger, started earlier, "a comienzos de siglo", before he finished the degree in 2007; it is not part of this archive. The site shows that work in his own voice. Copy written for the site describes and links; it does not replace his writing with slogans.
 
 ## How Juan writes
 
@@ -72,4 +72,5 @@ Text in this repository has five origins. Name the origin before reusing any tex
 | /books | Status of each book | New | `audit-2026-11-02.md` |
 | /about | First-person paragraphs, "How I work", "Outside of tech", the closing line | Literal | The About page Juan published before the redesign (`src/pages/about.md`, commit cea36da) |
 | /about | First blog sentence | Literal | *El primer paso siempre es el más difícil*, 2022 |
+| /about | First blog name, Blogger, before 2007 | New | Juan, 2026-11-03 |
 | /about | "Now" paragraph and experience list | New | CV |
