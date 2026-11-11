@@ -1,0 +1,30 @@
+---
+import PageHead from '../../../components/PageHead.astro';
+import Base from '../../../layouts/Base.astro';
+import { getPosts } from '../../../utils/posts';
+
+const counts = new Map<string, number>();
+for (const post of await getPosts()) {
+	for (const tag of post.data.tags) counts.set(tag, (counts.get(tag) ?? 0) + 1);
+}
+const tags = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+---
+
+<Base lang="es" title="Topics — Juan G. Carmona" description="Every topic on the blog of Juan G. Carmona, from software architecture and AI to DevOps, security and leadership, with the number of articles in each." wide>
+	<PageHead eyebrow="Artículos" eyebrowHref="/es/blog/" title="Temas">
+		<p>{tags.length} temas, ordenados por número de artículos.</p>
+	</PageHead>
+	<nav class="frame topics" aria-label="Temas">
+		<ul>
+			{
+				tags.map(([tag, count]) => (
+					<li>
+						<a href={`/es/tags/${tag}/`}>
+							{tag} <span>{count}</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</Base>

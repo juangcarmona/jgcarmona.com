@@ -1,14 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import PageHead from '../components/PageHead.astro';
-import { APPEARANCES, COURSES, SESSIONS, SPEAKER_LINKS, talkLinks } from '../data/speaking';
+import { APPEARANCES, SESSIONS, SPEAKER_LINKS, talkLinks } from '../data/speaking';
 import Base from '../layouts/Base.astro';
 import { PERSON_ID } from '../utils/schema';
 import convex from '../assets/talks/convex-2026.jpg';
 
 const title = 'Talks — Juan G. Carmona';
 const description =
-	'Public talks by Juan G. Carmona, from CONVEX and RootedCON to Software Architektur im Stream, his courses on GitHub Copilot and arc42, and the sessions he offers.';
+	'Public talks by Juan G. Carmona and sessions offered to organisers.';
 const day = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const when = (talk: (typeof APPEARANCES)[number]) =>
 	talk.endDate ? `${day(talk.date).replace(/ \w+ \d+$/, '')}–${day(talk.endDate)}` : day(talk.date);
@@ -44,8 +44,7 @@ const schema = APPEARANCES.map((talk) => ({
 	<PageHead eyebrow="Speaking" title="Talks">
 		<p>
 			Public talks at conferences and community events since {first}, in Spanish and English. Most of my speaking
-			happens inside teams and with clients, as internal talks and training; the courses whose material is public are
-			<a href="#courses">below</a>. The sessions
+			happens inside teams and with clients, as internal talks and training; the <a href="/courses/">courses and workshops</a> with public material have their own page. The sessions
 			offered to organisers are on <a href={SPEAKER_LINKS.SESSIONIZE}>Sessionize</a>.
 		</p>
 	</PageHead>
@@ -164,76 +163,16 @@ const schema = APPEARANCES.map((talk) => ({
 		</ol>
 	</section>
 
-	<section class="frame tools" aria-labelledby="courses">
-		<header class="section-head">
-			<div>
-				<p class="eyebrow">Teaching</p>
-				<h2 id="courses">Courses and workshops</h2>
-			</div>
-			<p>Courses and talks given to teams, with their material on dedicated websites, public repositories and articles.</p>
-		</header>
-		<ol class="tool-index">
-			{
-				COURSES.map((course, i) => (
-					<li>
-						<span class="index">{String(i + 1).padStart(2, '0')}</span>
-						<div class="tool-name">
-							<h3>
-								<a href={course.links[0].url}>{course.title}</a>
-							</h3>
-							{course.delivery && <p class="muted">{course.delivery}</p>}
-						</div>
-						<div class="tool-purpose">
-							<blockquote>
-								<p>{course.summary}</p>
-							</blockquote>
-							{course.modules && (
-								<ul class="chips" aria-label="Contents">
-									{course.modules.map((module) => <li>{module}</li>)}
-								</ul>
-							)}
-							<ul class="record-links">
-								{course.links.map((link) => (
-									<li>
-										<a href={link.url}>{link.label}</a>
-									</li>
-								))}
-							</ul>
-						</div>
-					</li>
-				))
-			}
-		</ol>
-		<p class="decks">
-			Video courses in Spanish on YouTube: <a href="/books/#courses">DADS, design patterns, Azure AI and Angular with .NET</a>.
-		</p>
-	</section>
+	<section class="frame" id="courses"><p>I also share <a href="/courses/">courses and workshops with public material</a>.</p></section>
 
 	<section class="frame tools" aria-labelledby="sessions">
 		<header class="section-head">
-			<div>
-				<p class="eyebrow">For organisers</p>
-				<h2 id="sessions">Sessions I offer</h2>
-			</div>
-			<p>Each one opens with the first lines of its abstract on Sessionize.</p>
+			<div><p class="eyebrow">For organisers</p><h2 id="sessions">Sessions I offer</h2></div>
+			<p>Sessions for organisers and more information on <a href={SPEAKER_LINKS.SESSIONIZE}>Sessionize</a>.</p>
 		</header>
-		<ol class="tool-index">
-			{
-				SESSIONS.map((session, i) => (
-					<li>
-						<span class="index">{String(i + 1).padStart(2, '0')}</span>
-						<div class="tool-name">
-							<h3>{session.url ? <a href={session.url}>{session.title}</a> : session.title}</h3>
-						</div>
-						<div class="tool-purpose">
-							<blockquote>
-								<p>{session.summary}</p>
-							</blockquote>
-						</div>
-					</li>
-				))
-			}
-		</ol>
+		<ul class="record-links">
+			{SESSIONS.map((session) => <li><a href={session.url ?? SPEAKER_LINKS.SESSIONIZE} lang="en">{session.title}</a></li>)}
+		</ul>
 		<p class="decks"><a class="lh-button" href={SPEAKER_LINKS.SESSIONIZE}>Invite me through Sessionize</a></p>
 	</section>
 </Base>

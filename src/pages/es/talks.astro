@@ -1,0 +1,176 @@
+---
+import { Image } from 'astro:assets';
+import PageHead from '../../components/PageHead.astro';
+import { APPEARANCES, SESSIONS, SPEAKER_LINKS, talkLinks } from '../../data/speaking';
+import Base from '../../layouts/Base.astro';
+import { PERSON_ID } from '../../utils/schema';
+import convex from '../../assets/talks/convex-2026.jpg';
+
+const title = 'Charlas — Juan G. Carmona';
+const description =
+	'Charlas públicas de Juan G. Carmona y sesiones para organizadores.';
+const day = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const when = (talk: (typeof APPEARANCES)[number]) =>
+	talk.endDate ? `${day(talk.date).replace(/ \w+ \d+$/, '')}–${day(talk.endDate)}` : day(talk.date);
+
+const upcoming = APPEARANCES.filter((talk) => talk.status === 'upcoming');
+const presented = APPEARANCES.filter((talk) => talk.status === 'presented');
+const recording = presented.find((talk) => talk.videoUrl);
+const first = presented.at(-1)!.date.slice(0, 4);
+
+const schema = APPEARANCES.map((talk) => ({
+	'@type': 'Event',
+	name: talk.title ? `${talk.title} — ${talk.event}` : talk.event,
+	startDate: talk.date,
+	...(talk.endDate && { endDate: talk.endDate }),
+	eventAttendanceMode: `https://schema.org/${talk.online ? 'Online' : 'Offline'}EventAttendanceMode`,
+	eventStatus: 'https://schema.org/EventScheduled',
+	...((talk.abstract ?? talk.summary) && { description: talk.abstract ?? talk.summary }),
+	...(talk.lang && { inLanguage: talk.lang }),
+	location: talk.online
+		? { '@type': 'VirtualLocation', url: talk.videoUrl ?? talk.eventUrl }
+		: {
+				'@type': 'Place',
+				name: talk.venue ?? talk.city,
+				address: { '@type': 'PostalAddress', addressLocality: talk.city, addressCountry: talk.country ?? 'ES' },
+			},
+	performer: { '@id': PERSON_ID },
+	...(talk.eventUrl && { url: talk.eventUrl }),
+	...(talk.videoUrl && { subjectOf: { '@type': 'VideoObject', name: talk.title, url: talk.videoUrl } }),
+}));
+---
+
+<Base lang="es" title={title} description={description} schema={schema} wide>
+	<PageHead eyebrow="Charlas" title="Charlas">
+		<p>
+			Charlas públicas en conferencias y comunidades desde {first}, en castellano e inglés. También doy charlas y formación a equipos. Los <a href="/es/courses/">cursos y talleres</a> tienen su propia página y las sesiones para organizadores, en <a href={SPEAKER_LINKS.SESSIONIZE}>Sessionize</a>.
+		</p>
+	</PageHead>
+
+	<section class="speaking-band" aria-label="Next talk and latest recording">
+		<div class="frame stage">
+			{
+				recording?.videoUrl && (
+					<figure class="stage-recording">
+						<a class="stage-photo" href={recording.videoUrl}>
+							<Image src={convex} alt={`Juan G. Carmona on stage at ${recording.event}`} widths={[480, 800, 1280]} sizes="(max-width: 56rem) 100vw, 700px" loading="eager" fetchpriority="high" />
+							<span class="play">Ver la grabación</span>
+						</a>
+						<figcaption>
+							<span class="talk-event">
+								{recording.event} · {recording.venue}, {recording.city}
+							</span>
+							<span class="talk-title" lang={recording.lang}>{recording.title}</span>
+						</figcaption>
+					</figure>
+				)
+			}
+			{
+				upcoming.map((talk) => (
+					<div class="next-talk">
+						<p class="eyebrow">Próxima charla · confirmada</p>
+						<p class="next-event">{talk.eventUrl ? <a href={talk.eventUrl}>{talk.event}</a> : talk.event}</p>
+						<p class="talk-event">
+							{when(talk)} · {talk.venue}, {talk.city}
+						</p>
+						<p class="talk-title" lang={talk.lang}>{talk.title}</p>
+						{talk.abstract && (
+							<blockquote class="talk-summary" lang={talk.lang}>
+								<p>{talk.abstract}</p>
+							</blockquote>
+						)}
+						{talk.timeToBeConfirmed && <p class="muted">Día y hora pendientes de confirmar.</p>}
+						<div class="actions">
+							{talk.sessionUrl && <a class="lh-button" href={talk.sessionUrl}>La sesión</a>}
+							<a class="arrow" href={SPEAKER_LINKS.SESSIONIZE}>Perfil en Sessionize</a>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="frame record" aria-labelledby="record">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Archivo</p>
+				<h2 id="record">Charlas públicas</h2>
+			</div>
+			<p>Charlas con registro público, de la más reciente a la más antigua, con enlaces al material asociado.</p>
+		</header>
+		<ol class="talk-record">
+			{
+				presented.map((talk) => (
+					<li>
+						<time datetime={talk.date}>
+							<span class="year">{talk.date.slice(0, 4)}</span>
+							{when(talk).replace(/ \d{4}$/, '')}
+						</time>
+						<div>
+							<p class="record-event">{talk.eventUrl ? <a href={talk.eventUrl}>{talk.event}</a> : talk.event}</p>
+							{talk.title && <h3 lang={talk.lang}>{talk.title}</h3>}
+							<p class="meta">{talk.venue ? `${talk.venue}, ${talk.city}` : talk.city}</p>
+							{talk.summary && (
+								<p class="record-summary">
+									<span class="label">Resumen</span> {talk.summary}
+								</p>
+							)}
+							{talk.abstract && (
+								<details open={!talk.summary}>
+									<summary>Resumen original</summary>
+									<blockquote lang={talk.lang}>
+										{talk.abstract.split('\n\n').map((paragraph) => <p>{paragraph}</p>)}
+									</blockquote>
+								</details>
+							)}
+							{talkLinks(talk).length > 0 && (
+								<ul class="record-links">
+									{talkLinks(talk).map((link) => (
+										<li>
+											<a href={link.url}>{link.label}</a>
+										</li>
+									))}
+								</ul>
+							)}
+							{talk.references && (
+								<p class="record-note">
+									También:{' '}
+									{talk.references.map((link, i) => (
+										<>
+											{i > 0 && ' · '}
+											<a href={link.url}>{link.label}</a>
+										</>
+									))}
+								</p>
+							)}
+							{talk.relatedReading && (
+								<p class="record-note">
+									Lecturas relacionadas sobre el mismo tema:{' '}
+									{talk.relatedReading.map((link, i) => (
+										<>
+											{i > 0 && ' · '}
+											<a href={link.url}>{link.label}</a>
+										</>
+									))}
+								</p>
+							)}
+						</div>
+					</li>
+				))
+			}
+		</ol>
+	</section>
+
+	<section class="frame" id="courses"><p>También comparto <a href="/es/courses/">cursos y talleres con material público</a>.</p></section>
+
+	<section class="frame tools" aria-labelledby="sessions">
+		<header class="section-head">
+			<div><p class="eyebrow">Para organizadores</p><h2 id="sessions">Sesiones que ofrezco</h2></div>
+			<p>Sesiones para organizadores y más información en <a href={SPEAKER_LINKS.SESSIONIZE}>Sessionize</a>.</p>
+		</header>
+		<ul class="record-links">
+			{SESSIONS.map((session) => <li><a href={session.url ?? SPEAKER_LINKS.SESSIONIZE} lang="en">{session.title}</a></li>)}
+		</ul>
+		<p class="decks"><a class="lh-button" href={SPEAKER_LINKS.SESSIONIZE}>Invítame a través de Sessionize</a></p>
+	</section>
+</Base>

@@ -1,0 +1,294 @@
+---
+import { Image } from 'astro:assets';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { PROFILES, SITE_DESCRIPTION, SITE_SEO_TITLE, YOUTUBE_COURSES } from '../../consts';
+import { PROJECTS_ES as FLAGSHIP_PROJECTS } from '../../data/projects-es';
+import { APPEARANCES, talkLinks } from '../../data/speaking';
+import Base from '../../layouts/Base.astro';
+import { getPosts, postUrl } from '../../utils/posts';
+import { openingExcerpt } from '../../utils/excerpt';
+import { ecosystem } from '../../utils/schema';
+import portrait from '../../assets/portrait.jpg';
+import convex from '../../assets/talks/convex-2026.jpg';
+import solidGrasp from '../../assets/image-11.png';
+import ddd from '../../assets/image-12-724x1024.png';
+
+// Copy rules and the source of every sentence on this page: docs/editorial/voice.md.
+
+// Curated, not chronological. The first one leads.
+const SELECTED = [
+	'product-definition-as-code',
+	'spec-driven-done-right',
+	'ataque-a-desarrolladores',
+	'what-devex-means-in-2026',
+	'cierre-jgcarmona-consulting',
+];
+
+const posts = await getPosts();
+const [lead, ...stories] = SELECTED.map((id) => posts.find((post) => post.id === id)).filter((post) => post !== undefined);
+const latest = posts.filter((post) => !SELECTED.includes(post.id)).slice(0, 4);
+
+const tools = FLAGSHIP_PROJECTS.slice(0, 4);
+
+const next = APPEARANCES.filter((talk) => talk.status === 'upcoming').at(-1);
+const recording = APPEARANCES.find((talk) => talk.status === 'presented' && talk.videoUrl);
+const past = APPEARANCES.filter((talk) => talk.status === 'presented' && talk !== recording);
+const month = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', timeZone: 'UTC' });
+const day = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+
+// Status and format verified on 2026-11-02; see docs/editorial/audit-2026-11-02.md. No item is a printed book.
+const books = [
+	{
+		title: 'SOLID y GRASP: Buenas Prácticas hacia el Éxito en el Desarrollo de Software',
+		status: 'Libro electrónico (PDF), distribuido gratuitamente por OpenLibra',
+		cover: solidGrasp,
+		url: '/books/',
+	},
+	{
+		title: 'Domain-Driven Design: Estrategias y Técnicas para Desarrolladores y Arquitectos',
+		status: 'En desarrollo',
+		cover: ddd,
+		url: '/books/',
+	},
+	{
+		title: 'Mastering Software Development: Herramientas y Habilidades para Impulsar tu Carrera Profesional',
+		status: 'Manuscrito inédito; partes publicadas en el blog en 2023',
+		url: '/es/mastering-software-development/',
+	},
+];
+---
+
+<Base lang="es" title="Juan G. Carmona — Arquitectura de software e IA" description="Arquitectura de software, IA y tecnología abierta por Juan G. Carmona." schema={ecosystem} wide>
+	<section class="frame home-hero" aria-labelledby="name">
+		<div class="hero-copy">
+			<h1 id="name" class="name">Juan G. Carmona</h1>
+			<p class="headline">Arquitecto de software · Estrategia de IA · Forward Deployed Engineer</p>
+			<p class="intro">Construyo software, exploro cómo la IA cambia nuestra forma de trabajar y comparto lo que aprendo en artículos, charlas y proyectos de código abierto.</p>
+			<blockquote class="own-words" cite="https://github.com/juangcarmona">
+				<p>Es mejor llegar a ser que simplemente ser.</p>
+				<p>Construye para hoy, diseña para mañana y nunca dejes de aprender.</p>
+			</blockquote>
+			<div class="actions">
+				<a class="lh-button" href="/es/blog/">Leer el blog</a>
+				<a class="arrow" href="/es/projects/">Proyectos</a>
+				<a class="arrow" href="/es/about/">Sobre mí</a>
+			</div>
+		</div>
+		<figure class="photo">
+			<Image src={portrait} alt="Juan G. Carmona" widths={[360, 560, 840]} sizes="(max-width: 56rem) 100vw, 420px" loading="eager" fetchpriority="high" />
+			<figcaption>Archivo del blog desde 2012 · Charlas desde 2012</figcaption>
+		</figure>
+	</section>
+
+	<section class="frame writing" aria-labelledby="writing">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Artículos</p>
+				<h2 id="writing">Artículos destacados</h2>
+			</div>
+			<p>
+				{posts.length} artículos en inglés y castellano.{' '}
+				<a class="arrow" href="/blog/">Todos los artículos</a>
+			</p>
+		</header>
+		{
+			lead && (
+				<a class="lead-story" href={postUrl(lead)} hreflang={lead.data.lang}>
+					{lead.data.heroImage && <Image src={lead.data.heroImage} alt="" widths={[480, 760, 1040]} sizes="(max-width: 56rem) 100vw, 640px" loading="lazy" />}
+					<div>
+						<span class="meta"><FormattedDate date={lead.data.pubDate} /></span>
+						<h3>{lead.data.title}</h3>
+						<p lang={lead.data.lang}>{openingExcerpt(lead.body)}</p>
+						<span class="arrow">Leer el artículo</span>
+					</div>
+				</a>
+			)
+		}
+		<ol class="stories">
+			{
+				stories.map((post) => (
+					<li>
+						<a href={postUrl(post)} hreflang={post.data.lang}>
+							{post.data.heroImage && <Image src={post.data.heroImage} alt="" widths={[160, 320, 480]} sizes="(max-width: 40rem) 100vw, 144px" loading="lazy" />}
+							<span class="meta">
+								<FormattedDate date={post.data.pubDate} />
+								{post.data.lang === 'es' && ' · ES'}
+							</span>
+							<h3 lang={post.data.lang}>{post.data.title}</h3>
+							<p lang={post.data.lang}>{openingExcerpt(post.body)}</p>
+						</a>
+					</li>
+				))
+			}
+		</ol>
+		<header class="section-head">
+			<h3>Artículos recientes</h3>
+		</header>
+		<ol class="stories">
+			{latest.map((post) => (
+				<li>
+					<a href={postUrl(post)} hreflang={post.data.lang}>
+						{post.data.heroImage && <Image src={post.data.heroImage} alt="" widths={[160, 320, 480]} sizes="(max-width: 40rem) 100vw, 144px" loading="lazy" />}
+						<span class="meta"><FormattedDate date={post.data.pubDate} /> · {post.data.lang === 'es' ? 'Español' : 'English'}</span>
+						<h3 lang={post.data.lang}>{post.data.title}</h3>
+						<p lang={post.data.lang}>{openingExcerpt(post.body)}</p>
+					</a>
+				</li>
+			))}
+		</ol>
+	</section>
+
+	<section class="frame tools" aria-labelledby="projects">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Open source</p>
+				<h2 id="projects">Proyectos</h2>
+			</div>
+			<p><a class="arrow" href="/projects/">Todos los proyectos</a></p>
+		</header>
+		<ol class="tool-index">
+			{
+				tools.map((project, i) => (
+					<li>
+						<span class="index">{String(i + 1).padStart(2, '0')}</span>
+						<div class="tool-name">
+							<h3>
+								<a href={project.links[0].url}>{project.name}</a>
+							</h3>
+						</div>
+						<div class="tool-purpose">
+							{project.inOwnWords && (
+								<>
+									<p>{project.description}</p>
+								</>
+							)}
+						</div>
+						<ul class="tool-links">
+							{project.links.map((link) => (
+								<li>
+									<a href={link.url}>{link.label}</a>
+								</li>
+							))}
+						</ul>
+					</li>
+				))
+			}
+		</ol>
+	</section>
+
+	<section class="speaking-band" aria-labelledby="speaking">
+		<div class="frame">
+			<header class="section-head">
+				<div>
+					<p class="eyebrow">Charlas</p>
+					<h2 id="speaking">Charlas</h2>
+				</div>
+				<p><a class="arrow" href="/talks/">Todas las charlas y sesiones</a></p>
+			</header>
+			<div class="stage">
+				{
+					recording?.videoUrl && (
+						<figure class="stage-recording">
+							<a class="stage-photo" href={recording.videoUrl}>
+								<Image src={convex} alt={`Juan G. Carmona on stage at ${recording.event}`} widths={[480, 800, 1280]} sizes="(max-width: 56rem) 100vw, 700px" loading="lazy" />
+								<span class="play">Ver la grabación</span>
+							</a>
+							<figcaption>
+								<span class="talk-event">
+									{recording.event} · {recording.venue}, {recording.city}
+								</span>
+								<span class="talk-title" lang="es">{recording.title}</span>
+							</figcaption>
+						</figure>
+					)
+				}
+				{
+					next && (
+						<div class="next-talk">
+							<p class="eyebrow">Próxima charla · confirmada</p>
+							<p class="next-event">{next.event}</p>
+							<p class="talk-event">
+								{next.endDate ? `${day(next.date).replace(/ \w+ \d+$/, '')}–${day(next.endDate)}` : day(next.date)} ·{' '}
+								{next.venue}, {next.city}
+							</p>
+							<p class="talk-title">{next.title}</p>
+							{next.abstract && (
+								<blockquote class="talk-summary" lang={next.lang}>
+									<p>{next.abstract}</p>
+								</blockquote>
+							)}
+							{next.timeToBeConfirmed && <p class="muted">Día y hora de la sesión pendientes de confirmar.</p>}
+							<div class="actions">
+								{next.sessionUrl && <a class="lh-button" href={next.sessionUrl}>La sesión</a>}
+								<a class="arrow" href={PROFILES.SESSIONIZE}>Perfil en Sessionize</a>
+							</div>
+						</div>
+					)
+				}
+			</div>
+			<ol class="timeline">
+				{
+					past.map((talk) => (
+						<li>
+							<time datetime={talk.date}>{month(talk.date)}</time>
+							<strong>{talk.event}</strong>
+							<span lang={talk.title ? talk.lang : undefined}>{talk.title ?? talk.city}</span>
+							{talkLinks(talk).length > 0 && (
+								<ul class="talk-links">
+									{talkLinks(talk).map((link) => (
+										<li>
+											<a href={link.url}>{link.label}</a>
+										</li>
+									))}
+								</ul>
+							)}
+						</li>
+					))
+				}
+			</ol>
+		</div>
+	</section>
+
+	<section class="frame publications" aria-labelledby="publications">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Publicaciones</p>
+				<h2 id="publications">Publicaciones y recursos para aprender</h2>
+			</div>
+			<p><a class="arrow" href="/books/">Libros</a></p>
+		</header>
+		<div class="shelf-layout">
+			<ul class="shelf">
+				{
+					books.map((book) => (
+						<li>
+							<a href={book.url} lang="es">
+								{book.cover ? (
+									<Image src={book.cover} alt={`Cover of ${book.title}`} widths={[200, 320]} sizes="(max-width: 40rem) 30vw, 180px" loading="lazy" />
+								) : (
+									<span class="no-cover" aria-hidden="true">{book.title.split(':')[0]}</span>
+								)}
+								<span class="book-title">{book.title.split(':')[0]}</span>
+							</a>
+							<span class="status">{book.status}</span>
+						</li>
+					))
+				}
+			</ul>
+			<div>
+				<h3 class="eyebrow">Cursos</h3>
+				<p><a class="arrow" href="/es/courses/">Todos los cursos y talleres</a></p>
+				<ol class="courses" lang="es">
+					{
+						YOUTUBE_COURSES.map((course) => (
+							<li>
+								<a href={course.url}>{course.title}</a>
+								<span class="status">Curso online · YouTube · {course.videos} videos</span>
+							</li>
+						))
+					}
+				</ol>
+			</div>
+		</div>
+	</section>
+</Base>

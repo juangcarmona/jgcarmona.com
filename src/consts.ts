@@ -1,6 +1,6 @@
 export const SITE_URL = 'https://jgcarmona.com';
 export const SITE_TITLE = 'Juan G. Carmona';
-export const SITE_HEADLINE = 'Software Architect · AI Strategist · Critical & Secure Systems';
+export const SITE_HEADLINE = 'Software Architect · AI Strategist · Forward Deployed Engineer';
 // Under 60 characters for search results; the full headline is on the page.
 export const SITE_SEO_TITLE = `${SITE_TITLE} — Software Architect · AI Strategist`;
 export const SITE_DESCRIPTION =

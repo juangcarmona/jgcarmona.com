@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import PageHead from '../components/PageHead.astro';
-import { YOUTUBE_COURSES } from '../consts';
 import Base from '../layouts/Base.astro';
 import solidGrasp from '../assets/image-11.png';
 import ddd from '../assets/image-12-724x1024.png';
@@ -43,14 +42,14 @@ const books = [
 ---
 
 <Base
-	title="Mis libros — Juan G. Carmona"
-	description="Libros de Juan G. Carmona sobre principios SOLID y GRASP, Domain-Driven Design y desarrollo profesional en software."
-	lang="es"
+	title="Books — Juan G. Carmona"
+	description="Books by Juan G. Carmona on software design and professional development, written in Spanish."
+	lang="en"
 	wide
 >
-	<PageHead eyebrow="Publicaciones" title="Mis libros">
+	<PageHead eyebrow="Publications" title="My books">
 		<blockquote class="own-words">
-			<p>{intro}</p>
+			<p>For more than twenty years I have worked as a developer, architect and mentor, helping teams tackle technical challenges. These books share practical software principles and professional skills. The books are written in Spanish.</p>
 		</blockquote>
 	</PageHead>
 
@@ -60,15 +59,15 @@ const books = [
 				books.map((book) => (
 					<li>
 						{book.cover ? (
-							<Image src={book.cover} alt={`Portada de ${book.title}`} widths={[240, 400]} sizes="(max-width: 40rem) 40vw, 220px" loading="lazy" />
+							<Image src={book.cover} alt={`Cover of ${book.title}`} widths={[240, 400]} sizes="(max-width: 40rem) 40vw, 220px" loading="lazy" />
 						) : (
 							<span class="no-cover" aria-hidden="true">{book.title.split(':')[0]}</span>
 						)}
 						<div>
-							<h2>{book.title}</h2>
-							<p class="status">{book.status}</p>
-							{book.text.map((paragraph) => <p>{paragraph}</p>)}
-							{book.url && <a class="arrow" href={book.url}>Leer la serie en el blog</a>}
+							<h2 lang="es">{book.title}</h2>
+							<p class="status">{["Spanish ebook (PDF), distributed free through OpenLibra. Download temporarily unavailable.", "In progress; no public edition.", "Unpublished manuscript; parts published as a blog series since July 2023."][books.indexOf(book)]}</p>
+							<p>{["A practical guide to SOLID principles and GRASP patterns, with examples and exercises for maintainable software design.", "A work in progress on Domain-Driven Design, from ubiquitous language and bounded contexts to tactical patterns, consistency and event-driven design.", "A book about technical and interpersonal skills, software design, architecture, DevOps, communication and leadership."][books.indexOf(book)]}</p>
+							{book.url && <a class="arrow" href={book.url}>Read the blog series (in Spanish)</a>}
 						</div>
 					</li>
 				))
@@ -76,22 +75,5 @@ const books = [
 		</ol>
 	</div>
 
-	<section class="frame publications" aria-labelledby="courses">
-		<header class="section-head">
-			<div>
-				<p class="eyebrow">YouTube</p>
-				<h2 id="courses">Cursos en vídeo</h2>
-			</div>
-		</header>
-		<ol class="courses">
-			{
-				YOUTUBE_COURSES.map((course) => (
-					<li>
-						<a href={course.url}>{course.title}</a>
-						<span class="status">Curso online · YouTube · {course.videos} vídeos</span>
-					</li>
-				))
-			}
-		</ol>
-	</section>
+	<section class="frame publications" id="courses"><p><a class="arrow" href="/courses/#videos">Explore video courses and workshops</a></p></section>
 </Base>

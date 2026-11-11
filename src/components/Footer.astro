@@ -1,6 +1,7 @@
 ---
 import { PROFILES, SITE_TITLE } from '../consts';
 
+const spanish = Astro.url.pathname === '/es/' || /^\/es\/(about|projects|talks|courses|books|blog|search|tags)(\/|$)/.test(Astro.url.pathname);
 const profiles = [
 	{ name: 'LinkedIn', url: PROFILES.LINKEDIN },
 	{ name: 'GitHub', url: PROFILES.GITHUB },
@@ -14,8 +15,8 @@ const profiles = [
 		<ul class="inline-list" aria-label="Profiles">
 			{profiles.map((profile) => <li><a href={profile.url} rel="me">{profile.name}</a></li>)}
 			<li><a href="/rss.xml">RSS</a></li>
-			<li><a href="/privacy/">Privacy · no cookies</a></li>
+			<li><a href="/privacy/">{spanish ? "Privacidad · sin cookies" : "Privacy · no cookies"}</a></li>
 		</ul>
-		<p>© {new Date().getFullYear()} {SITE_TITLE} · Content licensed under CC BY 4.0</p>
+		<p>© {new Date().getFullYear()} {SITE_TITLE} · {spanish ? "Contenido bajo licencia CC BY 4.0" : "Content licensed under CC BY 4.0"}</p>
 	</div>
 </footer>

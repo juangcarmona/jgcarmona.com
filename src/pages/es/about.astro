@@ -1,0 +1,156 @@
+---
+import { Image } from 'astro:assets';
+import { CONTACT_EMAIL, PROFILES } from '../../consts';
+import Base from '../../layouts/Base.astro';
+import portrait from '../../assets/portrait.jpg';
+import ski from '../../assets/about/ski-mountaineering.webp';
+
+// First-person text on this page is Juan's, quoted literally from the About page he published before the 2026 redesign
+// (src/pages/about.md as of commit cea36da) and from his post "El primer paso siempre es el más difícil" (2022).
+// The experience list and the "Now" paragraph are new copy from the CV. See docs/editorial/voice.md.
+
+const howIWork = [
+	['Arquitectura y entrega', 'Diseño para la escalabilidad, la seguridad y la experiencia de desarrollo, pensando en los resultados.'],
+	['Seguridad por defecto', 'Identidad, mínimo privilegio, gestión de secretos y protección de la telemetría.'],
+	['IA con límites', 'Flujos deterministas, uso supervisado de herramientas y recuperación reproducible.'],
+	['Mentoría', 'Formo y acompaño a equipos.'],
+	['Comunidad', 'Comparto conocimiento, construyo proyectos abiertos y ayudo a otros profesionales.'],
+];
+
+const experience = [
+	{ years: '2025–', org: 'Plain Concepts', role: 'Software Development Engineer y Forward Deployed Engineer: AI-SDLC, formación, auditorías, evaluaciones y SRE.' },
+	{ years: '2021–2025', org: 'JGCarmona Consulting', role: 'Fundador y consultor principal: arquitectura de soluciones Azure para automoción, AgTech y movilidad.' },
+	{ years: '2022–2024', org: 'Porsche AG', role: 'Arquitecto de soluciones Azure para Porsche Motorsport Data Platform.' },
+	{ years: '2018–2021', org: 'Logtrip', role: 'Fundador, CEO y CTO.' },
+	{ years: '2017–2018', org: 'Solera', role: 'Ingeniero sénior y responsable técnico: transición de sistemas heredados a microservicios con principios SRE.' },
+	{ years: '2014–2017', org: 'Alstom', role: 'Ingeniero sénior, arquitecto de soluciones y responsable del Madrid Innovation Lab, donde nació Mastria.' },
+	{ years: '2013–2014', org: 'Mandoyo', role: 'Ingeniero sénior en una plataforma cloud con .NET, AngularJS y Azure.' },
+	{ years: '2011–2013', org: 'Sogeti / Capgemini', role: 'Arquitecto de sistemas en una aplicación para Cassidian, la división militar de Airbus.' },
+	{ years: '2005–2011', org: 'Primeros años', role: 'Tunstall, Actualize y CEUAH.' },
+];
+---
+
+<Base
+	lang="es"
+	title="Sobre mí — Juan G. Carmona"
+	description="Arquitecto de software e IA con más de veinte años de experiencia. Trayectoria, trabajo y contacto."
+	wide
+>
+	<section class="frame home-hero about-hero" aria-labelledby="name">
+		<div class="hero-copy">
+			<p class="eyebrow">Sobre mí</p>
+			<h1 id="name" class="name">Juan G. Carmona</h1>
+			<p class="headline">Arquitecto de software e IA • Sistemas seguros • Cloud y DevOps</p>
+			<div class="intro">
+				<p>
+					Soy arquitecto de software e IA, centrado en <strong>plataformas seguras y escalables</strong> y <strong>sistemas de IA con agentes</strong>. Diseño y dirijo soluciones full-stack, con límites claros, prácticas DevSecOps e <strong>IA que respeta la privacidad</strong>: orquestación de modelos, RAG, herramientas MCP y observabilidad desde el primer día.
+				</p>
+				<p>
+					Ayudo a empresas de todos los tamaños a desarrollar software <strong>fiable, seguro y eficiente en costes</strong>. Me gusta trabajar cerca de la tecnología, liderar equipos y ayudarles a resolver problemas.
+				</p>
+			</div>
+			<div class="actions">
+				<a class="lh-button" href={`mailto:${CONTACT_EMAIL}`}>Escríbeme</a>
+				<a class="arrow" href={PROFILES.LINKEDIN}>LinkedIn</a>
+				<a class="arrow" href={PROFILES.GITHUB}>GitHub</a>
+			</div>
+		</div>
+		<figure class="photo">
+			<Image src={portrait} alt="Juan G. Carmona" widths={[360, 560, 840]} sizes="(max-width: 56rem) 100vw, 420px" loading="eager" fetchpriority="high" />
+		</figure>
+	</section>
+
+	<section class="frame about-now" aria-labelledby="now">
+		<p class="eyebrow" id="now">Ahora</p>
+		<p>
+			Desde 2025 soy Software Development Engineer en <a href="https://www.plainconcepts.com/">Plain Concepts</a>, donde trabajo como Forward Deployed Engineer en AI-SDLC, formación, auditorías, evaluaciones y SRE. Además, comparto mis <a href="/projects/">proyectos abiertos</a>, <a href="/talks/">charlas</a> y este <a href="/blog/">blog</a>.
+		</p>
+	</section>
+
+	<section class="frame" aria-labelledby="how">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Mi trabajo</p>
+				<h2 id="how">Cómo trabajo</h2>
+			</div>
+		</header>
+		<ul class="principles">
+			{
+				howIWork.map(([label, text]) => (
+					<li>
+						<strong>{label}</strong>
+						<span>{text}</span>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<section class="frame" aria-labelledby="experience">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Trayectoria</p>
+				<h2 id="experience">Experiencia</h2>
+			</div>
+			<p>Puestos, del más reciente al más antiguo. Fuente: CV.</p>
+		</header>
+		<ol class="talk-record experience">
+			{
+				experience.map((item) => (
+					<li>
+						<time>{item.years}</time>
+						<div>
+							<h3>{item.org}</h3>
+							<p>{item.role}</p>
+						</div>
+					</li>
+				))
+			}
+		</ol>
+	</section>
+
+	<section class="frame about-split" aria-labelledby="sharing">
+		<div>
+			<header class="section-head">
+				<div>
+					<p class="eyebrow">Artículos</p>
+					<h2 id="sharing">Compartir</h2>
+				</div>
+			</header>
+			<blockquote class="own-words" lang="es">
+				<p>
+					A comienzos de siglo, recién empezada la carrera de Ingeniería Técnica en Informática de Gestión, creé mi primer
+					blog.
+				</p>
+				<footer>
+					De <a href="/es/el-primer-paso-siempre-es-el-mas-dificil/">El primer paso siempre es el más difícil</a>, octubre de 2022
+				</footer>
+			</blockquote>
+			<p>
+				Aquel primer blog en Blogger se llamaba <em>Sharing Experience and Computer Science Knowledge</em>. Su sucesor en WordPress conservó el nombre; Internet Archive guarda <a href="https://web.archive.org/web/20071011001646/http://jxxx.wordpress.com/">una copia de octubre de 2007</a>. No todo se pudo recuperar y este archivo comienza en 2012. Desde entonces comparto en el <a href="/blog/">blog</a>, en <a href="/talks/">charlas</a>, <a href="/books/">libros</a> y cursos en <a href={PROFILES.YOUTUBE}>YouTube</a>, y colaboré en
+				<a href="https://medium.com/@kshilovskiy/scalable-ml-with-azure-kubernetes-and-keda-generating-inputs-with-500-pods-cde66cabf950">Scalable ML with Azure Kubernetes and KEDA</a>.
+			</p>
+			<h3>Formación</h3>
+			<p>Ingeniería Técnica en Informática de Gestión (2007), Universidad Pontificia de Salamanca and Universidad Politécnica de Madrid.</p>
+		</div>
+		<div>
+			<header class="section-head">
+				<div>
+					<p class="eyebrow">Fuera del trabajo</p>
+					<h2>Montaña</h2>
+				</div>
+			</header>
+			<p>
+				Fuera de la tecnología practico alpinismo, escalada, paracaidismo y esquí de montaña. Me gusta explorar mis límites, tanto a nivel del suelo como a 3.000 metros.
+			</p>
+			<div class="mountain-photos">
+				<img src="/juangcarmona_to_the_world.webp" alt="Juan G. Carmona ski mountaineering on a snowy ridge" width="1600" height="903" loading="lazy" />
+				<Image src={ski} alt="Juan G. Carmona climbing a snow slope with skis on his pack" widths={[240, 474]} sizes="(max-width: 40rem) 40vw, 240px" loading="lazy" />
+			</div>
+		</div>
+	</section>
+
+	<section class="frame motto" aria-label="Motto">
+		<p><em>Es mejor llegar a ser que simplemente ser.<br />Construye para hoy, diseña para mañana y nunca dejes de aprender.</em></p>
+	</section>
+</Base>

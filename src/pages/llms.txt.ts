@@ -18,13 +18,18 @@ export const GET: APIRoute = async () => {
 
 > ${SITE_HEADLINE}. ${SITE_DESCRIPTION}
 
-Personal site and blog of Juan G. Carmona (Juan García Carmona), with articles in English and Spanish since 2012. Current focus: Software Engineering 2.0, AI-assisted delivery, Product Definition as Code, software architecture and secure systems. Each article link below points to its Markdown source; the HTML version lives at the same path ending in a slash.
+Personal site and blog of Juan G. Carmona (Juan García Carmona), with articles in English and Spanish since 2012. Juan is a software architect and forward deployed engineer at Plain Concepts. He writes about AI-assisted software engineering, software architecture, secure systems, local AI and open-source tools. Each article link below points to its Markdown source; the HTML version lives at the same path ending in a slash.
 
 ## About
 
 - [About](${SITE_URL}/about/): biography, experience and contact
-- [Talks](${SITE_URL}/talks/): public talks and their material, courses on GitHub Copilot and arc42, and the sessions offered to organisers
+- [About in Spanish](${SITE_URL}/es/about/): biography, experience and contact in Spanish
+- [Talks](${SITE_URL}/talks/): public talks, recordings and sessions for organisers
+- [Courses and workshops](${SITE_URL}/courses/): training material and video courses
+- [GitHub Copilot course](https://github-copilot.jgcarmona.com/): course modules, labs and slides
+- [Publications](${SITE_URL}/books/): books and their availability
 - [Projects](${SITE_URL}/projects/): ${FLAGSHIP_PROJECTS.map((project) => project.name).join(', ')} and other open source
+- [Blog](${SITE_URL}/blog/): articles in English and Spanish
 
 ## Related sites
 

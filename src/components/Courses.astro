@@ -1,0 +1,44 @@
+---
+import PageHead from './PageHead.astro';
+import Base from '../layouts/Base.astro';
+import { COURSES } from '../data/speaking';
+import { YOUTUBE_COURSES } from '../consts';
+
+const { lang = 'en' } = Astro.props;
+const es = lang === 'es';
+const deliveryEs: Record<string, string> = {
+	'Given several times to engineering teams.': 'Impartido varias veces a equipos de ingeniería.',
+	'Talks for teams, walking through the repositories.': 'Charlas para equipos con ejemplos de los repositorios.',
+};
+---
+<Base lang={lang} title={es ? 'Cursos y talleres — Juan G. Carmona' : 'Courses and workshops — Juan G. Carmona'} description={es ? 'Cursos, talleres y materiales públicos de Juan G. Carmona.' : 'Courses, workshops and public materials by Juan G. Carmona.'} wide>
+	<PageHead eyebrow={es ? 'Formación' : 'Teaching'} title={es ? 'Cursos y talleres' : 'Courses and workshops'}>
+		<p>{es ? 'Cursos y talleres con material en páginas web, repositorios y artículos públicos.' : 'Courses and workshops with material on dedicated websites, public repositories and articles.'}</p>
+	</PageHead>
+	<section class="frame tools" aria-labelledby="workshops">
+		<header class="section-head"><div><h2 id="workshops">{es ? 'Talleres y materiales' : 'Workshops and materials'}</h2></div></header>
+		<ol class="tool-index">
+			{COURSES.map((course, i) => (
+				<li>
+					<span class="index">{String(i + 1).padStart(2, '0')}</span>
+					<div class="tool-name">
+						<h3 lang="en"><a href={course.links[0].url}>{course.title}</a></h3>
+						{course.delivery && <p class="muted">{es ? (deliveryEs[course.delivery] ?? course.delivery) : course.delivery}</p>}
+					</div>
+					<div class="tool-purpose">
+						<blockquote lang="en"><p>{course.summary}</p></blockquote>
+						{course.modules && <ul class="chips" aria-label={es ? 'Contenido' : 'Contents'} lang="en">{course.modules.map((module) => <li>{module}</li>)}</ul>}
+						<ul class="record-links">{course.links.map((link) => <li><a href={link.url}>{link.label}</a></li>)}</ul>
+					</div>
+				</li>
+			))}
+		</ol>
+	</section>
+	<section class="frame publications" aria-labelledby="videos">
+		<header class="section-head"><div><p class="eyebrow">YouTube</p><h2 id="videos">{es ? 'Cursos en vídeo' : 'Video courses'}</h2></div></header>
+		<p>{es ? 'Cursos en castellano.' : 'Courses in Spanish.'}</p>
+		<ol class="courses">{YOUTUBE_COURSES.map((course) => (
+			<li><a href={course.url} lang="es">{course.title}</a><span class="status">{es ? 'Curso online' : 'Online course'} · YouTube · {course.videos} {es ? 'vídeos' : 'videos'}</span></li>
+		))}</ol>
+	</section>
+</Base>

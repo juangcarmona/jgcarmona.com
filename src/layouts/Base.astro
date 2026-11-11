@@ -7,17 +7,33 @@ import Header from '../components/Header.astro';
 type Props = ComponentProps<typeof BaseHead> & { wide?: boolean };
 
 const { wide = false, ...props } = Astro.props;
+const path = Astro.url.pathname;
+const variants: Record<string, string> = { '/': '/es/', '/about/': '/es/about/', '/projects/': '/es/projects/', '/talks/': '/es/talks/', '/courses/': '/es/courses/', '/books/': '/es/books/', '/blog/': '/es/blog/', '/search/': '/es/search/', '/tags/': '/es/tags/' };
+const en = Object.keys(variants).find((key) => key === path || variants[key] === path);
+
 ---
 
 <!doctype html>
 <html lang={props.lang ?? 'en'} data-lh-theme="system">
 	<head>
+        <script is:inline>
+          try {
+            const routes = ['/', '/about/', '/projects/', '/talks/', '/courses/', '/books/', '/blog/', '/search/', '/tags/'];
+            if (localStorage.getItem('site-language') === 'es' && (routes.includes(location.pathname) || /^\/(blog\/\d+|tags\/[^/]+)\/$/.test(location.pathname))) {
+              location.replace('/es' + location.pathname + location.search + location.hash);
+            }
+          } catch {}
+        </script>
 		<BaseHead {...props}>
+			{en && <>
+				<link rel="alternate" hreflang="en" href={new URL(en, Astro.site)} />
+				<link rel="alternate" hreflang="es" href={new URL(variants[en], Astro.site)} />
+			</>}
 			<slot name="head" />
 		</BaseHead>
 	</head>
 	<body class="lh-root">
-		<a class="skip-link lh-button" href="#main">Skip to content</a>
+		<a class="skip-link lh-button" href="#main">{props.lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}</a>
 		<Header />
 		<main id="main" class:list={{ wide }}>
 			<slot />

@@ -4,10 +4,11 @@ import { getPosts, type Post } from '../utils/posts';
 import PageHead from './PageHead.astro';
 import PostList from './PostList.astro';
 
-type Props = { page: number; total: number; posts: Post[] };
+type Props = { page: number; total: number; posts: Post[]; lang?: 'en' | 'es' };
 
-const { page, total, posts } = Astro.props;
-const href = (n: number) => (n === 1 ? '/blog/' : `/blog/${n}/`);
+const { page, total, posts, lang = 'en' } = Astro.props;
+const es = lang === 'es';
+const href = (n: number) => `${es ? '/es' : ''}/blog/${n === 1 ? '' : `${n}/`}`;
 
 const all = await getPosts();
 const counts = new Map<string, number>();
@@ -23,12 +24,12 @@ const first = all.at(-1)!.data.pubDate.getUTCFullYear();
 			? 'Articles on software architecture, AI-assisted engineering, DevOps, security and leadership, in English and Spanish.'
 			: `Page ${page} of ${total} of the blog archive: articles on software architecture, AI-assisted engineering, DevOps, security and leadership.`
 	}
+	lang={lang}
 	wide
 >
-	<PageHead eyebrow="Writing" title="Blog">
+	<PageHead eyebrow={es ? "Artículos" : "Writing"} title="Blog">
 		<p>
-			{all.length} articles in English and Spanish, from {first} to today. Browse by <a href="/tags/">topic</a>,
-			<a href="/search/">search</a>, or follow the <a href="/rss.xml">RSS feed</a>.
+			{es ? `${all.length} artículos en inglés y castellano, desde ${first} hasta hoy.` : `${all.length} articles in English and Spanish, from ${first} to today.`} <a href="/search/">{es ? "Buscar" : "Search"}</a> · <a href="/tags/">{es ? "Temas" : "Topics"}</a> · <a href="/rss.xml">RSS</a>.
 		</p>
 	</PageHead>
 	{
@@ -43,18 +44,39 @@ const first = all.at(-1)!.data.pubDate.getUTCFullYear();
 						</li>
 					))}
 					<li>
-						<a class="all" href="/tags/">All topics</a>
+						<a class="all" href="/tags/">{es ? "Todos los temas" : "All topics"}</a>
 					</li>
 				</ul>
 			</nav>
 		)
 	}
 	<div class="frame">
-		<PostList posts={posts} />
-		<nav class="pagination" aria-label="Pages">
-			{page > 1 ? <a class="lh-button" data-variant="secondary" href={href(page - 1)} rel="prev">← Newer</a> : <span />}
-			<span class="meta">Page {page} of {total}</span>
-			{page < total ? <a class="lh-button" data-variant="secondary" href={href(page + 1)} rel="next">Older →</a> : <span />}
+		<label for="language-filter">{es ? 'Idioma de los artículos' : 'Article language'}</label>
+		<select id="language-filter">
+			<option value="all">{es ? 'Todos' : 'All'}</option>
+			<option value="en">English</option><option value="es">Español</option>
+		</select>
+		<div id="normal-posts"><PostList posts={posts} /></div>
+		<div id="filtered-posts" hidden><PostList posts={all} /></div>
+		<nav id="archive-pagination" class="pagination" aria-label="Pages">
+			{page > 1 ? <a class="lh-button" data-variant="secondary" href={href(page - 1)} rel="prev">← {es ? "Más recientes" : "Newer"}</a> : <span />}
+			<span class="meta">{es ? "Página" : "Page"} {page} {es ? "de" : "of"} {total}</span>
+			{page < total ? <a class="lh-button" data-variant="secondary" href={href(page + 1)} rel="next">{es ? "Anteriores" : "Older"} →</a> : <span />}
 		</nav>
 	</div>
 </Base>
+
+<script>
+ const filter = document.querySelector<HTMLSelectElement>('#language-filter')!;
+ const normal = document.querySelector<HTMLElement>('#normal-posts')!;
+ const filtered = document.querySelector<HTMLElement>('#filtered-posts')!;
+ const pagination = document.querySelector<HTMLElement>('#archive-pagination')!;
+ const apply = () => {
+   const lang = filter.value;
+   normal.hidden = lang !== 'all'; filtered.hidden = lang === 'all'; pagination.hidden = lang !== 'all';
+   filtered.querySelectorAll<HTMLLIElement>('ol.post-rows > li').forEach(row => {
+     row.hidden = row.querySelector('a')?.getAttribute('hreflang') !== lang;
+   });
+ };
+ filter.addEventListener('change', apply);
+</script>

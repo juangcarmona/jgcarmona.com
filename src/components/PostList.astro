@@ -26,7 +26,7 @@ const { posts, thumbs = true, searchable = false } = Astro.props;
 				<a href={postUrl(post)} hreflang={post.data.lang} class:list={{ 'has-thumb': thumbs && post.data.heroImage }}>
 					<span class="meta">
 						<FormattedDate date={post.data.pubDate} />
-						{post.data.lang === 'es' && <span title="Written in Spanish"> · ES</span>}
+						<span> · {post.data.lang === 'es' ? 'Español' : 'English'}</span>
 					</span>
 					<h2 lang={post.data.lang}>{post.data.title}</h2>
 					{/* The opening of the article, quoted from its body; see docs/editorial/voice.md. */}
