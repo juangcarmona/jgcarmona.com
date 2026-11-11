@@ -271,7 +271,7 @@ export const COURSES: Course[] = [
 		],
 		delivery: 'Given several times to engineering teams.',
 		links: [
-			{ label: 'Course and decks', url: 'https://github.com/juangcarmona/github_copilot_000_hub' },
+			{ label: 'Course and decks', url: 'https://github-copilot.jgcarmona.com/' },
 			{ label: 'Lab 101: Basics', url: 'https://github.com/juangcarmona/github_copilot_101_copilot_basics' },
 			{ label: 'Lab 102: Prompting', url: 'https://github.com/juangcarmona/github_copilot_102_prompting' },
 			{ label: 'Lab 103: Validation, testing and PRs', url: 'https://github.com/juangcarmona/github_copilot_103_validation_testing_prs' },
