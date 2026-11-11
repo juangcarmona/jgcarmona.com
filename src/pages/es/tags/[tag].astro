@@ -1,0 +1,28 @@
+---
+import PageHead from '../../../components/PageHead.astro';
+import PostList from '../../../components/PostList.astro';
+import Base from '../../../layouts/Base.astro';
+import { getPosts, type Post } from '../../../utils/posts';
+
+export async function getStaticPaths() {
+	const posts = await getPosts();
+	const tags = new Set(posts.flatMap((post) => post.data.tags));
+	return [...tags].map((tag) => ({
+		params: { tag },
+		props: { tag, posts: posts.filter((post) => post.data.tags.includes(tag)) },
+	}));
+}
+
+type Props = { tag: string; posts: Post[] };
+
+const { tag, posts } = Astro.props;
+---
+
+<Base lang="es" title={`${tag} — Juan G. Carmona`} description={`${posts.length} ${posts.length === 1 ? 'article' : 'articles'} about ${tag} by Juan G. Carmona, in English and Spanish. Latest: ${posts[0].data.title}.`} wide>
+	<PageHead eyebrow="Temas" eyebrowHref="/es/tags/" title={tag}>
+		<p>{posts.length} {posts.length === 1 ? 'artículo' : 'artículos'}, del más reciente al más antiguo.</p>
+	</PageHead>
+	<div class="frame">
+		<PostList posts={posts} />
+	</div>
+</Base>

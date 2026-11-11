@@ -13,7 +13,7 @@ tags:
   - "ai"
 ---
 
-Lately, I have been working as a FDE (Forward Development Engineer) at [Plain Concepts](https://www.plainconcepts.com/who-we-are/), helping different clients introduce AI into their software development lifecycle. AI-SDLC and Spec-Driven Development are my two main areas of focus and I have been thinking a lot about the implications of AI-assisted development on the software lifecycle in many environments, with many tools, with different workflows in many different scenarios...
+Lately, I have been working as a FDE (Forward Deployed Engineer) at [Plain Concepts](https://www.plainconcepts.com/who-we-are/), helping different clients introduce AI into their software development lifecycle. AI-SDLC and Spec-Driven Development are my two main areas of focus and I have been thinking a lot about the implications of AI-assisted development on the software lifecycle in many environments, with many tools, with different workflows in many different scenarios...
 
 There is something that becomes clear as the technologies, the organizations, and the constraints change... and it is that most of them are **documentation problems**. This should not surprise anyone, IMHO, documentation and documentation management have always been a disaster across the software industry. (and I am being polite saying "disaster"...)
 

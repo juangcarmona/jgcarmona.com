@@ -1,0 +1,50 @@
+---
+import PageHead from '../../components/PageHead.astro';
+import PostList from '../../components/PostList.astro';
+import Base from '../../layouts/Base.astro';
+import { getPosts } from '../../utils/posts';
+
+const posts = await getPosts();
+---
+
+<Base lang="es" title="Buscar — Juan G. Carmona" description="Busca artículos por título, resumen o tema." noindex wide>
+	<PageHead eyebrow="Artículos" eyebrowHref="/es/blog/" title="Buscar" />
+	<div class="frame">
+		<form id="search-form" class="lh-field search-field" role="search">
+			<label for="search-input">Título, resumen o tema</label>
+			<input id="search-input" class="lh-input" type="search" name="q" autocomplete="off" />
+		</form>
+		<label for="search-language">Idioma de los artículos</label>
+	<select id="search-language"><option value="all">Todos</option><option value="en">English</option><option value="es">Español</option></select>
+	<p id="search-status" class="meta" aria-live="polite"></p>
+		<PostList posts={posts} thumbs={false} searchable />
+	</div>
+</Base>
+
+<script>
+	const input = document.getElementById('search-input') as HTMLInputElement;
+	const status = document.getElementById('search-status')!;
+	const language = document.getElementById('search-language') as HTMLSelectElement;
+	const items = [...document.querySelectorAll<HTMLLIElement>('#search-results li')];
+
+	function search(query: string) {
+		const q = query.trim().toLowerCase();
+		let found = 0;
+		for (const item of items) {
+			const match = q !== '' && item.dataset.text!.includes(q) && (language.value === 'all' || item.querySelector('a')?.getAttribute('hreflang') === language.value);
+			item.hidden = !match;
+			if (match) found++;
+		}
+		status.textContent = q ? `${found} ${found === 1 ? 'resultado' : 'resultados'} para “${query.trim()}”` : '';
+		const url = new URL(location.href);
+		if (q) url.searchParams.set('q', query.trim());
+		else url.searchParams.delete('q');
+		history.replaceState(null, '', url);
+	}
+
+	input.value = new URLSearchParams(location.search).get('q') ?? '';
+	input.addEventListener('input', () => search(input.value));
+	language.addEventListener('change', () => search(input.value));
+	document.getElementById('search-form')!.addEventListener('submit', (event) => event.preventDefault());
+	search(input.value);
+</script>

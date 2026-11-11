@@ -11,7 +11,7 @@ const SITE = 'https://jgcarmona.com';
 // Only canonical URLs go in the sitemap; redirect pages (/slug/, the other language prefix, /blog/1/) stay out.
 const canonical = canonicalPostPaths('./src/content/blog');
 const dates = postDates('./src/content/blog');
-const isPostPath = (path) => /^\/(en|es)\/[^/]+\/$/.test(path);
+const postSlug = (path) => /^\/(?:en|es)\/([^/]+)\/$/.exec(path)?.[1];
 const isLegacyPath = (path) => [...canonical.keys()].some((slug) => path === `/${slug}/`);
 
 // https://astro.build/config
@@ -27,8 +27,9 @@ export default defineConfig({
 		sitemap({
 			filter: (page) => {
 				const path = new URL(page).pathname;
-				if (['/search/', '/404/', '/blog/1/'].includes(path)) return false;
-				if (isPostPath(path)) return [...canonical.values()].includes(path);
+				if (['/search/', '/es/search/', '/404/', '/blog/1/'].includes(path)) return false;
+				const slug = postSlug(path);
+				if (slug && canonical.has(slug)) return canonical.get(slug) === path;
 				return !isLegacyPath(path);
 			},
 			serialize: (item) => {

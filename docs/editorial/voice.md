@@ -44,10 +44,10 @@ Text in this repository has five origins. Name the origin before reusing any tex
 
 | Text | Kind | Source |
 | --- | --- | --- |
-| "Software Architect · AI Strategist · Critical & Secure Systems" | Literal | LinkedIn headline, without the employer |
-| "More than twenty years designing and building software for aerospace and defence, rail and smart mobility, motorsport and data platforms, and a company of my own…" | New | CV and /about; sectors confirmed by Juan on 2026-11-02 |
-| "I've been coding, daily, even on weekends, for more than half of my life." | Literal | Body of Spec-Driven Development: Controlling AI-Generated Drift, 2026 |
-| Career strip (2005–2025) | New | CV and /about |
+| "Software Architect · AI Strategist · Forward Deployed Engineer" | New | Juan, approved for the homepage, 2026-11-11 |
+| "I build software, explore how AI changes the way we work, and share what I learn through articles, talks and open-source projects." | New | Juan, approved for the homepage, 2026-11-11 |
+| "Becoming is better than being. Build for today, design for tomorrow, and never stop learning." | Literal | GitHub profile bio, confirmed by Juan, 2026-11-11; Spanish text is a translation |
+| Career and experience | New | CV and /about |
 | "Blog archive from 2012 · On stage since 2012" | New | The oldest article in this archive (August 2012); IWT2 DojoUS, 9 November 2012 |
 | Article titles | Literal | Each article's frontmatter title, as published |
 | Article excerpts | Literal, cut with "…" | The first paragraph of each article's body |
@@ -65,15 +65,16 @@ Text in this repository has five origins. Name the origin before reusing any tex
 | /blog, /tags, /search | Article excerpts | Literal, cut with "…" | The first paragraph of each article's body |
 | /blog | Counts and the first year | New | Computed from the archive at build time |
 | /talks | Talk titles, abstracts, links | Literal | `src/data/speaking.ts`, as on the homepage |
-| /talks | Courses and workshops: titles, summaries, contents | Literal | Each course's README; "Given several times to engineering teams" and the local-models talks (Docker Model Runner, llama.cpp, vLLM): Juan, 2026-11-03 |
+| /courses | Courses and workshops: titles, summaries, contents | Literal | Each course's README; "Given several times to engineering teams" and the local-models talks (Docker Model Runner, llama.cpp, vLLM): Juan, 2026-11-03 |
 | /talks | Software Architektur im Stream: title, abstract | Organiser text | The recording's description on Eberhard Wolff's channel |
 | /talks | "Most of my speaking happens inside teams and with clients, as internal talks and training" | New | Juan, 2026-11-03. No clients named, no count |
-| /talks | Session openings under "Sessions I offer" | Literal | Sessionize profile, checked word for word on 2026-11-02 |
+| /talks | Session titles under "Sessions I offer" | Literal | Sessionize profile, checked word for word on 2026-11-02 |
 | /projects | Headline and summary of each project | Literal | Each project's own site |
 | /projects | Descriptions and stacks | New | Each project's README and site; no claims beyond them |
 | /books | Introduction and book descriptions | Literal | The original /books page (WordPress import) |
 | /books | Status of each book | New | `audit-2026-11-02.md` |
-| /about | First-person paragraphs, "How I work", "Outside of tech", the closing line | Literal | The About page Juan published before the redesign (`src/pages/about.md`, commit cea36da) |
+| /about | First-person paragraphs, "How I work", "Outside of tech" | Literal | The About page Juan published before the redesign (`src/pages/about.md`, commit cea36da) |
+| /about | Closing motto | Literal | GitHub profile bio, confirmed by Juan, 2026-11-11; Spanish text is a translation |
 | /about | First blog sentence | Literal | *El primer paso siempre es el más difícil*, 2022 |
 | /about | First blog name, Blogger, before 2007 | New | Juan, 2026-11-03 |
 | /about | "Now" paragraph and experience list | New | CV |

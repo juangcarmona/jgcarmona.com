@@ -14,7 +14,9 @@ const posts = await getPosts();
 			<label for="search-input">Title, summary or topic</label>
 			<input id="search-input" class="lh-input" type="search" name="q" autocomplete="off" />
 		</form>
-		<p id="search-status" class="meta" aria-live="polite"></p>
+		<label for="search-language">Article language</label>
+	<select id="search-language"><option value="all">All</option><option value="en">English</option><option value="es">Español</option></select>
+	<p id="search-status" class="meta" aria-live="polite"></p>
 		<PostList posts={posts} thumbs={false} searchable />
 	</div>
 </Base>
@@ -22,13 +24,14 @@ const posts = await getPosts();
 <script>
 	const input = document.getElementById('search-input') as HTMLInputElement;
 	const status = document.getElementById('search-status')!;
+	const language = document.getElementById('search-language') as HTMLSelectElement;
 	const items = [...document.querySelectorAll<HTMLLIElement>('#search-results li')];
 
 	function search(query: string) {
 		const q = query.trim().toLowerCase();
 		let found = 0;
 		for (const item of items) {
-			const match = q !== '' && item.dataset.text!.includes(q);
+			const match = q !== '' && item.dataset.text!.includes(q) && (language.value === 'all' || item.querySelector('a')?.getAttribute('hreflang') === language.value);
 			item.hidden = !match;
 			if (match) found++;
 		}
@@ -41,6 +44,7 @@ const posts = await getPosts();
 
 	input.value = new URLSearchParams(location.search).get('q') ?? '';
 	input.addEventListener('input', () => search(input.value));
+	language.addEventListener('change', () => search(input.value));
 	document.getElementById('search-form')!.addEventListener('submit', (event) => event.preventDefault());
 	search(input.value);
 </script>

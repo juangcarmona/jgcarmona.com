@@ -58,6 +58,7 @@ const article = {
 		}
 	</Fragment>
 	<article>
+        <p class="meta" id="article-language" data-article-lang={lang} data-has-translation={translations.length > 0 ? 'true' : 'false'}></p>
 		<header class="article-header">
 			<p class="eyebrow"><a href="/blog/">Blog</a>{lang === 'es' && <span lang="es"> · En español</span>}</p>
 			<h1>{title}</h1>
@@ -100,3 +101,14 @@ const article = {
 		<slot name="after" />
 	</article>
 </Base>
+
+<script>
+ const notice = document.querySelector<HTMLElement>('#article-language');
+ if (notice) {
+   let preference = 'en';
+   try { preference = localStorage.getItem('site-language') || 'en'; } catch { /* Storage is optional. */ }
+   if (preference !== notice.dataset.articleLang && notice.dataset.hasTranslation !== 'true') {
+     notice.textContent = preference === 'es' ? 'Este artículo solo está disponible en inglés.' : 'This article is only available in Spanish.';
+   }
+ }
+</script>

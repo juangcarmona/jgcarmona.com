@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import FormattedDate from '../components/FormattedDate.astro';
-import { PROFILES, SITE_DESCRIPTION, SITE_HEADLINE, SITE_SEO_TITLE, YOUTUBE_COURSES } from '../consts';
+import { PROFILES, SITE_DESCRIPTION, SITE_SEO_TITLE, YOUTUBE_COURSES } from '../consts';
 import { FLAGSHIP_PROJECTS } from '../data/projects';
 import { APPEARANCES, talkLinks } from '../data/speaking';
 import Base from '../layouts/Base.astro';
@@ -24,18 +24,9 @@ const SELECTED = [
 	'cierre-jgcarmona-consulting',
 ];
 
-// Source: CV (see /about).
-const CAREER = [
-	{ year: '2005', field: 'First jobs', detail: 'Tunstall, Actualize and CEUAH' },
-	{ year: '2011', field: 'Aerospace and defence', detail: 'Systems architect on an application for Cassidian, the Airbus military division' },
-	{ year: '2014', field: 'Rail and smart mobility', detail: 'Alstom, and the Madrid Innovation Lab where Mastria was born' },
-	{ year: '2018', field: 'My own company', detail: 'Logtrip, as founder, CEO and CTO' },
-	{ year: '2022', field: 'Motorsport and data platforms', detail: 'Azure solutions architect for the Porsche Motorsport Data Platform' },
-	{ year: '2025', field: 'Plain Concepts', detail: 'Forward Deployed Engineer: AI-SDLC, training, audits, assessments and SRE' },
-];
-
 const posts = await getPosts();
 const [lead, ...stories] = SELECTED.map((id) => posts.find((post) => post.id === id)).filter((post) => post !== undefined);
+const latest = posts.filter((post) => !SELECTED.includes(post.id)).slice(0, 4);
 
 const tools = FLAGSHIP_PROJECTS.slice(0, 4);
 
@@ -71,22 +62,15 @@ const books = [
 	<section class="frame home-hero" aria-labelledby="name">
 		<div class="hero-copy">
 			<h1 id="name" class="name">Juan G. Carmona</h1>
-			<p class="headline">{SITE_HEADLINE}</p>
-			<p class="intro">
-				More than twenty years designing and building software for aerospace and defence, rail and smart mobility,
-				motorsport and data platforms, and a company of my own. My work is software architecture, cloud and engineering
-				practice, and lately AI-assisted development. I write about what I learn, in English and Spanish, give talks and
-				build open-source tools.
-			</p>
-			<blockquote class="own-words">
-				<p>I've been coding, daily, even on weekends, for more than half of my life.</p>
-				<footer>
-					From <a href="/en/spec-driven-done-right/">Spec-Driven Development: Controlling AI-Generated Drift</a>, April 2026
-				</footer>
+			<p class="headline">Software Architect · AI Strategist · Forward Deployed Engineer</p>
+			<p class="intro">I build software, explore how AI changes the way we work, and share what I learn through articles, talks and open-source projects.</p>
+			<blockquote class="own-words" cite="https://github.com/juangcarmona">
+				<p>Becoming is better than being.</p>
+				<p>Build for today, design for tomorrow, and never stop learning.</p>
 			</blockquote>
 			<div class="actions">
 				<a class="lh-button" href="/blog/">Read the blog</a>
-				<a class="arrow" href="/talks/">Talks</a>
+				<a class="arrow" href="/projects/">Projects</a>
 				<a class="arrow" href="/about/">About me</a>
 			</div>
 		</div>
@@ -94,21 +78,6 @@ const books = [
 			<Image src={portrait} alt="Juan G. Carmona" widths={[360, 560, 840]} sizes="(max-width: 56rem) 100vw, 420px" loading="eager" fetchpriority="high" />
 			<figcaption>Blog archive from 2012 · On stage since 2012</figcaption>
 		</figure>
-	</section>
-
-	<section class="frame path" aria-labelledby="career">
-		<h2 id="career" class="eyebrow">Career</h2>
-		<ol>
-			{
-				CAREER.map((step) => (
-					<li>
-						<span class="year">{step.year}</span>
-						<strong>{step.field}</strong>
-						<small>{step.detail}</small>
-					</li>
-				))
-			}
-		</ol>
 	</section>
 
 	<section class="frame writing" aria-labelledby="writing">
@@ -148,6 +117,60 @@ const books = [
 							<h3 lang={post.data.lang}>{post.data.title}</h3>
 							<p lang={post.data.lang}>{openingExcerpt(post.body)}</p>
 						</a>
+					</li>
+				))
+			}
+		</ol>
+		<header class="section-head">
+			<h3>Recent articles</h3>
+		</header>
+		<ol class="stories">
+			{latest.map((post) => (
+				<li>
+					<a href={postUrl(post)} hreflang={post.data.lang}>
+						{post.data.heroImage && <Image src={post.data.heroImage} alt="" widths={[160, 320, 480]} sizes="(max-width: 40rem) 100vw, 144px" loading="lazy" />}
+						<span class="meta"><FormattedDate date={post.data.pubDate} /> · {post.data.lang === 'es' ? 'Español' : 'English'}</span>
+						<h3 lang={post.data.lang}>{post.data.title}</h3>
+						<p lang={post.data.lang}>{openingExcerpt(post.body)}</p>
+					</a>
+				</li>
+			))}
+		</ol>
+	</section>
+
+	<section class="frame tools" aria-labelledby="projects">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow">Open source</p>
+				<h2 id="projects">Projects</h2>
+			</div>
+			<p><a class="arrow" href="/projects/">All projects</a></p>
+		</header>
+		<ol class="tool-index">
+			{
+				tools.map((project, i) => (
+					<li>
+						<span class="index">{String(i + 1).padStart(2, '0')}</span>
+						<div class="tool-name">
+							<h3>
+								<a href={project.links[0].url}>{project.name}</a>
+							</h3>
+						</div>
+						<div class="tool-purpose">
+							{project.inOwnWords && (
+								<>
+									<p class="problem">{project.inOwnWords.headline}</p>
+									<p>{project.inOwnWords.summary}</p>
+								</>
+							)}
+						</div>
+						<ul class="tool-links">
+							{project.links.map((link) => (
+								<li>
+									<a href={link.url}>{link.label}</a>
+								</li>
+							))}
+						</ul>
 					</li>
 				))
 			}
@@ -227,45 +250,6 @@ const books = [
 		</div>
 	</section>
 
-	<section class="frame tools" aria-labelledby="projects">
-		<header class="section-head">
-			<div>
-				<p class="eyebrow">Open source</p>
-				<h2 id="projects">Projects</h2>
-			</div>
-			<p><a class="arrow" href="/projects/">All projects</a></p>
-		</header>
-		<ol class="tool-index">
-			{
-				tools.map((project, i) => (
-					<li>
-						<span class="index">{String(i + 1).padStart(2, '0')}</span>
-						<div class="tool-name">
-							<h3>
-								<a href={project.links[0].url}>{project.name}</a>
-							</h3>
-						</div>
-						<div class="tool-purpose">
-							{project.inOwnWords && (
-								<>
-									<p class="problem">{project.inOwnWords.headline}</p>
-									<p>{project.inOwnWords.summary}</p>
-								</>
-							)}
-						</div>
-						<ul class="tool-links">
-							{project.links.map((link) => (
-								<li>
-									<a href={link.url}>{link.label}</a>
-								</li>
-							))}
-						</ul>
-					</li>
-				))
-			}
-		</ol>
-	</section>
-
 	<section class="frame publications" aria-labelledby="publications">
 		<header class="section-head">
 			<div>
@@ -294,6 +278,7 @@ const books = [
 			</ul>
 			<div>
 				<h3 class="eyebrow">Courses</h3>
+				<p><a class="arrow" href="/courses/">All courses and workshops</a></p>
 				<ol class="courses" lang="es">
 					{
 						YOUTUBE_COURSES.map((course) => (
