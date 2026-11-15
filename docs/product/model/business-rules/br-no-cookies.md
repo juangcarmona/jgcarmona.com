@@ -4,7 +4,6 @@ type: business-rule
 title: The site sets no cookies
 status: active
 applies-to:
-  - UC-READ-ARTICLE
   - JRN-READ
 uses-terms: []
 ---

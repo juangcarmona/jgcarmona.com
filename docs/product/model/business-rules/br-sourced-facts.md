@@ -3,8 +3,7 @@ id: BR-SOURCED-FACTS
 type: business-rule
 title: Every career and speaking fact has a source
 status: active
-applies-to:
-  - UC-REVIEW-SPEAKER
+applies-to: []
 uses-terms: []
 ---
 

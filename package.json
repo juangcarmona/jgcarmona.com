@@ -21,7 +21,8 @@
     "sharp": "^0.34.3"
   },
   "devDependencies": {
-    "@juangcarmona/lighthouse": "0.12.32",
+    "@juangcarmona/lighthouse": "0.13.11",
+    "@juangcarmona/lighthouse-sdlc": "0.24.0",
     "@playwright/test": "^1.59.1"
   }
 }
