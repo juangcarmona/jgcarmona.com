@@ -14,6 +14,8 @@ npm run verify   # build the site and run lighthouse verify
 
 `npm run brand` regenerates the favicon, touch icon and default social image from the portrait in `src/assets/portrait.jpg` (`scripts/brand.mjs`).
 
+The engineering tooling selects Lighthouse CLI 0.13.11 and SDLC 0.24.0. Its managed daily-maintenance workflow supports manual `housekeeping: true, dry_run: true` inspection. Scheduled execution requires explicit repository-variable activation; installation does not enable automation. The PDaC v1alpha2 conversion preserves all 20 product artifacts and their body text, moving six existing rule-to-use-case selectors into use-case governance.
+
 ## Write
 
 Add an article as `src/content/blog/<id>/index.md` with `title`, `description`, `pubDate` and `lang` (`en` or `es`). Its URL is `/<lang>/<id>/`. Give an article and its real translation the same `translationKey`. Talks and projects live in `src/data/`; record the source of every entry.

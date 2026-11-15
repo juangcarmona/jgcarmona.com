@@ -8,6 +8,7 @@ supporting-actors: []
 governed-by:
   - BR-CANONICAL-URL
   - BR-NO-COOKIES
+  - BR-REAL-TRANSLATIONS
 uses-terms: []
 ---
 

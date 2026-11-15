@@ -3,9 +3,7 @@ id: BR-CANONICAL-URL
 type: business-rule
 title: One canonical URL per article
 status: active
-applies-to:
-  - UC-READ-ARTICLE
-  - UC-PUBLISH-ARTICLE
+applies-to: []
 uses-terms: []
 ---
 

@@ -3,9 +3,7 @@ id: BR-REAL-TRANSLATIONS
 type: business-rule
 title: Only real translations are linked as translations
 status: active
-applies-to:
-  - UC-READ-ARTICLE
-  - UC-PUBLISH-ARTICLE
+applies-to: []
 uses-terms: []
 ---
 
